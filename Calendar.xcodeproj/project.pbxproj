@@ -10,6 +10,29 @@
 		0B745BE02669935500A3AB19 /* CalendarUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B745BDF2669935500A3AB19 /* CalendarUnitTests.swift */; };
 		0B745BEC266995C800A3AB19 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B745BEB266995C800A3AB19 /* Event.swift */; };
 		0B745BEE266996C600A3AB19 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B745BED266996C600A3AB19 /* Location.swift */; };
+		0B745BF02669979E00A3AB19 /* GetEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B745BEF2669979E00A3AB19 /* GetEventsUseCase.swift */; };
+		0B745BF22669A39C00A3AB19 /* GetEventsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B745BF12669A39C00A3AB19 /* GetEventsRepository.swift */; };
+		0B745BF52669A72100A3AB19 /* GetEventsRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B745BF42669A72100A3AB19 /* GetEventsRepositoryImp.swift */; };
+		0B745BF72669A7A200A3AB19 /* EventsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B745BF62669A7A200A3AB19 /* EventsDataSource.swift */; };
+		0B745BF92669A7D100A3AB19 /* EventsDataSourceImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B745BF82669A7D100A3AB19 /* EventsDataSourceImp.swift */; };
+		0B745BFB2669ACEA00A3AB19 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B745BFA2669ACEA00A3AB19 /* Month.swift */; };
+		0B745C0C2669B0EF00A3AB19 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745BFD2669B0EE00A3AB19 /* Rubik-Medium.ttf */; };
+		0B745C0D2669B0EF00A3AB19 /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745BFE2669B0EE00A3AB19 /* Rubik-ExtraBoldItalic.ttf */; };
+		0B745C0E2669B0EF00A3AB19 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745BFF2669B0EE00A3AB19 /* Rubik-Light.ttf */; };
+		0B745C0F2669B0EF00A3AB19 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745C002669B0EF00A3AB19 /* Rubik-Italic.ttf */; };
+		0B745C102669B0EF00A3AB19 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745C012669B0EF00A3AB19 /* Rubik-Black.ttf */; };
+		0B745C112669B0EF00A3AB19 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745C022669B0EF00A3AB19 /* Rubik-BlackItalic.ttf */; };
+		0B745C122669B0EF00A3AB19 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745C032669B0EF00A3AB19 /* Rubik-LightItalic.ttf */; };
+		0B745C132669B0EF00A3AB19 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745C042669B0EF00A3AB19 /* Rubik-BoldItalic.ttf */; };
+		0B745C142669B0EF00A3AB19 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745C052669B0EF00A3AB19 /* Rubik-SemiBold.ttf */; };
+		0B745C152669B0EF00A3AB19 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745C062669B0EF00A3AB19 /* Rubik-Bold.ttf */; };
+		0B745C162669B0EF00A3AB19 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B745C072669B0EF00A3AB19 /* Fonts.swift */; };
+		0B745C172669B0EF00A3AB19 /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745C082669B0EF00A3AB19 /* Rubik-ExtraBold.ttf */; };
+		0B745C182669B0EF00A3AB19 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745C092669B0EF00A3AB19 /* Rubik-Regular.ttf */; };
+		0B745C192669B0EF00A3AB19 /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745C0A2669B0EF00A3AB19 /* Rubik-SemiBoldItalic.ttf */; };
+		0B745C1A2669B0EF00A3AB19 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B745C0B2669B0EF00A3AB19 /* Rubik-MediumItalic.ttf */; };
+		0BEEA2CA2669B24500210039 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEEA2C92669B24500210039 /* EventViewModel.swift */; };
+		0BEEA2CC2669B36700210039 /* GetEventsUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEEA2CB2669B36700210039 /* GetEventsUseCaseImp.swift */; };
 		0BF3C97B265F17F1009C393F /* CalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF3C97A265F17F1009C393F /* CalendarApp.swift */; };
 		0BF3C97D265F17F1009C393F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF3C97C265F17F1009C393F /* ContentView.swift */; };
 		0BF3C97F265F17F3009C393F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BF3C97E265F17F3009C393F /* Assets.xcassets */; };
@@ -32,6 +55,29 @@
 		0B745BE12669935500A3AB19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B745BEB266995C800A3AB19 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0B745BED266996C600A3AB19 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		0B745BEF2669979E00A3AB19 /* GetEventsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsUseCase.swift; sourceTree = "<group>"; };
+		0B745BF12669A39C00A3AB19 /* GetEventsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsRepository.swift; sourceTree = "<group>"; };
+		0B745BF42669A72100A3AB19 /* GetEventsRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsRepositoryImp.swift; sourceTree = "<group>"; };
+		0B745BF62669A7A200A3AB19 /* EventsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDataSource.swift; sourceTree = "<group>"; };
+		0B745BF82669A7D100A3AB19 /* EventsDataSourceImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsDataSourceImp.swift; sourceTree = "<group>"; };
+		0B745BFA2669ACEA00A3AB19 /* Month.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		0B745BFD2669B0EE00A3AB19 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		0B745BFE2669B0EE00A3AB19 /* Rubik-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		0B745BFF2669B0EE00A3AB19 /* Rubik-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Light.ttf"; sourceTree = "<group>"; };
+		0B745C002669B0EF00A3AB19 /* Rubik-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Italic.ttf"; sourceTree = "<group>"; };
+		0B745C012669B0EF00A3AB19 /* Rubik-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Black.ttf"; sourceTree = "<group>"; };
+		0B745C022669B0EF00A3AB19 /* Rubik-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BlackItalic.ttf"; sourceTree = "<group>"; };
+		0B745C032669B0EF00A3AB19 /* Rubik-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-LightItalic.ttf"; sourceTree = "<group>"; };
+		0B745C042669B0EF00A3AB19 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
+		0B745C052669B0EF00A3AB19 /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
+		0B745C062669B0EF00A3AB19 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		0B745C072669B0EF00A3AB19 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		0B745C082669B0EF00A3AB19 /* Rubik-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-ExtraBold.ttf"; sourceTree = "<group>"; };
+		0B745C092669B0EF00A3AB19 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		0B745C0A2669B0EF00A3AB19 /* Rubik-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		0B745C0B2669B0EF00A3AB19 /* Rubik-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-MediumItalic.ttf"; sourceTree = "<group>"; };
+		0BEEA2C92669B24500210039 /* EventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		0BEEA2CB2669B36700210039 /* GetEventsUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsUseCaseImp.swift; sourceTree = "<group>"; };
 		0BF3C977265F17F1009C393F /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BF3C97A265F17F1009C393F /* CalendarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarApp.swift; sourceTree = "<group>"; };
 		0BF3C97C265F17F1009C393F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +116,10 @@
 		0B745BE72669959500A3AB19 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0B745BF42669A72100A3AB19 /* GetEventsRepositoryImp.swift */,
+				0B745BF62669A7A200A3AB19 /* EventsDataSource.swift */,
+				0B745BF82669A7D100A3AB19 /* EventsDataSourceImp.swift */,
+				0BEEA2CB2669B36700210039 /* GetEventsUseCaseImp.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -77,6 +127,8 @@
 		0B745BE8266995A100A3AB19 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				0B745BF32669A64100A3AB19 /* Repositories */,
+				0B745BEF2669979E00A3AB19 /* GetEventsUseCase.swift */,
 				0B745BEA266995B400A3AB19 /* Entities */,
 			);
 			path = Domain;
@@ -85,6 +137,10 @@
 		0B745BE9266995A700A3AB19 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				0BEEA2C92669B24500210039 /* EventViewModel.swift */,
+				0B745C1B2669B12100A3AB19 /* Views */,
+				0BF3C97A265F17F1009C393F /* CalendarApp.swift */,
+				0B745BFC2669B0E200A3AB19 /* Fonts */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -94,8 +150,47 @@
 			children = (
 				0B745BEB266995C800A3AB19 /* Event.swift */,
 				0B745BED266996C600A3AB19 /* Location.swift */,
+				0B745BFA2669ACEA00A3AB19 /* Month.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		0B745BF32669A64100A3AB19 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				0B745BF12669A39C00A3AB19 /* GetEventsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		0B745BFC2669B0E200A3AB19 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0B745C072669B0EF00A3AB19 /* Fonts.swift */,
+				0B745C012669B0EF00A3AB19 /* Rubik-Black.ttf */,
+				0B745C022669B0EF00A3AB19 /* Rubik-BlackItalic.ttf */,
+				0B745C062669B0EF00A3AB19 /* Rubik-Bold.ttf */,
+				0B745C042669B0EF00A3AB19 /* Rubik-BoldItalic.ttf */,
+				0B745C082669B0EF00A3AB19 /* Rubik-ExtraBold.ttf */,
+				0B745BFE2669B0EE00A3AB19 /* Rubik-ExtraBoldItalic.ttf */,
+				0B745C002669B0EF00A3AB19 /* Rubik-Italic.ttf */,
+				0B745BFF2669B0EE00A3AB19 /* Rubik-Light.ttf */,
+				0B745C032669B0EF00A3AB19 /* Rubik-LightItalic.ttf */,
+				0B745BFD2669B0EE00A3AB19 /* Rubik-Medium.ttf */,
+				0B745C0B2669B0EF00A3AB19 /* Rubik-MediumItalic.ttf */,
+				0B745C092669B0EF00A3AB19 /* Rubik-Regular.ttf */,
+				0B745C052669B0EF00A3AB19 /* Rubik-SemiBold.ttf */,
+				0B745C0A2669B0EF00A3AB19 /* Rubik-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0B745C1B2669B12100A3AB19 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0BF3C97C265F17F1009C393F /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		0BF3C96E265F17F1009C393F = {
@@ -122,8 +217,6 @@
 				0B745BE9266995A700A3AB19 /* Presentation */,
 				0B745BE8266995A100A3AB19 /* Domain */,
 				0B745BE72669959500A3AB19 /* Data */,
-				0BF3C97A265F17F1009C393F /* CalendarApp.swift */,
-				0BF3C97C265F17F1009C393F /* ContentView.swift */,
 				0BF3C97E265F17F3009C393F /* Assets.xcassets */,
 				0BF3C983265F17F3009C393F /* Info.plist */,
 				0BF3C980265F17F3009C393F /* Preview Content */,
@@ -226,7 +319,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B745C0C2669B0EF00A3AB19 /* Rubik-Medium.ttf in Resources */,
+				0B745C182669B0EF00A3AB19 /* Rubik-Regular.ttf in Resources */,
+				0B745C172669B0EF00A3AB19 /* Rubik-ExtraBold.ttf in Resources */,
+				0B745C1A2669B0EF00A3AB19 /* Rubik-MediumItalic.ttf in Resources */,
+				0B745C152669B0EF00A3AB19 /* Rubik-Bold.ttf in Resources */,
 				0BF3C982265F17F3009C393F /* Preview Assets.xcassets in Resources */,
+				0B745C0F2669B0EF00A3AB19 /* Rubik-Italic.ttf in Resources */,
+				0B745C122669B0EF00A3AB19 /* Rubik-LightItalic.ttf in Resources */,
+				0B745C102669B0EF00A3AB19 /* Rubik-Black.ttf in Resources */,
+				0B745C132669B0EF00A3AB19 /* Rubik-BoldItalic.ttf in Resources */,
+				0B745C0E2669B0EF00A3AB19 /* Rubik-Light.ttf in Resources */,
+				0B745C0D2669B0EF00A3AB19 /* Rubik-ExtraBoldItalic.ttf in Resources */,
+				0B745C142669B0EF00A3AB19 /* Rubik-SemiBold.ttf in Resources */,
+				0B745C192669B0EF00A3AB19 /* Rubik-SemiBoldItalic.ttf in Resources */,
+				0B745C112669B0EF00A3AB19 /* Rubik-BlackItalic.ttf in Resources */,
 				0BF3C97F265F17F3009C393F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,10 +353,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B745BF52669A72100A3AB19 /* GetEventsRepositoryImp.swift in Sources */,
+				0BEEA2CA2669B24500210039 /* EventViewModel.swift in Sources */,
+				0BEEA2CC2669B36700210039 /* GetEventsUseCaseImp.swift in Sources */,
+				0B745BF92669A7D100A3AB19 /* EventsDataSourceImp.swift in Sources */,
+				0B745BF72669A7A200A3AB19 /* EventsDataSource.swift in Sources */,
 				0BF3C97D265F17F1009C393F /* ContentView.swift in Sources */,
+				0B745BF02669979E00A3AB19 /* GetEventsUseCase.swift in Sources */,
 				0B745BEC266995C800A3AB19 /* Event.swift in Sources */,
 				0B745BEE266996C600A3AB19 /* Location.swift in Sources */,
 				0BF3C97B265F17F1009C393F /* CalendarApp.swift in Sources */,
+				0B745C162669B0EF00A3AB19 /* Fonts.swift in Sources */,
+				0B745BFB2669ACEA00A3AB19 /* Month.swift in Sources */,
+				0B745BF22669A39C00A3AB19 /* GetEventsRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
