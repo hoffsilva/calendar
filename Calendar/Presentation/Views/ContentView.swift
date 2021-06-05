@@ -6,19 +6,13 @@
 //
 
 import SwiftUI
-
+//
 struct ContentView: View {
-    
-    private let viewModel: EventViewModel
-    
-    init(
-        viewModel: EventViewModel
-    ) {
-        self.viewModel = viewModel
-    }
-    
+
+    private let viewModel: EventViewModel = EventViewModel()
+
     var body: some View {
-        List(viewModel.$events) { event in
+        List(viewModel.events) { event in
             LazyVStack(alignment: .leading) {
                 LazyHStack(spacing: 1) {
                     Text(event.day)
@@ -73,8 +67,9 @@ struct ContentView: View {
     }
 }
 
-//
+
 //struct ContentView: View {
+//
 //    var body: some View {
 //        List(0..<2) { item in
 //            HStack() {
@@ -122,9 +117,9 @@ struct ContentView: View {
 //        }
 //    }
 //}
-//
-//struct ContentView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ContentView()
-//    }
-//}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
+}
