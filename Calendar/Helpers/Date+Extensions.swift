@@ -32,4 +32,12 @@ extension Date {
         return formatter.string(from: self)
     }
     
+    func getYear() -> Int {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.dateFormat = "YYYY"
+        return Int(formatter.string(from: self)) ?? 0
+    }
+    
 }
