@@ -19,10 +19,31 @@ final class EventsDataSourceImp: EventsDataSource {
         return formatter
     }()
     
+    private var isAccessGranted = false
+    
+    init() {
+        requestAccess()
+    }
+    
+    private func requestAccess() {
+        store.requestAccess(to: .event) { (granted, error) in
+            if granted {
+                self.isAccessGranted = granted
+            } else {
+                self.isAccessGranted = false
+            }
+        }
+    }
+    
     func getEvents(from: Int, completion: @escaping ((Result<[Event], Error>) -> Void)) {
+        
+        if !isAccessGranted {
+            requestAccess()
+        }
+        
         guard
-            let startDate = dateFormatter.date(from: "01/01\(from)"),
-            let endDate = dateFormatter.date(from: "31/12\(from)")
+            let startDate = dateFormatter.date(from: "01/01/\(from)"),
+            let endDate = dateFormatter.date(from: "31/12/\(from)")
         else { return completion(.failure(NSError(domain: "", code: 0, userInfo: nil))) }
         
         let predicate = store.predicateForEvents(withStart: startDate, end: endDate, calendars: nil)
@@ -34,7 +55,6 @@ final class EventsDataSourceImp: EventsDataSource {
     private func mapEvent(events: [EKEvent]) -> [Event] {
         events.map { event in
             Event(
-                eventIdentifier: event.eventIdentifier,
                 startDate: event.startDate,
                 endDate: event.endDate,
                 isAllDay: event.isAllDay,
@@ -42,7 +62,8 @@ final class EventsDataSourceImp: EventsDataSource {
                     latitude: event.structuredLocation?.geoLocation?.coordinate.latitude ?? 0,
                     longitude: event.structuredLocation?.geoLocation?.coordinate.longitude ?? 0
                 ),
-                month: getMonth(of: event.startDate)
+                month: getMonth(of: event.startDate),
+                title: event.title
             )
         }
     }
@@ -58,7 +79,5 @@ final class EventsDataSourceImp: EventsDataSource {
             number: monthNumber
         )
     }
-    
-    
     
 }

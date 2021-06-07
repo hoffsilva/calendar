@@ -5,7 +5,7 @@
 //  Created by Hoff Silva on 03/06/21.
 //
 
-final class Location {
+struct Location: Hashable {
     
     let latitude: Double
     let longitude: Double

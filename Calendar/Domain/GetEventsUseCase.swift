@@ -6,5 +6,5 @@
 //
 
 protocol GetEventsUseCase {
-    func getEvents(from year: Int, completion: @escaping((Result<[Event], Error>) -> Void))
+    func getEvents(from year: Int, completion: @escaping((Result<[SectionForEvents], Error>) -> Void))
 }

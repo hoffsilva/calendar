@@ -7,17 +7,17 @@
 
 import Combine
 
-final class EventViewModel {
+final class EventViewModel: ObservableObject {
     
     private let eventUseCase = GetEventsUseCaseImp()
     
-    @Published var events: [Event] = []
+    @Published var sections: [SectionForEvents] = []
     
     func requestAccess() {
         eventUseCase.getEvents(from: 2021) { result in
             switch result {
-            case .success(let events):
-                self.events = events
+            case .success(let sections):
+                self.sections = sections
             case .failure: ()
             }
         }
