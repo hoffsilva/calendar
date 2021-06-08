@@ -38,16 +38,28 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
                     if event.startDate.getDay().prefix(1) == "0" {
                         if event.startDate.getDay() == "0\(day)" {
                             stringDays.insert(event.startDate.getDay())
-                            days.append(Day(number: event.startDate.getDay(), date: event.startDate))
                         }
                     } else {
                         if event.startDate.getDay() == "\(day)" {
                             stringDays.insert(event.startDate.getDay())
-                            days.append(Day(number: event.startDate.getDay(), date: event.startDate))
                         }
                     }
                 }
             }
+            
+            
+            
+            for day in stringDays {
+                var dayWithEvents = Day(number: day, events: [Event]())
+                for event in filteredEvents {
+                    if event.startDate.getDay() == day {
+                        dayWithEvents.events.append(event)
+                    }
+                }
+                days.append(dayWithEvents)
+            }
+            
+            
             let sortedDays = days.sorted(by: { $0.number > $1.number })
             let section = SectionForEvents(
                 id: nil,

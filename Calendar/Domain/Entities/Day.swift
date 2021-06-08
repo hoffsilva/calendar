@@ -10,11 +10,11 @@ import Foundation
 struct Day: Hashable {
     
     let number: String
-    let date: Date
+    var events: [Event]
     
-    init(number: String, date: Date) {
+    init(number: String, events: [Event]) {
         self.number = number
-        self.date = date
+        self.events = events
     }
     
 }
