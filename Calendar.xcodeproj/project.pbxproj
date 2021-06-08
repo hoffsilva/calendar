@@ -34,6 +34,7 @@
 		0BB23638266D76E100490CD4 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB23637266D76E100490CD4 /* Date+Extensions.swift */; };
 		0BB2363A266D8BB300490CD4 /* SectionForEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB23639266D8BB300490CD4 /* SectionForEvents.swift */; };
 		0BB2363C266D942F00490CD4 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB2363B266D942F00490CD4 /* EventView.swift */; };
+		0BD09985266EF1A000FF374A /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD09984266EF1A000FF374A /* Day.swift */; };
 		0BEEA2CA2669B24500210039 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEEA2C92669B24500210039 /* EventViewModel.swift */; };
 		0BEEA2CC2669B36700210039 /* GetEventsUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEEA2CB2669B36700210039 /* GetEventsUseCaseImp.swift */; };
 		0BF3C97B265F17F1009C393F /* CalendarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF3C97A265F17F1009C393F /* CalendarApp.swift */; };
@@ -82,6 +83,7 @@
 		0BB23637266D76E100490CD4 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		0BB23639266D8BB300490CD4 /* SectionForEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionForEvents.swift; sourceTree = "<group>"; };
 		0BB2363B266D942F00490CD4 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		0BD09984266EF1A000FF374A /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		0BEEA2C92669B24500210039 /* EventViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		0BEEA2CB2669B36700210039 /* GetEventsUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEventsUseCaseImp.swift; sourceTree = "<group>"; };
 		0BF3C977265F17F1009C393F /* Calendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +160,7 @@
 				0B745BED266996C600A3AB19 /* Location.swift */,
 				0B745BFA2669ACEA00A3AB19 /* Month.swift */,
 				0BB23639266D8BB300490CD4 /* SectionForEvents.swift */,
+				0BD09984266EF1A000FF374A /* Day.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				0B745BF02669979E00A3AB19 /* GetEventsUseCase.swift in Sources */,
 				0B745BEC266995C800A3AB19 /* Event.swift in Sources */,
 				0B745BEE266996C600A3AB19 /* Location.swift in Sources */,
+				0BD09985266EF1A000FF374A /* Day.swift in Sources */,
 				0BB23638266D76E100490CD4 /* Date+Extensions.swift in Sources */,
 				0BF3C97B265F17F1009C393F /* CalendarApp.swift in Sources */,
 				0B745C162669B0EF00A3AB19 /* Fonts.swift in Sources */,

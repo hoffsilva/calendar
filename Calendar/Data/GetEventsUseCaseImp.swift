@@ -6,16 +6,18 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class GetEventsUseCaseImp: GetEventsUseCase {
     
     let repository = GetEventsRepositoryImp(dataSource: EventsDataSourceImp())
     
+    
     func getEvents(from year: Int, completion: @escaping ((Result<[SectionForEvents], Error>) -> Void)) {
         repository.getEvents(from: year) { result in
             switch result {
             case .success(let events):
-                completion(.success(self.createSections(from: events)))
+                completion(.success(self.createSections(from: events, for: year)))
             case .failure: ()
             }
         }
@@ -25,17 +27,58 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
         case generic
     }
     
-    private func createSections(from events: [Event]) -> [SectionForEvents] {
+    private func createSections(from events: [Event], for year: Int) -> [SectionForEvents] {
         var sections = [SectionForEvents]()
+        var days = [Day]()
+        var stringDays: Set<String> = Set()
         for month in 1...12 {
-            let filteredEvents = events.filter { event in
-                event.month.number == month
+            let filteredEvents = getEvents(events: events, from: month)
+            for day in 1...getDaysOf(month: month, and: year)  {
+                for event in filteredEvents {
+                    if event.startDate.getDay().prefix(1) == "0" {
+                        if event.startDate.getDay() == "0\(day)" {
+                            stringDays.insert(event.startDate.getDay())
+                            days.append(Day(number: event.startDate.getDay(), date: event.startDate))
+                        }
+                    } else {
+                        if event.startDate.getDay() == "\(day)" {
+                            stringDays.insert(event.startDate.getDay())
+                            days.append(Day(number: event.startDate.getDay(), date: event.startDate))
+                        }
+                    }
+                }
             }
-            let section = SectionForEvents(id: nil, month: filteredEvents.first?.month.name ?? "", events: filteredEvents)
+            let sortedDays = days.sorted(by: { $0.number > $1.number })
+            let section = SectionForEvents(
+                id: nil,
+                month: filteredEvents.first?.month.name ?? "",
+                days: sortedDays,
+                stringDays: stringDays.sorted(),
+                events: filteredEvents
+            )
             sections.append(section)
-            print(section.month)
         }
         return sections
+    }
+    
+    private func getEvents(events: [Event], from month: Int) -> [Event] {
+        events.filter { event in
+            event.month.number == month
+        }
+    }
+    
+    private func getDaysOf(month: Int, and year: Int) -> Int {
+        var dateComponents = DateComponents()
+        dateComponents.year = year
+        dateComponents.month = month
+        
+        let calendar = NSCalendar.current
+        guard let date = calendar.date(from: dateComponents) else { return 0 }
+        
+        let range = calendar.range(of: .day, in: .month, for: date)
+        
+        return range!.count
+        
     }
     
 }

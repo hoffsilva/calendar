@@ -16,6 +16,7 @@ struct ContentView: View {
             ForEach (viewModel.sections) { section in
                 Section(
                     header: SectionHeaderView(title: section.month)
+                        .padding()
                 ) {
                     VStack(alignment: .leading) {
                         ForEach(section.events, id: \.self) { event in
@@ -25,7 +26,7 @@ struct ContentView: View {
                     }
                     
                 }
-                .background(Color.black)
+                .background(Color.clear)
                 .listRowInsets(EdgeInsets(
                         top: 0,
                         leading: 0,

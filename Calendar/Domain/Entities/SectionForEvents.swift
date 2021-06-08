@@ -8,5 +8,7 @@
 struct SectionForEvents: Identifiable {
     var id: ObjectIdentifier?
     var month: String
+    var days: [Day]
+    var stringDays: [String]
     var events: [Event]
 }
