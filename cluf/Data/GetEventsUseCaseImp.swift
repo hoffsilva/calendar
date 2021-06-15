@@ -59,16 +59,18 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
                 days.append(dayWithEvents)
             }
             
+            if let nameOfMont = filteredEvents.first?.month.name {
+                let section = SectionForEvents(
+                    id: nil,
+                    month: nameOfMont,
+                    days: days,
+                    stringDays: stringDays.sorted(),
+                    events: filteredEvents
+                )
+                sections.append(section)
+            }
             
-            let sortedDays = days.sorted(by: { $0.number > $1.number })
-            let section = SectionForEvents(
-                id: nil,
-                month: filteredEvents.first?.month.name ?? "",
-                days: sortedDays,
-                stringDays: stringDays.sorted(),
-                events: filteredEvents
-            )
-            sections.append(section)
+            
         }
         return sections
     }
