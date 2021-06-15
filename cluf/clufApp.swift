@@ -1,14 +1,14 @@
 //
-//  CalendarApp.swift
-//  Calendar
+//  clufApp.swift
+//  cluf
 //
-//  Created by Hoff Silva on 26/05/21.
+//  Created by Hoff Silva on 14/06/21.
 //
 
 import SwiftUI
 
 @main
-struct CalendarApp: App {
+struct clufApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
