@@ -14,7 +14,7 @@ struct EventView: View {
     var body: some View {
         HStack {
             Text(event.startDate.getDay())
-                .font(.rubikBold(80))
+                .font(.rubikBold(90))
                 .multilineTextAlignment(.center)
                 .rotationEffect(.degrees(270))
                 .frame(maxWidth: .infinity, alignment: .leading)
