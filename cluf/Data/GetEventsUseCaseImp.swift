@@ -61,7 +61,6 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
             
             if let nameOfMont = filteredEvents.first?.month.name {
                 let section = SectionForEvents(
-                    id: nil,
                     month: nameOfMont,
                     days: days,
                     stringDays: stringDays.sorted(),

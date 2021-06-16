@@ -12,32 +12,23 @@ struct ContentView: View {
     @ObservedObject var viewModel = EventViewModel()
     
     var body: some View {
-        List {
-            ForEach (viewModel.sections) { section in
-                Section(
-                    header: SectionHeaderView(title: section.month)
-                        .padding()
-                ) {
-                    VStack(alignment: .leading) {
+        VStack(alignment: .leading) {
+            ScrollView(.vertical, showsIndicators: false) {
+                ForEach (viewModel.sections, id: \.self) { section in
+                    Section(
+                        header: SectionHeaderView(title: section.month)
+                    ) {
                         ForEach(section.events, id: \.self) { event in
                             EventView(event: event)
-                                .padding([.top, .bottom])
                         }
                     }
-                    
                 }
-                .background(Color.clear)
-                .listRowInsets(EdgeInsets(
-                        top: 0,
-                        leading: 0,
-                        bottom: 0,
-                        trailing: 0))
+            }
+            .onAppear {
+                self.viewModel.requestAccess()
             }
         }
-        .listStyle(PlainListStyle())
-        .onAppear {
-            self.viewModel.requestAccess()
-        }
+        .padding(.horizontal)
     }
 }
 
@@ -52,10 +43,11 @@ struct SectionHeaderView: View {
     var title: String
     
     var body: some View {
-        Text(title)
-            .font(Font.rubikBold(40))
-            .foregroundColor(.gray)
-            .padding([.leading], 0)
+        VStack(alignment: .leading) {
+            Text(title)
+                .font(Font.rubikBold(40))
+                .foregroundColor(.gray)
+        }
     }
     
 }
