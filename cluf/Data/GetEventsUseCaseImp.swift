@@ -60,8 +60,6 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
                         && event.month.number == month
                         && event.startDate.time.hour >= date.time.hour + 1
                         && event.startDate.time.hour <= date.time.hour + 2 {
-                        print(month)
-                        print(event.month.number)
                         dayWithEvents.events.append(event)
                     }
                 }
@@ -69,12 +67,14 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
                     days.append(dayWithEvents)
                 }
             }
-            
+            let orderedDays = days.sorted { currentDay, nextDay in
+                currentDay.number < nextDay.number
+            }
             if let nameOfMont = filteredEventsByMonth.first?.month.name,
                !days.isEmpty {
                 let section = SectionForEvents(
                     month: nameOfMont,
-                    days: days,
+                    days: orderedDays,
                     stringDays: stringDays.sorted(),
                     events: filteredEventsByMonth
                 )

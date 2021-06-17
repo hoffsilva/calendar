@@ -14,10 +14,10 @@ struct EventView: View {
     var body: some View {
         HStack {
             Text(event.startDate.getDay())
-                .font(.rubikBold(90))
-                .multilineTextAlignment(.center)
                 .rotationEffect(.degrees(270))
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .font(.rubikBold(90))
+                .multilineTextAlignment(.leading)
+                .frame(maxWidth: 130, alignment: .center)
             Image("vertical-divider")
                 .frame(maxWidth: 1, alignment: .leading)
             HStack(alignment: .top) {
