@@ -15,5 +15,7 @@ struct Event: Hashable {
     let location: Location?
     let month: Month
     let title: String
+    let year: Int
+    let day: Int
     
 }

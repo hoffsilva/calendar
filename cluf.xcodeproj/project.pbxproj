@@ -41,6 +41,7 @@
 		0B27806B2678352F008EBA61 /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780492678352F008EBA61 /* Month.swift */; };
 		0BEB47D82678328C00436634 /* clufApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEB47D72678328C00436634 /* clufApp.swift */; };
 		0BEB47DF2678328D00436634 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BEB47DE2678328D00436634 /* Preview Assets.xcassets */; };
+		0BF42EBB267AD6EB0074EB64 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF42EBA267AD6EA0074EB64 /* Time.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +82,7 @@
 		0BEB47D72678328C00436634 /* clufApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clufApp.swift; sourceTree = "<group>"; };
 		0BEB47DE2678328D00436634 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0BF3C983265F17F3009C393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BF42EBA267AD6EA0074EB64 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				0B27803D2678352F008EBA61 /* Date+Extensions.swift */,
+				0BF42EBA267AD6EA0074EB64 /* Time.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				0BEB47D82678328C00436634 /* clufApp.swift in Sources */,
 				0B27804C2678352F008EBA61 /* EventsDataSourceImp.swift in Sources */,
 				0B27806B2678352F008EBA61 /* Month.swift in Sources */,
+				0BF42EBB267AD6EB0074EB64 /* Time.swift in Sources */,
 				0B2780632678352F008EBA61 /* Date+Extensions.swift in Sources */,
 				0B2780672678352F008EBA61 /* Location.swift in Sources */,
 				0B2780682678352F008EBA61 /* Event.swift in Sources */,

@@ -12,13 +12,18 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
     
     let repository = GetEventsRepositoryImp(dataSource: EventsDataSourceImp())
     
-    
+    private var date = Date()
+
     func getEvents(from year: Int, completion: @escaping ((Result<[SectionForEvents], Error>) -> Void)) {
-        repository.getEvents(from: year) { result in
-            switch result {
-            case .success(let events):
-                completion(.success(self.createSections(from: events, for: year)))
-            case .failure: ()
+        repository.requestAccess { granted in
+            if granted {
+                self.repository.getEvents(from: year) { result in
+                    switch result {
+                    case .success(let events):
+                        completion(.success(self.createSections(from: events, for: year)))
+                    case .failure: ()
+                    }
+                }
             }
         }
     }
@@ -52,14 +57,24 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
             for day in stringDays {
                 var dayWithEvents = Day(number: day, events: [Event]())
                 for event in filteredEvents {
-                    if event.startDate.getDay() == day {
+                    print(event.startDate.time.hour)
+                    print(date.time.hour + 1)
+                    if event.day == Int(day) ?? 0
+                        && event.startDate.time.hour >= date.time.hour + 1
+                        && event.startDate.time.hour <= date.time.hour + 2 {
+                        print(event)
+                        print(event.startDate.time.hour)
+                        print(date.time.hour + 1)
                         dayWithEvents.events.append(event)
                     }
                 }
-                days.append(dayWithEvents)
+                if !dayWithEvents.events.isEmpty {
+                    days.append(dayWithEvents)
+                }
             }
             
-            if let nameOfMont = filteredEvents.first?.month.name {
+            if let nameOfMont = filteredEvents.first?.month.name,
+               !days.isEmpty {
                 let section = SectionForEvents(
                     month: nameOfMont,
                     days: days,

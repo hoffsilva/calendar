@@ -6,6 +6,7 @@
 //
 
 import Combine
+import Foundation
 
 final class EventViewModel: ObservableObject {
     
@@ -17,7 +18,9 @@ final class EventViewModel: ObservableObject {
         eventUseCase.getEvents(from: 2021) { result in
             switch result {
             case .success(let sections):
-                self.sections = sections
+                DispatchQueue.main.async {
+                    self.sections = sections
+                }
             case .failure: ()
             }
         }

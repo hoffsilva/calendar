@@ -18,8 +18,8 @@ struct ContentView: View {
                     Section(
                         header: SectionHeaderView(title: section.month)
                     ) {
-                        ForEach(section.events, id: \.self) { event in
-                            EventView(event: event)
+                        ForEach(section.days, id: \.self) { day in
+                            EventView(event: day.events.first!)
                         }
                     }
                 }

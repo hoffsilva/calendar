@@ -19,27 +19,17 @@ final class EventsDataSourceImp: EventsDataSource {
         return formatter
     }()
     
-    private var isAccessGranted = false
-    
-    init() {
-        requestAccess()
-    }
-    
-    private func requestAccess() {
+    func requestAccess(completion: @escaping ((Bool) -> Void)) {
         store.requestAccess(to: .event) { (granted, error) in
             if granted {
-                self.isAccessGranted = granted
+                completion(granted)
             } else {
-                self.isAccessGranted = false
+                completion(false)
             }
         }
     }
     
     func getEvents(from: Int, completion: @escaping ((Result<[Event], Error>) -> Void)) {
-        
-        if !isAccessGranted {
-            requestAccess()
-        }
         
         guard
             let startDate = dateFormatter.date(from: "01/01/\(from)"),
@@ -63,7 +53,9 @@ final class EventsDataSourceImp: EventsDataSource {
                     longitude: event.structuredLocation?.geoLocation?.coordinate.longitude ?? 0
                 ),
                 month: getMonth(of: event.startDate),
-                title: event.title
+                title: event.title,
+                year: event.startDate.getYear(),
+                day: event.startDate.getIntDay()
             )
         }
     }

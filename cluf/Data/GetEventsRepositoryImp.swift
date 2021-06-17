@@ -6,7 +6,7 @@
 //
 
 final class GetEventsRepositoryImp: GetEventsRepository {
-    
+
     private let dataSource: EventsDataSource
     
     internal init(dataSource: EventsDataSource) {
@@ -15,6 +15,10 @@ final class GetEventsRepositoryImp: GetEventsRepository {
     
     func getEvents(from: Int, completion: @escaping ((Result<[Event], Error>) -> Void)) {
         dataSource.getEvents(from: from, completion: completion)
+    }
+    
+    func requestAccess(completion: @escaping ((Bool) -> Void)) {
+        dataSource.requestAccess(completion: completion)
     }
     
 }

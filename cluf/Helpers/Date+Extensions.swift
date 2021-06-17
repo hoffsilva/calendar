@@ -9,12 +9,24 @@ import Foundation
 
 extension Date {
     
+    var time: Time {
+        return Time(self)
+    }
+    
     func getDay() -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .none
         formatter.dateFormat = "dd"
         return formatter.string(from: self)
+    }
+    
+    func getIntDay() -> Int {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        formatter.dateFormat = "dd"
+        return Int(formatter.string(from: self)) ?? -1
     }
     
     func getMonth() -> String {
@@ -30,6 +42,13 @@ extension Date {
         formatter.dateStyle = .none
         formatter.timeStyle = .short
         return formatter.string(from: self)
+    }
+    
+    func getIntHour() -> Int {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        return Int(formatter.string(from: self)) ?? 0
     }
     
     func getYear() -> Int {
