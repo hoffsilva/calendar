@@ -42,6 +42,7 @@
 		0BEB47D82678328C00436634 /* clufApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEB47D72678328C00436634 /* clufApp.swift */; };
 		0BEB47DF2678328D00436634 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BEB47DE2678328D00436634 /* Preview Assets.xcassets */; };
 		0BF42EBB267AD6EB0074EB64 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF42EBA267AD6EA0074EB64 /* Time.swift */; };
+		0BF42EBD267C02F60074EB64 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF42EBC267C02F60074EB64 /* Extension+Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +84,7 @@
 		0BEB47DE2678328D00436634 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0BF3C983265F17F3009C393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF42EBA267AD6EA0074EB64 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		0BF42EBC267C02F60074EB64 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				0B2780282678352F008EBA61 /* EventViewModel.swift */,
 				0B2780292678352F008EBA61 /* Fonts */,
 				0B2780392678352F008EBA61 /* Views */,
+				0BF42EBC267C02F60074EB64 /* Extension+Color.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				0B27804A2678352F008EBA61 /* GetEventsRepositoryImp.swift in Sources */,
 				0B2780662678352F008EBA61 /* GetEventsUseCase.swift in Sources */,
 				0B2780622678352F008EBA61 /* ContentView.swift in Sources */,
+				0BF42EBD267C02F60074EB64 /* Extension+Color.swift in Sources */,
 				0BEB47D82678328C00436634 /* clufApp.swift in Sources */,
 				0B27804C2678352F008EBA61 /* EventsDataSourceImp.swift in Sources */,
 				0B27806B2678352F008EBA61 /* Month.swift in Sources */,
