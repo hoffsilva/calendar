@@ -60,6 +60,7 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
                     print(event.startDate.time.hour)
                     print(date.time.hour + 1)
                     if event.day == Int(day) ?? 0
+                        && event.month.number == month
                         && event.startDate.time.hour >= date.time.hour + 1
                         && event.startDate.time.hour <= date.time.hour + 2 {
                         print(event)
