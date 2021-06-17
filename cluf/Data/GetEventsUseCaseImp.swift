@@ -34,12 +34,13 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
     
     private func createSections(from events: [Event], for year: Int) -> [SectionForEvents] {
         var sections = [SectionForEvents]()
-        var days = [Day]()
-        var stringDays: Set<String> = Set()
+        
         for month in 1...12 {
-            let filteredEvents = getEvents(events: events, from: month)
+            var days = [Day]()
+            var stringDays: Set<String> = Set()
+            let filteredEventsByMonth = getEvents(events: events, from: month)
             for day in 1...getDaysOf(month: month, and: year)  {
-                for event in filteredEvents {
+                for event in filteredEventsByMonth {
                     if event.startDate.getDay().prefix(1) == "0" {
                         if event.startDate.getDay() == "0\(day)" {
                             stringDays.insert(event.startDate.getDay())
@@ -52,20 +53,15 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
                 }
             }
             
-            
-            
             for day in stringDays {
                 var dayWithEvents = Day(number: day, events: [Event]())
-                for event in filteredEvents {
-                    print(event.startDate.time.hour)
-                    print(date.time.hour + 1)
+                for event in filteredEventsByMonth {
                     if event.day == Int(day) ?? 0
                         && event.month.number == month
                         && event.startDate.time.hour >= date.time.hour + 1
                         && event.startDate.time.hour <= date.time.hour + 2 {
-                        print(event)
-                        print(event.startDate.time.hour)
-                        print(date.time.hour + 1)
+                        print(month)
+                        print(event.month.number)
                         dayWithEvents.events.append(event)
                     }
                 }
@@ -74,13 +70,13 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
                 }
             }
             
-            if let nameOfMont = filteredEvents.first?.month.name,
+            if let nameOfMont = filteredEventsByMonth.first?.month.name,
                !days.isEmpty {
                 let section = SectionForEvents(
                     month: nameOfMont,
                     days: days,
                     stringDays: stringDays.sorted(),
-                    events: filteredEvents
+                    events: filteredEventsByMonth
                 )
                 sections.append(section)
             }
