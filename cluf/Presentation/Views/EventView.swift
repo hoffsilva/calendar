@@ -12,7 +12,7 @@ struct EventView: View {
     var event: Event
     
     var body: some View {
-        HStack {
+        HStack(alignment: .top) {
             Text(event.startDate.getDay())
                 .rotationEffect(.degrees(270))
                 .font(.rubikBold(90))
