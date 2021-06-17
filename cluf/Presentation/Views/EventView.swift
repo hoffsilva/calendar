@@ -13,30 +13,43 @@ struct EventView: View {
     
     var body: some View {
         HStack(alignment: .top) {
+            
             Text(event.startDate.getDay())
                 .rotationEffect(.degrees(270))
                 .font(.rubikBold(90))
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: 130, alignment: .center)
-            Image("vertical-divider")
+            
+            Divider()
+                .foregroundColor(.red)
                 .frame(maxWidth: 1, alignment: .leading)
-            HStack(alignment: .top) {
-                Image("bullet").padding([.top], 6)
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("event.status")
-                        .font(.rubikRegular(16))
-                        .foregroundColor(.gray)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text(event.startDate.getHour())
-                        .font(.rubikBold(20))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Text(event.title)
-                        .font(.rubikRegular(16))
-                        .foregroundColor(.gray)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                }
+            
+            Ellipse()
+                .fill(.red)
+                .frame(width: 8, height: 8)
+                .padding(.top, 6)
+            
+            VStack(alignment: .leading, spacing: 8) {
+                
+                Text("event.status")
+                    .font(.rubikRegular(16))
+                    .foregroundColor(.gray)
+                
+                Text(event.startDate.getHour())
+                    .font(.rubikBold(20))
+                
+                Text(event.title)
+                    .font(.rubikRegular(16))
+                    .foregroundColor(.gray)
+                
             }
-            Image("righ-arrow")
+            
+            VStack(alignment: .center) {
+                Spacer()
+                Image("righ-arrow")
+                Spacer()
+            }
+            
         }
     }
 }
