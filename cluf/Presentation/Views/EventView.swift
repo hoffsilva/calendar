@@ -12,22 +12,25 @@ struct EventView: View {
     var event: Event
     
     var body: some View {
-        HStack(alignment: .top) {
+        HStack {
             
             Text(event.startDate.getDay())
                 .rotationEffect(.degrees(270))
                 .font(.rubikBold(90))
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: 124, alignment: .center)
-            
+
             Divider()
-                .foregroundColor(.red)
                 .frame(width: 1, height: 70, alignment: .leading)
+                .background(Color.red)
+                .padding(.trailing, 16)
             
-            Ellipse()
-                .fill(.red)
-                .frame(width: 8, height: 8)
-                .padding(.top, 6)
+            LazyHStack(alignment: .top) {
+                Ellipse()
+                    .fill(.red)
+                    .frame(width: 8, height: 8)
+                    .padding(.top, 16)
+            }
             
             VStack(alignment: .leading, spacing: 8) {
                 
