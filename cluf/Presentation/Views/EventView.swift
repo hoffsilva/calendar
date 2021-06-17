@@ -18,11 +18,11 @@ struct EventView: View {
                 .rotationEffect(.degrees(270))
                 .font(.rubikBold(90))
                 .multilineTextAlignment(.leading)
-                .frame(maxWidth: 130, alignment: .center)
+                .frame(maxWidth: 124, alignment: .center)
             
             Divider()
                 .foregroundColor(.red)
-                .frame(maxWidth: 1, alignment: .leading)
+                .frame(width: 1, height: 70, alignment: .leading)
             
             Ellipse()
                 .fill(.red)
@@ -34,13 +34,16 @@ struct EventView: View {
                 Text("event.status")
                     .font(.rubikRegular(16))
                     .foregroundColor(.gray)
+                    .frame(minWidth: 56, maxWidth: 128, maxHeight: 20, alignment: .leading)
                 
                 Text(event.startDate.getHour())
                     .font(.rubikBold(20))
+                    .frame(minWidth: 56, maxWidth: 128, maxHeight: 20, alignment: .leading)
                 
                 Text(event.title)
                     .font(.rubikRegular(16))
                     .foregroundColor(.gray)
+                    .frame(minWidth: 56, maxWidth: 128, maxHeight: 20, alignment: .leading)
                 
             }
             
