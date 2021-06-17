@@ -22,21 +22,21 @@ struct EventView: View {
 
             Divider()
                 .frame(width: 1, height: 70, alignment: .leading)
-                .background(Color.red)
+                .background(Color.clufGray)
                 .padding(.trailing, 16)
             
             LazyHStack(alignment: .top) {
                 Ellipse()
-                    .fill(.red)
+                    .fill(Color.clufRed)
                     .frame(width: 8, height: 8)
-                    .padding(.top, 16)
+                    .padding(.top, 14)
             }
             
             VStack(alignment: .leading, spacing: 8) {
                 
                 Text("event.status")
                     .font(.rubikRegular(16))
-                    .foregroundColor(.gray)
+                    .foregroundColor(.clufGray)
                     .frame(minWidth: 56, maxWidth: 128, maxHeight: 20, alignment: .leading)
                 
                 Text(event.startDate.getHour())
@@ -45,7 +45,7 @@ struct EventView: View {
                 
                 Text(event.title)
                     .font(.rubikRegular(16))
-                    .foregroundColor(.gray)
+                    .foregroundColor(.clufGray)
                     .frame(minWidth: 56, maxWidth: 128, maxHeight: 20, alignment: .leading)
                 
             }

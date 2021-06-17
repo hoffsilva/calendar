@@ -9,15 +9,15 @@ import SwiftUI
 
 extension Color {
     
-    var clufRed: Color {
+    static var clufRed: Color {
         Color(red: 0.942, green: 0.153, blue: 0.153)
     }
     
-    var clufGray: Color {
+    static var clufGray: Color {
         Color(red: 0.8, green: 0.8, blue: 0.8)
     }
     
-    var clugDarkGray: Color {
+    static var clugDarkGray: Color {
         Color(red: 0.565, green: 0.565, blue: 0.565)
     }
     
