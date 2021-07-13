@@ -1,6 +1,6 @@
 //
 //  EventView.swift
-//  Calendar
+//  timetable
 //
 //  Created by Hoff Silva on 06/06/21.
 //
@@ -21,14 +21,14 @@ struct EventView: View {
 
             Divider()
                 .frame(minWidth: 1, maxWidth: 1)
-                .background(Color.clufGray)
+                .background(Color.timetableGray)
                 .padding(.vertical)
             
             Spacer()
             
             LazyHStack(alignment: .top) {
                 Ellipse()
-                    .fill(Color.clufRed)
+                    .fill(Color.timetableRed)
                     .frame(width: 8, height: 8, alignment: .trailing)
             }
             .frame(maxWidth: 8)
@@ -38,14 +38,14 @@ struct EventView: View {
                 
                 Text("event.status")
                     .font(.rubikRegular(16))
-                    .foregroundColor(.clufGray)
+                    .foregroundColor(.timetableGray)
                 
                 Text(event.startDate.getHour())
                     .font(.rubikBold(20))
                 
                 Text(event.title)
                     .font(.rubikRegular(16))
-                    .foregroundColor(.clufGray)
+                    .foregroundColor(.timetableGray)
                 
             }
             .frame(width: 168, alignment: .leading)

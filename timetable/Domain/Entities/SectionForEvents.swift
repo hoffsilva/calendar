@@ -1,6 +1,6 @@
 //
 //  Section.swift
-//  Calendar
+//  timetable
 //
 //  Created by Hoff Silva on 06/06/21.
 //

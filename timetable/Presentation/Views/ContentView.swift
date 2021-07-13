@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  Calendar
+//  timetable
 //
 //  Created by Hoff Silva on 26/05/21.
 //
@@ -50,7 +50,7 @@ struct SectionHeaderView: View {
     var body: some View {
         Text(title)
             .font(.rubikBold(40))
-            .foregroundColor(.clufGray)
+            .foregroundColor(.timetableGray)
             .padding(.leading, 38)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.vertical)
