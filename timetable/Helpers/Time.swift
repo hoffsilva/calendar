@@ -1,6 +1,6 @@
 //
 //  Time.swift
-//  cluf
+//  timetable
 //
 //  Created by Hoff Silva on 16/06/21.
 //

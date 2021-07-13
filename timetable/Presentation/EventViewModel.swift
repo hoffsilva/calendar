@@ -1,6 +1,6 @@
 //
 //  EventViewModel.swift
-//  Calendar
+//  timetable
 //
 //  Created by Hoff Silva on 29/05/21.
 //

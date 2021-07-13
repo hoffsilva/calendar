@@ -1,6 +1,6 @@
 //
 //  Fonts.swift
-//  Calendar
+//  timetable
 //
 //  Created by Hoff Silva on 28/05/21.
 //
