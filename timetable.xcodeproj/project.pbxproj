@@ -40,10 +40,10 @@
 		0B0DF459269D1181005535CC /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B2780382678352F008EBA61 /* Rubik-BoldItalic.ttf */; };
 		0B0DF45A269D1184005535CC /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF42EBC267C02F60074EB64 /* Extension+Color.swift */; };
 		0B0DF45B269D118A005535CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B0DF41F269D1054005535CC /* Preview Assets.xcassets */; };
-		0B0DF45C269D118E005535CC /* timetableApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEB47D72678328C00436634 /* timetableApp.swift */; };
 		0B0DF45D269D11D1005535CC /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B27803A2678352F008EBA61 /* EventView.swift */; };
-		0B0DF45E269D11D4005535CC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B27803B2678352F008EBA61 /* ContentView.swift */; };
 		0B0DF45F269D11DB005535CC /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780282678352F008EBA61 /* EventViewModel.swift */; };
+		0B54E7A02702A487006A1FB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79E2702A487006A1FB5 /* AppDelegate.swift */; };
+		0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,7 +92,6 @@
 		0B2780372678352F008EBA61 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
 		0B2780382678352F008EBA61 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		0B27803A2678352F008EBA61 /* EventView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
-		0B27803B2678352F008EBA61 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0B27803D2678352F008EBA61 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		0B2780422678352F008EBA61 /* GetEventsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEventsRepository.swift; sourceTree = "<group>"; };
 		0B2780432678352F008EBA61 /* GetEventsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEventsUseCase.swift; sourceTree = "<group>"; };
@@ -101,7 +100,8 @@
 		0B2780472678352F008EBA61 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		0B2780482678352F008EBA61 /* SectionForEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionForEvents.swift; sourceTree = "<group>"; };
 		0B2780492678352F008EBA61 /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
-		0BEB47D72678328C00436634 /* timetableApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timetableApp.swift; sourceTree = "<group>"; };
+		0B54E79E2702A487006A1FB5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0BF3C983265F17F3009C393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF42EBA267AD6EA0074EB64 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		0BF42EBC267C02F60074EB64 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
@@ -204,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				0B27803A2678352F008EBA61 /* EventView.swift */,
-				0B27803B2678352F008EBA61 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,7 +257,8 @@
 				0B2780262678352F008EBA61 /* Presentation */,
 				0BF3C983265F17F3009C393F /* Info.plist */,
 				0B0DF41E269D1054005535CC /* Preview Content */,
-				0BEB47D72678328C00436634 /* timetableApp.swift */,
+				0B54E79E2702A487006A1FB5 /* AppDelegate.swift */,
+				0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */,
 			);
 			path = timetable;
 			sourceTree = "<group>";
@@ -432,8 +432,9 @@
 				0B0DF45D269D11D1005535CC /* EventView.swift in Sources */,
 				0B0DF43E269D1113005535CC /* GetEventsRepositoryImp.swift in Sources */,
 				0B0DF448269D1146005535CC /* Month.swift in Sources */,
-				0B0DF45C269D118E005535CC /* timetableApp.swift in Sources */,
 				0B0DF442269D1134005535CC /* GetEventsRepository.swift in Sources */,
+				0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */,
+				0B54E7A02702A487006A1FB5 /* AppDelegate.swift in Sources */,
 				0B0DF45F269D11DB005535CC /* EventViewModel.swift in Sources */,
 				0B0DF449269D114C005535CC /* Date+Extensions.swift in Sources */,
 				0B0DF45A269D1184005535CC /* Extension+Color.swift in Sources */,
@@ -441,7 +442,6 @@
 				0B0DF443269D1137005535CC /* GetEventsUseCase.swift in Sources */,
 				0B0DF446269D1141005535CC /* Day.swift in Sources */,
 				0B0DF440269D1119005535CC /* EventsDataSourceImp.swift in Sources */,
-				0B0DF45E269D11D4005535CC /* ContentView.swift in Sources */,
 				0B0DF43F269D1116005535CC /* EventsDataSource.swift in Sources */,
 				0B0DF447269D1144005535CC /* SectionForEvents.swift in Sources */,
 				0B0DF444269D113D005535CC /* Location.swift in Sources */,
@@ -491,9 +491,11 @@
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "precisamos acessar os dados de calendário";
+				INFOPLIST_KEY_NSContactsUsageDescription = "precisamos acessar os dados de contatos";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "precisamos acessar os dados de calendário";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -506,7 +508,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -521,9 +523,11 @@
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "precisamos acessar os dados de calendário";
+				INFOPLIST_KEY_NSContactsUsageDescription = "precisamos acessar os dados de contatos";
+				INFOPLIST_KEY_NSRemindersUsageDescription = "precisamos acessar os dados de calendário";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
@@ -536,7 +540,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

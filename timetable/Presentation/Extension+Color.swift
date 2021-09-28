@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-extension Color {
+extension UIColor {
     
-    static var timetableRed: Color {
-        Color(red: 0.942, green: 0.153, blue: 0.153)
+    static var timetableRed: UIColor {
+        UIColor(Color(red: 0.942, green: 0.153, blue: 0.153))
     }
     
-    static var timetableGray: Color {
-        Color(red: 0.8, green: 0.8, blue: 0.8)
+    static var timetableGray: UIColor {
+        UIColor(Color(red: 0.8, green: 0.8, blue: 0.8))
     }
     
-    static var timetableDarkGray: Color {
-        Color(red: 0.565, green: 0.565, blue: 0.565)
+    static var timetableDarkGray: UIColor {
+        UIColor(Color(red: 0.565, green: 0.565, blue: 0.565))
     }
     
 }
