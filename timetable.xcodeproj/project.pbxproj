@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B077DEB272C4028005006F2 /* main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B077DEA272C4028005006F2 /* main.storyboard */; };
 		0B0DF3FA269D0E4C005535CC /* timetableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DF3F9269D0E4C005535CC /* timetableTests.swift */; };
 		0B0DF404269D0E4C005535CC /* timetableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DF403269D0E4C005535CC /* timetableUITests.swift */; };
 		0B0DF40F269D0FE5005535CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B0DF40E269D0FE4005535CC /* Assets.xcassets */; };
@@ -65,7 +64,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0B077DEA272C4028005006F2 /* main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = main.storyboard; sourceTree = "<group>"; };
 		0B0DF3E6269D0E4A005535CC /* timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timetable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0DF3F5269D0E4C005535CC /* timetableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = timetableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0DF3F9269D0E4C005535CC /* timetableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timetableTests.swift; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				0B27803A2678352F008EBA61 /* EventView.swift */,
-				0B077DEA272C4028005006F2 /* main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -394,7 +391,6 @@
 				0B0DF457269D117B005535CC /* Rubik-ExtraBold.ttf in Resources */,
 				0B0DF454269D1173005535CC /* Rubik-LightItalic.ttf in Resources */,
 				0B0DF456269D1178005535CC /* Rubik-BlackItalic.ttf in Resources */,
-				0B077DEB272C4028005006F2 /* main.storyboard in Resources */,
 				0B0DF44C269D115F005535CC /* Rubik-Bold.ttf in Resources */,
 				0B0DF451269D116B005535CC /* Rubik-Black.ttf in Resources */,
 				0B0DF44E269D1164005535CC /* Rubik-Light.ttf in Resources */,
