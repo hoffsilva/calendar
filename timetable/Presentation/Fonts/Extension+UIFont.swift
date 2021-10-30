@@ -7,62 +7,62 @@
 
 import UIKit
 
-extension Font {
+extension UIFont {
     
-    static func rubikBlack(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-Black", size: size)
+    static func rubikBlack(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-Black", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikBlackItalic(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-BlackItalic", size: size)
+    static func rubikBlackItalic(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-BlackItalic", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikBold(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-Bold", size: size)
+    static func rubikBold(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-Bold", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikBoldItalic(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-BoldItalic", size: size)
+    static func rubikBoldItalic(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-BoldItalic", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikExtraBold(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-ExtraBold", size: size)
+    static func rubikExtraBold(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-ExtraBold", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikExtraBoldItalic(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-ExtraBoldItalic", size: size)
+    static func rubikExtraBoldItalic(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-ExtraBoldItalic", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikItalic(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-Italic", size: size)
+    static func rubikItalic(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-Italic", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikLight(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-Light", size: size)
+    static func rubikLight(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-Light", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikLightItalic(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-LightItalic", size: size)
+    static func rubikLightItalic(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-LightItalic", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikMedium(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-Medium", size: size)
+    static func rubikMedium(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-Medium", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikMediumItalic(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-MediumItalic", size: size)
+    static func rubikMediumItalic(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-MediumItalic", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikRegular(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-Regular", size: size)
+    static func rubikRegular(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-Regular", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikSemiBold(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-SemiBold", size: size)
+    static func rubikSemiBold(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-SemiBold", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
-    static func rubikSemiBoldItalic(_ size: CGFloat) -> Font {
-        Font.custom("Rubik-SemiBoldItalic", size: size)
+    static func rubikSemiBoldItalic(_ size: CGFloat) -> UIFont {
+        UIFont(name: "Rubik-SemiBoldItalic", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     
 }
