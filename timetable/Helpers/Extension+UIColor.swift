@@ -1,5 +1,5 @@
 //
-//  Extension+Color.swift
+//  Extension+UIColor.swift
 //  timetable
 //
 //  Created by Hoff Silva on 17/06/21.
