@@ -1,11 +1,11 @@
 //
-//  Fonts.swift
+//  Extension+UIFont.swift
 //  timetable
 //
 //  Created by Hoff Silva on 28/05/21.
 //
 
-import SwiftUI
+import UIKit
 
 extension Font {
     

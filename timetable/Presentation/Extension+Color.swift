@@ -21,4 +21,14 @@ extension UIColor {
         UIColor(Color(red: 0.565, green: 0.565, blue: 0.565))
     }
     
+    static var timetableLabelTint: UIColor {
+        UIColor.init { (UITraitCollection: UITraitCollection) -> UIColor in
+            if UITraitCollection.userInterfaceStyle == .dark {
+                return UIColor.white
+            } else {
+                return UIColor.black
+            }
+        }
+    }
+    
 }
