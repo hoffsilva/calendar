@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -45,6 +45,8 @@
 		0B0DF45F269D11DB005535CC /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780282678352F008EBA61 /* EventViewModel.swift */; };
 		0B54E7A02702A487006A1FB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79E2702A487006A1FB5 /* AppDelegate.swift */; };
 		0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */; };
+		0BA628D0274F250B0046F492 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA628CF274F250B0046F492 /* Resolver */; };
+		0BA628D3274F25A20046F492 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D2274F25A20046F492 /* DI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,7 @@
 		0B2780492678352F008EBA61 /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		0B54E79E2702A487006A1FB5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0BA628D2274F25A20046F492 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
 		0BF3C983265F17F3009C393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF42EBA267AD6EA0074EB64 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		0BF42EBC267C02F60074EB64 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BA628D0274F250B0046F492 /* Resolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +254,18 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		0BA628D1274F256E0046F492 /* Resolver */ = {
+			isa = PBXGroup;
+			children = (
+				0BA628D2274F25A20046F492 /* DI.swift */,
+			);
+			path = Resolver;
+			sourceTree = "<group>";
+		};
 		0BEB47D62678328C00436634 /* timetable */ = {
 			isa = PBXGroup;
 			children = (
+				0BA628D1274F256E0046F492 /* Resolver */,
 				0B0DF40E269D0FE4005535CC /* Assets.xcassets */,
 				0B27801F2678352E008EBA61 /* Data */,
 				0B2780402678352F008EBA61 /* Domain */,
@@ -302,6 +315,9 @@
 			dependencies = (
 			);
 			name = timetable;
+			packageProductDependencies = (
+				0BA628CF274F250B0046F492 /* Resolver */,
+			);
 			productName = timetable;
 			productReference = 0B0DF3E6269D0E4A005535CC /* timetable.app */;
 			productType = "com.apple.product-type.application";
@@ -373,6 +389,9 @@
 				Base,
 			);
 			mainGroup = 0BF3C96E265F17F1009C393F;
+			packageReferences = (
+				0BA628CE274F250B0046F492 /* XCRemoteSwiftPackageReference "Resolver" */,
+			);
 			productRefGroup = 0BF3C978265F17F1009C393F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -449,6 +468,7 @@
 				0B0DF43F269D1116005535CC /* EventsDataSource.swift in Sources */,
 				0B0DF447269D1144005535CC /* SectionForEvents.swift in Sources */,
 				0B0DF444269D113D005535CC /* Location.swift in Sources */,
+				0BA628D3274F25A20046F492 /* DI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +824,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0BA628CE274F250B0046F492 /* XCRemoteSwiftPackageReference "Resolver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Resolver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0BA628CF274F250B0046F492 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0BA628CE274F250B0046F492 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0BF3C96F265F17F1009C393F /* Project object */;
 }
