@@ -46,7 +46,12 @@
 		0B54E7A02702A487006A1FB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79E2702A487006A1FB5 /* AppDelegate.swift */; };
 		0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */; };
 		0BA628D0274F250B0046F492 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA628CF274F250B0046F492 /* Resolver */; };
-		0BA628D3274F25A20046F492 /* DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D2274F25A20046F492 /* DI.swift */; };
+		0BA628D3274F25A20046F492 /* AppDelegate+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D2274F25A20046F492 /* AppDelegate+DI.swift */; };
+		0BA628D62753B52F0046F492 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D42753B52F0046F492 /* EventListView.swift */; };
+		0BA628D72753B52F0046F492 /* EventListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BA628D52753B52F0046F492 /* EventListView.xib */; };
+		0BA628DA2753B5530046F492 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D82753B5530046F492 /* EventCell.swift */; };
+		0BA628DB2753B5530046F492 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BA628D92753B5530046F492 /* EventCell.xib */; };
+		0BA628DD2753C4C20046F492 /* PaddableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628DC2753C4C20046F492 /* PaddableLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +111,12 @@
 		0B2780492678352F008EBA61 /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		0B54E79E2702A487006A1FB5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0BA628D2274F25A20046F492 /* DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DI.swift; sourceTree = "<group>"; };
+		0BA628D2274F25A20046F492 /* AppDelegate+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+DI.swift"; sourceTree = "<group>"; };
+		0BA628D42753B52F0046F492 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
+		0BA628D52753B52F0046F492 /* EventListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListView.xib; sourceTree = "<group>"; };
+		0BA628D82753B5530046F492 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		0BA628D92753B5530046F492 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
+		0BA628DC2753C4C20046F492 /* PaddableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddableLabel.swift; sourceTree = "<group>"; };
 		0BF3C983265F17F3009C393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF42EBA267AD6EA0074EB64 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		0BF42EBC267C02F60074EB64 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
@@ -208,6 +218,10 @@
 			isa = PBXGroup;
 			children = (
 				0B27803A2678352F008EBA61 /* EventView.swift */,
+				0BA628D42753B52F0046F492 /* EventListView.swift */,
+				0BA628D52753B52F0046F492 /* EventListView.xib */,
+				0BA628D82753B5530046F492 /* EventCell.swift */,
+				0BA628D92753B5530046F492 /* EventCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +234,7 @@
 				0B2780312678352F008EBA61 /* Extension+UIFont.swift */,
 				0BF42EBC267C02F60074EB64 /* Extension+UIColor.swift */,
 				0BF42EBA267AD6EA0074EB64 /* Time.swift */,
+				0BA628DC2753C4C20046F492 /* PaddableLabel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -257,7 +272,7 @@
 		0BA628D1274F256E0046F492 /* Resolver */ = {
 			isa = PBXGroup;
 			children = (
-				0BA628D2274F25A20046F492 /* DI.swift */,
+				0BA628D2274F25A20046F492 /* AppDelegate+DI.swift */,
 			);
 			path = Resolver;
 			sourceTree = "<group>";
@@ -421,8 +436,10 @@
 				0B0DF453269D1170005535CC /* Rubik-Italic.ttf in Resources */,
 				0B0DF459269D1181005535CC /* Rubik-BoldItalic.ttf in Resources */,
 				0B0DF44B269D115C005535CC /* Rubik-MediumItalic.ttf in Resources */,
+				0BA628D72753B52F0046F492 /* EventListView.xib in Resources */,
 				0B0DF455269D1175005535CC /* Rubik-SemiBold.ttf in Resources */,
 				0B0DF450269D1169005535CC /* Rubik-ExtraBoldItalic.ttf in Resources */,
+				0BA628DB2753B5530046F492 /* EventCell.xib in Resources */,
 				0B0DF44D269D1161005535CC /* Rubik-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +468,7 @@
 				0B0DF452269D116D005535CC /* Extension+UIFont.swift in Sources */,
 				0B0DF445269D113F005535CC /* Event.swift in Sources */,
 				0B0DF441269D1127005535CC /* GetEventsUseCaseImp.swift in Sources */,
+				0BA628DD2753C4C20046F492 /* PaddableLabel.swift in Sources */,
 				0B0DF45D269D11D1005535CC /* EventView.swift in Sources */,
 				0B0DF43E269D1113005535CC /* GetEventsRepositoryImp.swift in Sources */,
 				0B0DF448269D1146005535CC /* Month.swift in Sources */,
@@ -459,6 +477,7 @@
 				0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */,
 				0B54E7A02702A487006A1FB5 /* AppDelegate.swift in Sources */,
 				0B0DF45F269D11DB005535CC /* EventViewModel.swift in Sources */,
+				0BA628D62753B52F0046F492 /* EventListView.swift in Sources */,
 				0B0DF449269D114C005535CC /* Date+Extensions.swift in Sources */,
 				0B0DF45A269D1184005535CC /* Extension+UIColor.swift in Sources */,
 				0B0DF44A269D114E005535CC /* Time.swift in Sources */,
@@ -467,8 +486,9 @@
 				0B0DF440269D1119005535CC /* EventsDataSourceImp.swift in Sources */,
 				0B0DF43F269D1116005535CC /* EventsDataSource.swift in Sources */,
 				0B0DF447269D1144005535CC /* SectionForEvents.swift in Sources */,
+				0BA628DA2753B5530046F492 /* EventCell.swift in Sources */,
 				0B0DF444269D113D005535CC /* Location.swift in Sources */,
-				0BA628D3274F25A20046F492 /* DI.swift in Sources */,
+				0BA628D3274F25A20046F492 /* AppDelegate+DI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
