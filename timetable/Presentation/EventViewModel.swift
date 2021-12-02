@@ -7,10 +7,15 @@
 
 import Combine
 import Foundation
+import Resolver
 
 final class EventViewModel: ObservableObject {
     
-    private let eventUseCase = GetEventsUseCaseImp()
+    @Injected private var eventUseCase: GetEventsUseCase
+    
+    init(eventUseCase: GetEventsUseCase) {
+        self.eventUseCase = eventUseCase
+    }
     
     @Published var sections: [SectionForEvents] = []
     

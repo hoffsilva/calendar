@@ -22,6 +22,7 @@ class EventCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        clearCell()
         setupStyle()
     }
     
@@ -53,6 +54,20 @@ class EventCell: UITableViewCell {
         conflictLabel.paddingRight = 8
         conflictLabel.paddingTop = 4
         conflictLabel.paddingBottom = 4
+    }
+    
+    private func clearCell() {
+        eventDayLabel.text = nil
+        eventHourLabel.text = nil
+        eventTitleLabel.text = nil
+        conflictLabel.isHidden = true
+    }
+    
+    func setupData(_ data: EventCellViewModel) {
+        eventDayLabel.text = data.day
+        eventHourLabel.text = data.hour
+        eventTitleLabel.text = data.title
+        conflictLabel.isHidden = !data.hasConflict
     }
     
 }
