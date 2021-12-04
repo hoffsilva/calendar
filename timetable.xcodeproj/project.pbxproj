@@ -46,13 +46,14 @@
 		0B54E7A02702A487006A1FB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79E2702A487006A1FB5 /* AppDelegate.swift */; };
 		0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */; };
 		0BA628D0274F250B0046F492 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA628CF274F250B0046F492 /* Resolver */; };
-		0BA628D3274F25A20046F492 /* AppDelegate+DI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D2274F25A20046F492 /* AppDelegate+DI.swift */; };
+		0BA628D3274F25A20046F492 /* Timetable+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D2274F25A20046F492 /* Timetable+Injection.swift */; };
 		0BA628D62753B52F0046F492 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D42753B52F0046F492 /* EventListView.swift */; };
 		0BA628D72753B52F0046F492 /* EventListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BA628D52753B52F0046F492 /* EventListView.xib */; };
 		0BA628DA2753B5530046F492 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D82753B5530046F492 /* EventCell.swift */; };
 		0BA628DB2753B5530046F492 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BA628D92753B5530046F492 /* EventCell.xib */; };
 		0BA628DD2753C4C20046F492 /* PaddableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628DC2753C4C20046F492 /* PaddableLabel.swift */; };
 		0BA628DF2758EE5E0046F492 /* EventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628DE2758EE5E0046F492 /* EventCellViewModel.swift */; };
+		0BA628E1275B9AF00046F492 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0BA628E0275B9AF00046F492 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,13 +113,14 @@
 		0B2780492678352F008EBA61 /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
 		0B54E79E2702A487006A1FB5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0BA628D2274F25A20046F492 /* AppDelegate+DI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+DI.swift"; sourceTree = "<group>"; };
+		0BA628D2274F25A20046F492 /* Timetable+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timetable+Injection.swift"; sourceTree = "<group>"; };
 		0BA628D42753B52F0046F492 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		0BA628D52753B52F0046F492 /* EventListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListView.xib; sourceTree = "<group>"; };
 		0BA628D82753B5530046F492 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		0BA628D92753B5530046F492 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		0BA628DC2753C4C20046F492 /* PaddableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddableLabel.swift; sourceTree = "<group>"; };
 		0BA628DE2758EE5E0046F492 /* EventCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCellViewModel.swift; sourceTree = "<group>"; };
+		0BA628E0275B9AF00046F492 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0BF3C983265F17F3009C393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF42EBA267AD6EA0074EB64 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		0BF42EBC267C02F60074EB64 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				0B2780292678352F008EBA61 /* Fonts */,
 				0B2780392678352F008EBA61 /* Views */,
 				0BA628DE2758EE5E0046F492 /* EventCellViewModel.swift */,
+				0BA628E0275B9AF00046F492 /* LaunchScreen.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -275,7 +278,7 @@
 		0BA628D1274F256E0046F492 /* Resolver */ = {
 			isa = PBXGroup;
 			children = (
-				0BA628D2274F25A20046F492 /* AppDelegate+DI.swift */,
+				0BA628D2274F25A20046F492 /* Timetable+Injection.swift */,
 			);
 			path = Resolver;
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				0B0DF454269D1173005535CC /* Rubik-LightItalic.ttf in Resources */,
 				0B0DF456269D1178005535CC /* Rubik-BlackItalic.ttf in Resources */,
 				0B0DF44C269D115F005535CC /* Rubik-Bold.ttf in Resources */,
+				0BA628E1275B9AF00046F492 /* LaunchScreen.storyboard in Resources */,
 				0B0DF451269D116B005535CC /* Rubik-Black.ttf in Resources */,
 				0B0DF44E269D1164005535CC /* Rubik-Light.ttf in Resources */,
 				0B0DF45B269D118A005535CC /* Preview Assets.xcassets in Resources */,
@@ -492,7 +496,7 @@
 				0B0DF447269D1144005535CC /* SectionForEvents.swift in Sources */,
 				0BA628DA2753B5530046F492 /* EventCell.swift in Sources */,
 				0B0DF444269D113D005535CC /* Location.swift in Sources */,
-				0BA628D3274F25A20046F492 /* AppDelegate+DI.swift in Sources */,
+				0BA628D3274F25A20046F492 /* Timetable+Injection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
