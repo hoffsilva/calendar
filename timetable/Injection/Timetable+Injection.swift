@@ -6,10 +6,12 @@
 //
 
 import Resolver
+import UIKit
 
 extension Resolver: ResolverRegistering {
     
     public static func registerAllServices() {
+        registerCoordinators()
         registerViews()
         registerViewModels()
         registerUseCases()
@@ -19,10 +21,26 @@ extension Resolver: ResolverRegistering {
 
 extension Resolver {
     
+    public static func registerCoordinators() {
+        
+        register { _, args in
+            AppCoordinator(window: args())
+        }.implements(Coordinator.self)
+        
+        register { _, args in
+            EventListViewCoordinator(window: args("window"))
+        }.implements(Coordinator.self)
+        
+    }
+    
     public static func registerViews() {
         
         register {
             EventListView()
+        }
+        
+        register {
+            CustomLaunchScreen()
         }
         
     }

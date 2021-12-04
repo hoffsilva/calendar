@@ -11,8 +11,6 @@ import Resolver
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    
-    private lazy var navigationController = UINavigationController(rootViewController: Resolver.resolve(EventListView.self))
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let scene = (scene as? UIWindowScene) else { return }
@@ -21,8 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func configureWindow() {
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
+        let appCoordinator = Resolver.optional(AppCoordinator.self, args: window!)
+        appCoordinator?.start()
     }
 
 
