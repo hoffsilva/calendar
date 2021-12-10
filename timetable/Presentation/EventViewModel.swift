@@ -13,10 +13,6 @@ final class EventViewModel: ObservableObject {
     
     @Injected private var eventUseCase: GetEventsUseCase
     
-    init(eventUseCase: GetEventsUseCase) {
-        self.eventUseCase = eventUseCase
-    }
-    
     @Published var sections: [SectionForEvents] = []
     
     func requestAccess() {
