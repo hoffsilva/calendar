@@ -22,7 +22,9 @@ final class AppCoordinator: Coordinator {
     }
     
     private func showLaunchScreen() {
-        self.window.rootViewController = Resolver.resolve(CustomLaunchScreen.self)
+        let customLaunchScreen = Resolver.resolve(CustomLaunchScreen.self)
+        customLaunchScreen.delegate = self
+        self.window.rootViewController = customLaunchScreen
     }
     
     private func showEventListView() {
@@ -30,6 +32,12 @@ final class AppCoordinator: Coordinator {
         eventListViewCoordinator.start()
     }
     
+}
+
+extension AppCoordinator: CustomLaunchScreenDelegate {
     
+    func finishDidLoad() {
+        self.showEventListView()
+    }
     
 }
