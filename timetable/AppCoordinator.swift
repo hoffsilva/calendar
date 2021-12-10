@@ -19,9 +19,6 @@ final class AppCoordinator: Coordinator {
     func start() {
         window.makeKeyAndVisible()
         showLaunchScreen()
-        let timer = Timer.scheduledTimer(withTimeInterval: 10.0, repeats: false) { timer in
-            self.showEventListView()
-        }
     }
     
     private func showLaunchScreen() {

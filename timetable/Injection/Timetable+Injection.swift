@@ -6,7 +6,6 @@
 //
 
 import Resolver
-import UIKit
 
 extension Resolver: ResolverRegistering {
     
