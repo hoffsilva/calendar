@@ -24,11 +24,15 @@ extension Resolver {
         
         register { _, args in
             AppCoordinator(window: args())
-        }.implements(Coordinator.self)
+        }
+        .scope(.application)
+        .implements(Coordinator.self)
         
         register { _, args in
             EventListViewCoordinator(window: args("window"))
-        }.implements(Coordinator.self)
+        }
+        .scope(.application)
+        .implements(Coordinator.self)
         
     }
     
@@ -45,18 +49,17 @@ extension Resolver {
     }
     
     public static func registerViewModels() {
-        
         register {
-            EventViewModel(eventUseCase: GetEventsUseCaseImp())
+            EventViewModel()
         }
-        
     }
     
     public static func registerUseCases() {
         
         register {
             GetEventsUseCaseImp()
-        }.implements(GetEventsUseCase.self)
+        }
+        .implements(GetEventsUseCase.self)
         
     }
     
