@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class EventCellViewModel {
+struct EventCellViewModel: Hashable {
     
     let eventName: String
     let hasConflict: Bool
