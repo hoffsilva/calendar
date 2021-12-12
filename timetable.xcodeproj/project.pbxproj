@@ -47,7 +47,6 @@
 		0BA628D0274F250B0046F492 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA628CF274F250B0046F492 /* Resolver */; };
 		0BA628D3274F25A20046F492 /* Timetable+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D2274F25A20046F492 /* Timetable+Injection.swift */; };
 		0BA628D62753B52F0046F492 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D42753B52F0046F492 /* EventListView.swift */; };
-		0BA628D72753B52F0046F492 /* EventListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BA628D52753B52F0046F492 /* EventListView.xib */; };
 		0BA628DA2753B5530046F492 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D82753B5530046F492 /* EventCell.swift */; };
 		0BA628DB2753B5530046F492 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BA628D92753B5530046F492 /* EventCell.xib */; };
 		0BA628DD2753C4C20046F492 /* PaddableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628DC2753C4C20046F492 /* PaddableLabel.swift */; };
@@ -58,6 +57,7 @@
 		0BA628EF275BA7600046F492 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628EE275BA7600046F492 /* Coordinator.swift */; };
 		0BA628F1275BA9200046F492 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628F0275BA9200046F492 /* AppCoordinator.swift */; };
 		0BA628F4275BAAC20046F492 /* EventListViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628F3275BAAC20046F492 /* EventListViewCoordinator.swift */; };
+		0BEA78AC2765087B00933B33 /* AppearenceToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEA78AB2765087B00933B33 /* AppearenceToggle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,7 +118,6 @@
 		0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0BA628D2274F25A20046F492 /* Timetable+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timetable+Injection.swift"; sourceTree = "<group>"; };
 		0BA628D42753B52F0046F492 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
-		0BA628D52753B52F0046F492 /* EventListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventListView.xib; sourceTree = "<group>"; };
 		0BA628D82753B5530046F492 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		0BA628D92753B5530046F492 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		0BA628DC2753C4C20046F492 /* PaddableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddableLabel.swift; sourceTree = "<group>"; };
@@ -129,6 +128,7 @@
 		0BA628EE275BA7600046F492 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0BA628F0275BA9200046F492 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		0BA628F3275BAAC20046F492 /* EventListViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewCoordinator.swift; sourceTree = "<group>"; };
+		0BEA78AB2765087B00933B33 /* AppearenceToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearenceToggle.swift; sourceTree = "<group>"; };
 		0BF3C983265F17F3009C393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF42EBA267AD6EA0074EB64 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		0BF42EBC267C02F60074EB64 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
@@ -234,9 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				0BA628D42753B52F0046F492 /* EventListView.swift */,
-				0BA628D52753B52F0046F492 /* EventListView.xib */,
 				0BA628D82753B5530046F492 /* EventCell.swift */,
 				0BA628D92753B5530046F492 /* EventCell.xib */,
+				0BEA78AB2765087B00933B33 /* AppearenceToggle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -463,7 +463,6 @@
 				0B0DF453269D1170005535CC /* Rubik-Italic.ttf in Resources */,
 				0B0DF459269D1181005535CC /* Rubik-BoldItalic.ttf in Resources */,
 				0B0DF44B269D115C005535CC /* Rubik-MediumItalic.ttf in Resources */,
-				0BA628D72753B52F0046F492 /* EventListView.xib in Resources */,
 				0B0DF455269D1175005535CC /* Rubik-SemiBold.ttf in Resources */,
 				0B0DF450269D1169005535CC /* Rubik-ExtraBoldItalic.ttf in Resources */,
 				0BA628EB275B9F3C0046F492 /* CustomLaunchScreen.xib in Resources */,
@@ -507,6 +506,7 @@
 				0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */,
 				0B54E7A02702A487006A1FB5 /* AppDelegate.swift in Sources */,
 				0B0DF45F269D11DB005535CC /* EventViewModel.swift in Sources */,
+				0BEA78AC2765087B00933B33 /* AppearenceToggle.swift in Sources */,
 				0BA628D62753B52F0046F492 /* EventListView.swift in Sources */,
 				0B0DF449269D114C005535CC /* Date+Extensions.swift in Sources */,
 				0BA628DF2758EE5E0046F492 /* EventCellViewModel.swift in Sources */,
