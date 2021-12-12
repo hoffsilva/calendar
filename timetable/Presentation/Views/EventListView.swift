@@ -35,6 +35,7 @@ class EventListView: UITableViewController {
         tableView.dataSource = dataSource
         tableView.delegate = self
         updateDataSource()
+        tableView.separatorColor = .clear
     }
     
     private func makeDataSource() -> UITableViewDiffableDataSource<Section, EventCellViewModel> {
