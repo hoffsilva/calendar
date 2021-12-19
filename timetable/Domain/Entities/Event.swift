@@ -8,14 +8,11 @@
 import Foundation
 
 struct Event: Hashable {
-
     let startDate: Date
     let endDate: Date
     let isAllDay: Bool
     let location: Location?
-    let month: Month
     let title: String
     let year: Int
     let day: Int
-    
 }

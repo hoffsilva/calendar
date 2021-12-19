@@ -20,7 +20,7 @@
 		0B0DF444269D113D005535CC /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780452678352F008EBA61 /* Location.swift */; };
 		0B0DF445269D113F005535CC /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780462678352F008EBA61 /* Event.swift */; };
 		0B0DF446269D1141005535CC /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780472678352F008EBA61 /* Day.swift */; };
-		0B0DF447269D1144005535CC /* SectionForEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780482678352F008EBA61 /* SectionForEvents.swift */; };
+		0B0DF447269D1144005535CC /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780482678352F008EBA61 /* Months.swift */; };
 		0B0DF448269D1146005535CC /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780492678352F008EBA61 /* Month.swift */; };
 		0B0DF449269D114C005535CC /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B27803D2678352F008EBA61 /* Date+Extensions.swift */; };
 		0B0DF44A269D114E005535CC /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF42EBA267AD6EA0074EB64 /* Time.swift */; };
@@ -42,6 +42,7 @@
 		0B0DF45A269D1184005535CC /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF42EBC267C02F60074EB64 /* Extension+UIColor.swift */; };
 		0B0DF45B269D118A005535CC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B0DF41F269D1054005535CC /* Preview Assets.xcassets */; };
 		0B0DF45F269D11DB005535CC /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780282678352F008EBA61 /* EventViewModel.swift */; };
+		0B424166276FAE9B00037845 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B424165276FAE9B00037845 /* String+Utils.swift */; };
 		0B54E7A02702A487006A1FB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79E2702A487006A1FB5 /* AppDelegate.swift */; };
 		0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */; };
 		0BA628D0274F250B0046F492 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA628CF274F250B0046F492 /* Resolver */; };
@@ -112,8 +113,9 @@
 		0B2780452678352F008EBA61 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		0B2780462678352F008EBA61 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		0B2780472678352F008EBA61 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
-		0B2780482678352F008EBA61 /* SectionForEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionForEvents.swift; sourceTree = "<group>"; };
+		0B2780482678352F008EBA61 /* Months.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Months.swift; sourceTree = "<group>"; };
 		0B2780492678352F008EBA61 /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		0B424165276FAE9B00037845 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		0B54E79E2702A487006A1FB5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0BA628D2274F25A20046F492 /* Timetable+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timetable+Injection.swift"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				0BF42EBC267C02F60074EB64 /* Extension+UIColor.swift */,
 				0BF42EBA267AD6EA0074EB64 /* Time.swift */,
 				0BA628DC2753C4C20046F492 /* PaddableLabel.swift */,
+				0B424165276FAE9B00037845 /* String+Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -279,7 +282,7 @@
 				0B2780452678352F008EBA61 /* Location.swift */,
 				0B2780462678352F008EBA61 /* Event.swift */,
 				0B2780472678352F008EBA61 /* Day.swift */,
-				0B2780482678352F008EBA61 /* SectionForEvents.swift */,
+				0B2780482678352F008EBA61 /* Months.swift */,
 				0B2780492678352F008EBA61 /* Month.swift */,
 			);
 			path = Entities;
@@ -512,12 +515,13 @@
 				0BA628DF2758EE5E0046F492 /* EventCellViewModel.swift in Sources */,
 				0B0DF45A269D1184005535CC /* Extension+UIColor.swift in Sources */,
 				0B0DF44A269D114E005535CC /* Time.swift in Sources */,
+				0B424166276FAE9B00037845 /* String+Utils.swift in Sources */,
 				0B0DF443269D1137005535CC /* GetEventsUseCase.swift in Sources */,
 				0B0DF446269D1141005535CC /* Day.swift in Sources */,
 				0B0DF440269D1119005535CC /* EventsDataSourceImp.swift in Sources */,
 				0BA628EA275B9F3C0046F492 /* CustomLaunchScreen.swift in Sources */,
 				0B0DF43F269D1116005535CC /* EventsDataSource.swift in Sources */,
-				0B0DF447269D1144005535CC /* SectionForEvents.swift in Sources */,
+				0B0DF447269D1144005535CC /* Months.swift in Sources */,
 				0BA628DA2753B5530046F492 /* EventCell.swift in Sources */,
 				0B0DF444269D113D005535CC /* Location.swift in Sources */,
 				0BA628D3274F25A20046F492 /* Timetable+Injection.swift in Sources */,

@@ -6,6 +6,6 @@
 //
 
 protocol GetEventsRepository {
-    func getEvents(from: Int, completion: @escaping ((Result<[Event], Error>) -> Void))
+    func getEvents(from: Int, completion: @escaping ((Result<[Month], Error>) -> Void))
     func requestAccess(completion: @escaping ((Bool) -> Void))
 }

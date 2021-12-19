@@ -9,12 +9,6 @@ import UIKit
 import Resolver
 
 class EventListView: UITableViewController {
-    
-    enum Section: CaseIterable {
-            case friends
-            case family
-            case coworkers
-        }
 
     struct ContactList {
         var friends: [EventCellViewModel]
@@ -38,7 +32,7 @@ class EventListView: UITableViewController {
         tableView.separatorColor = .clear
     }
     
-    private func makeDataSource() -> UITableViewDiffableDataSource<Section, EventCellViewModel> {
+    private func makeDataSource() -> UITableViewDiffableDataSource<Months, EventCellViewModel> {
         UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, itemIdentifier in
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EventCell.self), for: indexPath) as? EventCell else { return UITableViewCell() }
             cell.setupData(itemIdentifier)
@@ -47,8 +41,8 @@ class EventListView: UITableViewController {
     }
     
     private func updateDataSource() {
-        var snapshot = NSDiffableDataSourceSnapshot<Section, EventCellViewModel>()
-        snapshot.appendSections(Section.allCases)
+        var snapshot = NSDiffableDataSourceSnapshot<Months, EventCellViewModel>()
+        snapshot.appendSections(Months.allCases)
         
         let friend = EventCellViewModel(eventName: "Friend1", hasConflict: true, day: "30", hour: "Em 10 minutos1", title: "Vamos lá!1")
         
@@ -56,9 +50,9 @@ class EventListView: UITableViewController {
         
         let friend3 = EventCellViewModel(eventName: "Friend3", hasConflict: true, day: "14", hour: "Em 10 minutos3", title: "Vamos lá!3")
         
-        snapshot.appendItems([friend], toSection: .friends)
-        snapshot.appendItems([friend2], toSection: .family)
-        snapshot.appendItems([friend3], toSection: .coworkers)
+        snapshot.appendItems([friend], toSection: .jan)
+        snapshot.appendItems([friend2], toSection: .fev)
+        snapshot.appendItems([friend3], toSection: .mar)
         
         dataSource.apply(snapshot)
     }

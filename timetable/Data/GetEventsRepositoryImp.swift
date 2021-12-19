@@ -13,7 +13,7 @@ final class GetEventsRepositoryImp: GetEventsRepository {
         self.dataSource = dataSource
     }
     
-    func getEvents(from: Int, completion: @escaping ((Result<[Event], Error>) -> Void)) {
+    func getEvents(from: Int, completion: @escaping ((Result<[Month], Error>) -> Void)) {
         dataSource.getEvents(from: from, completion: completion)
     }
     

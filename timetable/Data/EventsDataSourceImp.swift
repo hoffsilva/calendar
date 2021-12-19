@@ -29,7 +29,7 @@ final class EventsDataSourceImp: EventsDataSource {
         }
     }
     
-    func getEvents(from: Int, completion: @escaping ((Result<[Event], Error>) -> Void)) {
+    func getEvents(from: Int, completion: @escaping ((Result<[Month], Error>) -> Void)) {
         
         guard
             let startDate = dateFormatter.date(from: "01/01/\(from)"),
@@ -42,34 +42,32 @@ final class EventsDataSourceImp: EventsDataSource {
         completion(.success(mapEvent(events: events)))
     }
     
-    private func mapEvent(events: [EKEvent]) -> [Event] {
-        events.map { event in
-            Event(
-                startDate: event.startDate,
-                endDate: event.endDate,
-                isAllDay: event.isAllDay,
-                location: Location(
-                    latitude: event.structuredLocation?.geoLocation?.coordinate.latitude ?? 0,
-                    longitude: event.structuredLocation?.geoLocation?.coordinate.longitude ?? 0
-                ),
-                month: getMonth(of: event.startDate),
-                title: event.title,
-                year: event.startDate.getYear(),
-                day: event.startDate.getIntDay()
-            )
+    private func mapEvent(events: [EKEvent]) -> [Month] {
+        
+        for event in events {
+            switch event.startDate.getMonth() {
+            case Months.jan.rawValue:
+                print()
+            default:
+                print()
+            }
         }
-    }
-    
-    private func getMonth(of date: Date) -> Month {
-        let dateComponent = Calendar.current.dateComponents([.month], from: date)
-        self.dateFormatter.setLocalizedDateFormatFromTemplate("MMMM")
-        guard let monthNumber = dateComponent.month else {
-            return Month(name: "0", number: 0)
-        }
-        return Month(
-            name: dateFormatter.string(from: date),
-            number: monthNumber
-        )
+        
+//        events.map { event in
+//            Event(
+//                startDate: event.startDate,
+//                endDate: event.endDate,
+//                isAllDay: event.isAllDay,
+//                location: Location(
+//                    latitude: event.structuredLocation?.geoLocation?.coordinate.latitude ?? 0,
+//                    longitude: event.structuredLocation?.geoLocation?.coordinate.longitude ?? 0
+//                ),
+//                title: event.title,
+//                year: event.startDate.getYear(),
+//                day: event.startDate.getIntDay()
+//            )
+//        }
+       return [Month]()
     }
     
 }

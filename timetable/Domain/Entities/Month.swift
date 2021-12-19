@@ -8,11 +8,11 @@
 struct Month: Hashable {
     
     let name: String
-    let number: Int
+    let events: [Event]
     
-    init(name: String, number: Int) {
+    init(name: String, events: [Event]) {
         self.name = name
-        self.number = number
+        self.events = events
     }
     
 }

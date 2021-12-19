@@ -14,13 +14,13 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
     
     private var date = Date()
 
-    func getEvents(from year: Int, completion: @escaping ((Result<[SectionForEvents], Error>) -> Void)) {
+    func getEvents(from year: Int, completion: @escaping ((Result<[Month], Error>) -> Void)) {
         repository.requestAccess { granted in
             if granted {
                 self.repository.getEvents(from: year) { result in
                     switch result {
-                    case .success(let events):
-                        completion(.success(self.createSections(from: events, for: year)))
+                    case .success(let months):
+                        completion(.success(months))
                     case .failure: ()
                     }
                 }
@@ -32,14 +32,14 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
         case generic
     }
     
-    private func createSections(from events: [Event], for year: Int) -> [SectionForEvents] {
-        var sections = [SectionForEvents]()
-        
-        for month in 1...12 {
+    private func createSections(from events: [Event], for year: Int) -> [Month] {
+        var sections = [Month]()
+        for month in Months.allCases {
             var days = [Day]()
             var stringDays: Set<String> = Set()
-            let filteredEventsByMonth = getEvents(events: events, from: month)
-            for day in 1...getDaysOf(month: month, and: year)  {
+            let numeralMonth = month.rawValue.toInt()
+            let filteredEventsByMonth = getEvents(events: events, from: numeralMonth)
+            for day in 1...getDaysOf(month: numeralMonth, and: year)  {
                 for event in filteredEventsByMonth {
                     if event.startDate.getDay().prefix(1) == "0" {
                         if event.startDate.getDay() == "0\(day)" {
@@ -53,33 +53,33 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
                 }
             }
             
-            for day in stringDays {
-                var dayWithEvents = Day(number: day, events: [Event]())
-                for event in filteredEventsByMonth {
-                    if event.day == Int(day) ?? 0
-                        && event.month.number == month
-                        && event.startDate.time.hour >= date.time.hour + 1
-                        && event.startDate.time.hour <= date.time.hour + 2 {
-                        dayWithEvents.events.append(event)
-                    }
-                }
-                if !dayWithEvents.events.isEmpty {
-                    days.append(dayWithEvents)
-                }
-            }
+//            for day in stringDays {
+//                var dayWithEvents = Day(number: day, events: [Event]())
+//                for event in filteredEventsByMonth {
+//                    if event.day == Int(day) ?? 0
+//                        && event.month.number == month
+//                        && event.startDate.time.hour >= date.time.hour + 1
+//                        && event.startDate.time.hour <= date.time.hour + 2 {
+//                        dayWithEvents.events.append(event)
+//                    }
+//                }
+//                if !dayWithEvents.events.isEmpty {
+//                    days.append(dayWithEvents)
+//                }
+//            }
             let orderedDays = days.sorted { currentDay, nextDay in
                 currentDay.number < nextDay.number
             }
-            if let nameOfMont = filteredEventsByMonth.first?.month.name,
-               !days.isEmpty {
-                let section = SectionForEvents(
-                    month: nameOfMont,
-                    days: orderedDays,
-                    stringDays: stringDays.sorted(),
-                    events: filteredEventsByMonth
-                )
-                sections.append(section)
-            }
+//            if let nameOfMont = filteredEventsByMonth.first?.month.name,
+//               !days.isEmpty {
+//                let section = SectionForEvents(
+//                    month: nameOfMont,
+//                    days: orderedDays,
+//                    stringDays: stringDays.sorted(),
+//                    events: filteredEventsByMonth
+//                )
+//                sections.append(section)
+//            }
             
             
         }
@@ -88,7 +88,7 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
     
     private func getEvents(events: [Event], from month: Int) -> [Event] {
         events.filter { event in
-            event.month.number == month
+            event.startDate.getShortMonth().toInt() == month
         }
     }
     

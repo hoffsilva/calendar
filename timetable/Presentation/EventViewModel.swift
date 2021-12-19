@@ -13,7 +13,7 @@ final class EventViewModel: ObservableObject {
     
     @Injected private var eventUseCase: GetEventsUseCase
     
-    @Published var sections: [SectionForEvents] = []
+    @Published var sections: [Month] = []
     
     func requestAccess() {
         eventUseCase.getEvents(from: 2021) { result in
