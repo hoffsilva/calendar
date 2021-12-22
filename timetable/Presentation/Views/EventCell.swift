@@ -64,11 +64,11 @@ class EventCell: UITableViewCell {
         conflictLabel.isHidden = true
     }
     
-    func setupData(_ data: EventCellViewModel) {
-        eventDayLabel.text = data.day
-        eventHourLabel.text = data.hour
+    func setupData(_ data: Event) {
+        eventDayLabel.text = data.startDate.getDay()
+        eventHourLabel.text = data.startDate.getHour()
         eventTitleLabel.text = data.title
-        conflictLabel.isHidden = !data.hasConflict
+        conflictLabel.isHidden = data.title.count >= 4
     }
     
 }
