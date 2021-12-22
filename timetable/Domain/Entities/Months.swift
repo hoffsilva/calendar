@@ -10,7 +10,7 @@ enum Months: String, CaseIterable {
     case fev = "02"
     case mar = "03"
     case apr = "04"
-    case mai = "05"
+    case may = "05"
     case jun = "06"
     case jul = "07"
     case aug = "08"
