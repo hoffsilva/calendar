@@ -7,18 +7,14 @@
 
 import UIKit
 import Resolver
+import Combine
 
 class EventListView: UITableViewController {
-
-    struct ContactList {
-        var friends: [EventCellViewModel]
-        var family: [EventCellViewModel]
-        var coworkers: [EventCellViewModel]
-    }
     
     @Injected private var viewModel: EventViewModel
     
     private lazy var dataSource = makeDataSource()
+    private var bag = Set<AnyCancellable>()
     
     let appearence = AppearenceToggle()
     
@@ -28,11 +24,11 @@ class EventListView: UITableViewController {
         registerCell()
         tableView.dataSource = dataSource
         tableView.delegate = self
-        updateDataSource()
         tableView.separatorColor = .clear
+        setupBindings()
     }
     
-    private func makeDataSource() -> UITableViewDiffableDataSource<Months, EventCellViewModel> {
+    private func makeDataSource() -> UITableViewDiffableDataSource<Months, Event> {
         UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, itemIdentifier in
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EventCell.self), for: indexPath) as? EventCell else { return UITableViewCell() }
             cell.setupData(itemIdentifier)
@@ -40,19 +36,21 @@ class EventListView: UITableViewController {
         }
     }
     
-    private func updateDataSource() {
-        var snapshot = NSDiffableDataSourceSnapshot<Months, EventCellViewModel>()
+    func setupBindings() {
+        viewModel
+            .$sections
+            .sink { [weak self] events in
+                self?.updateDataSource(listOfMonth: events)
+            }.store(in: &bag)
+    }
+    
+    private func updateDataSource(listOfMonth: [Month]) {
+        var snapshot = NSDiffableDataSourceSnapshot<Months, Event>()
         snapshot.appendSections(Months.allCases)
         
-        let friend = EventCellViewModel(eventName: "Friend1", hasConflict: true, day: "30", hour: "Em 10 minutos1", title: "Vamos lá!1")
-        
-        let friend2 = EventCellViewModel(eventName: "Friend2", hasConflict: false, day: "20", hour: "Em 10 minutos2", title: "Vamos lá!2")
-        
-        let friend3 = EventCellViewModel(eventName: "Friend3", hasConflict: true, day: "14", hour: "Em 10 minutos3", title: "Vamos lá!3")
-        
-        snapshot.appendItems([friend], toSection: .jan)
-        snapshot.appendItems([friend2], toSection: .fev)
-        snapshot.appendItems([friend3], toSection: .mar)
+        for month in listOfMonth {
+            snapshot.appendItems(month.events, toSection: month.month)
+        }
         
         dataSource.apply(snapshot)
     }
