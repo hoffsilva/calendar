@@ -29,11 +29,19 @@ extension Date {
         return Int(formatter.string(from: self)) ?? -1
     }
     
-    func getMonth() -> String {
+    func getShortMonth() -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .long
         formatter.timeStyle = .none
         formatter.dateFormat = "MM"
+        return formatter.string(from: self)
+    }
+    
+    func getLongMonth() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.timeStyle = .none
+        formatter.dateFormat = "MMMM"
         return formatter.string(from: self)
     }
     
