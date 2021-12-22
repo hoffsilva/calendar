@@ -15,13 +15,12 @@ final class EventViewModel: ObservableObject {
     
     @Published var sections: [Month] = []
     
+    
     func requestAccess() {
         eventUseCase.getEvents(from: 2021) { result in
             switch result {
             case .success(let sections):
-                DispatchQueue.main.async {
-                    self.sections = sections
-                }
+                self.sections = sections
             case .failure: ()
             }
         }
