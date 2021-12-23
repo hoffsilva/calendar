@@ -28,7 +28,7 @@ class EventListView: UITableViewController {
         setupBindings()
     }
     
-    private func makeDataSource() -> UITableViewDiffableDataSource<Months, Event> {
+    private func makeDataSource() -> UITableViewDiffableDataSource<Month, Event> {
         UITableViewDiffableDataSource(tableView: tableView) { tableView, indexPath, itemIdentifier in
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EventCell.self), for: indexPath) as? EventCell else { return UITableViewCell() }
             cell.setupData(itemIdentifier)
@@ -45,11 +45,14 @@ class EventListView: UITableViewController {
     }
     
     private func updateDataSource(listOfMonth: [Month]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Months, Event>()
-        snapshot.appendSections(Months.allCases)
+        var snapshot = NSDiffableDataSourceSnapshot<Month, Event>()
+        
+        dataSource.defaultRowAnimation = UITableView.RowAnimation.top
+        
+        snapshot.appendSections(listOfMonth)
         
         for month in listOfMonth {
-            snapshot.appendItems(month.events, toSection: month.month)
+            snapshot.appendItems(month.events, toSection: month)
         }
         
         dataSource.apply(snapshot)
@@ -68,17 +71,22 @@ class EventListView: UITableViewController {
         UITableView.automaticDimension
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        60
+    }
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: self.view.frame)
-        
-        view.addSubview(appearence)
-        appearence.height(with: 18)
-        appearence.width(with: 27)
-        appearence.centerVertically()
-        appearence.centerHorizontally()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(hello))
-        appearence.addGestureRecognizer(tap)
-        return view
+        let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 60))
+        backgroundView.backgroundColor = .systemBackground
+        let label = UILabel()
+        label.font = .rubikBold(40)
+        label.text = dataSource.sectionIdentifier(for: section)?.name
+        label.textColor = .timetableGray
+        label.prepareForConstraints()
+        backgroundView.addSubview(label)
+        label.pinLeft(24)
+        label.centerHorizontally()
+        return backgroundView
     }
     
     @objc func hello() {
