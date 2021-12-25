@@ -19,7 +19,8 @@ final class EventListViewCoordinator: Coordinator {
     }
     
     func start() {
-        self.window.rootViewController = Resolver.resolve(EventListView.self)
+        let navigationController = TimeTableNavigationController(rootViewController: Resolver.resolve(EventListViewController.self))
+        self.window.rootViewController = navigationController
     }
     
 }

@@ -39,7 +39,7 @@ extension Resolver {
     public static func registerViews() {
         
         register {
-            EventListView()
+            EventListViewController()
         }
         
         register {
