@@ -43,7 +43,7 @@ class EventListViewController: UIViewController {
 
     }
     
-    private func makeDataSource() -> UITableViewDiffableDataSource<Month, Event> {
+    private func makeDataSource() -> UITableViewDiffableDataSource<Month, Day> {
         UITableViewDiffableDataSource(tableView: listViewTableView) { tableView, indexPath, itemIdentifier in
             guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: EventCell.self), for: indexPath) as? EventCell else { return UITableViewCell() }
             cell.setupData(itemIdentifier)
@@ -62,14 +62,14 @@ class EventListViewController: UIViewController {
     }
     
     private func updateDataSource(listOfMonth: [Month]) {
-        var snapshot = NSDiffableDataSourceSnapshot<Month, Event>()
+        var snapshot = NSDiffableDataSourceSnapshot<Month, Day>()
         
         dataSource.defaultRowAnimation = UITableView.RowAnimation.top
         
         snapshot.appendSections(listOfMonth)
         
         for month in listOfMonth {
-            snapshot.appendItems(month.events, toSection: month)
+            snapshot.appendItems(month.days, toSection: month)
         }
         
         dataSource.apply(snapshot)
@@ -81,7 +81,6 @@ class EventListViewController: UIViewController {
     }
     
     @objc func hello() {
-        print("Oi!")
         UIView.animate(withDuration: 1) {
             self.overrideUserInterfaceStyle = self.overrideUserInterfaceStyle == .dark ? .light : .dark
             self.view.layoutIfNeeded()

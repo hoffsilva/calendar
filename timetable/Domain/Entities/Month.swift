@@ -10,13 +10,13 @@ import Foundation
 struct Month: Hashable {
     
     var name: String
-    var events: [Event]
+    var days: [Day]
     var month: Months
     let uuid = UUID()
     
-    init(name: String, events: [Event], month: Months) {
+    init(name: String, days: [Day], month: Months) {
         self.name = name
-        self.events = events
+        self.days = days
         self.month = month
     }
     
