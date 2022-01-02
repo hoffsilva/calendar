@@ -19,6 +19,12 @@ class EventListViewController: UIViewController {
     private var bag = Set<AnyCancellable>()
     
     let appearence = AppearenceToggle()
+    private lazy var userInterfaceStyleNameLabel: UILabel = {
+        let label = UILabel()
+        label.prepareForConstraints()
+        label.font = .rubikRegular(12)
+        return label
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -26,10 +32,15 @@ class EventListViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(hello))
         appearence.addGestureRecognizer(tap)
         navigationController?.view.addSubview(appearence)
+        navigationController?.view.addSubview(userInterfaceStyleNameLabel)
+        
         appearence.height(with: 18)
         appearence.width(with: 27)
         appearence.pinTop(60)
         appearence.pinLeft(24)
+        
+        userInterfaceStyleNameLabel.centerVertically(inRelationTo: appearence)
+        userInterfaceStyleNameLabel.pinLeftInRelation(to: appearence.rightAnchor, 8)
     }
     
     override func viewDidLoad() {
@@ -40,7 +51,7 @@ class EventListViewController: UIViewController {
         listViewTableView.delegate = self
         listViewTableView.separatorColor = .clear
         setupBindings()
-
+        configure()
     }
     
     private func makeDataSource() -> UITableViewDiffableDataSource<Month, Day> {
@@ -86,6 +97,12 @@ class EventListViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
         appearence.changeUserInterfaceStyleAnimated()
+        configure()
+    }
+    
+    func configure() {
+        userInterfaceStyleNameLabel.text = self.overrideUserInterfaceStyle == .dark ? "LIGHT MODE" : "DARK MODE"
+        userInterfaceStyleNameLabel.textColor = self.overrideUserInterfaceStyle == .dark ? .white : .black
     }
     
     private func createSectionHeaderView(with title: String?) -> UIView  {
