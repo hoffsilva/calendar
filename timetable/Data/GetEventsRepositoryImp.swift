@@ -5,6 +5,8 @@
 //  Created by Hoff Silva on 03/06/21.
 //
 
+import EventKit
+
 final class GetEventsRepositoryImp: GetEventsRepository {
 
     private let dataSource: EventsDataSource
@@ -13,7 +15,7 @@ final class GetEventsRepositoryImp: GetEventsRepository {
         self.dataSource = dataSource
     }
     
-    func getEvents(from: Int, completion: @escaping ((Result<[Month], Error>) -> Void)) {
+    func getEvents(from: Int, completion: @escaping ((Result<[EKEvent], Error>) -> Void)) {
         dataSource.getEvents(from: from, completion: completion)
     }
     
