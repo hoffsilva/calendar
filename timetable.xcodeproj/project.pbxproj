@@ -48,6 +48,7 @@
 		0B424166276FAE9B00037845 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B424165276FAE9B00037845 /* String+Utils.swift */; };
 		0B54E7A02702A487006A1FB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79E2702A487006A1FB5 /* AppDelegate.swift */; };
 		0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */; };
+		0B991F8A2789D48B00682A77 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B991F892789D48B00682A77 /* Extension+UILabel.swift */; };
 		0BA628D0274F250B0046F492 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0BA628CF274F250B0046F492 /* Resolver */; };
 		0BA628D3274F25A20046F492 /* Timetable+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D2274F25A20046F492 /* Timetable+Injection.swift */; };
 		0BA628DA2753B5530046F492 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA628D82753B5530046F492 /* EventCell.swift */; };
@@ -123,6 +124,7 @@
 		0B424165276FAE9B00037845 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		0B54E79E2702A487006A1FB5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		0B991F892789D48B00682A77 /* Extension+UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		0BA628D2274F25A20046F492 /* Timetable+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Timetable+Injection.swift"; sourceTree = "<group>"; };
 		0BA628D82753B5530046F492 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		0BA628D92753B5530046F492 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				0BA628DC2753C4C20046F492 /* PaddableLabel.swift */,
 				0B424165276FAE9B00037845 /* String+Utils.swift */,
 				0B02371527776A97001AC484 /* TimeTableNavigationController.swift */,
+				0B991F892789D48B00682A77 /* Extension+UILabel.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -514,6 +517,7 @@
 				0B077DEF272D88A6005006F2 /* UIView+Constraints.swift in Sources */,
 				0BA628F4275BAAC20046F492 /* EventListViewCoordinator.swift in Sources */,
 				0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */,
+				0B991F8A2789D48B00682A77 /* Extension+UILabel.swift in Sources */,
 				0B54E7A02702A487006A1FB5 /* AppDelegate.swift in Sources */,
 				0B02371627776A97001AC484 /* TimeTableNavigationController.swift in Sources */,
 				0B0DF45F269D11DB005535CC /* EventViewModel.swift in Sources */,
@@ -574,7 +578,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconBlack;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"timetable/Preview Content\"";
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				ENABLE_PREVIEWS = YES;
@@ -608,7 +612,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconBlack;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_ASSET_PATHS = "\"timetable/Preview Content\"";
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				ENABLE_PREVIEWS = YES;

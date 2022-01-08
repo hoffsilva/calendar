@@ -23,6 +23,7 @@ class EventListViewController: UIViewController {
         let label = UILabel()
         label.prepareForConstraints()
         label.font = .rubikRegular(12)
+        label.addCharacterSpacing(kernValue: 50)
         return label
     }()
     
@@ -33,7 +34,6 @@ class EventListViewController: UIViewController {
         appearence.addGestureRecognizer(tap)
         navigationController?.view.addSubview(appearence)
         navigationController?.view.addSubview(userInterfaceStyleNameLabel)
-        
         appearence.height(with: 18)
         appearence.width(with: 27)
         appearence.pinTop(60)
@@ -92,7 +92,7 @@ class EventListViewController: UIViewController {
     }
     
     @objc func hello() {
-        UIView.animate(withDuration: 1) {
+        UIView.animate(withDuration: 0.2) {
             self.overrideUserInterfaceStyle = self.overrideUserInterfaceStyle == .dark ? .light : .dark
             self.view.layoutIfNeeded()
         }
@@ -111,6 +111,7 @@ class EventListViewController: UIViewController {
         let label = UILabel()
         label.font = .rubikBold(40)
         label.text = title
+        label.addCharacterSpacing(kernValue: -2)
         label.textColor = .timetableGray
         label.prepareForConstraints()
         backgroundView.addSubview(label)

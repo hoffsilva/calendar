@@ -42,9 +42,9 @@ class EventCell: UITableViewCell {
     private func setupLabelColor() {
         eventDayLabel.textColor = .timetableSystemBackgroundColor
         conflictLabel.textColor = .systemBackground
-        nextAppointmentLabel.textColor = .timetableGray
+        nextAppointmentLabel.textColor = .timetableDarkGray
         eventHourLabel.textColor = .timetableSystemBackgroundColor
-        eventTitleLabel.textColor = .timetableGray
+        eventTitleLabel.textColor = .timetableDarkGray
     }
     
     private func setupLabelFrame() {
@@ -66,6 +66,7 @@ class EventCell: UITableViewCell {
     
     func setupData(_ data: Day) {
         eventDayLabel.text = data.number
+        eventDayLabel.addCharacterSpacing(kernValue: -8)
         eventHourLabel.text = data.events.first?.startDate.getHour()
         eventTitleLabel.text = data.events.first?.title
         conflictLabel.isHidden = data.events.count > 1
