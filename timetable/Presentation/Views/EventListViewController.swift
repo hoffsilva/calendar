@@ -30,7 +30,7 @@ class EventListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(hello))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(animateUserInterfaceStyle))
         appearence.addGestureRecognizer(tap)
         navigationController?.view.addSubview(appearence)
         navigationController?.view.addSubview(userInterfaceStyleNameLabel)
@@ -50,8 +50,8 @@ class EventListViewController: UIViewController {
         listViewTableView.dataSource = dataSource
         listViewTableView.delegate = self
         listViewTableView.separatorColor = .clear
+        setAppearenceToggleTitle()
         setupBindings()
-        configure()
     }
     
     private func makeDataSource() -> UITableViewDiffableDataSource<Month, Day> {
@@ -91,16 +91,16 @@ class EventListViewController: UIViewController {
         listViewTableView.register(nibName, forCellReuseIdentifier: String(describing: EventCell.self))
     }
     
-    @objc func hello() {
+    @objc func animateUserInterfaceStyle() {
         UIView.animate(withDuration: 0.2) {
             self.overrideUserInterfaceStyle = self.overrideUserInterfaceStyle == .dark ? .light : .dark
             self.view.layoutIfNeeded()
         }
         appearence.changeUserInterfaceStyleAnimated()
-        configure()
+        setAppearenceToggleTitle()
     }
     
-    func configure() {
+    func setAppearenceToggleTitle() {
         userInterfaceStyleNameLabel.text = self.overrideUserInterfaceStyle == .dark ? "LIGHT MODE" : "DARK MODE"
         userInterfaceStyleNameLabel.textColor = self.overrideUserInterfaceStyle == .dark ? .white : .black
     }
