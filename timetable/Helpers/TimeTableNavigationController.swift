@@ -20,4 +20,55 @@ final class TimeTableNavigationController: UINavigationController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private lazy var appearenceToggle: AppearenceToggle = {
+        AppearenceToggle()
+    }()
+    
+    private lazy var userInterfaceStyleNameLabel: UILabel = {
+        let label = UILabel()
+        label.prepareForConstraints()
+        label.font = .rubikRegular(12)
+        label.addCharacterSpacing(kernValue: 50)
+        return label
+    }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureAppearenceToggle()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setAppearenceToggleTitle()
+    }
+    
+    private func configureAppearenceToggle() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(animateUserInterfaceStyle))
+        appearenceToggle.addGestureRecognizer(tap)
+        self.navigationBar.addSubview(appearenceToggle)
+        self.navigationBar.addSubview(userInterfaceStyleNameLabel)
+        appearenceToggle.height(with: 18)
+        appearenceToggle.width(with: 27)
+        appearenceToggle.centerVertically(inRelationTo: self.navigationBar)
+        appearenceToggle.pinLeft(24)
+        
+        userInterfaceStyleNameLabel.centerVertically(inRelationTo: appearenceToggle)
+        userInterfaceStyleNameLabel.pinLeftInRelation(to: appearenceToggle.rightAnchor, 8)
+    }
+    
+    func setAppearenceToggleTitle() {
+        userInterfaceStyleNameLabel.text = self.overrideUserInterfaceStyle == .dark ? "LIGHT MODE" : "DARK MODE"
+        userInterfaceStyleNameLabel.textColor = self.overrideUserInterfaceStyle == .dark ? .white : .black
+    }
+    
+    
+    @objc func animateUserInterfaceStyle() {
+        UIView.animate(withDuration: 0.2) {
+            self.overrideUserInterfaceStyle = self.overrideUserInterfaceStyle == .dark ? .light : .dark
+            self.view.layoutIfNeeded()
+        }
+        appearenceToggle.changeUserInterfaceStyleAnimated()
+        setAppearenceToggleTitle()
+    }
+    
 }

@@ -18,34 +18,6 @@ class EventListViewController: UIViewController {
     private lazy var dataSource = makeDataSource()
     private var bag = Set<AnyCancellable>()
     
-    private lazy var appearenceToggle: AppearenceToggle = {
-        AppearenceToggle()
-    }()
-    
-    private lazy var userInterfaceStyleNameLabel: UILabel = {
-        let label = UILabel()
-        label.prepareForConstraints()
-        label.font = .rubikRegular(12)
-        label.addCharacterSpacing(kernValue: 50)
-        return label
-    }()
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(animateUserInterfaceStyle))
-        appearence.addGestureRecognizer(tap)
-        navigationController?.view.addSubview(appearence)
-        navigationController?.view.addSubview(userInterfaceStyleNameLabel)
-        appearence.height(with: 18)
-        appearence.width(with: 27)
-        appearence.pinTop(60)
-        appearence.pinLeft(24)
-        
-        userInterfaceStyleNameLabel.centerVertically(inRelationTo: appearence)
-        userInterfaceStyleNameLabel.pinLeftInRelation(to: appearence.rightAnchor, 8)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.requestAccess()
@@ -53,7 +25,6 @@ class EventListViewController: UIViewController {
         listViewTableView.dataSource = dataSource
         listViewTableView.delegate = self
         listViewTableView.separatorColor = .clear
-        setAppearenceToggleTitle()
         setupBindings()
     }
     
@@ -90,20 +61,6 @@ class EventListViewController: UIViewController {
     private func registerCell() {
         let nibName = UINib(nibName: String(describing: EventCell.self), bundle: nil)
         listViewTableView.register(nibName, forCellReuseIdentifier: String(describing: EventCell.self))
-    }
-    
-    @objc func animateUserInterfaceStyle() {
-        UIView.animate(withDuration: 0.2) {
-            self.overrideUserInterfaceStyle = self.overrideUserInterfaceStyle == .dark ? .light : .dark
-            self.view.layoutIfNeeded()
-        }
-        appearence.changeUserInterfaceStyleAnimated()
-        setAppearenceToggleTitle()
-    }
-    
-    func setAppearenceToggleTitle() {
-        userInterfaceStyleNameLabel.text = self.overrideUserInterfaceStyle == .dark ? "LIGHT MODE" : "DARK MODE"
-        userInterfaceStyleNameLabel.textColor = self.overrideUserInterfaceStyle == .dark ? .white : .black
     }
     
     private func createSectionHeaderView(with title: String?) -> UIView  {
