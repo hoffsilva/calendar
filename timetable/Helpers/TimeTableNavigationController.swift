@@ -43,10 +43,33 @@ final class TimeTableNavigationController: UINavigationController {
     }
     
     private func configureAppearenceToggle() {
+        setupViewsHierarchy()
+        setupConstraints()
         let tap = UITapGestureRecognizer(target: self, action: #selector(animateUserInterfaceStyle))
         appearenceToggle.addGestureRecognizer(tap)
+    }
+    
+    private func setAppearenceToggleTitle() {
+        userInterfaceStyleNameLabel.text = self.overrideUserInterfaceStyle == .dark ? "LIGHT MODE" : "DARK MODE"
+        userInterfaceStyleNameLabel.textColor = self.overrideUserInterfaceStyle == .dark ? .white : .black
+    }
+    
+    
+    @objc private func animateUserInterfaceStyle() {
+        UIView.animate(withDuration: 0.2) {
+            self.overrideUserInterfaceStyle = self.overrideUserInterfaceStyle == .dark ? .light : .dark
+            self.view.layoutIfNeeded()
+        }
+        appearenceToggle.changeUserInterfaceStyleAnimated()
+        setAppearenceToggleTitle()
+    }
+    
+    private func setupViewsHierarchy() {
         self.navigationBar.addSubview(appearenceToggle)
         self.navigationBar.addSubview(userInterfaceStyleNameLabel)
+    }
+    
+    private func setupConstraints() {
         appearenceToggle.height(with: 18)
         appearenceToggle.width(with: 27)
         appearenceToggle.centerVertically(inRelationTo: self.navigationBar)
@@ -54,21 +77,7 @@ final class TimeTableNavigationController: UINavigationController {
         
         userInterfaceStyleNameLabel.centerVertically(inRelationTo: appearenceToggle)
         userInterfaceStyleNameLabel.pinLeftInRelation(to: appearenceToggle.rightAnchor, 8)
-    }
-    
-    func setAppearenceToggleTitle() {
-        userInterfaceStyleNameLabel.text = self.overrideUserInterfaceStyle == .dark ? "LIGHT MODE" : "DARK MODE"
-        userInterfaceStyleNameLabel.textColor = self.overrideUserInterfaceStyle == .dark ? .white : .black
-    }
-    
-    
-    @objc func animateUserInterfaceStyle() {
-        UIView.animate(withDuration: 0.2) {
-            self.overrideUserInterfaceStyle = self.overrideUserInterfaceStyle == .dark ? .light : .dark
-            self.view.layoutIfNeeded()
-        }
-        appearenceToggle.changeUserInterfaceStyleAnimated()
-        setAppearenceToggleTitle()
+
     }
     
 }
