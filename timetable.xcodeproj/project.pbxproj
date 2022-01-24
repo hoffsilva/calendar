@@ -12,7 +12,6 @@
 		0B02371627776A97001AC484 /* TimeTableNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B02371527776A97001AC484 /* TimeTableNavigationController.swift */; };
 		0B077DEF272D88A6005006F2 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B077DEE272D88A6005006F2 /* UIView+Constraints.swift */; };
 		0B0DF3FA269D0E4C005535CC /* timetableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DF3F9269D0E4C005535CC /* timetableTests.swift */; };
-		0B0DF404269D0E4C005535CC /* timetableUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0DF403269D0E4C005535CC /* timetableUITests.swift */; };
 		0B0DF40F269D0FE5005535CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B0DF40E269D0FE4005535CC /* Assets.xcassets */; };
 		0B0DF43E269D1113005535CC /* GetEventsRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780202678352E008EBA61 /* GetEventsRepositoryImp.swift */; };
 		0B0DF43F269D1116005535CC /* EventsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780212678352E008EBA61 /* EventsDataSource.swift */; };
@@ -72,13 +71,6 @@
 			remoteGlobalIDString = 0B0DF3E5269D0E4A005535CC;
 			remoteInfo = timetable;
 		};
-		0B0DF400269D0E4C005535CC /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0BF3C96F265F17F1009C393F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B0DF3E5269D0E4A005535CC;
-			remoteInfo = timetable;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -89,8 +81,6 @@
 		0B0DF3E6269D0E4A005535CC /* timetable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = timetable.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0DF3F5269D0E4C005535CC /* timetableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = timetableTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B0DF3F9269D0E4C005535CC /* timetableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timetableTests.swift; sourceTree = "<group>"; };
-		0B0DF3FF269D0E4C005535CC /* timetableUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = timetableUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0B0DF403269D0E4C005535CC /* timetableUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timetableUITests.swift; sourceTree = "<group>"; };
 		0B0DF40E269D0FE4005535CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B0DF41F269D1054005535CC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0B2780202678352E008EBA61 /* GetEventsRepositoryImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEventsRepositoryImp.swift; sourceTree = "<group>"; };
@@ -158,13 +148,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B0DF3FC269D0E4C005535CC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -174,14 +157,6 @@
 				0B0DF3F9269D0E4C005535CC /* timetableTests.swift */,
 			);
 			path = timetableTests;
-			sourceTree = "<group>";
-		};
-		0B0DF402269D0E4C005535CC /* timetableUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0B0DF403269D0E4C005535CC /* timetableUITests.swift */,
-			);
-			path = timetableUITests;
 			sourceTree = "<group>";
 		};
 		0B0DF41E269D1054005535CC /* Preview Content */ = {
@@ -337,7 +312,6 @@
 			children = (
 				0BEB47D62678328C00436634 /* timetable */,
 				0B0DF3F8269D0E4C005535CC /* timetableTests */,
-				0B0DF402269D0E4C005535CC /* timetableUITests */,
 				0BF3C978265F17F1009C393F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -347,7 +321,6 @@
 			children = (
 				0B0DF3E6269D0E4A005535CC /* timetable.app */,
 				0B0DF3F5269D0E4C005535CC /* timetableTests.xctest */,
-				0B0DF3FF269D0E4C005535CC /* timetableUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -393,24 +366,6 @@
 			productReference = 0B0DF3F5269D0E4C005535CC /* timetableTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0B0DF3FE269D0E4C005535CC /* timetableUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0B0DF40B269D0E4C005535CC /* Build configuration list for PBXNativeTarget "timetableUITests" */;
-			buildPhases = (
-				0B0DF3FB269D0E4C005535CC /* Sources */,
-				0B0DF3FC269D0E4C005535CC /* Frameworks */,
-				0B0DF3FD269D0E4C005535CC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0B0DF401269D0E4C005535CC /* PBXTargetDependency */,
-			);
-			name = timetableUITests;
-			productName = timetableUITests;
-			productReference = 0B0DF3FF269D0E4C005535CC /* timetableUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -424,10 +379,6 @@
 						CreatedOnToolsVersion = 13.0;
 					};
 					0B0DF3F4269D0E4C005535CC = {
-						CreatedOnToolsVersion = 13.0;
-						TestTargetID = 0B0DF3E5269D0E4A005535CC;
-					};
-					0B0DF3FE269D0E4C005535CC = {
 						CreatedOnToolsVersion = 13.0;
 						TestTargetID = 0B0DF3E5269D0E4A005535CC;
 					};
@@ -451,7 +402,6 @@
 			targets = (
 				0B0DF3E5269D0E4A005535CC /* timetable */,
 				0B0DF3F4269D0E4C005535CC /* timetableTests */,
-				0B0DF3FE269D0E4C005535CC /* timetableUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -485,13 +435,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		0B0DF3F3269D0E4C005535CC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B0DF3FD269D0E4C005535CC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -548,14 +491,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0B0DF3FB269D0E4C005535CC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0B0DF404269D0E4C005535CC /* timetableUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -563,11 +498,6 @@
 			isa = PBXTargetDependency;
 			target = 0B0DF3E5269D0E4A005535CC /* timetable */;
 			targetProxy = 0B0DF3F6269D0E4C005535CC /* PBXContainerItemProxy */;
-		};
-		0B0DF401269D0E4C005535CC /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0B0DF3E5269D0E4A005535CC /* timetable */;
-			targetProxy = 0B0DF400269D0E4C005535CC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -687,54 +617,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/timetable.app/timetable";
-			};
-			name = Release;
-		};
-		0B0DF40C269D0E4C005535CC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C434CHPZ37;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hoffsilva.timetableUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = timetable;
-			};
-			name = Debug;
-		};
-		0B0DF40D269D0E4C005535CC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = C434CHPZ37;
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hoffsilva.timetableUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = timetable;
 			};
 			name = Release;
 		};
@@ -873,15 +755,6 @@
 			buildConfigurations = (
 				0B0DF409269D0E4C005535CC /* Debug */,
 				0B0DF40A269D0E4C005535CC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0B0DF40B269D0E4C005535CC /* Build configuration list for PBXNativeTarget "timetableUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0B0DF40C269D0E4C005535CC /* Debug */,
-				0B0DF40D269D0E4C005535CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
