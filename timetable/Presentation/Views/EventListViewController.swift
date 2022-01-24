@@ -18,7 +18,10 @@ class EventListViewController: UIViewController {
     private lazy var dataSource = makeDataSource()
     private var bag = Set<AnyCancellable>()
     
-    let appearence = AppearenceToggle()
+    private lazy var appearenceToggle: AppearenceToggle = {
+        AppearenceToggle()
+    }()
+    
     private lazy var userInterfaceStyleNameLabel: UILabel = {
         let label = UILabel()
         label.prepareForConstraints()
