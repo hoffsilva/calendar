@@ -44,6 +44,12 @@ class EventListViewController: UIViewController {
                     self?.updateDataSource(listOfMonth: events)
                 }
             }.store(in: &bag)
+        
+        viewModel
+            .$didGetErrorMessage
+            .sink {  [weak self] errorMessage in
+            
+            }.store(in: &bag)
     }
     
     private func updateDataSource(listOfMonth: [Month]) {

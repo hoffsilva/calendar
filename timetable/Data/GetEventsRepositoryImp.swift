@@ -19,7 +19,7 @@ final class GetEventsRepositoryImp: GetEventsRepository {
         dataSource.getEvents(from: from, completion: completion)
     }
     
-    func requestAccess(completion: @escaping ((Bool) -> Void)) {
+    func requestAccess(completion: @escaping ((Bool, LocalizedError?) -> Void)) {
         dataSource.requestAccess(completion: completion)
     }
     

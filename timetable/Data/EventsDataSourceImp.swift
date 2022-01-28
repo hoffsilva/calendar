@@ -19,12 +19,12 @@ final class EventsDataSourceImp: EventsDataSource {
         return formatter
     }()
     
-    func requestAccess(completion: @escaping ((Bool) -> Void)) {
+    func requestAccess(completion: @escaping ((Bool, LocalizedError?) -> Void)) {
         store.requestAccess(to: .event) { (granted, error) in
             if granted {
-                completion(granted)
+                completion(granted, nil)
             } else {
-                completion(false)
+                completion(false, EventsDataSourceImpError.notGranted)
             }
         }
     }
@@ -37,7 +37,15 @@ final class EventsDataSourceImp: EventsDataSource {
         let events = store.events(matching: predicate)
         completion(.success(events))
     }
+}
+
+enum EventsDataSourceImpError: LocalizedError {
+    case notGranted
     
-    
-    
+    var errorDescription: String? {
+        switch self {
+        case .notGranted:
+            return ""
+        }
+    }
 }

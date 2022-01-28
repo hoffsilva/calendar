@@ -11,12 +11,12 @@ import EventKit
 final class GetEventsUseCaseImp: GetEventsUseCase {
     
     let repository = GetEventsRepositoryImp(dataSource: EventsDataSourceImp())
-    
-    private var date = Date()
 
     func getEvents(from year: Int, completion: @escaping ((Result<[Month], Error>) -> Void)) {
-        repository.requestAccess { granted in
-            if granted {
+        repository.requestAccess { granted, error in
+            if let safeError = error {
+                completion(.failure(NSError.init(domain: safeError.localizedDescription, code: 0, userInfo: nil)))
+            } else if granted {
                 self.repository.getEvents(from: year) { result in
                     switch result {
                     case .success(let events):
@@ -26,10 +26,6 @@ final class GetEventsUseCaseImp: GetEventsUseCase {
                 }
             }
         }
-    }
-    
-    enum CalendarError: Error {
-        case generic
     }
     
     private func addEventInDay(month: inout Month, with event: EKEvent) {

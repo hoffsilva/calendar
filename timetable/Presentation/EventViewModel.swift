@@ -14,6 +14,7 @@ final class EventViewModel: ObservableObject {
     @Injected private var eventUseCase: GetEventsUseCase
     
     @Published var sections: [Month] = []
+    @Published var didGetErrorMessage: String = ""
     
     
     func requestAccess() {
@@ -21,7 +22,8 @@ final class EventViewModel: ObservableObject {
             switch result {
             case .success(let sections):
                 self.sections = sections
-            case .failure: ()
+            case .failure(let error):
+                self.didGetErrorMessage = error.localizedDescription
             }
         }
     }
