@@ -40,7 +40,9 @@ class EventListViewController: UIViewController {
         viewModel
             .$sections
             .sink { [weak self] events in
-                self?.updateDataSource(listOfMonth: events)
+                DispatchQueue.main.async {
+                    self?.updateDataSource(listOfMonth: events)
+                }
             }.store(in: &bag)
     }
     
