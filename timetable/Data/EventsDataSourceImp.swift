@@ -31,10 +31,13 @@ final class EventsDataSourceImp: EventsDataSource {
     
     func getEvents(from: Int, completion: @escaping ((Result<[EKEvent], Error>) -> Void)) {
         
-       let date = Date()
-        guard let next = Calendar(identifier: .gregorian).date(byAdding: .year, value: 1, to: date) else { return }
+        let date = Date()
+        
+        guard let numericMonth = Int(date.getShortMonth()),
+              let next = Calendar(identifier: .gregorian).date(byAdding: .month, value: 12 - numericMonth, to: date) else { return }
         
         let predicate = store.predicateForEvents(withStart: date, end: next, calendars: nil)
+        
         let events = store.events(matching: predicate)
         
         completion(.success(events))
