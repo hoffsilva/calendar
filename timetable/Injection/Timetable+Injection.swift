@@ -59,7 +59,7 @@ extension Resolver {
         
         register { _, args in
             ErrorViewModel(errorMessage: args.get("errorMessage"), allowCalendarAccess: args.get("allowCalendarAccess"))
-        }
+        }.scope(.application)
     }
     
     public static func registerUseCases() {
