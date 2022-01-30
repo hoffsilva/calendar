@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "LocalazyPackage",
+        "repositoryURL": "https://github.com/localazy/localazy-swift",
+        "state": {
+          "branch": null,
+          "revision": "921b29345b92919ed190be8ec88512e00191e624",
+          "version": "0.1.7"
+        }
+      },
+      {
         "package": "Resolver",
         "repositoryURL": "https://github.com/hmlongco/Resolver.git",
         "state": {

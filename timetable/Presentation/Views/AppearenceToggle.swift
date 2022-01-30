@@ -78,18 +78,14 @@ final class AppearenceToggle: UIView {
         UIView.animate(withDuration: 0.5) { [weak self] in
             if self?.foregroundViewRightConstraint?.constant == 0 {
                 self?.foregroundViewRightConstraint?.constant = -9
-                self?.foregroundView.backgroundColor = .timetableSystemBackgroundColor
             } else {
                 self?.foregroundViewRightConstraint?.constant = 0
-                self?.foregroundView.backgroundColor = .systemBackground
             }
             
             if self?.backgroundViewLeftConstraint?.constant == 0 {
-                self?.backgroundView.backgroundColor = .systemBackground
                 self?.backgroundViewLeftConstraint?.constant = 9
             } else {
                 self?.backgroundViewLeftConstraint?.constant = 0
-                self?.backgroundView.backgroundColor = .timetableSystemBackgroundColor
             }
             self?.layoutIfNeeded()
         }
