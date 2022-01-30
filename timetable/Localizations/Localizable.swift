@@ -25,8 +25,16 @@ final class Localizable {
         getLocalizedString(of: "error_screen_description")
     }
     
-    static func closeAction() -> String {
-        getLocalizedString(of: "close")
+    static func closeButtonTitle() -> String {
+        getLocalizedString(of: "close_button_title")
+    }
+    
+    static func allowCalendarAccessButtonTitle() -> String {
+        getLocalizedString(of: "allowCalendarAccess_button_title")
+    }
+    
+    static func descriptionOfErrorScreenWhenCalendarAccessNotGranted() -> String {
+        getLocalizedString(of: "error_screen_allowCallendarAccess_description")
     }
     
     private static func getLocalizedString(of key: String) -> String {

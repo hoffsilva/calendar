@@ -9,10 +9,12 @@ import Combine
 
 final class ErrorViewModel {
     
-    @Published var errorMessage: String
+    var errorMessage: ((String)->Void)?
+    var showAllowCalendarAccessButton: ((Bool)->Void)?
     
-    init(errorMessage: String) {
-        self.errorMessage = errorMessage
+    init(errorMessage: String, allowCalendarAccess: Bool) {
+        self.errorMessage?(errorMessage)
+        self.showAllowCalendarAccessButton?(allowCalendarAccess)
     }
     
 }

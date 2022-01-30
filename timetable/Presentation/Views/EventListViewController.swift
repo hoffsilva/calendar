@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Combine
 import Resolver
 
 protocol EventListViewControllerDelegate: AnyObject {
@@ -22,7 +21,6 @@ class EventListViewController: UIViewController {
     weak var delegate: EventListViewControllerDelegate?
     
     private lazy var dataSource = makeDataSource()
-    private var bag = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,18 +42,18 @@ class EventListViewController: UIViewController {
     
     func setupBindings() {
         viewModel
-            .$sections
-            .sink { [weak self] events in
+            .sections = { [weak self] events in
                 DispatchQueue.main.async {
                     self?.updateDataSource(listOfMonth: events)
                 }
-            }.store(in: &bag)
+            }
         
         viewModel
-            .$didGetErrorMessage
-            .sink {  [weak self] errorMessage in
-            
-            }.store(in: &bag)
+            .didGetErrorMessage = { [weak self] errorMessage in
+                DispatchQueue.main.async {
+                    self?.delegate?.didLoadDataWithAccessNotGranted()
+                }
+            }
     }
     
     private func updateDataSource(listOfMonth: [Month]) {

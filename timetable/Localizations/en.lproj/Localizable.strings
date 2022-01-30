@@ -9,4 +9,7 @@
 "light_mode" = "LIGHT MODE";
 "error_screen_title" = "Oops";
 "error_screen_description" = "The Event Wasn't Created!";
-"close" = "Close";
+"close_button_title" = "Close";
+"allowCalendarAccess_button_title" = "Allow access to the Calendar";
+"error_screen_allowCallendarAccess_description" = "Looks like you have not allowed me to access the iPhone Calendar.";
+

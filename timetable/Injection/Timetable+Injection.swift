@@ -48,7 +48,7 @@ extension Resolver {
         
         register {
             ErrorViewController()
-        }
+        }.scope(.application)
         
     }
     
@@ -58,7 +58,7 @@ extension Resolver {
         }
         
         register { _, args in
-            ErrorViewModel(errorMessage: args())
+            ErrorViewModel(errorMessage: args.get("errorMessage"), allowCalendarAccess: args.get("allowCalendarAccess"))
         }
     }
     

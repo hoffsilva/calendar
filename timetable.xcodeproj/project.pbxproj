@@ -43,6 +43,7 @@
 		0B0DF459269D1181005535CC /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B2780382678352F008EBA61 /* Rubik-BoldItalic.ttf */; };
 		0B0DF45A269D1184005535CC /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BF42EBC267C02F60074EB64 /* Extension+UIColor.swift */; };
 		0B0DF45F269D11DB005535CC /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2780282678352F008EBA61 /* EventViewModel.swift */; };
+		0B2CF06327A6F72C008E5177 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B2CF06227A6F72C008E5177 /* InfoPlist.strings */; };
 		0B424166276FAE9B00037845 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B424165276FAE9B00037845 /* String+Utils.swift */; };
 		0B54E7A02702A487006A1FB5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79E2702A487006A1FB5 /* AppDelegate.swift */; };
 		0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */; };
@@ -114,6 +115,7 @@
 		0B2780472678352F008EBA61 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		0B2780482678352F008EBA61 /* Months.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Months.swift; sourceTree = "<group>"; };
 		0B2780492678352F008EBA61 /* Month.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Month.swift; sourceTree = "<group>"; };
+		0B2CF06227A6F72C008E5177 /* InfoPlist.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		0B424165276FAE9B00037845 /* String+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
 		0B54E79E2702A487006A1FB5 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0B54E79F2702A487006A1FB5 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 			children = (
 				0BC557E927A6265300D7DC39 /* Localizable.strings */,
 				0BC557EC27A62F6600D7DC39 /* Localizable.swift */,
+				0B2CF06227A6F72C008E5177 /* InfoPlist.strings */,
 			);
 			path = Localizations;
 			sourceTree = "<group>";
@@ -407,7 +410,6 @@
 			mainGroup = 0BF3C96E265F17F1009C393F;
 			packageReferences = (
 				0BA628CE274F250B0046F492 /* XCRemoteSwiftPackageReference "Resolver" */,
-				0BB1858627A5719800F11A2C /* XCRemoteSwiftPackageReference "localazy-swift" */,
 			);
 			productRefGroup = 0BF3C978265F17F1009C393F /* Products */;
 			projectDirPath = "";
@@ -433,6 +435,7 @@
 				0BA628E1275B9AF00046F492 /* LaunchScreen.storyboard in Resources */,
 				0B0DF451269D116B005535CC /* Rubik-Black.ttf in Resources */,
 				0B0DF44E269D1164005535CC /* Rubik-Light.ttf in Resources */,
+				0B2CF06327A6F72C008E5177 /* InfoPlist.strings in Resources */,
 				0B0DF44F269D1166005535CC /* Rubik-Medium.ttf in Resources */,
 				0B0DF453269D1170005535CC /* Rubik-Italic.ttf in Resources */,
 				0B0DF459269D1181005535CC /* Rubik-BoldItalic.ttf in Resources */,
@@ -805,14 +808,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.1.2;
-			};
-		};
-		0BB1858627A5719800F11A2C /* XCRemoteSwiftPackageReference "localazy-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/localazy/localazy-swift";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.0.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

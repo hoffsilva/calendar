@@ -9,6 +9,11 @@ import Combine
 import Resolver
 import UIKit
 
+protocol ErrorViewControllerDelegate: AnyObject {
+    func didTopOnCloseButton()
+    func didTopOnAllowCalendarAccessButton()
+}
+
 class ErrorViewController: UIViewController {
     
     @Injected var errorViewModel: ErrorViewModel
@@ -16,23 +21,41 @@ class ErrorViewController: UIViewController {
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var errorTitleLabel: UILabel!
     @IBOutlet weak var errorDescriptionLabel: UILabel!
+    @IBOutlet weak var allowCalendarAccessButton: UIButton!
     
+    weak var delegate: ErrorViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStyle()
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        UIView.animate(withDuration: 3) {
+            self.view.alpha = 1
+        }
+        loadData()
     }
     
     private func loadData() {
-        errorViewModel.$errorMessage.sink { <#String#> in
-            <#code#>
-        }.store(in: &bag)
+        errorViewModel
+            .errorMessage = { errorDescription in
+                self.errorDescriptionLabel.text = errorDescription
+        }
+        
+        errorViewModel
+            .showAllowCalendarAccessButton = { isAccessNotaGranted in
+                self.allowCalendarAccessButton.isHidden = isAccessNotaGranted
+            }
     }
     
     private func setupStyle() {
         setupLabelFont()
         setupLabelColor()
-        setupButton()
+        setupCloseButton()
+        setupAllowCalendarAccessButton()
     }
     
     private func setupLabelFont() {
@@ -45,9 +68,34 @@ class ErrorViewController: UIViewController {
         errorDescriptionLabel.textColor = .timetableSystemBackgroundColor
     }
     
-    private func setupButton() {
-        closeButton.setTitle(Localizable.closeAction(), for: .normal)
-        closeButton.setTitleColor(.timetableRed, for: .normal)
+    private func setupCloseButton() {
+        let font = UIFont.rubikBold(16)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.timetableRed,
+        ]
+        let buttonTitle = NSAttributedString(string: Localizable.closeButtonTitle(), attributes: attributes)
+        closeButton.setAttributedTitle(buttonTitle, for: .normal)
+        closeButton.addTarget(self, action: #selector(didTapOnCloseButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTapOnCloseButton() {
+        self.delegate?.didTopOnCloseButton()
+    }
+    
+    private func setupAllowCalendarAccessButton() {
+        let font = UIFont.rubikBold(16)
+        let attributes: [NSAttributedString.Key: Any] = [
+            .font: font,
+            .foregroundColor: UIColor.timetableRed,
+        ]
+        let buttonTitle = NSAttributedString(string: Localizable.allowCalendarAccessButtonTitle(), attributes: attributes)
+        allowCalendarAccessButton.setAttributedTitle(buttonTitle, for: .normal)
+        allowCalendarAccessButton.addTarget(self, action: #selector(didTapOnAllowCalendarAccessButton), for: .touchUpInside)
+    }
+    
+    @objc private func didTapOnAllowCalendarAccessButton() {
+        self.delegate?.didTopOnAllowCalendarAccessButton()
     }
 
 }

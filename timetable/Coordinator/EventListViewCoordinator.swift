@@ -12,6 +12,7 @@ final class EventListViewCoordinator: Coordinator {
  
     private let window: UIWindow
     private var navigationController: UINavigationController?
+    private var eventListViewController: EventListViewController?
     @WeakLazyInjected private var delegate: Coordinator?
     
     internal init(window: UIWindow) {
@@ -19,10 +20,21 @@ final class EventListViewCoordinator: Coordinator {
     }
     
     func start() {
-        let eventListViewController = Resolver.resolve(EventListViewController.self)
-        eventListViewController.delegate = self
-        navigationController = TimeTableNavigationController(rootViewController: eventListViewController)
+        eventListViewController = Resolver.resolve(EventListViewController.self)
+        eventListViewController?.delegate = self
+        navigationController = TimeTableNavigationController(rootViewController: eventListViewController ?? UIViewController())
         self.window.rootViewController = navigationController
+    }
+    
+    func showErrorViewController(with errorMessage: String, and calendarAccessGranted: Bool) {
+        let errorViewModel: ErrorViewModel = Resolver.resolve(args: [
+            "errorMessage": errorMessage,
+            "allowCalendarAccess": calendarAccessGranted
+        ])
+        let errorViewController = Resolver.resolve(ErrorViewController.self, args: errorViewModel)
+        errorViewController.modalPresentationStyle = .overCurrentContext
+        errorViewController.delegate = self
+        navigationController?.viewControllers.first?.present(errorViewController, animated: true, completion: nil)
     }
 
 }
@@ -30,8 +42,23 @@ final class EventListViewCoordinator: Coordinator {
 extension EventListViewCoordinator: EventListViewControllerDelegate {
     
     func didLoadDataWithAccessNotGranted() {
-        let errorViewController = Resolver.resolve(ErrorViewController.self, args: Localizable.descriptionOfErrorScreen)
-        navigationController?.show(errorViewController, sender: nil)
+        showErrorViewController(with: Localizable.descriptionOfErrorScreenWhenCalendarAccessNotGranted(), and: false)
+    }
+    
+}
+
+extension EventListViewCoordinator: ErrorViewControllerDelegate {
+    
+    func didTopOnAllowCalendarAccessButton() {
+        navigationController?.viewControllers.last?.dismiss(animated: true, completion: {
+            UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+        })
+    }
+    
+    func didTopOnCloseButton() {
+        navigationController?.viewControllers.last?.dismiss(animated: true, completion: {
+            self.eventListViewController?.viewDidLoad()
+        })
     }
     
 }
