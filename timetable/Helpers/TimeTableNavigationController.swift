@@ -50,8 +50,10 @@ final class TimeTableNavigationController: UINavigationController {
     }
     
     private func setAppearenceToggleTitle() {
-        self.overrideUserInterfaceStyle = .dark
-        userInterfaceStyleNameLabel.text = self.overrideUserInterfaceStyle == .dark ? "LIGHT MODE" : "DARK MODE"
+        if self.overrideUserInterfaceStyle == .unspecified {
+            self.overrideUserInterfaceStyle = .dark
+        }
+        userInterfaceStyleNameLabel.text = self.overrideUserInterfaceStyle == .dark ? Localizable.lightMode() : Localizable.darkMode()
         userInterfaceStyleNameLabel.textColor = self.overrideUserInterfaceStyle == .dark ? .white : .black
     }
     

@@ -62,6 +62,8 @@
 		0BB1858427A39E0E00F11A2C /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB1858227A39E0E00F11A2C /* ErrorViewController.swift */; };
 		0BB1858527A39E0E00F11A2C /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BB1858327A39E0E00F11A2C /* ErrorViewController.xib */; };
 		0BC557E727A6265300D7DC39 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0BC557E927A6265300D7DC39 /* Localizable.strings */; };
+		0BC557ED27A62F6600D7DC39 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC557EC27A62F6600D7DC39 /* Localizable.swift */; };
+		0BC557EF27A632E800D7DC39 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC557EE27A632E800D7DC39 /* ErrorViewModel.swift */; };
 		0BEA78AC2765087B00933B33 /* AppearenceToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BEA78AB2765087B00933B33 /* AppearenceToggle.swift */; };
 /* End PBXBuildFile section */
 
@@ -130,6 +132,8 @@
 		0BB1858227A39E0E00F11A2C /* ErrorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
 		0BB1858327A39E0E00F11A2C /* ErrorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorViewController.xib; sourceTree = "<group>"; };
 		0BC557E827A6265300D7DC39 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0BC557EC27A62F6600D7DC39 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		0BC557EE27A632E800D7DC39 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
 		0BEA78AB2765087B00933B33 /* AppearenceToggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearenceToggle.swift; sourceTree = "<group>"; };
 		0BF3C983265F17F3009C393F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BF42EBA267AD6EA0074EB64 /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
@@ -177,13 +181,14 @@
 		0B2780262678352F008EBA61 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				0B2780282678352F008EBA61 /* EventViewModel.swift */,
-				0B2780292678352F008EBA61 /* Fonts */,
-				0B2780392678352F008EBA61 /* Views */,
-				0BA628DE2758EE5E0046F492 /* EventCellViewModel.swift */,
-				0BA628E0275B9AF00046F492 /* LaunchScreen.storyboard */,
 				0BA628E8275B9F3C0046F492 /* CustomLaunchScreen.swift */,
 				0BA628E9275B9F3C0046F492 /* CustomLaunchScreen.xib */,
+				0BA628DE2758EE5E0046F492 /* EventCellViewModel.swift */,
+				0B2780282678352F008EBA61 /* EventViewModel.swift */,
+				0B2780292678352F008EBA61 /* Fonts */,
+				0BA628E0275B9AF00046F492 /* LaunchScreen.storyboard */,
+				0B2780392678352F008EBA61 /* Views */,
+				0BC557EE27A632E800D7DC39 /* ErrorViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -290,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				0BC557E927A6265300D7DC39 /* Localizable.strings */,
+				0BC557EC27A62F6600D7DC39 /* Localizable.swift */,
 			);
 			path = Localizations;
 			sourceTree = "<group>";
@@ -465,6 +471,7 @@
 				0BA628F1275BA9200046F492 /* AppCoordinator.swift in Sources */,
 				0B0DF448269D1146005535CC /* Month.swift in Sources */,
 				0B0DF442269D1134005535CC /* GetEventsRepository.swift in Sources */,
+				0BC557EF27A632E800D7DC39 /* ErrorViewModel.swift in Sources */,
 				0B077DEF272D88A6005006F2 /* UIView+Constraints.swift in Sources */,
 				0BA628F4275BAAC20046F492 /* EventListViewCoordinator.swift in Sources */,
 				0B54E7A12702A487006A1FB5 /* SceneDelegate.swift in Sources */,
@@ -478,6 +485,7 @@
 				0BA628DF2758EE5E0046F492 /* EventCellViewModel.swift in Sources */,
 				0B0DF45A269D1184005535CC /* Extension+UIColor.swift in Sources */,
 				0B0DF44A269D114E005535CC /* Time.swift in Sources */,
+				0BC557ED27A62F6600D7DC39 /* Localizable.swift in Sources */,
 				0B0237132777660D001AC484 /* EventListViewController.swift in Sources */,
 				0B424166276FAE9B00037845 /* String+Utils.swift in Sources */,
 				0B0DF443269D1137005535CC /* GetEventsUseCase.swift in Sources */,

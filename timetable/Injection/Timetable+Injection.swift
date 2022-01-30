@@ -46,11 +46,19 @@ extension Resolver {
             CustomLaunchScreen()
         }
         
+        register {
+            ErrorViewController()
+        }
+        
     }
     
     public static func registerViewModels() {
         register {
             EventViewModel()
+        }
+        
+        register { _, args in
+            ErrorViewModel(errorMessage: args())
         }
     }
     

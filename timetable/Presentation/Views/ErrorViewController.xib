@@ -10,6 +10,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ErrorViewController" customModule="timetable" customModuleProvider="target">
             <connections>
+                <outlet property="closeButton" destination="YIg-wZ-U05" id="w8O-SR-OSw"/>
+                <outlet property="errorDescriptionLabel" destination="V8q-6e-hw3" id="e9Y-GY-qGy"/>
+                <outlet property="errorTitleLabel" destination="ZFZ-wm-P62" id="nc6-uf-hEU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

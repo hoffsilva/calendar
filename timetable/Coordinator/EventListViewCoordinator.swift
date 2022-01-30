@@ -8,10 +8,10 @@
 import Resolver
 import UIKit
 
-
 final class EventListViewCoordinator: Coordinator {
  
     private let window: UIWindow
+    private var navigationController: UINavigationController?
     @WeakLazyInjected private var delegate: Coordinator?
     
     internal init(window: UIWindow) {
@@ -19,8 +19,19 @@ final class EventListViewCoordinator: Coordinator {
     }
     
     func start() {
-        let navigationController = TimeTableNavigationController(rootViewController: Resolver.resolve(EventListViewController.self))
+        let eventListViewController = Resolver.resolve(EventListViewController.self)
+        eventListViewController.delegate = self
+        navigationController = TimeTableNavigationController(rootViewController: eventListViewController)
         self.window.rootViewController = navigationController
+    }
+
+}
+
+extension EventListViewCoordinator: EventListViewControllerDelegate {
+    
+    func didLoadDataWithAccessNotGranted() {
+        let errorViewController = Resolver.resolve(ErrorViewController.self, args: Localizable.descriptionOfErrorScreen)
+        navigationController?.show(errorViewController, sender: nil)
     }
     
 }

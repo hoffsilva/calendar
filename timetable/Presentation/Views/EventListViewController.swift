@@ -9,11 +9,17 @@ import UIKit
 import Combine
 import Resolver
 
+protocol EventListViewControllerDelegate: AnyObject {
+    func didLoadDataWithAccessNotGranted()
+}
+
 class EventListViewController: UIViewController {
     
     @Injected private var viewModel: EventViewModel
     
     @IBOutlet weak var listViewTableView: UITableView!
+    
+    weak var delegate: EventListViewControllerDelegate?
     
     private lazy var dataSource = makeDataSource()
     private var bag = Set<AnyCancellable>()
