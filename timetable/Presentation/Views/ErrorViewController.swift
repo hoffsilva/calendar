@@ -28,25 +28,25 @@ class ErrorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStyle()
-        
+        loadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        UIView.animate(withDuration: 3) {
+        UIView.animate(withDuration: 1) {
             self.view.alpha = 1
         }
-        loadData()
+        errorViewModel.lodaData()
     }
     
     private func loadData() {
         errorViewModel
-            .errorMessage = { errorDescription in
+            .didLoadWithErrorMessage = { errorDescription in
                 self.errorDescriptionLabel.text = errorDescription
         }
         
         errorViewModel
-            .showAllowCalendarAccessButton = { isAccessNotaGranted in
+            .shouldShowAllowCalendarAccessButton = { isAccessNotaGranted in
                 self.allowCalendarAccessButton.isHidden = isAccessNotaGranted
             }
     }
@@ -80,7 +80,11 @@ class ErrorViewController: UIViewController {
     }
     
     @objc private func didTapOnCloseButton() {
-        self.delegate?.didTopOnCloseButton()
+        UIView.animate(withDuration: 1) {
+            self.view.alpha = 0
+        } completion: { _ in
+            self.delegate?.didTopOnCloseButton()
+        }
     }
     
     private func setupAllowCalendarAccessButton() {
@@ -95,7 +99,11 @@ class ErrorViewController: UIViewController {
     }
     
     @objc private func didTapOnAllowCalendarAccessButton() {
-        self.delegate?.didTopOnAllowCalendarAccessButton()
+        UIView.animate(withDuration: 1) {
+            self.view.alpha = 0
+        } completion: { _ in
+            self.delegate?.didTopOnAllowCalendarAccessButton()
+        }
     }
 
 }
