@@ -41,14 +41,17 @@ extension Resolver {
         register {
             EventListViewController()
         }
+        .scope(.application)
         
         register {
             CustomLaunchScreen()
         }
+        .scope(.application)
         
-        register {
+        register { _, args in
             ErrorViewController()
-        }.scope(.application)
+        }
+        .scope(.application)
         
     }
     
@@ -56,10 +59,12 @@ extension Resolver {
         register {
             EventViewModel()
         }
+        .scope(.application)
         
         register { _, args in
             ErrorViewModel(errorMessage: args.get("errorMessage"), allowCalendarAccess: args.get("allowCalendarAccess"))
-        }.scope(.application)
+        }
+        .scope(.application)
     }
     
     public static func registerUseCases() {
@@ -67,6 +72,7 @@ extension Resolver {
         register {
             GetEventsUseCaseImp()
         }
+        .scope(.application)
         .implements(GetEventsUseCase.self)
         
     }
