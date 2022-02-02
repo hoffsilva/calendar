@@ -9,12 +9,20 @@ import Combine
 
 final class ErrorViewModel {
     
-    var errorMessage: ((String)->Void)?
-    var showAllowCalendarAccessButton: ((Bool)->Void)?
+    var didLoadWithErrorMessage: ((String)->Void)?
+    var shouldShowAllowCalendarAccessButton: ((Bool)->Void)?
+    
+    private let errorMessage: String
+    private let showAllowCalendarAccessButton: Bool
     
     init(errorMessage: String, allowCalendarAccess: Bool) {
-        self.errorMessage?(errorMessage)
-        self.showAllowCalendarAccessButton?(allowCalendarAccess)
+        self.errorMessage = errorMessage
+        self.showAllowCalendarAccessButton = allowCalendarAccess
+    }
+    
+    func lodaData() {
+        self.didLoadWithErrorMessage?(errorMessage)
+        self.shouldShowAllowCalendarAccessButton?(showAllowCalendarAccessButton)
     }
     
 }
