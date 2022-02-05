@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol GetEventsUseCase {
-    func getEvents(from year: Int, completion: @escaping((Result<[SectionForEvents], Error>) -> Void))
+public protocol GetEventsUseCase {
+    func getEvents(from year: Int, completion: @escaping((Result<[Month], Error>) -> Void))
 }

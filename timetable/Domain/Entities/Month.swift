@@ -5,14 +5,19 @@
 //  Created by Hoff Silva on 03/06/21.
 //
 
-struct Month: Hashable {
+import Foundation
+
+public struct Month: Hashable {
     
-    let name: String
-    let number: Int
+    public var name: String
+    public var days: [Day]
+    public var month: Months
+    let uuid = UUID()
     
-    init(name: String, number: Int) {
+    public init(name: String, days: [Day], month: Months) {
         self.name = name
-        self.number = number
+        self.days = days
+        self.month = month
     }
     
 }

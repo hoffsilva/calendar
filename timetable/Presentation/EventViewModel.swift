@@ -5,23 +5,25 @@
 //  Created by Hoff Silva on 29/05/21.
 //
 
-import Combine
 import Foundation
+import Resolver
+import Domain
 
 final class EventViewModel: ObservableObject {
     
-    private let eventUseCase = GetEventsUseCaseImp()
+    @Injected private var eventUseCase: GetEventsUseCase
     
-    @Published var sections: [SectionForEvents] = []
+    var sections: (([Month])->Void)?
+    var didGetErrorMessage: ((String)->Void)?
+    
     
     func requestAccess() {
         eventUseCase.getEvents(from: 2021) { result in
             switch result {
             case .success(let sections):
-                DispatchQueue.main.async {
-                    self.sections = sections
-                }
-            case .failure: ()
+                self.sections?(sections)
+            case .failure(let error):
+                self.didGetErrorMessage?(error.localizedDescription)
             }
         }
     }

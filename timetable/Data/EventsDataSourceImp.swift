@@ -6,6 +6,7 @@
 //
 
 import EventKit
+import Domain
 
 final class EventsDataSourceImp: EventsDataSource {
     
@@ -19,57 +20,33 @@ final class EventsDataSourceImp: EventsDataSource {
         return formatter
     }()
     
-    func requestAccess(completion: @escaping ((Bool) -> Void)) {
+    func requestAccess(completion: @escaping ((Bool, LocalizedError?) -> Void)) {
         store.requestAccess(to: .event) { (granted, error) in
             if granted {
-                completion(granted)
+                completion(granted, nil)
             } else {
-                completion(false)
+                completion(false, EventsDataSourceImpError.notGranted)
             }
         }
     }
     
-    func getEvents(from: Int, completion: @escaping ((Result<[Event], Error>) -> Void)) {
-        
-        guard
-            let startDate = dateFormatter.date(from: "01/01/\(from)"),
-            let endDate = dateFormatter.date(from: "31/12/\(from)")
-        else { return completion(.failure(NSError(domain: "", code: 0, userInfo: nil))) }
-        
-        let predicate = store.predicateForEvents(withStart: startDate, end: endDate, calendars: nil)
+    func getEvents(from: Int, completion: @escaping ((Result<[EKEvent], Error>) -> Void)) {
+        let today = Date()
+        guard let numericMonth = Int(today.getShortMonth()),
+              let endDate = Calendar(identifier: .gregorian).date(byAdding: .month, value: 12 - numericMonth, to: today) else { return }
+        let predicate = store.predicateForEvents(withStart: today, end: endDate, calendars: nil)
         let events = store.events(matching: predicate)
-        
-        completion(.success(mapEvent(events: events)))
+        completion(.success(events))
     }
+}
+
+enum EventsDataSourceImpError: LocalizedError {
+    case notGranted
     
-    private func mapEvent(events: [EKEvent]) -> [Event] {
-        events.map { event in
-            Event(
-                startDate: event.startDate,
-                endDate: event.endDate,
-                isAllDay: event.isAllDay,
-                location: Location(
-                    latitude: event.structuredLocation?.geoLocation?.coordinate.latitude ?? 0,
-                    longitude: event.structuredLocation?.geoLocation?.coordinate.longitude ?? 0
-                ),
-                month: getMonth(of: event.startDate),
-                title: event.title,
-                year: event.startDate.getYear(),
-                day: event.startDate.getIntDay()
-            )
+    var errorDescription: String? {
+        switch self {
+        case .notGranted:
+            return ""
         }
     }
-    
-    private func getMonth(of date: Date) -> Month {
-        let dateComponent = Calendar.current.dateComponents([.month], from: date)
-        self.dateFormatter.setLocalizedDateFormatFromTemplate("MMMM")
-        guard let monthNumber = dateComponent.month else {
-            return Month(name: "0", number: 0)
-        }
-        return Month(
-            name: dateFormatter.string(from: date),
-            number: monthNumber
-        )
-    }
-    
 }

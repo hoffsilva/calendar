@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct Day: Hashable {
+public struct Day: Hashable {
     
-    let number: String
-    var events: [Event]
+    public let number: String
+    public var events: [Event]
     
-    init(number: String, events: [Event]) {
+    public init(number: String, events: [Event]) {
         self.number = number
         self.events = events
     }
