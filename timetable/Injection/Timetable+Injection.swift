@@ -23,12 +23,6 @@ extension Resolver {
     public static func registerCoordinators() {
         
         register { _, args in
-            AppCoordinator(window: args())
-        }
-        .scope(.application)
-        .implements(Coordinator.self)
-        
-        register { _, args in
             EventListViewCoordinator(window: args("window"))
         }
         .scope(.application)
