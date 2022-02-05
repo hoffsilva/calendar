@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Calendar.xcscheme_^#shared#^_</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
-		</dict>
 		<key>timetable.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
@@ -17,6 +12,16 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0B0DF3E5269D0E4A005535CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0B0DF3F4269D0E4C005535CC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0B745BDC2669935500A3AB19</key>
 		<dict>
 			<key>primary</key>
