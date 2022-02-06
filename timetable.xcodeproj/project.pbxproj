@@ -32,6 +32,7 @@
 		0B3331D627AFFFED00695F27 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1827AEF0AF00644CE2 /* Rubik-Italic.ttf */; };
 		0B3331D727AFFFED00695F27 /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1627AEF0AF00644CE2 /* Rubik-ExtraBoldItalic.ttf */; };
 		0B3331D827B000DA00695F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */; };
+		0B3331DA27B00F1D00695F27 /* CustomLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3331D927B00F1D00695F27 /* CustomLaunchScreen.swift */; };
 		0B471D8A27AEEA3400644CE2 /* GetEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8927AEEA3400644CE2 /* GetEventsUseCase.swift */; };
 		0B471D9127AEEA4E00644CE2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8C27AEEA4E00644CE2 /* Location.swift */; };
 		0B471D9227AEEA4E00644CE2 /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8D27AEEA4E00644CE2 /* Months.swift */; };
@@ -56,7 +57,6 @@
 		0B471E0827AEF07000644CE2 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E0727AEF07000644CE2 /* UITests.swift */; };
 		0B471E3827AEF0AF00644CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1F27AEF0AF00644CE2 /* LaunchScreen.storyboard */; };
 		0B471E3927AEF0AF00644CE2 /* CustomLaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E2027AEF0AF00644CE2 /* CustomLaunchScreen.xib */; };
-		0B471E3A27AEF0AF00644CE2 /* CustomLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E2127AEF0AF00644CE2 /* CustomLaunchScreen.swift */; };
 		0B471E3B27AEF0AF00644CE2 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E2327AEF0AF00644CE2 /* EventCell.swift */; };
 		0B471E3C27AEF0AF00644CE2 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E2427AEF0AF00644CE2 /* EventCell.xib */; };
 		0B471E3D27AEF0AF00644CE2 /* AppearenceToggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E2527AEF0AF00644CE2 /* AppearenceToggle.swift */; };
@@ -216,6 +216,7 @@
 		0B3331B827AF00AE00695F27 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0B3331BA27AFF03400695F27 /* Timetable+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timetable+Injection.swift"; sourceTree = "<group>"; };
 		0B3331C327AFF88300695F27 /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
+		0B3331D927B00F1D00695F27 /* CustomLaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLaunchScreen.swift; sourceTree = "<group>"; };
 		0B471D8227AEE99900644CE2 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B471D8927AEEA3400644CE2 /* GetEventsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEventsUseCase.swift; sourceTree = "<group>"; };
 		0B471D8C27AEEA4E00644CE2 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -259,7 +260,6 @@
 		0B471E1E27AEF0AF00644CE2 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		0B471E1F27AEF0AF00644CE2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B471E2027AEF0AF00644CE2 /* CustomLaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLaunchScreen.xib; sourceTree = "<group>"; };
-		0B471E2127AEF0AF00644CE2 /* CustomLaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLaunchScreen.swift; path = /Users/hoffsilva/Developer/timetable/timetable/UI/CustomLaunchScreen.swift; sourceTree = "<absolute>"; };
 		0B471E2327AEF0AF00644CE2 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		0B471E2427AEF0AF00644CE2 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		0B471E2527AEF0AF00644CE2 /* AppearenceToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearenceToggle.swift; sourceTree = "<group>"; };
@@ -475,7 +475,7 @@
 				0B471E5127AEF2E500644CE2 /* String+Utils.swift */,
 				0B471E5227AEF2E500644CE2 /* TimeTableNavigationController.swift */,
 				0B471E4D27AEF2E400644CE2 /* UIView+Constraints.swift */,
-				0B471E2127AEF0AF00644CE2 /* CustomLaunchScreen.swift */,
+				0B3331D927B00F1D00695F27 /* CustomLaunchScreen.swift */,
 				0B471E2027AEF0AF00644CE2 /* CustomLaunchScreen.xib */,
 				0B471E1F27AEF0AF00644CE2 /* LaunchScreen.storyboard */,
 				0B471DC127AEEB8F00644CE2 /* String+Utils.swift */,
@@ -971,13 +971,13 @@
 				0B471E4127AEF0AF00644CE2 /* EventListViewController.swift in Sources */,
 				0B471E3B27AEF0AF00644CE2 /* EventCell.swift in Sources */,
 				0B3331BB27AFF03400695F27 /* Timetable+Injection.swift in Sources */,
+				0B3331DA27B00F1D00695F27 /* CustomLaunchScreen.swift in Sources */,
 				0B471E3E27AEF0AF00644CE2 /* ErrorViewController.swift in Sources */,
 				0B471E5927AEF2E500644CE2 /* TimeTableNavigationController.swift in Sources */,
 				0B3331C227AFF1FE00695F27 /* Coordinator.swift in Sources */,
 				0B471E5627AEF2E500644CE2 /* Extension+UIFont.swift in Sources */,
 				0B471E5427AEF2E500644CE2 /* UIView+Constraints.swift in Sources */,
 				0B471E3D27AEF0AF00644CE2 /* AppearenceToggle.swift in Sources */,
-				0B471E3A27AEF0AF00644CE2 /* CustomLaunchScreen.swift in Sources */,
 				0B471E5327AEF2E500644CE2 /* Extension+UIColor.swift in Sources */,
 				0B3331C727AFFAFF00695F27 /* Localizable.swift in Sources */,
 				0B471E5727AEF2E500644CE2 /* PaddableLabel.swift in Sources */,
