@@ -9,14 +9,14 @@ import Foundation
 
 public struct Event: Hashable {
     
-    let startDate: Date
-    let endDate: Date
-    let isAllDay: Bool
-    let location: String?
-    let title: String
-    let year: Int
-    let day: Int
-    let uuid = UUID()
+   public let startDate: Date
+   public let endDate: Date
+   public let isAllDay: Bool
+   public let location: String?
+   public let title: String
+   public let year: Int
+   public let day: Int
+   public let uuid = UUID()
     
     public init(startDate: Date, endDate: Date, isAllDay: Bool, location: String?, title: String, year: Int, day: Int) {
         self.startDate = startDate

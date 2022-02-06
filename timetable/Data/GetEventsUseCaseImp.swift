@@ -8,11 +8,13 @@
 import EventKit
 import Domain
 
-final class GetEventsUseCaseImp: GetEventsUseCase {
+public final class GetEventsUseCaseImp: GetEventsUseCase {
     
     let repository = GetEventsRepositoryImp(dataSource: EventsDataSourceImp())
+    
+    public init() {}
 
-    func getEvents(from year: Int, completion: @escaping ((Result<[Month], Error>) -> Void)) {
+    public func getEvents(from year: Int, completion: @escaping ((Result<[Month], Error>) -> Void)) {
         repository.requestAccess { granted, error in
             if let safeError = error {
                 completion(.failure(NSError.init(domain: safeError.localizedDescription, code: 0, userInfo: nil)))

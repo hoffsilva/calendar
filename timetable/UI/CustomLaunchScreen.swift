@@ -7,20 +7,28 @@
 
 import UIKit
 
-protocol CustomLaunchScreenDelegate: AnyObject {
+public protocol CustomLaunchScreenDelegate: AnyObject {
     func finishDidLoad()
 }
 
-class CustomLaunchScreen: UIViewController {
+public class CustomLaunchScreen: UIViewController {
     
     @IBOutlet weak var appIconImageView: UIImageView!
     
-    weak var delegate: CustomLaunchScreenDelegate?
+    public weak var delegate: CustomLaunchScreenDelegate?
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setAppIconImage()
         waitingForLoading()
+    }
+    
+    public override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     private func setAppIconImage() {
@@ -33,8 +41,5 @@ class CustomLaunchScreen: UIViewController {
             self?.delegate?.finishDidLoad()
         }
     }
-            
-    
-            
 
 }

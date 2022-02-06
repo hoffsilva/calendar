@@ -18,6 +18,7 @@ extension UIFont {
     }
     
     static func rubikBold(_ size: CGFloat) -> UIFont {
+        
         UIFont(name: "Rubik-Bold", size: size) ?? UIFont.systemFont(ofSize: size)
     }
     

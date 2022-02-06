@@ -7,6 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B3331B627AF004300695F27 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DC827AEEB9000644CE2 /* Date+Extensions.swift */; };
+		0B3331B727AF005A00695F27 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DC627AEEB9000644CE2 /* Time.swift */; };
+		0B3331BB27AFF03400695F27 /* Timetable+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3331BA27AFF03400695F27 /* Timetable+Injection.swift */; };
+		0B3331C027AFF1F000695F27 /* EventListViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E7E27AEF42A00644CE2 /* EventListViewCoordinator.swift */; };
+		0B3331C127AFF1FA00695F27 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E7427AEF3C200644CE2 /* AppCoordinator.swift */; };
+		0B3331C227AFF1FE00695F27 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3331B827AF00AE00695F27 /* Coordinator.swift */; };
+		0B3331C427AFF88300695F27 /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3331C327AFF88300695F27 /* Extensions+UIViewController.swift */; };
+		0B3331C527AFFAF300695F27 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E8127AEF43A00644CE2 /* Localizable.strings */; };
+		0B3331C627AFFAF800695F27 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E8327AEF43A00644CE2 /* InfoPlist.strings */; };
+		0B3331C727AFFAFF00695F27 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E8427AEF43A00644CE2 /* Localizable.swift */; };
+		0B3331CA27AFFFED00695F27 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1127AEF0AF00644CE2 /* Rubik-MediumItalic.ttf */; };
+		0B3331CB27AFFFED00695F27 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1227AEF0AF00644CE2 /* Rubik-Bold.ttf */; };
+		0B3331CC27AFFFED00695F27 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1B27AEF0AF00644CE2 /* Rubik-BlackItalic.ttf */; };
+		0B3331CD27AFFFED00695F27 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1A27AEF0AF00644CE2 /* Rubik-SemiBold.ttf */; };
+		0B3331CE27AFFFED00695F27 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1727AEF0AF00644CE2 /* Rubik-Black.ttf */; };
+		0B3331CF27AFFFED00695F27 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1427AEF0AF00644CE2 /* Rubik-Light.ttf */; };
+		0B3331D027AFFFED00695F27 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1927AEF0AF00644CE2 /* Rubik-LightItalic.ttf */; };
+		0B3331D127AFFFED00695F27 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1E27AEF0AF00644CE2 /* Rubik-BoldItalic.ttf */; };
+		0B3331D227AFFFED00695F27 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1D27AEF0AF00644CE2 /* Rubik-Regular.ttf */; };
+		0B3331D327AFFFED00695F27 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1527AEF0AF00644CE2 /* Rubik-Medium.ttf */; };
+		0B3331D427AFFFED00695F27 /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1327AEF0AF00644CE2 /* Rubik-SemiBoldItalic.ttf */; };
+		0B3331D527AFFFED00695F27 /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1C27AEF0AF00644CE2 /* Rubik-ExtraBold.ttf */; };
+		0B3331D627AFFFED00695F27 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1827AEF0AF00644CE2 /* Rubik-Italic.ttf */; };
+		0B3331D727AFFFED00695F27 /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1627AEF0AF00644CE2 /* Rubik-ExtraBoldItalic.ttf */; };
+		0B3331D827B000DA00695F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */; };
 		0B471D8A27AEEA3400644CE2 /* GetEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8927AEEA3400644CE2 /* GetEventsUseCase.swift */; };
 		0B471D9127AEEA4E00644CE2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8C27AEEA4E00644CE2 /* Location.swift */; };
 		0B471D9227AEEA4E00644CE2 /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8D27AEEA4E00644CE2 /* Months.swift */; };
@@ -20,9 +45,6 @@
 		0B471DB827AEEACE00644CE2 /* EventsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DB427AEEACE00644CE2 /* EventsDataSource.swift */; };
 		0B471DB927AEEACE00644CE2 /* GetEventsRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DB527AEEACE00644CE2 /* GetEventsRepositoryImp.swift */; };
 		0B471DBA27AEEACE00644CE2 /* GetEventsUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DB627AEEACE00644CE2 /* GetEventsUseCaseImp.swift */; };
-		0B471DCA27AEEB9000644CE2 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DC127AEEB8F00644CE2 /* String+Utils.swift */; };
-		0B471DCF27AEEB9000644CE2 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DC627AEEB9000644CE2 /* Time.swift */; };
-		0B471DD127AEEB9000644CE2 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DC827AEEB9000644CE2 /* Date+Extensions.swift */; };
 		0B471DD327AEEE5D00644CE2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
 		0B471DD427AEEE5D00644CE2 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B471DE327AEEF2A00644CE2 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; };
@@ -32,20 +54,6 @@
 		0B471DF527AEEF5400644CE2 /* EventCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DF227AEEF5400644CE2 /* EventCellViewModel.swift */; };
 		0B471E0327AEF07000644CE2 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; };
 		0B471E0827AEF07000644CE2 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E0727AEF07000644CE2 /* UITests.swift */; };
-		0B471E2A27AEF0AF00644CE2 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1127AEF0AF00644CE2 /* Rubik-MediumItalic.ttf */; };
-		0B471E2B27AEF0AF00644CE2 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1227AEF0AF00644CE2 /* Rubik-Bold.ttf */; };
-		0B471E2C27AEF0AF00644CE2 /* Rubik-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1327AEF0AF00644CE2 /* Rubik-SemiBoldItalic.ttf */; };
-		0B471E2D27AEF0AF00644CE2 /* Rubik-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1427AEF0AF00644CE2 /* Rubik-Light.ttf */; };
-		0B471E2E27AEF0AF00644CE2 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1527AEF0AF00644CE2 /* Rubik-Medium.ttf */; };
-		0B471E2F27AEF0AF00644CE2 /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1627AEF0AF00644CE2 /* Rubik-ExtraBoldItalic.ttf */; };
-		0B471E3027AEF0AF00644CE2 /* Rubik-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1727AEF0AF00644CE2 /* Rubik-Black.ttf */; };
-		0B471E3127AEF0AF00644CE2 /* Rubik-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1827AEF0AF00644CE2 /* Rubik-Italic.ttf */; };
-		0B471E3227AEF0AF00644CE2 /* Rubik-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1927AEF0AF00644CE2 /* Rubik-LightItalic.ttf */; };
-		0B471E3327AEF0AF00644CE2 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1A27AEF0AF00644CE2 /* Rubik-SemiBold.ttf */; };
-		0B471E3427AEF0AF00644CE2 /* Rubik-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1B27AEF0AF00644CE2 /* Rubik-BlackItalic.ttf */; };
-		0B471E3527AEF0AF00644CE2 /* Rubik-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1C27AEF0AF00644CE2 /* Rubik-ExtraBold.ttf */; };
-		0B471E3627AEF0AF00644CE2 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1D27AEF0AF00644CE2 /* Rubik-Regular.ttf */; };
-		0B471E3727AEF0AF00644CE2 /* Rubik-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1E27AEF0AF00644CE2 /* Rubik-BoldItalic.ttf */; };
 		0B471E3827AEF0AF00644CE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1F27AEF0AF00644CE2 /* LaunchScreen.storyboard */; };
 		0B471E3927AEF0AF00644CE2 /* CustomLaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E2027AEF0AF00644CE2 /* CustomLaunchScreen.xib */; };
 		0B471E3A27AEF0AF00644CE2 /* CustomLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E2127AEF0AF00644CE2 /* CustomLaunchScreen.swift */; };
@@ -66,14 +74,8 @@
 		0B471E5827AEF2E500644CE2 /* String+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E5127AEF2E500644CE2 /* String+Utils.swift */; };
 		0B471E5927AEF2E500644CE2 /* TimeTableNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E5227AEF2E500644CE2 /* TimeTableNavigationController.swift */; };
 		0B471E7627AEF3C200644CE2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E7327AEF3C200644CE2 /* AppDelegate.swift */; };
-		0B471E7727AEF3C200644CE2 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E7427AEF3C200644CE2 /* AppCoordinator.swift */; };
 		0B471E7827AEF3C200644CE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E7527AEF3C200644CE2 /* SceneDelegate.swift */; };
-		0B471E7A27AEF3DB00644CE2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E7927AEF3DB00644CE2 /* Info.plist */; };
 		0B471E7C27AEF3FB00644CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */; };
-		0B471E7F27AEF42A00644CE2 /* EventListViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E7E27AEF42A00644CE2 /* EventListViewCoordinator.swift */; };
-		0B471E8527AEF43A00644CE2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E8127AEF43A00644CE2 /* Localizable.strings */; };
-		0B471E8627AEF43A00644CE2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E8327AEF43A00644CE2 /* InfoPlist.strings */; };
-		0B471E8727AEF43A00644CE2 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E8427AEF43A00644CE2 /* Localizable.swift */; };
 		0B471E8827AEF4F400644CE2 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; };
 		0B471E8927AEF4F400644CE2 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B471E8C27AEF4F400644CE2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
@@ -211,6 +213,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B3331B827AF00AE00695F27 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		0B3331BA27AFF03400695F27 /* Timetable+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timetable+Injection.swift"; sourceTree = "<group>"; };
+		0B3331C327AFF88300695F27 /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		0B471D8227AEE99900644CE2 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B471D8927AEEA3400644CE2 /* GetEventsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEventsUseCase.swift; sourceTree = "<group>"; };
 		0B471D8C27AEEA4E00644CE2 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -226,7 +231,7 @@
 		0B471DB427AEEACE00644CE2 /* EventsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsDataSource.swift; sourceTree = "<group>"; };
 		0B471DB527AEEACE00644CE2 /* GetEventsRepositoryImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEventsRepositoryImp.swift; sourceTree = "<group>"; };
 		0B471DB627AEEACE00644CE2 /* GetEventsUseCaseImp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEventsUseCaseImp.swift; sourceTree = "<group>"; };
-		0B471DC127AEEB8F00644CE2 /* String+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utils.swift"; sourceTree = "<group>"; };
+		0B471DC127AEEB8F00644CE2 /* String+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Utils.swift"; path = "../String+Utils.swift"; sourceTree = "<group>"; };
 		0B471DC627AEEB9000644CE2 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		0B471DC827AEEB9000644CE2 /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		0B471DDB27AEEF2A00644CE2 /* Presentation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Presentation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,7 +259,7 @@
 		0B471E1E27AEF0AF00644CE2 /* Rubik-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-BoldItalic.ttf"; sourceTree = "<group>"; };
 		0B471E1F27AEF0AF00644CE2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B471E2027AEF0AF00644CE2 /* CustomLaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomLaunchScreen.xib; sourceTree = "<group>"; };
-		0B471E2127AEF0AF00644CE2 /* CustomLaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLaunchScreen.swift; sourceTree = "<group>"; };
+		0B471E2127AEF0AF00644CE2 /* CustomLaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLaunchScreen.swift; path = /Users/hoffsilva/Developer/timetable/timetable/UI/CustomLaunchScreen.swift; sourceTree = "<absolute>"; };
 		0B471E2327AEF0AF00644CE2 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		0B471E2427AEF0AF00644CE2 /* EventCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
 		0B471E2527AEF0AF00644CE2 /* AppearenceToggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppearenceToggle.swift; sourceTree = "<group>"; };
@@ -356,9 +361,6 @@
 		0B471D5B27AEE88F00644CE2 = {
 			isa = PBXGroup;
 			children = (
-				0B471DC827AEEB9000644CE2 /* Date+Extensions.swift */,
-				0B471DC127AEEB8F00644CE2 /* String+Utils.swift */,
-				0B471DC627AEEB9000644CE2 /* Time.swift */,
 				0B471D8327AEE99900644CE2 /* Domain */,
 				0B471D9C27AEEAA400644CE2 /* Data */,
 				0B471DA627AEEAA400644CE2 /* DataTests */,
@@ -411,10 +413,12 @@
 		0B471D9C27AEEAA400644CE2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0B471DC627AEEB9000644CE2 /* Time.swift */,
 				0B471DB427AEEACE00644CE2 /* EventsDataSource.swift */,
 				0B471DB327AEEACE00644CE2 /* EventsDataSourceImp.swift */,
 				0B471DB527AEEACE00644CE2 /* GetEventsRepositoryImp.swift */,
 				0B471DB627AEEACE00644CE2 /* GetEventsUseCaseImp.swift */,
+				0B471DC827AEEB9000644CE2 /* Date+Extensions.swift */,
 				0B471DB027AEEAC300644CE2 /* Repositories */,
 			);
 			path = Data;
@@ -473,9 +477,13 @@
 				0B471E4D27AEF2E400644CE2 /* UIView+Constraints.swift */,
 				0B471E2127AEF0AF00644CE2 /* CustomLaunchScreen.swift */,
 				0B471E2027AEF0AF00644CE2 /* CustomLaunchScreen.xib */,
-				0B471E1027AEF0AF00644CE2 /* Fonts */,
 				0B471E1F27AEF0AF00644CE2 /* LaunchScreen.storyboard */,
+				0B471DC127AEEB8F00644CE2 /* String+Utils.swift */,
+				0B3331BA27AFF03400695F27 /* Timetable+Injection.swift */,
+				0B471E7D27AEF42A00644CE2 /* Coordinator */,
 				0B471E2227AEF0AF00644CE2 /* Views */,
+				0B3331C327AFF88300695F27 /* Extensions+UIViewController.swift */,
+				0B471E8027AEF43A00644CE2 /* Localizations */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -526,12 +534,11 @@
 		0B471E5F27AEF35E00644CE2 /* timetable */ = {
 			isa = PBXGroup;
 			children = (
-				0B471E7D27AEF42A00644CE2 /* Coordinator */,
-				0B471E7427AEF3C200644CE2 /* AppCoordinator.swift */,
+				0B471E1027AEF0AF00644CE2 /* Fonts */,
+				0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */,
 				0B471E7327AEF3C200644CE2 /* AppDelegate.swift */,
 				0B471E7527AEF3C200644CE2 /* SceneDelegate.swift */,
 				0B471E7927AEF3DB00644CE2 /* Info.plist */,
-				0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */,
 				0B471E7227AEF3C100644CE2 /* timetable-Bridging-Header.h */,
 			);
 			path = timetable;
@@ -540,8 +547,9 @@
 		0B471E7D27AEF42A00644CE2 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				0B471E8027AEF43A00644CE2 /* Localizations */,
 				0B471E7E27AEF42A00644CE2 /* EventListViewCoordinator.swift */,
+				0B471E7427AEF3C200644CE2 /* AppCoordinator.swift */,
+				0B3331B827AF00AE00695F27 /* Coordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -855,25 +863,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B471E2F27AEF0AF00644CE2 /* Rubik-ExtraBoldItalic.ttf in Resources */,
-				0B471E2C27AEF0AF00644CE2 /* Rubik-SemiBoldItalic.ttf in Resources */,
-				0B471E2D27AEF0AF00644CE2 /* Rubik-Light.ttf in Resources */,
+				0B3331C627AFFAF800695F27 /* InfoPlist.strings in Resources */,
 				0B471E3F27AEF0AF00644CE2 /* EventListViewController.xib in Resources */,
 				0B471E3827AEF0AF00644CE2 /* LaunchScreen.storyboard in Resources */,
+				0B3331C527AFFAF300695F27 /* Localizable.strings in Resources */,
 				0B471E3C27AEF0AF00644CE2 /* EventCell.xib in Resources */,
 				0B471E4027AEF0AF00644CE2 /* ErrorViewController.xib in Resources */,
-				0B471E3227AEF0AF00644CE2 /* Rubik-LightItalic.ttf in Resources */,
-				0B471E3027AEF0AF00644CE2 /* Rubik-Black.ttf in Resources */,
-				0B471E3727AEF0AF00644CE2 /* Rubik-BoldItalic.ttf in Resources */,
-				0B471E3427AEF0AF00644CE2 /* Rubik-BlackItalic.ttf in Resources */,
-				0B471E3127AEF0AF00644CE2 /* Rubik-Italic.ttf in Resources */,
-				0B471E2A27AEF0AF00644CE2 /* Rubik-MediumItalic.ttf in Resources */,
-				0B471E3327AEF0AF00644CE2 /* Rubik-SemiBold.ttf in Resources */,
-				0B471E2B27AEF0AF00644CE2 /* Rubik-Bold.ttf in Resources */,
-				0B471E3627AEF0AF00644CE2 /* Rubik-Regular.ttf in Resources */,
+				0B3331D827B000DA00695F27 /* Assets.xcassets in Resources */,
 				0B471E3927AEF0AF00644CE2 /* CustomLaunchScreen.xib in Resources */,
-				0B471E3527AEF0AF00644CE2 /* Rubik-ExtraBold.ttf in Resources */,
-				0B471E2E27AEF0AF00644CE2 /* Rubik-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -888,10 +885,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B3331CE27AFFFED00695F27 /* Rubik-Black.ttf in Resources */,
+				0B3331D527AFFFED00695F27 /* Rubik-ExtraBold.ttf in Resources */,
+				0B3331D027AFFFED00695F27 /* Rubik-LightItalic.ttf in Resources */,
+				0B3331D727AFFFED00695F27 /* Rubik-ExtraBoldItalic.ttf in Resources */,
 				0B471E7C27AEF3FB00644CE2 /* Assets.xcassets in Resources */,
-				0B471E8627AEF43A00644CE2 /* InfoPlist.strings in Resources */,
-				0B471E8527AEF43A00644CE2 /* Localizable.strings in Resources */,
-				0B471E7A27AEF3DB00644CE2 /* Info.plist in Resources */,
+				0B3331D627AFFFED00695F27 /* Rubik-Italic.ttf in Resources */,
+				0B3331D427AFFFED00695F27 /* Rubik-SemiBoldItalic.ttf in Resources */,
+				0B3331D227AFFFED00695F27 /* Rubik-Regular.ttf in Resources */,
+				0B3331CB27AFFFED00695F27 /* Rubik-Bold.ttf in Resources */,
+				0B3331CD27AFFFED00695F27 /* Rubik-SemiBold.ttf in Resources */,
+				0B3331CC27AFFFED00695F27 /* Rubik-BlackItalic.ttf in Resources */,
+				0B3331CF27AFFFED00695F27 /* Rubik-Light.ttf in Resources */,
+				0B3331D127AFFFED00695F27 /* Rubik-BoldItalic.ttf in Resources */,
+				0B3331D327AFFFED00695F27 /* Rubik-Medium.ttf in Resources */,
+				0B3331CA27AFFFED00695F27 /* Rubik-MediumItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -917,12 +925,11 @@
 			files = (
 				0B471DB727AEEACE00644CE2 /* EventsDataSourceImp.swift in Sources */,
 				0B471DB227AEEAC300644CE2 /* GetEventsRepository.swift in Sources */,
-				0B471DCF27AEEB9000644CE2 /* Time.swift in Sources */,
-				0B471DD127AEEB9000644CE2 /* Date+Extensions.swift in Sources */,
-				0B471DCA27AEEB9000644CE2 /* String+Utils.swift in Sources */,
+				0B3331B727AF005A00695F27 /* Time.swift in Sources */,
 				0B471DB927AEEACE00644CE2 /* GetEventsRepositoryImp.swift in Sources */,
 				0B471DB827AEEACE00644CE2 /* EventsDataSource.swift in Sources */,
 				0B471DBA27AEEACE00644CE2 /* GetEventsUseCaseImp.swift in Sources */,
+				0B3331B627AF004300695F27 /* Date+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -956,17 +963,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B3331C427AFF88300695F27 /* Extensions+UIViewController.swift in Sources */,
+				0B3331C027AFF1F000695F27 /* EventListViewCoordinator.swift in Sources */,
 				0B471E5827AEF2E500644CE2 /* String+Utils.swift in Sources */,
 				0B471E5527AEF2E500644CE2 /* Extension+UILabel.swift in Sources */,
+				0B3331C127AFF1FA00695F27 /* AppCoordinator.swift in Sources */,
 				0B471E4127AEF0AF00644CE2 /* EventListViewController.swift in Sources */,
 				0B471E3B27AEF0AF00644CE2 /* EventCell.swift in Sources */,
+				0B3331BB27AFF03400695F27 /* Timetable+Injection.swift in Sources */,
 				0B471E3E27AEF0AF00644CE2 /* ErrorViewController.swift in Sources */,
 				0B471E5927AEF2E500644CE2 /* TimeTableNavigationController.swift in Sources */,
+				0B3331C227AFF1FE00695F27 /* Coordinator.swift in Sources */,
 				0B471E5627AEF2E500644CE2 /* Extension+UIFont.swift in Sources */,
 				0B471E5427AEF2E500644CE2 /* UIView+Constraints.swift in Sources */,
 				0B471E3D27AEF0AF00644CE2 /* AppearenceToggle.swift in Sources */,
 				0B471E3A27AEF0AF00644CE2 /* CustomLaunchScreen.swift in Sources */,
 				0B471E5327AEF2E500644CE2 /* Extension+UIColor.swift in Sources */,
+				0B3331C727AFFAFF00695F27 /* Localizable.swift in Sources */,
 				0B471E5727AEF2E500644CE2 /* PaddableLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -983,10 +996,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B471E7727AEF3C200644CE2 /* AppCoordinator.swift in Sources */,
 				0B471E7627AEF3C200644CE2 /* AppDelegate.swift in Sources */,
-				0B471E8727AEF43A00644CE2 /* Localizable.swift in Sources */,
-				0B471E7F27AEF42A00644CE2 /* EventListViewCoordinator.swift in Sources */,
 				0B471E7827AEF3C200644CE2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1115,7 +1125,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				INFOPLIST_FILE = timetable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1173,7 +1184,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				INFOPLIST_FILE = timetable/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

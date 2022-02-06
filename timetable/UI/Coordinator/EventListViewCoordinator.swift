@@ -7,26 +7,27 @@
 
 import Resolver
 import UIKit
+import Presentation
 
-final class EventListViewCoordinator: Coordinator {
+public final class EventListViewCoordinator: Coordinator {
  
     private let window: UIWindow
     private var navigationController: UINavigationController?
     private var eventListViewController: EventListViewController?
     @WeakLazyInjected private var delegate: Coordinator?
     
-    internal init(window: UIWindow) {
+    public  init(window: UIWindow) {
         self.window = window
     }
     
-    func start() {
+    public func start() {
         eventListViewController = Resolver.resolve(EventListViewController.self)
         eventListViewController?.delegate = self
         navigationController = TimeTableNavigationController(rootViewController: eventListViewController ?? UIViewController())
         self.window.rootViewController = navigationController
     }
     
-    func showErrorViewController(with errorMessage: String, and calendarAccessGranted: Bool) {
+    public func showErrorViewController(with errorMessage: String, and calendarAccessGranted: Bool) {
         let errorViewModel: ErrorViewModel = Resolver.resolve(args: [
             "errorMessage": errorMessage,
             "allowCalendarAccess": calendarAccessGranted
@@ -41,7 +42,7 @@ final class EventListViewCoordinator: Coordinator {
 
 extension EventListViewCoordinator: EventListViewControllerDelegate {
     
-    func didLoadDataWithAccessNotGranted() {
+    public func didLoadDataWithAccessNotGranted() {
         showErrorViewController(with: Localizable.descriptionOfErrorScreenWhenCalendarAccessNotGranted(), and: false)
     }
     
@@ -49,13 +50,13 @@ extension EventListViewCoordinator: EventListViewControllerDelegate {
 
 extension EventListViewCoordinator: ErrorViewControllerDelegate {
     
-    func didTopOnAllowCalendarAccessButton() {
+    public func didTopOnAllowCalendarAccessButton() {
         navigationController?.viewControllers.last?.dismiss(animated: true, completion: {
             UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
         })
     }
     
-    func didTopOnCloseButton() {
+    public func didTopOnCloseButton() {
         navigationController?.viewControllers.last?.dismiss(animated: true, completion: {
             self.eventListViewController?.viewDidLoad()
         })

@@ -7,22 +7,25 @@
 
 import UIKit
 import Resolver
+import Presentation
+import Domain
+import Data
 
-protocol EventListViewControllerDelegate: AnyObject {
+public protocol EventListViewControllerDelegate: AnyObject {
     func didLoadDataWithAccessNotGranted()
 }
 
-class EventListViewController: UIViewController {
+public class EventListViewController: UIViewController {
     
     @Injected private var viewModel: EventViewModel
     
     @IBOutlet weak var listViewTableView: UITableView!
     
-    weak var delegate: EventListViewControllerDelegate?
+    public weak var delegate: EventListViewControllerDelegate?
     
     private lazy var dataSource = makeDataSource()
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.requestAccess()
         registerCell()
@@ -71,7 +74,7 @@ class EventListViewController: UIViewController {
     }
     
     private func registerCell() {
-        let nibName = UINib(nibName: String(describing: EventCell.self), bundle: nil)
+        let nibName = UINib(nibName: String(describing: EventCell.self), bundle: Bundle(for: EventCell.self))
         listViewTableView.register(nibName, forCellReuseIdentifier: String(describing: EventCell.self))
     }
     
@@ -95,19 +98,19 @@ class EventListViewController: UIViewController {
 
 extension EventListViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    public func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         60
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         return createSectionHeaderView(
             with: dataSource.sectionIdentifier(for: section)?.name
         )

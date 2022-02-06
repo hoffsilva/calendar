@@ -8,15 +8,15 @@
 import Resolver
 import UIKit
 
-final class AppCoordinator: Coordinator {
+public final class AppCoordinator: Coordinator {
     
     private let window: UIWindow
     
-    init(window: UIWindow) {
+    public init(window: UIWindow) {
         self.window = window
     }
     
-    func start() {
+    public func start() {
         window.makeKeyAndVisible()
         showLaunchScreen()
     }
@@ -36,7 +36,7 @@ final class AppCoordinator: Coordinator {
 
 extension AppCoordinator: CustomLaunchScreenDelegate {
     
-    func finishDidLoad() {
+    public func finishDidLoad() {
         self.showEventListView()
     }
     

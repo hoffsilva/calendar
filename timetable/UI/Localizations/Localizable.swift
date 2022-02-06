@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Localizable {
+public final class Localizable {
     
     static func darkMode() -> String {
         getLocalizedString(of: "dark_mode")
@@ -38,7 +38,7 @@ final class Localizable {
     }
     
     private static func getLocalizedString(of key: String) -> String {
-        NSLocalizedString(key, comment: key)
+        NSLocalizedString(key, bundle: Bundle(for: Localizable.self), comment: key)
     }
     
 }

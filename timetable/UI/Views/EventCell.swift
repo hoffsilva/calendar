@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import Domain
 
-class EventCell: UITableViewCell {
+public class EventCell: UITableViewCell {
     
     @IBOutlet weak var eventDayLabel: PaddableLabel!
     
@@ -19,7 +20,7 @@ class EventCell: UITableViewCell {
     
     @IBOutlet weak var eventTitleLabel: UILabel!
 
-    override func awakeFromNib() {
+    public override func awakeFromNib() {
         super.awakeFromNib()
         clearCell()
         setupStyle()
@@ -64,7 +65,7 @@ class EventCell: UITableViewCell {
         conflictLabel.isHidden = true
     }
     
-    func setupData(_ data: Day) {
+    public func setupData(_ data: Day) {
         eventDayLabel.text = data.number
         eventDayLabel.addCharacterSpacing(kernValue: -8)
         eventHourLabel.text = data.events.first?.startDate.getHour()

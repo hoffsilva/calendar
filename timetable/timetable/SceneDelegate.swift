@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Resolver
+import UI
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 

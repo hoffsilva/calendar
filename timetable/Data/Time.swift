@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Time: Comparable, Equatable {
+public class Time: Comparable, Equatable {
     
     init(_ date: Date) {
         //get the current calender
@@ -55,25 +55,25 @@ class Time: Comparable, Equatable {
     private let secondsSinceBeginningOfDay: Int
     
     //comparisions so you can compare times
-    static func == (lhs: Time, rhs: Time) -> Bool {
+    public static func == (lhs: Time, rhs: Time) -> Bool {
         return lhs.secondsSinceBeginningOfDay == rhs.secondsSinceBeginningOfDay
     }
     
-    static func < (lhs: Time, rhs: Time) -> Bool {
+    public static func < (lhs: Time, rhs: Time) -> Bool {
         return lhs.secondsSinceBeginningOfDay < rhs.secondsSinceBeginningOfDay
     }
     
-    static func <= (lhs: Time, rhs: Time) -> Bool {
+    public static func <= (lhs: Time, rhs: Time) -> Bool {
         return lhs.secondsSinceBeginningOfDay <= rhs.secondsSinceBeginningOfDay
     }
     
     
-    static func >= (lhs: Time, rhs: Time) -> Bool {
+    public static func >= (lhs: Time, rhs: Time) -> Bool {
         return lhs.secondsSinceBeginningOfDay >= rhs.secondsSinceBeginningOfDay
     }
     
     
-    static func > (lhs: Time, rhs: Time) -> Bool {
+    public static func > (lhs: Time, rhs: Time) -> Bool {
         return lhs.secondsSinceBeginningOfDay > rhs.secondsSinceBeginningOfDay
     }
 }

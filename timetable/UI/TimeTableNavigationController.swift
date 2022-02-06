@@ -7,9 +7,9 @@
 
 import UIKit
 
-final class TimeTableNavigationController: UINavigationController {
+public final class TimeTableNavigationController: UINavigationController {
     
-    override init(rootViewController: UIViewController) {
+    public override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.shadowImage = UIImage()
@@ -32,12 +32,12 @@ final class TimeTableNavigationController: UINavigationController {
         return label
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         configureAppearenceToggle()
     }
     
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setAppearenceToggleTitle()
     }

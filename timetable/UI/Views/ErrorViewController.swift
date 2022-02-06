@@ -8,13 +8,14 @@
 import Combine
 import Resolver
 import UIKit
+import Presentation
 
-protocol ErrorViewControllerDelegate: AnyObject {
+public protocol ErrorViewControllerDelegate: AnyObject {
     func didTopOnCloseButton()
     func didTopOnAllowCalendarAccessButton()
 }
 
-class ErrorViewController: UIViewController {
+public class ErrorViewController: UIViewController {
     
     @Injected var errorViewModel: ErrorViewModel
     
@@ -23,15 +24,15 @@ class ErrorViewController: UIViewController {
     @IBOutlet weak var errorDescriptionLabel: UILabel!
     @IBOutlet weak var allowCalendarAccessButton: UIButton!
     
-    weak var delegate: ErrorViewControllerDelegate?
+    public weak var delegate: ErrorViewControllerDelegate?
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
         setupStyle()
         loadData()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    public override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         UIView.animate(withDuration: 1) {
             self.view.alpha = 1
