@@ -33,6 +33,15 @@
 		0B3331D727AFFFED00695F27 /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1627AEF0AF00644CE2 /* Rubik-ExtraBoldItalic.ttf */; };
 		0B3331D827B000DA00695F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */; };
 		0B3331DA27B00F1D00695F27 /* CustomLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3331D927B00F1D00695F27 /* CustomLaunchScreen.swift */; };
+		0B3331DC27B17E5A00695F27 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0B3331DB27B17E5A00695F27 /* Resolver */; };
+		0B3331E727B17F2C00695F27 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; };
+		0B3331ED27B17FEB00695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; platformFilter = ios; };
+		0B3331F027B1805F00695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; platformFilter = ios; };
+		0B3331F227B1806C00695F27 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; platformFilter = ios; };
+		0B3331FE27B181CB00695F27 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0B3331FD27B181CB00695F27 /* Resolver */; };
+		0B33320027B181DD00695F27 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0B3331FF27B181DD00695F27 /* Resolver */; };
+		0B33320127B1824F00695F27 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; };
+		0B33320527B1824F00695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; platformFilter = ios; };
 		0B471D8A27AEEA3400644CE2 /* GetEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8927AEEA3400644CE2 /* GetEventsUseCase.swift */; };
 		0B471D9127AEEA4E00644CE2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8C27AEEA4E00644CE2 /* Location.swift */; };
 		0B471D9227AEEA4E00644CE2 /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8D27AEEA4E00644CE2 /* Months.swift */; };
@@ -46,7 +55,6 @@
 		0B471DB827AEEACE00644CE2 /* EventsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DB427AEEACE00644CE2 /* EventsDataSource.swift */; };
 		0B471DB927AEEACE00644CE2 /* GetEventsRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DB527AEEACE00644CE2 /* GetEventsRepositoryImp.swift */; };
 		0B471DBA27AEEACE00644CE2 /* GetEventsUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DB627AEEACE00644CE2 /* GetEventsUseCaseImp.swift */; };
-		0B471DD327AEEE5D00644CE2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; platformFilter = ios; };
 		0B471DE327AEEF2A00644CE2 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; };
 		0B471DE827AEEF2A00644CE2 /* PresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DE727AEEF2A00644CE2 /* PresentationTests.swift */; };
 		0B471DF327AEEF5400644CE2 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DF027AEEF5400644CE2 /* EventViewModel.swift */; };
@@ -63,7 +71,6 @@
 		0B471E3F27AEF0AF00644CE2 /* EventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E2727AEF0AF00644CE2 /* EventListViewController.xib */; };
 		0B471E4027AEF0AF00644CE2 /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E2827AEF0AF00644CE2 /* ErrorViewController.xib */; };
 		0B471E4127AEF0AF00644CE2 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E2927AEF0AF00644CE2 /* EventListViewController.swift */; };
-		0B471E4727AEF1D400644CE2 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; platformFilter = ios; };
 		0B471E5327AEF2E500644CE2 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E4C27AEF2E400644CE2 /* Extension+UIColor.swift */; };
 		0B471E5427AEF2E500644CE2 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E4D27AEF2E400644CE2 /* UIView+Constraints.swift */; };
 		0B471E5527AEF2E500644CE2 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E4E27AEF2E500644CE2 /* Extension+UILabel.swift */; };
@@ -78,11 +85,30 @@
 		0B471E8C27AEF4F400644CE2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
 		0B471E9027AEF4F400644CE2 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; platformFilter = ios; };
 		0B471E9427AEF4F500644CE2 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; platformFilter = ios; };
-		0B471E9927AEF52000644CE2 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; };
-		0B471EA027AEF76E00644CE2 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0B471E9F27AEF76E00644CE2 /* Resolver */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0B3331EB27B17F7900695F27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B471D8127AEE99900644CE2;
+			remoteInfo = Domain;
+		};
+		0B33320327B1824F00695F27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B471D9A27AEEAA400644CE2;
+			remoteInfo = Data;
+		};
+		0B33320727B1824F00695F27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B471D8127AEE99900644CE2;
+			remoteInfo = Domain;
+		};
 		0B471DA427AEEAA400644CE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
@@ -235,7 +261,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B471EA027AEF76E00644CE2 /* Resolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,7 +268,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B471DD327AEEE5D00644CE2 /* Domain.framework in Frameworks */,
+				0B3331ED27B17FEB00695F27 /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +284,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B471E9927AEF52000644CE2 /* Data.framework in Frameworks */,
+				0B33320027B181DD00695F27 /* Resolver in Frameworks */,
+				0B3331F027B1805F00695F27 /* Domain.framework in Frameworks */,
+				0B3331E727B17F2C00695F27 /* Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +302,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B471E4727AEF1D400644CE2 /* Presentation.framework in Frameworks */,
+				0B33320527B1824F00695F27 /* Domain.framework in Frameworks */,
+				0B33320127B1824F00695F27 /* Data.framework in Frameworks */,
+				0B3331FE27B181CB00695F27 /* Resolver in Frameworks */,
+				0B3331F227B1806C00695F27 /* Presentation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +324,7 @@
 				0B471E8C27AEF4F400644CE2 /* Domain.framework in Frameworks */,
 				0B471E8827AEF4F400644CE2 /* Data.framework in Frameworks */,
 				0B471E9427AEF4F500644CE2 /* UI.framework in Frameworks */,
+				0B3331DC27B17E5A00695F27 /* Resolver in Frameworks */,
 				0B471E9027AEF4F400644CE2 /* Presentation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,7 +587,6 @@
 			);
 			name = Domain;
 			packageProductDependencies = (
-				0B471E9F27AEF76E00644CE2 /* Resolver */,
 			);
 			productName = Domain;
 			productReference = 0B471D8227AEE99900644CE2 /* Domain.framework */;
@@ -612,8 +642,12 @@
 			);
 			dependencies = (
 				0B471E9C27AEF52000644CE2 /* PBXTargetDependency */,
+				0B3331EC27B17F7900695F27 /* PBXTargetDependency */,
 			);
 			name = Presentation;
+			packageProductDependencies = (
+				0B3331FF27B181DD00695F27 /* Resolver */,
+			);
 			productName = Presentation;
 			productReference = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */;
 			productType = "com.apple.product-type.framework";
@@ -649,8 +683,13 @@
 			);
 			dependencies = (
 				0B471E4A27AEF1D400644CE2 /* PBXTargetDependency */,
+				0B33320427B1824F00695F27 /* PBXTargetDependency */,
+				0B33320827B1824F00695F27 /* PBXTargetDependency */,
 			);
 			name = UI;
+			packageProductDependencies = (
+				0B3331FD27B181CB00695F27 /* Resolver */,
+			);
 			productName = UI;
 			productReference = 0B471DFB27AEF07000644CE2 /* UI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -690,6 +729,9 @@
 				0B471E9727AEF4F500644CE2 /* PBXTargetDependency */,
 			);
 			name = timetable;
+			packageProductDependencies = (
+				0B3331DB27B17E5A00695F27 /* Resolver */,
+			);
 			productName = timetable;
 			productReference = 0B471E5E27AEF35E00644CE2 /* timetable.app */;
 			productType = "com.apple.product-type.application";
@@ -943,6 +985,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0B3331EC27B17F7900695F27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 0B471D8127AEE99900644CE2 /* Domain */;
+			targetProxy = 0B3331EB27B17F7900695F27 /* PBXContainerItemProxy */;
+		};
+		0B33320427B1824F00695F27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 0B471D9A27AEEAA400644CE2 /* Data */;
+			targetProxy = 0B33320327B1824F00695F27 /* PBXContainerItemProxy */;
+		};
+		0B33320827B1824F00695F27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = 0B471D8127AEE99900644CE2 /* Domain */;
+			targetProxy = 0B33320727B1824F00695F27 /* PBXContainerItemProxy */;
+		};
 		0B471DA527AEEAA400644CE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0B471D9A27AEEAA400644CE2 /* Data */;
@@ -1673,7 +1733,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0B471E9F27AEF76E00644CE2 /* Resolver */ = {
+		0B3331DB27B17E5A00695F27 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B471E9E27AEF76E00644CE2 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+		0B3331FD27B181CB00695F27 /* Resolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0B471E9E27AEF76E00644CE2 /* XCRemoteSwiftPackageReference "Resolver" */;
+			productName = Resolver;
+		};
+		0B3331FF27B181DD00695F27 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 0B471E9E27AEF76E00644CE2 /* XCRemoteSwiftPackageReference "Resolver" */;
 			productName = Resolver;
