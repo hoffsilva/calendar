@@ -47,7 +47,6 @@
 		0B471DB927AEEACE00644CE2 /* GetEventsRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DB527AEEACE00644CE2 /* GetEventsRepositoryImp.swift */; };
 		0B471DBA27AEEACE00644CE2 /* GetEventsUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DB627AEEACE00644CE2 /* GetEventsUseCaseImp.swift */; };
 		0B471DD327AEEE5D00644CE2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
-		0B471DD427AEEE5D00644CE2 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B471DE327AEEF2A00644CE2 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; };
 		0B471DE827AEEF2A00644CE2 /* PresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DE727AEEF2A00644CE2 /* PresentationTests.swift */; };
 		0B471DF327AEEF5400644CE2 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DF027AEEF5400644CE2 /* EventViewModel.swift */; };
@@ -65,7 +64,6 @@
 		0B471E4027AEF0AF00644CE2 /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E2827AEF0AF00644CE2 /* ErrorViewController.xib */; };
 		0B471E4127AEF0AF00644CE2 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E2927AEF0AF00644CE2 /* EventListViewController.swift */; };
 		0B471E4727AEF1D400644CE2 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; platformFilter = ios; };
-		0B471E4827AEF1D400644CE2 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B471E5327AEF2E500644CE2 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E4C27AEF2E400644CE2 /* Extension+UIColor.swift */; };
 		0B471E5427AEF2E500644CE2 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E4D27AEF2E400644CE2 /* UIView+Constraints.swift */; };
 		0B471E5527AEF2E500644CE2 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E4E27AEF2E500644CE2 /* Extension+UILabel.swift */; };
@@ -85,7 +83,6 @@
 		0B471E9427AEF4F500644CE2 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; platformFilter = ios; };
 		0B471E9527AEF4F500644CE2 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B471E9927AEF52000644CE2 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; };
-		0B471E9A27AEF52000644CE2 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B471EA027AEF76E00644CE2 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0B471E9F27AEF76E00644CE2 /* Resolver */; };
 /* End PBXBuildFile section */
 
@@ -163,28 +160,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		0B471DD527AEEE5D00644CE2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0B471DD427AEEE5D00644CE2 /* Domain.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B471E4B27AEF1D400644CE2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0B471E4827AEF1D400644CE2 /* Presentation.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0B471E9827AEF4F500644CE2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,17 +170,6 @@
 				0B471E8927AEF4F400644CE2 /* Data.framework in Embed Frameworks */,
 				0B471E9527AEF4F500644CE2 /* UI.framework in Embed Frameworks */,
 				0B471E9127AEF4F400644CE2 /* Presentation.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0B471E9D27AEF52000644CE2 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0B471E9A27AEF52000644CE2 /* Data.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,7 +591,6 @@
 				0B471D9727AEEAA400644CE2 /* Sources */,
 				0B471D9827AEEAA400644CE2 /* Frameworks */,
 				0B471D9927AEEAA400644CE2 /* Resources */,
-				0B471DD527AEEE5D00644CE2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -665,7 +628,6 @@
 				0B471DD727AEEF2A00644CE2 /* Sources */,
 				0B471DD827AEEF2A00644CE2 /* Frameworks */,
 				0B471DD927AEEF2A00644CE2 /* Resources */,
-				0B471E9D27AEF52000644CE2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -703,7 +665,6 @@
 				0B471DF727AEF07000644CE2 /* Sources */,
 				0B471DF827AEF07000644CE2 /* Frameworks */,
 				0B471DF927AEF07000644CE2 /* Resources */,
-				0B471E4B27AEF1D400644CE2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1575,7 +1536,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = timetable/Info.plist;
@@ -1609,7 +1570,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = timetable/Info.plist;
