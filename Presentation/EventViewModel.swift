@@ -6,20 +6,23 @@
 //
 
 import Foundation
-import Resolver
 import Domain
 
 public final class EventViewModel: ObservableObject {
     
-    @Injected private var eventUseCase: GetEventsUseCase
+    private var eventUseCase: GetEventsUseCase
     
     public var sections: (([Month])->Void)?
     public var didGetErrorMessage: ((String)->Void)?
     
-    public init(sections: (([Month]) -> Void)? = nil, didGetErrorMessage: ((String) -> Void)? = nil) {
-        self.sections = sections
-        self.didGetErrorMessage = didGetErrorMessage
-    }
+    public init(
+        eventUseCase: GetEventsUseCase,
+        sections: (([Month]) -> Void)? = nil,
+        didGetErrorMessage: ((String) -> Void)? = nil) {
+            self.sections = sections
+            self.didGetErrorMessage = didGetErrorMessage
+            self.eventUseCase = eventUseCase
+        }
     
     public func requestAccess() {
         eventUseCase.getEvents(from: 2021) { result in

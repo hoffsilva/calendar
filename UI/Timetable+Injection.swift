@@ -55,7 +55,7 @@ extension Resolver {
     
     public static func registerViewModels() {
         register {
-            EventViewModel()
+            EventViewModel(eventUseCase: Resolver.resolve(GetEventsUseCase.self))
         }
         .scope(.application)
         
