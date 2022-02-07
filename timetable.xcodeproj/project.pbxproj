@@ -46,7 +46,7 @@
 		0B471DB827AEEACE00644CE2 /* EventsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DB427AEEACE00644CE2 /* EventsDataSource.swift */; };
 		0B471DB927AEEACE00644CE2 /* GetEventsRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DB527AEEACE00644CE2 /* GetEventsRepositoryImp.swift */; };
 		0B471DBA27AEEACE00644CE2 /* GetEventsUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DB627AEEACE00644CE2 /* GetEventsUseCaseImp.swift */; };
-		0B471DD327AEEE5D00644CE2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
+		0B471DD327AEEE5D00644CE2 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; platformFilter = ios; };
 		0B471DE327AEEF2A00644CE2 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; };
 		0B471DE827AEEF2A00644CE2 /* PresentationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DE727AEEF2A00644CE2 /* PresentationTests.swift */; };
 		0B471DF327AEEF5400644CE2 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DF027AEEF5400644CE2 /* EventViewModel.swift */; };
@@ -950,6 +950,7 @@
 		};
 		0B471DBF27AEEB3400644CE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
+			platformFilter = ios;
 			target = 0B471D8127AEE99900644CE2 /* Domain */;
 			targetProxy = 0B471DBE27AEEB3400644CE2 /* PBXContainerItemProxy */;
 		};
@@ -1537,7 +1538,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "timetable/timetable-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1570,7 +1571,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "timetable/timetable-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
