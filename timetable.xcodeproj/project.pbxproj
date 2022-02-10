@@ -33,12 +33,11 @@
 		0B3331D727AFFFED00695F27 /* Rubik-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1627AEF0AF00644CE2 /* Rubik-ExtraBoldItalic.ttf */; };
 		0B3331D827B000DA00695F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */; };
 		0B3331DA27B00F1D00695F27 /* CustomLaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3331D927B00F1D00695F27 /* CustomLaunchScreen.swift */; };
-		0B33320E27B1A96500695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; platformFilter = ios; };
-		0B33321327B1AAF900695F27 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; };
-		0B33321527B1AAFE00695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; platformFilter = ios; };
-		0B33321827B1AB0400695F27 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; };
-		0B33321B27B1AB0600695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; platformFilter = ios; };
-		0B33321D27B1AB0800695F27 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; platformFilter = ios; };
+		0B33320E27B1A96500695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
+		0B33321327B1AAF900695F27 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; };
+		0B33321827B1AB0400695F27 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; };
+		0B33321B27B1AB0600695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
+		0B33321D27B1AB0800695F27 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; };
 		0B33322D27B1B08E00695F27 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; };
 		0B33322E27B1B08E00695F27 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B33323027B1B08F00695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
@@ -48,6 +47,7 @@
 		0B33323427B1B09500695F27 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; platformFilter = ios; };
 		0B33323527B1B09500695F27 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B33323827B1B9CF00695F27 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0B33323727B1B9CF00695F27 /* Resolver */; };
+		0B33323B27B5976500695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
 		0B471D8A27AEEA3400644CE2 /* GetEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8927AEEA3400644CE2 /* GetEventsUseCase.swift */; };
 		0B471D9127AEEA4E00644CE2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8C27AEEA4E00644CE2 /* Location.swift */; };
 		0B471D9227AEEA4E00644CE2 /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8D27AEEA4E00644CE2 /* Months.swift */; };
@@ -105,6 +105,13 @@
 			remoteInfo = Domain;
 		};
 		0B33321027B1A96500695F27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B471D8127AEE99900644CE2;
+			remoteInfo = Domain;
+		};
+		0B33323927B5946F00695F27 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
 			proxyType = 1;
@@ -280,7 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B33321527B1AAFE00695F27 /* Domain.framework in Frameworks */,
+				0B33323B27B5976500695F27 /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -733,6 +740,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0B33323A27B5946F00695F27 /* PBXTargetDependency */,
 				0B471E8B27AEF4F400644CE2 /* PBXTargetDependency */,
 				0B471E9327AEF4F500644CE2 /* PBXTargetDependency */,
 				0B471E9727AEF4F500644CE2 /* PBXTargetDependency */,
@@ -995,21 +1003,23 @@
 /* Begin PBXTargetDependency section */
 		0B33320427B1824F00695F27 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = 0B471D9A27AEEAA400644CE2 /* Data */;
 			targetProxy = 0B33320327B1824F00695F27 /* PBXContainerItemProxy */;
 		};
 		0B33320827B1824F00695F27 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = 0B471D8127AEE99900644CE2 /* Domain */;
 			targetProxy = 0B33320727B1824F00695F27 /* PBXContainerItemProxy */;
 		};
 		0B33321127B1A96500695F27 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = 0B471D8127AEE99900644CE2 /* Domain */;
 			targetProxy = 0B33321027B1A96500695F27 /* PBXContainerItemProxy */;
+		};
+		0B33323A27B5946F00695F27 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0B471D8127AEE99900644CE2 /* Domain */;
+			targetProxy = 0B33323927B5946F00695F27 /* PBXContainerItemProxy */;
 		};
 		0B471DA527AEEAA400644CE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1018,7 +1028,6 @@
 		};
 		0B471DBF27AEEB3400644CE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = 0B471D8127AEE99900644CE2 /* Domain */;
 			targetProxy = 0B471DBE27AEEB3400644CE2 /* PBXContainerItemProxy */;
 		};
@@ -1034,7 +1043,6 @@
 		};
 		0B471E4A27AEF1D400644CE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			platformFilter = ios;
 			target = 0B471DDA27AEEF2A00644CE2 /* Presentation */;
 			targetProxy = 0B471E4927AEF1D400644CE2 /* PBXContainerItemProxy */;
 		};
