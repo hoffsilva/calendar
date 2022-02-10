@@ -153,13 +153,6 @@
 			remoteGlobalIDString = 0B471D9A27AEEAA400644CE2;
 			remoteInfo = Data;
 		};
-		0B471E8E27AEF4F400644CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B471D8127AEE99900644CE2;
-			remoteInfo = Domain;
-		};
 		0B471E9227AEF4F500644CE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
@@ -741,7 +734,6 @@
 			);
 			dependencies = (
 				0B471E8B27AEF4F400644CE2 /* PBXTargetDependency */,
-				0B471E8F27AEF4F400644CE2 /* PBXTargetDependency */,
 				0B471E9327AEF4F500644CE2 /* PBXTargetDependency */,
 				0B471E9727AEF4F500644CE2 /* PBXTargetDependency */,
 			);
@@ -1051,11 +1043,6 @@
 			platformFilter = ios;
 			target = 0B471D9A27AEEAA400644CE2 /* Data */;
 			targetProxy = 0B471E8A27AEF4F400644CE2 /* PBXContainerItemProxy */;
-		};
-		0B471E8F27AEF4F400644CE2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0B471D8127AEE99900644CE2 /* Domain */;
-			targetProxy = 0B471E8E27AEF4F400644CE2 /* PBXContainerItemProxy */;
 		};
 		0B471E9327AEF4F500644CE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
