@@ -38,9 +38,6 @@
 		0B33321827B1AB0400695F27 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; };
 		0B33321B27B1AB0600695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
 		0B33321D27B1AB0800695F27 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; };
-		0B33322D27B1B08E00695F27 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; };
-		0B33323027B1B08F00695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
-		0B33323227B1B09200695F27 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; platformFilter = ios; };
 		0B33323427B1B09500695F27 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; platformFilter = ios; };
 		0B33323827B1B9CF00695F27 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0B33323727B1B9CF00695F27 /* Resolver */; };
 		0B33323B27B5976500695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
@@ -107,13 +104,6 @@
 			remoteGlobalIDString = 0B471D8127AEE99900644CE2;
 			remoteInfo = Domain;
 		};
-		0B33323927B5946F00695F27 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B471D8127AEE99900644CE2;
-			remoteInfo = Domain;
-		};
 		0B471DA427AEEAA400644CE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
@@ -143,20 +133,6 @@
 			remoteInfo = UI;
 		};
 		0B471E4927AEF1D400644CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B471DDA27AEEF2A00644CE2;
-			remoteInfo = Presentation;
-		};
-		0B471E8A27AEF4F400644CE2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0B471D9A27AEEAA400644CE2;
-			remoteInfo = Data;
-		};
-		0B471E9227AEF4F500644CE2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0B471D5C27AEE88F00644CE2 /* Project object */;
 			proxyType = 1;
@@ -318,10 +294,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B33323027B1B08F00695F27 /* Domain.framework in Frameworks */,
 				0B33323427B1B09500695F27 /* UI.framework in Frameworks */,
-				0B33323227B1B09200695F27 /* Presentation.framework in Frameworks */,
-				0B33322D27B1B08E00695F27 /* Data.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,9 +691,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0B33323A27B5946F00695F27 /* PBXTargetDependency */,
-				0B471E8B27AEF4F400644CE2 /* PBXTargetDependency */,
-				0B471E9327AEF4F500644CE2 /* PBXTargetDependency */,
 				0B471E9727AEF4F500644CE2 /* PBXTargetDependency */,
 			);
 			name = timetable;
@@ -994,11 +964,6 @@
 			target = 0B471D8127AEE99900644CE2 /* Domain */;
 			targetProxy = 0B33321027B1A96500695F27 /* PBXContainerItemProxy */;
 		};
-		0B33323A27B5946F00695F27 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0B471D8127AEE99900644CE2 /* Domain */;
-			targetProxy = 0B33323927B5946F00695F27 /* PBXContainerItemProxy */;
-		};
 		0B471DA527AEEAA400644CE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0B471D9A27AEEAA400644CE2 /* Data */;
@@ -1023,18 +988,6 @@
 			isa = PBXTargetDependency;
 			target = 0B471DDA27AEEF2A00644CE2 /* Presentation */;
 			targetProxy = 0B471E4927AEF1D400644CE2 /* PBXContainerItemProxy */;
-		};
-		0B471E8B27AEF4F400644CE2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 0B471D9A27AEEAA400644CE2 /* Data */;
-			targetProxy = 0B471E8A27AEF4F400644CE2 /* PBXContainerItemProxy */;
-		};
-		0B471E9327AEF4F500644CE2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			platformFilter = ios;
-			target = 0B471DDA27AEEF2A00644CE2 /* Presentation */;
-			targetProxy = 0B471E9227AEF4F500644CE2 /* PBXContainerItemProxy */;
 		};
 		0B471E9727AEF4F500644CE2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
