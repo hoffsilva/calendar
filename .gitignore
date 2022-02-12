@@ -5,7 +5,7 @@
 ## User settings
 xcuserdata/
 timetable/.DS_Store
-.DS_Store
+*.DS_Store
 timetable.xcodeproj/project.xcworkspace/*
 
 
