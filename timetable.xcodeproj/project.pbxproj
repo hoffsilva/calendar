@@ -87,6 +87,7 @@
 		0B471E7827AEF3C200644CE2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E7527AEF3C200644CE2 /* SceneDelegate.swift */; };
 		0B471E7C27AEF3FB00644CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */; };
 		0B57B02A27B82A6F008F4015 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57B02927B82A6F008F4015 /* Resolver.swift */; };
+		0B57B02C27B82E60008F4015 /* exportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B57B02B27B82E60008F4015 /* exportOptions.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -274,6 +275,7 @@
 		0B471E8327AEF43A00644CE2 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		0B471E8427AEF43A00644CE2 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		0B57B02927B82A6F008F4015 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
+		0B57B02B27B82E60008F4015 /* exportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = exportOptions.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -532,6 +534,7 @@
 				0B471E7527AEF3C200644CE2 /* SceneDelegate.swift */,
 				0B471E7927AEF3DB00644CE2 /* Info.plist */,
 				0B471E7227AEF3C100644CE2 /* timetable-Bridging-Header.h */,
+				0B57B02B27B82E60008F4015 /* exportOptions.plist */,
 			);
 			path = timetable;
 			sourceTree = "<group>";
@@ -892,6 +895,7 @@
 				0B3331CB27AFFFED00695F27 /* Rubik-Bold.ttf in Resources */,
 				0B3331CD27AFFFED00695F27 /* Rubik-SemiBold.ttf in Resources */,
 				0B3331CC27AFFFED00695F27 /* Rubik-BlackItalic.ttf in Resources */,
+				0B57B02C27B82E60008F4015 /* exportOptions.plist in Resources */,
 				0B3331CF27AFFFED00695F27 /* Rubik-Light.ttf in Resources */,
 				0B3331D127AFFFED00695F27 /* Rubik-BoldItalic.ttf in Resources */,
 				0B3331D327AFFFED00695F27 /* Rubik-Medium.ttf in Resources */,
