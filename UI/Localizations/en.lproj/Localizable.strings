@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  timetable
+
+  Created by Hoff Silva on 29/01/22.
+  
+*/
+"dark_mode" = "DARK MODE";
+"light_mode" = "LIGHT MODE";
+"error_screen_title" = "Oops";
+"error_screen_description" = "The Event Wasn't Created!";
+"close_button_title" = "Close";
+"allowCalendarAccess_button_title" = "Allow Access";
+"error_screen_allowCallendarAccess_description" = "You need allow the access to your calendar.";
+

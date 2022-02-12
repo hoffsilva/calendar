@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  timetable
+
+  Created by Hoff Silva on 30/01/22.
+  
+*/
+"NSCalendarsUsageDescription" = "Do you allow me access your calendar?";
