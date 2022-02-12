@@ -40,10 +40,14 @@
 		0B33321D27B1AB0800695F27 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; };
 		0B33323827B1B9CF00695F27 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = 0B33323727B1B9CF00695F27 /* Resolver */; };
 		0B33323B27B5976500695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; };
-		0B33323E27B7F45400695F27 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; };
-		0B33324227B7F45400695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; platformFilter = ios; };
-		0B33324627B7F45400695F27 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; platformFilter = ios; };
-		0B33324B27B7F46300695F27 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; platformFilter = ios; };
+		0B33324D27B7FC4800695F27 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; };
+		0B33324E27B7FC4800695F27 /* Data.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D9B27AEEAA400644CE2 /* Data.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B33325027B7FC4A00695F27 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; platformFilter = ios; };
+		0B33325127B7FC4A00695F27 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471D8227AEE99900644CE2 /* Domain.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B33325227B7FC4C00695F27 /* Presentation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; platformFilter = ios; };
+		0B33325327B7FC4C00695F27 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B33325427B7FC4D00695F27 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; platformFilter = ios; };
+		0B33325527B7FC4D00695F27 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B471D8A27AEEA3400644CE2 /* GetEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8927AEEA3400644CE2 /* GetEventsUseCase.swift */; };
 		0B471D9127AEEA4E00644CE2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8C27AEEA4E00644CE2 /* Location.swift */; };
 		0B471D9227AEEA4E00644CE2 /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8D27AEEA4E00644CE2 /* Months.swift */; };
@@ -178,6 +182,23 @@
 			remoteInfo = Data;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0B33324F27B7FC4800695F27 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0B33325127B7FC4A00695F27 /* Domain.framework in Embed Frameworks */,
+				0B33324E27B7FC4800695F27 /* Data.framework in Embed Frameworks */,
+				0B33325527B7FC4D00695F27 /* UI.framework in Embed Frameworks */,
+				0B33325327B7FC4C00695F27 /* Presentation.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0B3331B827AF00AE00695F27 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -318,10 +339,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B33324227B7F45400695F27 /* Domain.framework in Frameworks */,
-				0B33323E27B7F45400695F27 /* Data.framework in Frameworks */,
-				0B33324B27B7F46300695F27 /* UI.framework in Frameworks */,
-				0B33324627B7F45400695F27 /* Presentation.framework in Frameworks */,
+				0B33325027B7FC4A00695F27 /* Domain.framework in Frameworks */,
+				0B33324D27B7FC4800695F27 /* Data.framework in Frameworks */,
+				0B33325427B7FC4D00695F27 /* UI.framework in Frameworks */,
+				0B33325227B7FC4C00695F27 /* Presentation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,6 +735,7 @@
 				0B471E5A27AEF35E00644CE2 /* Sources */,
 				0B471E5B27AEF35E00644CE2 /* Frameworks */,
 				0B471E5C27AEF35E00644CE2 /* Resources */,
+				0B33324F27B7FC4800695F27 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
