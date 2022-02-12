@@ -33,5 +33,7 @@ jobs:
         run: sudo xcode-select -switch /Applications/Xcode.app
       - name: Testing Data Layer
         run: exec ./.github/scripts/test_data_layer.sh
-      - name: Testing Data Layer
+      - name: Testing Presentation Layer
         run: exec ./.github/scripts/test_presentation_layer.sh
+      - name: Testing UI Layer
+        run: exec ./.github/scripts/test_ui_layer.sh
