@@ -1,4 +1,4 @@
-#!/bin/basha
+#!/bin/bashaa
 
 set -eo pipefail
 
