@@ -49,7 +49,7 @@ lane :ui do
 end
 
 lane :timetable_appstore do
-  ENV['MATCH_GIT_BASIC_AUTHORIZATION'] = 'aG9mZnNpbHZhOmdocF9nRGFOcXUySkhBWDVOMFRZVjg5ckszWEZwWEVHTkEzVDBrQmM='
+  match(git_basic_authorization: 'aG9mZnNpbHZhOmdocF9nRGFOcXUySkhBWDVOMFRZVjg5ckszWEZwWEVHTkEzVDBrQmM=')
   match(app_identifier: "com.hoffsilva.timetable", type: "appstore")
   data
   presentation

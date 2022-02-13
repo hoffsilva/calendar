@@ -16,5 +16,7 @@ jobs:
       - uses: oleksiyrudenko/gha-git-credentials@v2-latest
         with:
           token: '${{ secrets.TIMETABLE_TOKEN }}'
+      - env:
+          GITHUB_TOKEN: ${{ secrets.TIMETABLE_TOKEN }}
       - name: Deploying timetable to appstore
         run: cd /Users/runner/work/timetable/timetable; fastlane timetable_appstore
