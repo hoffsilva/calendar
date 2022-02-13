@@ -52,6 +52,7 @@ lane :timetable_appstore do
   data
   presentation
   ui
+  setup_ci if ENV['ci-cd']
   match(app_identifier: "com.hoffsilva.timetable", type: "appstore")
   build_app(
     project: "timetable.xcodeproj", 
