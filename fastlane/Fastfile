@@ -49,8 +49,7 @@ lane :ui do
 end
 
 lane :timetable_appstore do
-  setup_ci if ENV['ci-cd']
-  match(git_basic_authorization: 'aG9mZnNpbHZhOmdocF9nRGFOcXUySkhBWDVOMFRZVjg5ckszWEZwWEVHTkEzVDBrQmM=')
+  match
   match(app_identifier: "com.hoffsilva.timetable", type: "appstore")
   data
   presentation
