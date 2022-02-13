@@ -12,4 +12,4 @@ jobs:
       - name: list directory
         run: ls
       - name: Deploying timetable to appstore
-        run: scripts/deploying.sh
+        run: deploying.sh
