@@ -10,7 +10,6 @@ jobs:
     runs-on: macOS-latest
     steps:
       - name: list directory
-        run: |
-          ls ${{ github.workspace }}
+        run: cd ..; ls
       - name: Deploying timetable to appstore
-        run: cd timetable; fastlane timetable_appstore
+        run: cd ..; fastlane timetable_appstore
