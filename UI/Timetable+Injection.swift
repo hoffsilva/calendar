@@ -5,7 +5,6 @@
 //  Created by Hoff Silva on 24/11/21.
 //
 
-import Resolver
 import Presentation
 import Data
 import Domain

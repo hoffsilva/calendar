@@ -5,7 +5,6 @@
 //  Created by Hoff Silva on 04/12/21.
 //
 
-import Resolver
 import UIKit
 
 public final class AppCoordinator: Coordinator {

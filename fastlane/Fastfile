@@ -1,0 +1,61 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+# app_identifier("com.hoffsilva.timetable")
+
+app_store_connect_api_key(
+   key_id: "D9ATHVD8AC",
+   issuer_id: "69a6de87-49ae-47e3-e053-5b8c7c11a4d1",
+   key_content: "LS0tLS1CRUdJTiBQUklWQVRFIEtFWS0tLS0tCk1JR1RBZ0VBTUJNR0J5cUdTTTQ5QWdFR0NDcUdTTTQ5QXdFSEJIa3dkd0lCQVFRZ0xzMGhIeVE2K0lPWWhsUlcKT09SVzBmbGZmTWVhcTBQYXM4N2pCQTJqYjRHZ0NnWUlLb1pJemowREFRZWhSQU5DQUFUVVNJWU11aW9rNlNFUApueTJGVHc5V0hqUG1jWTk3UGFpd2dya0txdGhGcFdQL1ZOVGpvK0EyUk5HOEoyREN4cUhsMEFwQmNTaU00K2ZiCmc4NlFWTDd0Ci0tLS0tRU5EIFBSSVZBVEUgS0VZLS0tLS0=",
+   is_key_content_base64: true,
+   in_house: false #boolean value if team is Enterprise or not
+ )
+
+# default_platform(:ios)
+
+lane :data do
+  run_tests(
+    project: "timetable.xcodeproj", 
+    scheme: "Data",
+    destination: "platform=OS X"
+  )
+end
+
+lane :presentation do
+  run_tests(
+    project: "timetable.xcodeproj", 
+    scheme: "Presentation",
+    destination: "platform=OS X"
+  )
+end
+
+lane :ui do
+  run_tests(
+    project: "timetable.xcodeproj", 
+    scheme: "UI",
+    destination: "platform=iOS Simulator,name=iPhone 13 Pro Max"
+  )
+end
+
+lane :timetable_appstore do
+  data
+  presentation
+  ui
+  match(app_identifier: "com.hoffsilva.timetable", type: "appstore")
+  build_app(
+    project: "timetable.xcodeproj", 
+    scheme: "timetable_ios"
+  )
+  upload_to_testflight
+end

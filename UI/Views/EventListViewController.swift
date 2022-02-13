@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Resolver
 import Presentation
 import Domain
 import Data
