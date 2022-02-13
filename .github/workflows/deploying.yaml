@@ -10,5 +10,4 @@ jobs:
     runs-on: macOS-latest
     steps:
       - name: Deploying timetable to appstore
-      # - uses: actions/checkout@v2
       - run: bundle exec fastlane timetable_appstore
