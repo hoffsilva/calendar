@@ -9,7 +9,9 @@ jobs:
     name: Deploying to Testflight
     runs-on: macOS-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
       - name: list directory
         run: cd ..; ls
       - name: Deploying timetable to appstore
-        run: cd ..; fastlane timetable_appstore
+        uses: cd ..; fastlane timetable_appstore
