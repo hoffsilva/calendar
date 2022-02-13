@@ -9,5 +9,7 @@ jobs:
     name: Deploying to Testflight
     runs-on: macOS-latest
     steps:
+      - name: list directory
+        run: ls
       - name: Deploying timetable to appstore
         run: .github/scripts/deploying.sh
