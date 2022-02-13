@@ -13,4 +13,4 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - name: Deploying timetable to appstore
-        run: cd ..; fastlane timetable_appstore
+        run: cd timetable; fastlane timetable_appstore
