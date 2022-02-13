@@ -12,6 +12,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
       - name: list directory
-        run: cd ..; ls
+        uses: Rishabh510/Path-lister-action@master
       - name: Deploying timetable to appstore
-        uses: cd ..; fastlane timetable_appstore
+        run: cd ..; fastlane timetable_appstore
