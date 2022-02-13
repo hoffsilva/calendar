@@ -13,5 +13,8 @@ jobs:
         uses: actions/checkout@v1
       - name: list directory
         run: ls /Users/runner/work/timetable/timetable
+      - uses: oleksiyrudenko/gha-git-credentials@v2-latest
+        with:
+          token: '${{ secrets.TIMETABLE_TOKEN }}'
       - name: Deploying timetable to appstore
         run: cd /Users/runner/work/timetable/timetable; fastlane timetable_appstore
