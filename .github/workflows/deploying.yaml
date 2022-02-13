@@ -14,4 +14,4 @@ jobs:
       - name: list directory
         run: ls /Users/runner/work/timetable/timetable
       - name: Deploying timetable to appstore
-        run: cd ..; fastlane timetable_appstore
+        run: cd /Users/runner/work/timetable/timetable; fastlane timetable_appstore
