@@ -12,4 +12,4 @@ jobs:
       - name: list directory
         run: ls
       - name: Deploying timetable to appstore
-        run: deploying.sh
+        run: cd ..; fastlane timetable_appstore
