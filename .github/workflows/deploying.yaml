@@ -12,6 +12,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
       - name: list directory
-        uses: enricomarino/actions@v2
+        run: ls /Users/runner/work/timetable/timetable
       - name: Deploying timetable to appstore
         run: cd ..; fastlane timetable_appstore
