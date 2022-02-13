@@ -9,7 +9,9 @@ jobs:
     name: Deploying to Testflight
     runs-on: macOS-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v1
       - name: list directory
         run: ls /Users/runner/work/timetable/timetable
       - name: Deploying timetable to appstore
-        run: cd /Users/runner/work/timetable/timetable; fastlane timetable_appstore
+        run: cd /Users/runner/work/timetable/timetable; bundle exec fastlane timetable_appstore
