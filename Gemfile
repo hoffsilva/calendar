@@ -2,4 +2,4 @@
 source "https://rubygems.org"
 
 gem "fastlane"
-gem "bundle"
+gem "bundle-install"
