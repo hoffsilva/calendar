@@ -89,6 +89,12 @@
 		502BDF642843C22E00C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		502BDF652843CDD200C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094EC582842499A002A3042 /* Extension+UIColor.swift */; };
+		0BD0A7E627D030C00087B1AC /* DetailDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7E427D030C00087B1AC /* DetailDayViewController.swift */; };
+		0BD0A7E727D030C00087B1AC /* DetailDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */; };
+		0BD0A7E927D032800087B1AC /* DaysEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7E827D032800087B1AC /* DaysEventsViewModel.swift */; };
+		0BD0A7EB27D034B00087B1AC /* Hour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7EA27D034B00087B1AC /* Hour.swift */; };
+		0BD0A7EE27D035F00087B1AC /* DetailDayEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */; };
+		0BD0A7EF27D035F00087B1AC /* DetailDayEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BD0A7ED27D035F00087B1AC /* DetailDayEventCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,6 +283,12 @@
 		0B57B02B27B82E60008F4015 /* exportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = exportOptions.plist; sourceTree = "<group>"; };
 		502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5094EC582842499A002A3042 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		0BD0A7E427D030C00087B1AC /* DetailDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDayViewController.swift; sourceTree = "<group>"; };
+		0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailDayViewController.xib; sourceTree = "<group>"; };
+		0BD0A7E827D032800087B1AC /* DaysEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysEventsViewModel.swift; sourceTree = "<group>"; };
+		0BD0A7EA27D034B00087B1AC /* Hour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hour.swift; sourceTree = "<group>"; };
+		0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDayEventCell.swift; sourceTree = "<group>"; };
+		0BD0A7ED27D035F00087B1AC /* DetailDayEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailDayEventCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +412,7 @@
 				0B471D8E27AEEA4E00644CE2 /* Event.swift */,
 				0B471D8F27AEEA4E00644CE2 /* Day.swift */,
 				0B471D9027AEEA4E00644CE2 /* Month.swift */,
+				0BD0A7EA27D034B00087B1AC /* Hour.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -447,6 +460,7 @@
 				0B471DF127AEEF5400644CE2 /* ErrorViewModel.swift */,
 				0B471DF227AEEF5400644CE2 /* EventCellViewModel.swift */,
 				0B471DF027AEEF5400644CE2 /* EventViewModel.swift */,
+				0BD0A7E827D032800087B1AC /* DaysEventsViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -522,6 +536,10 @@
 				0B471E2727AEF0AF00644CE2 /* EventListViewController.xib */,
 				0B471E2827AEF0AF00644CE2 /* ErrorViewController.xib */,
 				0B471E2927AEF0AF00644CE2 /* EventListViewController.swift */,
+				0BD0A7E427D030C00087B1AC /* DetailDayViewController.swift */,
+				0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */,
+				0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */,
+				0BD0A7ED27D035F00087B1AC /* DetailDayEventCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -871,6 +889,8 @@
 				0B471E4027AEF0AF00644CE2 /* ErrorViewController.xib in Resources */,
 				0B3331D827B000DA00695F27 /* Assets.xcassets in Resources */,
 				0B471E3927AEF0AF00644CE2 /* CustomLaunchScreen.xib in Resources */,
+				0BD0A7EF27D035F00087B1AC /* DetailDayEventCell.xib in Resources */,
+				0BD0A7E727D030C00087B1AC /* DetailDayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -918,6 +938,7 @@
 				0B471D9227AEEA4E00644CE2 /* Months.swift in Sources */,
 				0B471D9427AEEA4E00644CE2 /* Day.swift in Sources */,
 				0B471D8A27AEEA3400644CE2 /* GetEventsUseCase.swift in Sources */,
+				0BD0A7EB27D034B00087B1AC /* Hour.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -949,6 +970,7 @@
 			files = (
 				0B471DF327AEEF5400644CE2 /* EventViewModel.swift in Sources */,
 				0B471DF527AEEF5400644CE2 /* EventCellViewModel.swift in Sources */,
+				0BD0A7E927D032800087B1AC /* DaysEventsViewModel.swift in Sources */,
 				0B471DF427AEEF5400644CE2 /* ErrorViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -973,6 +995,7 @@
 				0B3331C127AFF1FA00695F27 /* AppCoordinator.swift in Sources */,
 				0B471E4127AEF0AF00644CE2 /* EventListViewController.swift in Sources */,
 				0B471E3B27AEF0AF00644CE2 /* EventCell.swift in Sources */,
+				0BD0A7E627D030C00087B1AC /* DetailDayViewController.swift in Sources */,
 				0B3331BB27AFF03400695F27 /* Timetable+Injection.swift in Sources */,
 				0B3331DA27B00F1D00695F27 /* CustomLaunchScreen.swift in Sources */,
 				0B471E3E27AEF0AF00644CE2 /* ErrorViewController.swift in Sources */,
@@ -983,6 +1006,7 @@
 				0B471E5427AEF2E500644CE2 /* UIView+Constraints.swift in Sources */,
 				0B471E3D27AEF0AF00644CE2 /* AppearenceToggle.swift in Sources */,
 				0B3331C727AFFAFF00695F27 /* Localizable.swift in Sources */,
+				0BD0A7EE27D035F00087B1AC /* DetailDayEventCell.swift in Sources */,
 				0B471E5727AEF2E500644CE2 /* PaddableLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
