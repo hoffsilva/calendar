@@ -14,11 +14,12 @@ class DetailDayViewController: UIViewController {
     
     @Injected var daysEventsViewModel: DaysEventsViewModel
     
-    @IBOutlet weak var backButton: UIButton!
-    @IBOutlet weak var addEventButton: UIButton!
+    @IBOutlet weak var backButton: UILabel!
+    @IBOutlet weak var addEventButton: UILabel!
     @IBOutlet weak var nameOfTheDayLabel: UILabel!
     @IBOutlet weak var numberOfTheDayLabel: UILabel!
     @IBOutlet weak var nameOfMonthLabel: UILabel!
+    @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var listOfDaysEventsTableView: UITableView!
 
     private lazy var dataSource = makeDataSource()
@@ -42,6 +43,12 @@ class DetailDayViewController: UIViewController {
                     self?.updateDataSource(listOfHour: hours)
                 }
             }
+        
+        daysEventsViewModel.headerData = { [weak self] data in
+            self?.nameOfTheDayLabel.text = data.dayOfWeek
+            self?.numberOfTheDayLabel.text = data.dayOfMonth
+            self?.nameOfMonthLabel.text = data.month
+        }
     }
     
     private func updateDataSource(listOfHour: [Hour]) {
@@ -66,8 +73,8 @@ class DetailDayViewController: UIViewController {
     }
     
     private func setLabelStrings() {
-        backButton.setTitle(Localizable.backButtonTitle(), for: .normal)
-        addEventButton.setTitle(Localizable.addEventButtonTitle(), for: .normal)
+        backButton.text = Localizable.backButtonTitle()
+        addEventButton.text = Localizable.addEventButtonTitle()
     }
     
     private func setupStyle() {
@@ -75,39 +82,35 @@ class DetailDayViewController: UIViewController {
         setupLabelColor()
         setupBackButton()
         setupAddEventButton()
+        separatorView.backgroundColor = .timetableGray
     }
     
     private func setupLabelFont() {
+        backButton.font = .rubikBold(16)
+        addEventButton.font = .rubikBold(16)
         nameOfTheDayLabel.font = .rubikRegular(16)
         numberOfTheDayLabel.font = .rubikBold(40)
         nameOfMonthLabel.font = .rubikBold(40)
     }
     
     private func setupLabelColor() {
+        backButton.textColor = .timetableRed
+        addEventButton.textColor = .timetableRed
         nameOfTheDayLabel.textColor = .timetableSystemBackgroundColor
         numberOfTheDayLabel.textColor = .timetableSystemBackgroundColor
         nameOfMonthLabel.textColor = .timetableGray
     }
     
     private func setupBackButton() {
-        let font = UIFont.rubikBold(16)
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: font,
-            .foregroundColor: UIColor.timetableRed
-        ]
-        let buttonTitle = NSAttributedString(string: Localizable.backButtonTitle(), attributes: attributes)
-        backButton.setAttributedTitle(buttonTitle, for: .normal)
-        backButton.addTarget(self, action: #selector(didTapOnBackButton), for: .touchUpInside)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnBackButton))
+        backButton.isUserInteractionEnabled = true
+        backButton.addGestureRecognizer(tap)
     }
     
     private func setupAddEventButton() {
-        let font = UIFont.rubikBold(16)
-        let attributes: [NSAttributedString.Key: Any] = [
-            .font: font,
-            .foregroundColor: UIColor.timetableRed
-        ]
-        let buttonTitle = NSAttributedString(string: Localizable.addEventButtonTitle(), attributes: attributes)
-        addEventButton.setAttributedTitle(buttonTitle, for: .normal)
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnBackButton))
+//        addEventButton.isUserInteractionEnabled = true
+//        addEventButton.addGestureRecognizer(tap)
 //        addEventButton.addTarget(self, action: #selector(didTapOnCloseButton), for: .touchUpInside)
     }
     

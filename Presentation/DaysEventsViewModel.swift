@@ -8,11 +8,18 @@
 import Domain
 import Data
 
+public struct HeaderData {
+    public let dayOfWeek: String
+    public let dayOfMonth: String
+    public let month: String
+}
+
 public final class DaysEventsViewModel {
     
     private let day: Day
     
     public var listOfHour: (([Hour]) -> Void)?
+    public var headerData: ((HeaderData) -> Void)?
     
     public init(day: Day) {
         self.day = day
@@ -33,6 +40,14 @@ public final class DaysEventsViewModel {
             }
             hours.append(a)
         }
+        
+        headerData?(
+            HeaderData(
+                dayOfWeek: day.events.first?.startDate.getDayOfWeek().lowercased() ?? "",
+                dayOfMonth: day.number,
+                month: day.events.first?.startDate.getLongMonth() ?? ""
+            )
+        )
         
         listOfHour?(hours)
     }
