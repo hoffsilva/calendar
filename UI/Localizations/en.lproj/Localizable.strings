@@ -12,4 +12,6 @@
 "close_button_title" = "Close";
 "allowCalendarAccess_button_title" = "Allow Access";
 "error_screen_allowCallendarAccess_description" = "You need allow the access to your calendar.";
+"back_button_title" = "Back";
+"add_event_button_title" = "Add Event";
 

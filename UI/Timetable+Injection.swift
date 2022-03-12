@@ -50,6 +50,11 @@ extension Resolver {
         }
         .scope(.application)
         
+        register { _, args in
+            DetailDayViewController.loadFromNib()
+        }
+        .scope(.application)
+        
     }
     
     public static func registerViewModels() {
@@ -60,6 +65,11 @@ extension Resolver {
         
         register { _, args in
             ErrorViewModel(errorMessage: args.get("errorMessage"), allowCalendarAccess: args.get("allowCalendarAccess"))
+        }
+        .scope(.application)
+        
+        register { _, args in
+            DaysEventsViewModel(day: args.get("day"))
         }
         .scope(.application)
     }

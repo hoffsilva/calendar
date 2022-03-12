@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,9 +16,44 @@
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="371" height="142"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDQ-d6-AJD">
+                        <rect key="frame" x="20" y="60.5" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="HUq-rK-LqI">
+                        <rect key="frame" x="70" y="8" width="293" height="126"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AGh-MZ-mCc">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HUq-rK-LqI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="6GL-Ci-xR5"/>
+                    <constraint firstItem="HUq-rK-LqI" firstAttribute="leading" secondItem="UDQ-d6-AJD" secondAttribute="trailing" constant="8" symbolic="YES" id="B9z-QT-MsQ"/>
+                    <constraint firstAttribute="trailing" secondItem="HUq-rK-LqI" secondAttribute="trailing" constant="8" id="Ssz-9W-wDI"/>
+                    <constraint firstItem="UDQ-d6-AJD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="aOS-Ew-WLy"/>
+                    <constraint firstAttribute="bottom" secondItem="HUq-rK-LqI" secondAttribute="bottom" constant="8" id="ahz-gr-Xkx"/>
+                    <constraint firstItem="UDQ-d6-AJD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dWr-co-Xbu"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="hourEventsCollectionView" destination="HUq-rK-LqI" id="ETY-RC-jCu"/>
+                <outlet property="hourLabel" destination="UDQ-d6-AJD" id="68z-QW-aB0"/>
+            </connections>
             <point key="canvasLocation" x="168.84057971014494" y="162.72321428571428"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

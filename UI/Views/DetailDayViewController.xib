@@ -10,7 +10,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailDayViewController" customModule="UI" customModuleProvider="target">
             <connections>
+                <outlet property="addEventButton" destination="xnI-wM-YCd" id="i3A-V9-1tx"/>
+                <outlet property="backButton" destination="rsu-7l-bcF" id="20J-yi-ANV"/>
                 <outlet property="listOfDaysEventsTableView" destination="1rY-zs-664" id="pqy-C4-Mjz"/>
+                <outlet property="nameOfMonthLabel" destination="AT2-HS-kr7" id="PJS-Nz-r9x"/>
+                <outlet property="nameOfTheDayLabel" destination="zcp-Ac-Rzi" id="H02-TW-D5m"/>
+                <outlet property="numberOfTheDayLabel" destination="rnq-da-tNJ" id="H4e-bc-DkN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,20 +24,71 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsu-7l-bcF">
+                    <rect key="frame" x="24" y="52" width="56" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="back" subtitle="" titleAlignment="leading"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnI-wM-YCd">
+                    <rect key="frame" x="305" y="52" width="85" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="addEvent"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wednesday" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcp-Ac-Rzi">
+                    <rect key="frame" x="24" y="91" width="366" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="numberOfDay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnq-da-tNJ">
+                    <rect key="frame" x="24" y="115.5" width="107" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1rY-zs-664">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <rect key="frame" x="0.0" y="190.5" width="414" height="671.5"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="nameOfMonth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AT2-HS-kr7">
+                    <rect key="frame" x="139" y="115.5" width="251" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBZ-Co-PfS">
+                    <rect key="frame" x="24" y="184.5" width="366" height="2"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="6Tb-8L-a4Y"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="1rY-zs-664" secondAttribute="bottom" id="AV7-0t-Xym"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1rY-zs-664" secondAttribute="trailing" id="OoC-xG-E4h"/>
-                <constraint firstItem="1rY-zs-664" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="P88-9H-95H"/>
-                <constraint firstItem="1rY-zs-664" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="YO8-7R-zYd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xnI-wM-YCd" secondAttribute="trailing" constant="24" id="1Md-xk-6Zd"/>
+                <constraint firstItem="zcp-Ac-Rzi" firstAttribute="top" secondItem="rsu-7l-bcF" secondAttribute="bottom" constant="8" symbolic="YES" id="1cU-Ba-CMz"/>
+                <constraint firstItem="AT2-HS-kr7" firstAttribute="centerY" secondItem="rnq-da-tNJ" secondAttribute="centerY" id="5De-Eb-Mmg"/>
+                <constraint firstItem="AT2-HS-kr7" firstAttribute="leading" secondItem="rnq-da-tNJ" secondAttribute="trailing" constant="8" id="5F5-L7-wdZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AT2-HS-kr7" secondAttribute="trailing" constant="24" id="BpO-TX-hRS"/>
+                <constraint firstItem="rnq-da-tNJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="CzT-8r-Bcd"/>
+                <constraint firstItem="rsu-7l-bcF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="GCf-es-b0v"/>
+                <constraint firstItem="IBZ-Co-PfS" firstAttribute="top" secondItem="rnq-da-tNJ" secondAttribute="bottom" constant="48" id="Ghf-Dp-m3x"/>
+                <constraint firstItem="zcp-Ac-Rzi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="I6G-Hb-YZc"/>
+                <constraint firstItem="1rY-zs-664" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Py8-CC-9jo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zcp-Ac-Rzi" secondAttribute="trailing" constant="24" id="RZx-0N-lU0"/>
+                <constraint firstItem="IBZ-Co-PfS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="TBV-Bq-whm"/>
+                <constraint firstItem="1rY-zs-664" firstAttribute="top" secondItem="IBZ-Co-PfS" secondAttribute="bottom" constant="4" id="Vft-hI-ha6"/>
+                <constraint firstItem="xnI-wM-YCd" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="aUp-YH-OSX"/>
+                <constraint firstItem="1rY-zs-664" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="eJT-Q4-U8u"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IBZ-Co-PfS" secondAttribute="trailing" constant="24" id="lvr-RM-mgl"/>
+                <constraint firstItem="rsu-7l-bcF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="mdo-IE-Av8"/>
+                <constraint firstItem="rnq-da-tNJ" firstAttribute="top" secondItem="zcp-Ac-Rzi" secondAttribute="bottom" constant="4" id="nqH-Il-YFm"/>
+                <constraint firstItem="1rY-zs-664" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="qaJ-jE-JKt"/>
+                <constraint firstItem="zcp-Ac-Rzi" firstAttribute="top" secondItem="rsu-7l-bcF" secondAttribute="bottom" constant="8" id="yoK-yJ-odQ"/>
             </constraints>
-            <point key="canvasLocation" x="132" y="130"/>
+            <point key="canvasLocation" x="131.8840579710145" y="129.91071428571428"/>
         </view>
     </objects>
     <resources>

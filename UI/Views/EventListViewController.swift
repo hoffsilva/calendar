@@ -12,6 +12,7 @@ import Data
 
 public protocol EventListViewControllerDelegate: AnyObject {
     func didLoadDataWithAccessNotGranted()
+    func didTapToDetail(day: Day)
 }
 
 public class EventListViewController: UIViewController {
@@ -113,6 +114,11 @@ extension EventListViewController: UITableViewDelegate {
         return createSectionHeaderView(
             with: dataSource.sectionIdentifier(for: section)?.name
         )
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let day = viewModel.months?[indexPath.section].days[indexPath.row] else { return }
+        self.delegate?.didTapToDetail(day: day)
     }
     
 }

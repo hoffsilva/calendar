@@ -45,6 +45,14 @@ public extension Date {
         return formatter.string(from: self)
     }
     
+    func getShortHour() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        formatter.dateFormat = "h a"
+        return formatter.string(from: self)
+    }
+    
     func getHour() -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .none

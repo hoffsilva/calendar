@@ -14,6 +14,7 @@ public final class EventViewModel: ObservableObject {
     
     public var sections: (([Month])->Void)?
     public var didGetErrorMessage: ((String)->Void)?
+    public var months: [Month]?
     
     public init(
         eventUseCase: GetEventsUseCase,
@@ -29,6 +30,7 @@ public final class EventViewModel: ObservableObject {
             switch result {
             case .success(let sections):
                 self.sections?(sections)
+                self.months = sections
             case .failure(let error):
                 self.didGetErrorMessage?(error.localizedDescription)
             }
