@@ -53,7 +53,6 @@ extension Resolver {
         register { _, args in
             DetailDayViewController.loadFromNib()
         }
-        .scope(.application)
         
     }
     
@@ -71,7 +70,7 @@ extension Resolver {
         register { _, args in
             DaysEventsViewModel(day: args.get("day"))
         }
-        .scope(.application)
+        .scope(.shared)
     }
     
     public static func registerUseCases() {
