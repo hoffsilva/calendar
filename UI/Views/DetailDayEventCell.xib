@@ -24,9 +24,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="HUq-rK-LqI">
-                        <rect key="frame" x="70" y="8" width="293" height="126"/>
+                        <rect key="frame" x="70" y="8" width="277" height="124.5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AGh-MZ-mCc">
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="AGh-MZ-mCc">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -45,10 +45,10 @@
                     <constraint firstItem="qHj-cI-fnt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="44k-4D-grn"/>
                     <constraint firstItem="HUq-rK-LqI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="6GL-Ci-xR5"/>
                     <constraint firstItem="HUq-rK-LqI" firstAttribute="leading" secondItem="UDQ-d6-AJD" secondAttribute="trailing" constant="8" symbolic="YES" id="B9z-QT-MsQ"/>
-                    <constraint firstAttribute="trailing" secondItem="HUq-rK-LqI" secondAttribute="trailing" constant="8" id="Ssz-9W-wDI"/>
+                    <constraint firstAttribute="trailing" secondItem="HUq-rK-LqI" secondAttribute="trailing" constant="24" id="Ssz-9W-wDI"/>
                     <constraint firstItem="UDQ-d6-AJD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="aOS-Ew-WLy"/>
                     <constraint firstAttribute="bottom" secondItem="qHj-cI-fnt" secondAttribute="bottom" id="aVV-fr-wad"/>
-                    <constraint firstAttribute="bottom" secondItem="HUq-rK-LqI" secondAttribute="bottom" constant="8" id="ahz-gr-Xkx"/>
+                    <constraint firstItem="qHj-cI-fnt" firstAttribute="top" secondItem="HUq-rK-LqI" secondAttribute="bottom" constant="8" id="cgE-ub-7DQ"/>
                     <constraint firstItem="UDQ-d6-AJD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dWr-co-Xbu"/>
                     <constraint firstAttribute="trailing" secondItem="qHj-cI-fnt" secondAttribute="trailing" constant="24" id="hbT-3u-cUL"/>
                 </constraints>

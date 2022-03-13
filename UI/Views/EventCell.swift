@@ -70,7 +70,7 @@ public class EventCell: UITableViewCell {
         eventDayLabel.addCharacterSpacing(kernValue: -8)
         eventHourLabel.text = data.events.first?.startDate.getHour()
         eventTitleLabel.text = data.events.first?.title
-        conflictLabel.isHidden = data.events.count > 1
+        conflictLabel.isHidden = data.events.count <= 1
     }
     
 }

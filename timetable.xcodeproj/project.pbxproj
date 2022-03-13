@@ -95,6 +95,8 @@
 		0BD0A7EB27D034B00087B1AC /* Hour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7EA27D034B00087B1AC /* Hour.swift */; };
 		0BD0A7EE27D035F00087B1AC /* DetailDayEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */; };
 		0BD0A7EF27D035F00087B1AC /* DetailDayEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BD0A7ED27D035F00087B1AC /* DetailDayEventCell.xib */; };
+		0BD1166F27DE298000BD7AD8 /* DetailEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */; };
+		0BD1167027DE298000BD7AD8 /* DetailEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BD1166E27DE298000BD7AD8 /* DetailEventCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -289,6 +291,8 @@
 		0BD0A7EA27D034B00087B1AC /* Hour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hour.swift; sourceTree = "<group>"; };
 		0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDayEventCell.swift; sourceTree = "<group>"; };
 		0BD0A7ED27D035F00087B1AC /* DetailDayEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailDayEventCell.xib; sourceTree = "<group>"; };
+		0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventCell.swift; sourceTree = "<group>"; };
+		0BD1166E27DE298000BD7AD8 /* DetailEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailEventCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -540,6 +544,8 @@
 				0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */,
 				0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */,
 				0BD0A7ED27D035F00087B1AC /* DetailDayEventCell.xib */,
+				0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */,
+				0BD1166E27DE298000BD7AD8 /* DetailEventCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -889,6 +895,7 @@
 				0B471E4027AEF0AF00644CE2 /* ErrorViewController.xib in Resources */,
 				0B3331D827B000DA00695F27 /* Assets.xcassets in Resources */,
 				0B471E3927AEF0AF00644CE2 /* CustomLaunchScreen.xib in Resources */,
+				0BD1167027DE298000BD7AD8 /* DetailEventCell.xib in Resources */,
 				0BD0A7EF27D035F00087B1AC /* DetailDayEventCell.xib in Resources */,
 				0BD0A7E727D030C00087B1AC /* DetailDayViewController.xib in Resources */,
 			);
@@ -998,6 +1005,7 @@
 				0BD0A7E627D030C00087B1AC /* DetailDayViewController.swift in Sources */,
 				0B3331BB27AFF03400695F27 /* Timetable+Injection.swift in Sources */,
 				0B3331DA27B00F1D00695F27 /* CustomLaunchScreen.swift in Sources */,
+				0BD1166F27DE298000BD7AD8 /* DetailEventCell.swift in Sources */,
 				0B471E3E27AEF0AF00644CE2 /* ErrorViewController.swift in Sources */,
 				0B471E5927AEF2E500644CE2 /* TimeTableNavigationController.swift in Sources */,
 				0B3331C227AFF1FE00695F27 /* Coordinator.swift in Sources */,
