@@ -33,20 +33,31 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHj-cI-fnt">
+                        <rect key="frame" x="24" y="140.5" width="323" height="1.5"/>
+                        <color key="backgroundColor" systemColor="tintColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1.5" id="dKn-xO-qTo"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="qHj-cI-fnt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="44k-4D-grn"/>
                     <constraint firstItem="HUq-rK-LqI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="6GL-Ci-xR5"/>
                     <constraint firstItem="HUq-rK-LqI" firstAttribute="leading" secondItem="UDQ-d6-AJD" secondAttribute="trailing" constant="8" symbolic="YES" id="B9z-QT-MsQ"/>
                     <constraint firstAttribute="trailing" secondItem="HUq-rK-LqI" secondAttribute="trailing" constant="8" id="Ssz-9W-wDI"/>
                     <constraint firstItem="UDQ-d6-AJD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="aOS-Ew-WLy"/>
+                    <constraint firstAttribute="bottom" secondItem="qHj-cI-fnt" secondAttribute="bottom" id="aVV-fr-wad"/>
                     <constraint firstAttribute="bottom" secondItem="HUq-rK-LqI" secondAttribute="bottom" constant="8" id="ahz-gr-Xkx"/>
                     <constraint firstItem="UDQ-d6-AJD" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="dWr-co-Xbu"/>
+                    <constraint firstAttribute="trailing" secondItem="qHj-cI-fnt" secondAttribute="trailing" constant="24" id="hbT-3u-cUL"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="hourEventsCollectionView" destination="HUq-rK-LqI" id="ETY-RC-jCu"/>
                 <outlet property="hourLabel" destination="UDQ-d6-AJD" id="68z-QW-aB0"/>
+                <outlet property="sparatorView" destination="qHj-cI-fnt" id="2KE-CE-rvq"/>
             </connections>
             <point key="canvasLocation" x="168.84057971014494" y="162.72321428571428"/>
         </tableViewCell>
@@ -54,6 +65,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
