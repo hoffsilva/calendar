@@ -26,6 +26,14 @@ class DetailDayViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        switch UserDefaults.standard.integer(forKey: "overrideUserInterfaceStyle") {
+        case UIUserInterfaceStyle.dark.rawValue:
+            overrideUserInterfaceStyle = .dark
+        case UIUserInterfaceStyle.light.rawValue:
+            overrideUserInterfaceStyle = .light
+        default: ()
+        }
+        view.layoutIfNeeded()
         registerCell()
         listOfDaysEventsTableView.dataSource = dataSource
         listOfDaysEventsTableView.delegate = self
@@ -34,7 +42,10 @@ class DetailDayViewController: UIViewController {
         daysEventsViewModel.loadData()
         setLabelStrings()
         setupStyle()
+        
     }
+    
+
     
     func setupBindings() {
         daysEventsViewModel
@@ -82,7 +93,6 @@ class DetailDayViewController: UIViewController {
         setupLabelColor()
         setupBackButton()
         setupAddEventButton()
-        overrideUserInterfaceStyle = .dark
         separatorView.backgroundColor = .timetableGray
         self.view.backgroundColor = .timetableSystemBackgroundColor
         self.listOfDaysEventsTableView.backgroundColor = .timetableSystemBackgroundColor
@@ -99,8 +109,8 @@ class DetailDayViewController: UIViewController {
     private func setupLabelColor() {
         backButton.textColor = .timetableRed
         addEventButton.textColor = .timetableRed
-        nameOfTheDayLabel.textColor = .timetableSystemBackgroundColor
-        numberOfTheDayLabel.textColor = .timetableSystemBackgroundColor
+        nameOfTheDayLabel.textColor = .systemBackground
+        numberOfTheDayLabel.textColor = .systemBackground
         nameOfMonthLabel.textColor = .timetableGray
     }
     
