@@ -38,9 +38,14 @@ public final class EventListViewCoordinator: Coordinator {
         navigationController?.viewControllers.first?.present(errorViewController, animated: true, completion: nil)
     }
     
-    public func showDetail(of day: Day) {
+    public func showDetail(of day: Day, from viewController: UIViewController) {
         let detailDayViewModel = Resolver.resolve(DaysEventsViewModel.self,args: ["day": day])
         let detailDayViewController = Resolver.resolve(DetailDayViewController.self, args: detailDayViewModel)
+        guard let eventListViewController = viewController as? EventListViewController else {
+            return
+        }
+        detailDayViewController.transitioningDelegate = eventListViewController
+        detailDayViewController.modalPresentationStyle = .custom
         navigationController?.viewControllers.first?.present(detailDayViewController, animated: true, completion: nil)
     }
 
@@ -48,8 +53,8 @@ public final class EventListViewCoordinator: Coordinator {
 
 extension EventListViewCoordinator: EventListViewControllerDelegate {
     
-    public func didTapToDetail(day: Day) {
-        self.showDetail(of: day)
+    public func didTapToDetail(day: Day, from viewController: UIViewController) {
+        self.showDetail(of: day, from: viewController)
     }
     
     

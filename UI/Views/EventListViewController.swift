@@ -12,10 +12,10 @@ import Data
 
 public protocol EventListViewControllerDelegate: AnyObject {
     func didLoadDataWithAccessNotGranted()
-    func didTapToDetail(day: Day)
+    func didTapToDetail(day: Day, from viewController: UIViewController)
 }
 
-public class EventListViewController: UIViewController {
+public class EventListViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     @Injected private var viewModel: EventViewModel
     
@@ -24,6 +24,10 @@ public class EventListViewController: UIViewController {
     public weak var delegate: EventListViewControllerDelegate?
     
     private lazy var dataSource = makeDataSource()
+    
+    let transition = Transition()
+    
+    var cell: EventCell?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -118,7 +122,20 @@ extension EventListViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let day = viewModel.months?[indexPath.section].days[indexPath.row] else { return }
-        self.delegate?.didTapToDetail(day: day)
+        self.cell = tableView.cellForRow(at: indexPath) as? EventCell
+        self.delegate?.didTapToDetail(day: day, from: self)
+    }
+    
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startingPoint = cell!.center
+        return transition
+    }
+    
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .dismiss
+        transition.startingPoint = cell!.center
+        return transition
     }
     
 }

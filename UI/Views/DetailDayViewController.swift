@@ -82,7 +82,10 @@ class DetailDayViewController: UIViewController {
         setupLabelColor()
         setupBackButton()
         setupAddEventButton()
+        overrideUserInterfaceStyle = .dark
         separatorView.backgroundColor = .timetableGray
+        self.view.backgroundColor = .timetableSystemBackgroundColor
+        self.listOfDaysEventsTableView.backgroundColor = .timetableSystemBackgroundColor
     }
     
     private func setupLabelFont() {

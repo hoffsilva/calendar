@@ -89,6 +89,7 @@
 		502BDF642843C22E00C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		502BDF652843CDD200C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094EC582842499A002A3042 /* Extension+UIColor.swift */; };
+		0BAF0A9A27E6281400030DA1 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF0A9927E6281400030DA1 /* Transition.swift */; };
 		0BD0A7E627D030C00087B1AC /* DetailDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7E427D030C00087B1AC /* DetailDayViewController.swift */; };
 		0BD0A7E727D030C00087B1AC /* DetailDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */; };
 		0BD0A7E927D032800087B1AC /* DaysEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7E827D032800087B1AC /* DaysEventsViewModel.swift */; };
@@ -285,6 +286,7 @@
 		0B57B02B27B82E60008F4015 /* exportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = exportOptions.plist; sourceTree = "<group>"; };
 		502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5094EC582842499A002A3042 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		0BAF0A9927E6281400030DA1 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
 		0BD0A7E427D030C00087B1AC /* DetailDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDayViewController.swift; sourceTree = "<group>"; };
 		0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailDayViewController.xib; sourceTree = "<group>"; };
 		0BD0A7E827D032800087B1AC /* DaysEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysEventsViewModel.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 				0B471E2227AEF0AF00644CE2 /* Views */,
 				0B3331C327AFF88300695F27 /* Extensions+UIViewController.swift */,
 				0B471E8027AEF43A00644CE2 /* Localizations */,
+				0BAF0A9927E6281400030DA1 /* Transition.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -1011,6 +1014,7 @@
 				0B3331C227AFF1FE00695F27 /* Coordinator.swift in Sources */,
 				5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */,
 				0B471E5627AEF2E500644CE2 /* Extension+UIFont.swift in Sources */,
+				0BAF0A9A27E6281400030DA1 /* Transition.swift in Sources */,
 				0B471E5427AEF2E500644CE2 /* UIView+Constraints.swift in Sources */,
 				0B471E3D27AEF0AF00644CE2 /* AppearenceToggle.swift in Sources */,
 				0B3331C727AFFAFF00695F27 /* Localizable.swift in Sources */,
