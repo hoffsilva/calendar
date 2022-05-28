@@ -76,7 +76,6 @@
 		0B471E3F27AEF0AF00644CE2 /* EventListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E2727AEF0AF00644CE2 /* EventListViewController.xib */; };
 		0B471E4027AEF0AF00644CE2 /* ErrorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E2827AEF0AF00644CE2 /* ErrorViewController.xib */; };
 		0B471E4127AEF0AF00644CE2 /* EventListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E2927AEF0AF00644CE2 /* EventListViewController.swift */; };
-		0B471E5327AEF2E500644CE2 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E4C27AEF2E400644CE2 /* Extension+UIColor.swift */; };
 		0B471E5427AEF2E500644CE2 /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E4D27AEF2E400644CE2 /* UIView+Constraints.swift */; };
 		0B471E5527AEF2E500644CE2 /* Extension+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E4E27AEF2E500644CE2 /* Extension+UILabel.swift */; };
 		0B471E5627AEF2E500644CE2 /* Extension+UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E4F27AEF2E500644CE2 /* Extension+UIFont.swift */; };
@@ -88,6 +87,7 @@
 		0B471E7C27AEF3FB00644CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */; };
 		0B57B02A27B82A6F008F4015 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57B02927B82A6F008F4015 /* Resolver.swift */; };
 		0B57B02C27B82E60008F4015 /* exportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B57B02B27B82E60008F4015 /* exportOptions.plist */; };
+		5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094EC582842499A002A3042 /* Extension+UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,7 +256,6 @@
 		0B471E2727AEF0AF00644CE2 /* EventListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventListViewController.xib; sourceTree = "<group>"; };
 		0B471E2827AEF0AF00644CE2 /* ErrorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorViewController.xib; sourceTree = "<group>"; };
 		0B471E2927AEF0AF00644CE2 /* EventListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewController.swift; sourceTree = "<group>"; };
-		0B471E4C27AEF2E400644CE2 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		0B471E4D27AEF2E400644CE2 /* UIView+Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		0B471E4E27AEF2E500644CE2 /* Extension+UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UILabel.swift"; sourceTree = "<group>"; };
 		0B471E4F27AEF2E500644CE2 /* Extension+UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIFont.swift"; sourceTree = "<group>"; };
@@ -276,6 +275,7 @@
 		0B471E8427AEF43A00644CE2 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		0B57B02927B82A6F008F4015 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		0B57B02B27B82E60008F4015 /* exportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = exportOptions.plist; sourceTree = "<group>"; };
+		5094EC582842499A002A3042 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -461,8 +461,8 @@
 		0B471DFC27AEF07000644CE2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5094EC582842499A002A3042 /* Extension+UIColor.swift */,
 				0B57B02927B82A6F008F4015 /* Resolver.swift */,
-				0B471E4C27AEF2E400644CE2 /* Extension+UIColor.swift */,
 				0B471E4F27AEF2E500644CE2 /* Extension+UIFont.swift */,
 				0B471E4E27AEF2E500644CE2 /* Extension+UILabel.swift */,
 				0B471E5027AEF2E500644CE2 /* PaddableLabel.swift */,
@@ -976,10 +976,10 @@
 				0B471E3E27AEF0AF00644CE2 /* ErrorViewController.swift in Sources */,
 				0B471E5927AEF2E500644CE2 /* TimeTableNavigationController.swift in Sources */,
 				0B3331C227AFF1FE00695F27 /* Coordinator.swift in Sources */,
+				5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */,
 				0B471E5627AEF2E500644CE2 /* Extension+UIFont.swift in Sources */,
 				0B471E5427AEF2E500644CE2 /* UIView+Constraints.swift in Sources */,
 				0B471E3D27AEF0AF00644CE2 /* AppearenceToggle.swift in Sources */,
-				0B471E5327AEF2E500644CE2 /* Extension+UIColor.swift in Sources */,
 				0B3331C727AFFAFF00695F27 /* Localizable.swift in Sources */,
 				0B471E5727AEF2E500644CE2 /* PaddableLabel.swift in Sources */,
 			);
