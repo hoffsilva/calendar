@@ -10,23 +10,25 @@ import SwiftUI
 extension UIColor {
     
     static var timetableRed: UIColor {
-        UIColor(Color(red: 0.942, green: 0.153, blue: 0.153))
+        UIColor(named: "red") ?? .magenta
     }
     
     static var timetableGray: UIColor {
-        UIColor(Color(red: 0.8, green: 0.8, blue: 0.8))
+        UIColor(named: "gray") ?? .magenta
     }
     
     static var timetableDarkGray: UIColor {
-        UIColor(Color(red: 0.565, green: 0.565, blue: 0.565))
+        UIColor(named: "dark-gray") ?? .magenta
     }
     
     static var timetableSystemBackgroundColor: UIColor {
-        UIColor.init { (UITraitCollection: UITraitCollection) -> UIColor in
+        return UIColor { (UITraitCollection: UITraitCollection) -> UIColor in
             if UITraitCollection.userInterfaceStyle == .dark {
-                return UIColor.white
+                /// Return the color for Dark Mode
+                return UIColor(named: "light-background-color") ?? .magenta
             } else {
-                return UIColor.black
+                /// Return the color for Light Mode
+                return UIColor(named: "dark-background-color") ?? .magenta
             }
         }
     }
