@@ -19,7 +19,6 @@ public class CustomLaunchScreen: UIViewController {
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setAppIconImage()
         waitingForLoading()
     }
     
@@ -29,11 +28,6 @@ public class CustomLaunchScreen: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setAppIconImage() {
-        appIconImageView.image = traitCollection
-            .userInterfaceStyle == .light ? UIImage(named: "LaunchScreenIconWhite") : UIImage(named: "LaunchScreenIconBlack")
     }
     
     private func waitingForLoading() {
