@@ -11,18 +11,19 @@ import Presentation
 public final class EventListViewCoordinator: Coordinator {
  
     private let window: UIWindow
-    private var navigationController: UINavigationController?
+    private var navigationController: TimeTableNavigationController?
     private var eventListViewController: EventListViewController?
     @WeakLazyInjected private var delegate: Coordinator?
     
-    public  init(window: UIWindow) {
+    public init(window: UIWindow) {
         self.window = window
     }
     
     public func start() {
         eventListViewController = Resolver.resolve(EventListViewController.self)
         eventListViewController?.delegate = self
-        navigationController = TimeTableNavigationController(rootViewController: eventListViewController ?? UIViewController())
+        navigationController = TimeTableNavigationController(rootViewController: eventListViewController ?? UIViewController(), userInterfaceStyle: self.window.overrideUserInterfaceStyle)
+        navigationController?.timeTableNavigationControllerDelegate = self
         self.window.rootViewController = navigationController
     }
     
@@ -37,6 +38,18 @@ public final class EventListViewCoordinator: Coordinator {
         navigationController?.viewControllers.first?.present(errorViewController, animated: true, completion: nil)
     }
 
+}
+
+
+
+extension EventListViewCoordinator: TimeTableNavigationControllerDelegate {
+    public func setAppearenceToggleTitle() {
+        if self.window.overrideUserInterfaceStyle == .dark {
+            self.window.overrideUserInterfaceStyle = .light
+        } else {
+            self.window.overrideUserInterfaceStyle = .dark
+        }
+    }
 }
 
 extension EventListViewCoordinator: EventListViewControllerDelegate {

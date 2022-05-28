@@ -23,6 +23,7 @@ public final class AppCoordinator: Coordinator {
     private func showLaunchScreen() {
         let customLaunchScreen = Resolver.resolve(CustomLaunchScreen.self)
         customLaunchScreen.delegate = self
+        customLaunchScreen.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
         self.window.rootViewController = customLaunchScreen
     }
     

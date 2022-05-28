@@ -7,9 +7,18 @@
 
 import UIKit
 
+public protocol TimeTableNavigationControllerDelegate: AnyObject {
+    func setAppearenceToggleTitle()
+}
+
 public final class TimeTableNavigationController: UINavigationController {
     
-    public override init(rootViewController: UIViewController) {
+    weak public var timeTableNavigationControllerDelegate: TimeTableNavigationControllerDelegate?
+    
+    private var userInterfaceStyle:  UIUserInterfaceStyle
+    
+    public init(rootViewController: UIViewController, userInterfaceStyle:  UIUserInterfaceStyle) {
+        self.userInterfaceStyle = userInterfaceStyle
         super.init(rootViewController: rootViewController)
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.shadowImage = UIImage()
@@ -29,6 +38,7 @@ public final class TimeTableNavigationController: UINavigationController {
         label.prepareForConstraints()
         label.font = .rubikRegular(12)
         label.addCharacterSpacing(kernValue: 50)
+        label.textColor = .timetableText
         return label
     }()
     
@@ -50,19 +60,14 @@ public final class TimeTableNavigationController: UINavigationController {
     }
     
     private func setAppearenceToggleTitle() {
-        if self.overrideUserInterfaceStyle == .unspecified {
-            self.overrideUserInterfaceStyle = .dark
-        }
-        userInterfaceStyleNameLabel.text = self.overrideUserInterfaceStyle == .dark ? Localizable.lightMode() : Localizable.darkMode()
-        userInterfaceStyleNameLabel.textColor = self.overrideUserInterfaceStyle == .dark ? .white : .black
+        timeTableNavigationControllerDelegate?.setAppearenceToggleTitle()
+        print(userInterfaceStyleNameLabel.overrideUserInterfaceStyle.rawValue)
+        print(userInterfaceStyle.rawValue)
+        userInterfaceStyleNameLabel.text = userInterfaceStyleNameLabel.textColor.isEqual(UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 1))) ? Localizable.lightMode() : Localizable.darkMode()
     }
     
     
     @objc private func animateUserInterfaceStyle() {
-        UIView.animate(withDuration: 0.2) {
-            self.overrideUserInterfaceStyle = self.overrideUserInterfaceStyle == .dark ? .light : .dark
-            self.view.layoutIfNeeded()
-        }
         appearenceToggle.changeUserInterfaceStyleAnimated()
         setAppearenceToggleTitle()
     }

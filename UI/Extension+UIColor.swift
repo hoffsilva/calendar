@@ -13,6 +13,10 @@ extension UIColor {
         UIColor(named: "red") ?? .magenta
     }
     
+    static var timetableText: UIColor {
+        UIColor(named: "text") ?? .magenta
+    }
+    
     static var timetableGray: UIColor {
         UIColor(named: "gray") ?? .magenta
     }
