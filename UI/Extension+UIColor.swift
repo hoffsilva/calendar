@@ -26,15 +26,7 @@ extension UIColor {
     }
     
     static var timetableSystemBackgroundColor: UIColor {
-        return UIColor { (UITraitCollection: UITraitCollection) -> UIColor in
-            if UITraitCollection.userInterfaceStyle == .dark {
-                /// Return the color for Dark Mode
-                return UIColor(named: "light-background-color") ?? .magenta
-            } else {
-                /// Return the color for Light Mode
-                return UIColor(named: "dark-background-color") ?? .magenta
-            }
-        }
+        UIColor(named: "background-color") ?? .magenta
     }
     
 }

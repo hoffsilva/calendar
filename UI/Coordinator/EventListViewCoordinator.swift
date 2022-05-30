@@ -43,7 +43,7 @@ public final class EventListViewCoordinator: Coordinator {
 
 
 extension EventListViewCoordinator: TimeTableNavigationControllerDelegate {
-    public func setAppearenceToggleTitle() {
+    public func setAppearenceToggleColor() {
         if self.window.overrideUserInterfaceStyle == .dark {
             self.window.overrideUserInterfaceStyle = .light
         } else {

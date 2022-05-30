@@ -41,10 +41,10 @@ public class EventCell: UITableViewCell {
     }
     
     private func setupLabelColor() {
-        eventDayLabel.textColor = .timetableSystemBackgroundColor
+        eventDayLabel.textColor = .timetableText
         conflictLabel.textColor = .systemBackground
         nextAppointmentLabel.textColor = .timetableDarkGray
-        eventHourLabel.textColor = .timetableSystemBackgroundColor
+        eventHourLabel.textColor = .timetableText
         eventTitleLabel.textColor = .timetableDarkGray
     }
     

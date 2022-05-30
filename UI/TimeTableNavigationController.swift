@@ -8,7 +8,7 @@
 import UIKit
 
 public protocol TimeTableNavigationControllerDelegate: AnyObject {
-    func setAppearenceToggleTitle()
+    func setAppearenceToggleColor()
 }
 
 public final class TimeTableNavigationController: UINavigationController {
@@ -49,7 +49,9 @@ public final class TimeTableNavigationController: UINavigationController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        setAppearenceToggleColor()
         setAppearenceToggleTitle()
+        NotificationCenter.default.addObserver(self, selector: #selector(setAppearenceToggleTitle), name: NSNotification.Name(rawValue: "AppearenceToggleTitle"), object: self)
     }
     
     private func configureAppearenceToggle() {
@@ -59,8 +61,12 @@ public final class TimeTableNavigationController: UINavigationController {
         appearenceToggle.addGestureRecognizer(tap)
     }
     
-    private func setAppearenceToggleTitle() {
-        timeTableNavigationControllerDelegate?.setAppearenceToggleTitle()
+    @objc private func setAppearenceToggleTitle() {
+        userInterfaceStyleNameLabel.text = userInterfaceStyleNameLabel.textColor.isEqual(UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 1))) ? Localizable.lightMode() : Localizable.darkMode()
+    }
+    
+    private func setAppearenceToggleColor() {
+        timeTableNavigationControllerDelegate?.setAppearenceToggleColor()
         print(userInterfaceStyleNameLabel.overrideUserInterfaceStyle.rawValue)
         print(userInterfaceStyle.rawValue)
         userInterfaceStyleNameLabel.text = userInterfaceStyleNameLabel.textColor.isEqual(UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 1))) ? Localizable.lightMode() : Localizable.darkMode()
@@ -69,7 +75,7 @@ public final class TimeTableNavigationController: UINavigationController {
     
     @objc private func animateUserInterfaceStyle() {
         appearenceToggle.changeUserInterfaceStyleAnimated()
-        setAppearenceToggleTitle()
+        setAppearenceToggleColor()
     }
     
     private func setupViewsHierarchy() {

@@ -65,7 +65,7 @@ public class ErrorViewController: UIViewController {
     
     private func setupLabelColor() {
         errorTitleLabel.textColor = .timetableRed
-        errorDescriptionLabel.textColor = .timetableSystemBackgroundColor
+        errorDescriptionLabel.textColor = .timetableText
     }
     
     private func setupCloseButton() {

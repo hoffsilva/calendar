@@ -63,7 +63,7 @@ final class AppearenceToggle: UIView {
     
     private func setupStyle() {
         self.backgroundColor = .clear
-        backgroundView.backgroundColor = .timetableSystemBackgroundColor
+        backgroundView.backgroundColor = .timetableText
         foregroundView.backgroundColor = .systemBackground
         setupCornerRadiusFor(view: backgroundView, radius: 9)
         setupCornerRadiusFor(view: foregroundView, radius: 9)
