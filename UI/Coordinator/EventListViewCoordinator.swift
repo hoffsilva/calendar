@@ -22,7 +22,7 @@ public final class EventListViewCoordinator: Coordinator {
     public func start() {
         eventListViewController = Resolver.resolve(EventListViewController.self)
         eventListViewController?.delegate = self
-        navigationController = TimeTableNavigationController(rootViewController: eventListViewController ?? UIViewController(), userInterfaceStyle: self.window.overrideUserInterfaceStyle)
+        navigationController = TimeTableNavigationController(rootViewController: eventListViewController ?? UIViewController())
         navigationController?.timeTableNavigationControllerDelegate = self
         self.window.rootViewController = navigationController
     }

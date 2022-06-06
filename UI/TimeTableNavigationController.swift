@@ -15,10 +15,7 @@ public final class TimeTableNavigationController: UINavigationController {
     
     weak public var timeTableNavigationControllerDelegate: TimeTableNavigationControllerDelegate?
     
-    private var userInterfaceStyle:  UIUserInterfaceStyle
-    
-    public init(rootViewController: UIViewController, userInterfaceStyle:  UIUserInterfaceStyle) {
-        self.userInterfaceStyle = userInterfaceStyle
+    public override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.shadowImage = UIImage()
@@ -66,9 +63,8 @@ public final class TimeTableNavigationController: UINavigationController {
     }
     
     private func setAppearenceToggleColor() {
-        timeTableNavigationControllerDelegate?.setAppearenceToggleColor()
         print(userInterfaceStyleNameLabel.overrideUserInterfaceStyle.rawValue)
-        print(userInterfaceStyle.rawValue)
+        timeTableNavigationControllerDelegate?.setAppearenceToggleColor()
         userInterfaceStyleNameLabel.text = userInterfaceStyleNameLabel.textColor.isEqual(UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 1))) ? Localizable.lightMode() : Localizable.darkMode()
     }
     

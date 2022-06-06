@@ -30,7 +30,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         } else {
             window?.overrideUserInterfaceStyle = .dark
         }
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "AppearenceToggleTitle"), object: self)
     }
     
 
