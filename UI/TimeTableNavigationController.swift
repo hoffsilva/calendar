@@ -7,13 +7,7 @@
 
 import UIKit
 
-public protocol TimeTableNavigationControllerDelegate: AnyObject {
-    func setAppearenceToggleColor()
-}
-
 public final class TimeTableNavigationController: UINavigationController {
-    
-    weak public var timeTableNavigationControllerDelegate: TimeTableNavigationControllerDelegate?
     
     public override init(rootViewController: UIViewController) {
         super.init(rootViewController: rootViewController)
@@ -59,13 +53,16 @@ public final class TimeTableNavigationController: UINavigationController {
     }
     
     @objc private func setAppearenceToggleTitle() {
-        userInterfaceStyleNameLabel.text = userInterfaceStyleNameLabel.textColor.isEqual(UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 1))) ? Localizable.lightMode() : Localizable.darkMode()
+        userInterfaceStyleNameLabel.text = userInterfaceStyleNameLabel.text == Localizable.darkMode() ? Localizable.lightMode() : Localizable.darkMode()
     }
     
     private func setAppearenceToggleColor() {
-        print(userInterfaceStyleNameLabel.overrideUserInterfaceStyle.rawValue)
-        timeTableNavigationControllerDelegate?.setAppearenceToggleColor()
-        userInterfaceStyleNameLabel.text = userInterfaceStyleNameLabel.textColor.isEqual(UIColor(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 1))) ? Localizable.lightMode() : Localizable.darkMode()
+        if overrideUserInterfaceStyle == .dark {
+            overrideUserInterfaceStyle = .light
+        } else {
+            overrideUserInterfaceStyle = .dark
+        }
+        setAppearenceToggleTitle()
     }
     
     
