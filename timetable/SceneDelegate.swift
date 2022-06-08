@@ -23,15 +23,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appCoordinator = AppCoordinator(window: window!)
         appCoordinator?.start()
     }
-    
-    func windowScene(_ windowScene: UIWindowScene, didUpdate previousCoordinateSpace: UICoordinateSpace, interfaceOrientation previousInterfaceOrientation: UIInterfaceOrientation, traitCollection previousTraitCollection: UITraitCollection) {
-        if previousTraitCollection.userInterfaceStyle == .dark {
-            window?.overrideUserInterfaceStyle = .light
-        } else {
-            window?.overrideUserInterfaceStyle = .dark
-        }
-    }
-    
-
 }
 
