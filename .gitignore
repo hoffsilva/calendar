@@ -12,6 +12,7 @@ timetable.xcodeproj/project.xcworkspace/*
 ## compatibility with Xcode 8 and earlier (ignoring not required starting Xcode 9)
 *.xcscmblueprint
 *.xccheckout
+timetable.xcodeproj/project.xcworkspace/xcuserdata/hoffsilva.xcuserdatad/UserInterfaceState.xcuserstate
 
 ## compatibility with Xcode 3 and earlier (ignoring not required starting Xcode 4)
 build/
