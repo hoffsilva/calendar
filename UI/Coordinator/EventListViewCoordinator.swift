@@ -39,11 +39,12 @@ public final class EventListViewCoordinator: Coordinator {
     }
     
     public func showDetail(of day: Day, from viewController: UIViewController) {
-        let detailDayViewModel = Resolver.resolve(DaysEventsViewModel.self,args: ["day": day])
+        let detailDayViewModel = Resolver.resolve(DaysEventsViewModel.self, args: ["day": day])
         let detailDayViewController = Resolver.resolve(DetailDayViewController.self, args: detailDayViewModel)
         guard let eventListViewController = viewController as? EventListViewController else {
             return
         }
+        detailDayViewController.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
         detailDayViewController.transitioningDelegate = eventListViewController
         detailDayViewController.modalPresentationStyle = .custom
         navigationController?.viewControllers.first?.present(detailDayViewController, animated: true, completion: nil)

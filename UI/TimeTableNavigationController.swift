@@ -42,7 +42,6 @@ public final class TimeTableNavigationController: UINavigationController {
         super.viewDidLoad()
         setAppearenceToggleColor()
         setAppearenceToggleTitle()
-        NotificationCenter.default.addObserver(self, selector: #selector(setAppearenceToggleTitle), name: NSNotification.Name(rawValue: "AppearenceToggleTitle"), object: self)
     }
     
     private func configureAppearenceToggle() {
@@ -84,7 +83,6 @@ public final class TimeTableNavigationController: UINavigationController {
         
         userInterfaceStyleNameLabel.centerVertically(inRelationTo: appearenceToggle)
         userInterfaceStyleNameLabel.pinLeftInRelation(to: appearenceToggle.rightAnchor, 8)
-
     }
     
 }

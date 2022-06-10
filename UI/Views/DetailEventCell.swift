@@ -14,8 +14,8 @@ class DetailEventCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.backgroundColor = .timetableSystemBackgroundColor
-        self.eventNameLabel.textColor = .systemBackground
+        self.backgroundColor = .timetableText
+        self.eventNameLabel.textColor = .timetableSystemBackgroundColor
         self.eventNameLabel.font = .rubikMedium(16)
     }
 

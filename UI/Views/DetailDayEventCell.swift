@@ -20,6 +20,8 @@ class DetailDayEventCell: UITableViewCell {
         super.awakeFromNib()
         hourLabel.font = .rubikRegular(16)
         sparatorView.backgroundColor = .timetableGray
+        self.backgroundColor = .clear
+        self.hourEventsCollectionView.backgroundColor = .clear
     }
     
     public func setupData(_ data: Hour) {
