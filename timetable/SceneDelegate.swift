@@ -20,14 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func configureWindow() {
-//        switch UserDefaults.standard.integer(forKey: "overrideUserInterfaceStyle") {
-//        case UIUserInterfaceStyle.dark.rawValue:
-//            window?.overrideUserInterfaceStyle = .dark
-//        case UIUserInterfaceStyle.light.rawValue:
-//            window?.overrideUserInterfaceStyle = .light
-//        default:
-//            window?.overrideUserInterfaceStyle = .dark
-//        }
         appCoordinator = AppCoordinator(window: window!)
         appCoordinator?.start()
     }
