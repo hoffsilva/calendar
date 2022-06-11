@@ -23,7 +23,7 @@ public final class EventListViewCoordinator: Coordinator {
     public func start() {
         eventListViewController = Resolver.resolve(EventListViewController.self)
         eventListViewController?.delegate = self
-        navigationController = TimeTableNavigationController(rootViewController: eventListViewController ?? UIViewController())
+        navigationController = TimeTableNavigationController(rootViewController: eventListViewController ?? UIViewController(), window: self.window)
         self.window.rootViewController = navigationController
     }
     
@@ -46,7 +46,7 @@ public final class EventListViewCoordinator: Coordinator {
         }
         detailDayViewController.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
         detailDayViewController.transitioningDelegate = eventListViewController
-        detailDayViewController.modalPresentationStyle = .custom
+        detailDayViewController.modalPresentationStyle = .overFullScreen
         navigationController?.viewControllers.first?.present(detailDayViewController, animated: true, completion: nil)
     }
 

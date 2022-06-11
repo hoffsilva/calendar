@@ -9,7 +9,10 @@ import UIKit
 
 public final class TimeTableNavigationController: UINavigationController {
     
-    public override init(rootViewController: UIViewController) {
+    private let window: UIWindow
+    
+    public init(rootViewController: UIViewController, window: UIWindow) {
+        self.window = window
         super.init(rootViewController: rootViewController)
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.shadowImage = UIImage()
@@ -40,7 +43,6 @@ public final class TimeTableNavigationController: UINavigationController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        setAppearenceToggleColor()
         setAppearenceToggleTitle()
     }
     
@@ -56,10 +58,10 @@ public final class TimeTableNavigationController: UINavigationController {
     }
     
     private func setAppearenceToggleColor() {
-        if overrideUserInterfaceStyle == .dark {
-            overrideUserInterfaceStyle = .light
+        if self.window.overrideUserInterfaceStyle == .dark {
+            self.window.overrideUserInterfaceStyle = .light
         } else {
-            overrideUserInterfaceStyle = .dark
+            self.window.overrideUserInterfaceStyle = .dark
         }
         setAppearenceToggleTitle()
     }
