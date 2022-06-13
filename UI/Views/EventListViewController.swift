@@ -25,7 +25,7 @@ public class EventListViewController: UIViewController, UIViewControllerTransiti
     
     private lazy var dataSource = makeDataSource()
     
-    let transition = Transition()
+    let transition = Transition(originCornerRadius: 8)
     
     var cell: EventCell?
     
@@ -127,14 +127,13 @@ extension EventListViewController: UITableViewDelegate {
     }
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.transitionMode = .present
-        transition.startingPoint = cell!.center
+//        transition.startingPoint = cell!.eventDayLabel.center
         return transition
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        transition.transitionMode = .dismiss
-        transition.startingPoint = cell!.center
+//        transition.transitionMode = .dismiss
+//        transition.startingPoint = cell!.center
         return transition
     }
     
