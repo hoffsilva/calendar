@@ -71,8 +71,7 @@ class DetailDayEventCell: UITableViewCell {
     }
     
     private func registerCell() {
-        let nibName = UINib(nibName: String(describing: DetailEventCell.self), bundle: Bundle(for: DetailEventCell.self))
-        hourEventsCollectionView.register(nibName, forCellWithReuseIdentifier: String(describing: DetailEventCell.self))
+        hourEventsCollectionView.register(DetailEventCell.self, forCellWithReuseIdentifier: String(describing: DetailEventCell.self))
     }
     
     private func makeDataSource() -> UICollectionViewDiffableDataSource<Int, Event> {

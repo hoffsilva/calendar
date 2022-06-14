@@ -93,7 +93,6 @@
 		0BD0A7EB27D034B00087B1AC /* Hour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7EA27D034B00087B1AC /* Hour.swift */; };
 		0BD0A7EE27D035F00087B1AC /* DetailDayEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */; };
 		0BD1166F27DE298000BD7AD8 /* DetailEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */; };
-		0BD1167027DE298000BD7AD8 /* DetailEventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BD1166E27DE298000BD7AD8 /* DetailEventCell.xib */; };
 		502BDF642843C22E00C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		502BDF652843CDD200C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094EC582842499A002A3042 /* Extension+UIColor.swift */; };
@@ -290,7 +289,6 @@
 		0BD0A7EA27D034B00087B1AC /* Hour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hour.swift; sourceTree = "<group>"; };
 		0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDayEventCell.swift; sourceTree = "<group>"; };
 		0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventCell.swift; sourceTree = "<group>"; };
-		0BD1166E27DE298000BD7AD8 /* DetailEventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailEventCell.xib; sourceTree = "<group>"; };
 		502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5094EC582842499A002A3042 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -545,7 +543,6 @@
 				0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */,
 				0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */,
 				0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */,
-				0BD1166E27DE298000BD7AD8 /* DetailEventCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -895,7 +892,6 @@
 				0B471E4027AEF0AF00644CE2 /* ErrorViewController.xib in Resources */,
 				0B3331D827B000DA00695F27 /* Assets.xcassets in Resources */,
 				0B471E3927AEF0AF00644CE2 /* CustomLaunchScreen.xib in Resources */,
-				0BD1167027DE298000BD7AD8 /* DetailEventCell.xib in Resources */,
 				0BD0A7E727D030C00087B1AC /* DetailDayViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
