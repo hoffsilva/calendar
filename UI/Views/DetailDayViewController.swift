@@ -26,7 +26,6 @@ class DetailDayViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        view.layoutIfNeeded()
         registerCell()
         listOfDaysEventsTableView.dataSource = dataSource
         listOfDaysEventsTableView.delegate = self
@@ -61,8 +60,7 @@ class DetailDayViewController: UIViewController {
     }
     
     private func registerCell() {
-        let nibName = UINib(nibName: String(describing: DetailDayEventCell.self), bundle: Bundle(for: DetailDayEventCell.self))
-        listOfDaysEventsTableView.register(nibName, forCellReuseIdentifier: String(describing: DetailDayEventCell.self))
+        listOfDaysEventsTableView.register(DetailDayEventCell.self, forCellReuseIdentifier: String(describing: DetailDayEventCell.self))
     }
     
     private func makeDataSource() -> UITableViewDiffableDataSource<Int, Hour> {
