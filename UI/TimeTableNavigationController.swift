@@ -27,12 +27,21 @@ public final class TimeTableNavigationController: UINavigationController {
         AppearenceToggle()
     }()
     
+    private lazy var appearenceToggleTap:  UIGestureRecognizer = {
+        UITapGestureRecognizer(target: self, action: #selector(animateUserInterfaceStyle))
+    }()
+    
+    private lazy var userInterfaceStyleNameLabelTap:  UIGestureRecognizer = {
+        UITapGestureRecognizer(target: self, action: #selector(animateUserInterfaceStyle))
+    }()
+    
     private lazy var userInterfaceStyleNameLabel: UILabel = {
         let label = UILabel()
         label.prepareForConstraints()
         label.font = .rubikRegular(12)
         label.addCharacterSpacing(kernValue: 50)
         label.textColor = .timetableText
+        label.isUserInteractionEnabled = true
         return label
     }()
     
@@ -49,8 +58,8 @@ public final class TimeTableNavigationController: UINavigationController {
     private func configureAppearenceToggle() {
         setupViewsHierarchy()
         setupConstraints()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(animateUserInterfaceStyle))
-        appearenceToggle.addGestureRecognizer(tap)
+        appearenceToggle.addGestureRecognizer(appearenceToggleTap)
+        userInterfaceStyleNameLabel.addGestureRecognizer(userInterfaceStyleNameLabelTap)
     }
     
     @objc private func setAppearenceToggleTitle() {
