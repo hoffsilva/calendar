@@ -40,13 +40,13 @@ class DetailDayEventCell: UITableViewCell {
     
     private func setupViewsConstraints() {
         hourLabel.centerVertically()
-        hourLabel.pinLeft()
+        hourLabel.pinLeft(24)
         hourEventsCollectionView.pinLeftInRelation(to: hourLabel.rightAnchor)
         hourEventsCollectionView.pinRight(24)
         hourEventsCollectionView.pinTop()
         hourEventsCollectionView.pinBottomInRelation(to: separatorView.topAnchor)
-        separatorView.pinLeft()
-        separatorView.pinRight()
+        separatorView.pinLeft(24)
+        separatorView.pinRight(24)
         separatorView.pinBottom()
         separatorView.height(with: 1.5)
     }

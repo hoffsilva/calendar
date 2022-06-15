@@ -9,25 +9,16 @@ import UIKit
 
 class Transition: NSObject {
     
-//    private let originCornerRadius: CGFloat
-//
-//    private let animationContainer: UIView = {
-//        UIView()
-//    }()
-//
-//    private var animationContainerTopConstraint: NSLayoutConstraint?
-//    private var animationContainerLeftConstraint: NSLayoutConstraint?
-//    private var animationContainerWidthConstraint: NSLayoutConstraint?
-//    private var animationContainerHeightConstraint: NSLayoutConstraint?
-//
-//    init(originCornerRadius: CGFloat) {
-//        self.originCornerRadius = originCornerRadius
-//    }
-//
-//    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-//        return 3
-//    }
-//
+    private let originView: UIView
+
+    init(originView: UIView) {
+        self.originView = originView
+    }
+
+    public func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 3
+    }
+
 //    public func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
 //        guard let originNavigationViewController = transitionContext.viewController(forKey: .from) as? TimeTableNavigationController,
 //              let originViewController = originNavigationViewController.viewControllers.first as? EventListViewController,
@@ -44,15 +35,15 @@ class Transition: NSObject {
 //        animationContainer.addSubview(destinationView)
 //        transitionContainer.addSubview(animationContainer)
 //
-//        configureAnimationContainerInitialState(originImageViewFrame: originImageViewFrame)
+////        configureAnimationContainerInitialState(originImageViewFrame: originImageViewFrame)
 //
-//        configureDestinationViewInitialState(destinationView,
-//                                             originFrame: originImageViewFrame,
-//                                             destinationFrame: destinationViewFrame)
+////        configureDestinationViewInitialState(destinationView,
+////                                             originFrame: originImageViewFrame,
+////                                             destinationFrame: destinationViewFrame)
 //
 //        transitionContainer.layoutIfNeeded()
 //
-//        configureAnimationContainerFinalState(destinationFrame: destinationViewFrame)
+////        configureAnimationContainerFinalState(destinationFrame: destinationViewFrame)
 //
 //        UIView.animate(
 //            withDuration: self.transitionDuration(using: transitionContext),
@@ -62,55 +53,24 @@ class Transition: NSObject {
 //            options: [.curveEaseOut],
 //            animations: {
 //                self.animationContainer.layer.cornerRadius = 0
-//                transitionContainer.layoutIfNeeded()
+////                transitionContainer.layoutIfNeeded()
 //            }, completion: { _ in
 //                transitionContext.completeTransition(true)
 //            })
 //    }
+
 //
-//    private func configureAnimationContainerInitialState(originImageViewFrame: CGRect) {
-//        animationContainer.layer.cornerRadius = self.originCornerRadius
-//        animationContainer.layer.masksToBounds = true
+
+//    var origin = UIView()
 //
-//        animationContainerTopConstraint = animationContainer.pinTop(originImageViewFrame.origin.y)
-//        animationContainerLeftConstraint = animationContainer.pinLeft(originImageViewFrame.origin.x)
-//        animationContainerWidthConstraint = animationContainer.constraintWidth(originImageViewFrame.width)
-//        animationContainerHeightConstraint = animationContainer.constraintHeight(originImageViewFrame.height)
+//    var startingPoint = CGPoint.zero {
+//        didSet {
+//            origin.center = startingPoint
+//        }
 //    }
 //
-//    private func configureAnimationContainerFinalState(destinationFrame: CGRect) {
-//        animationContainerTopConstraint?.constant = 0
-//        animationContainerLeftConstraint?.constant = 0
-//        animationContainerWidthConstraint?.constant = destinationFrame.width
-//        animationContainerHeightConstraint?.constant = destinationFrame.height
-//    }
+
 //
-//    private func configureDestinationViewInitialState(_ destinationView: UIView,
-//                                                      originFrame: CGRect,
-//                                                      destinationFrame: CGRect) {
-////        let screen = destinationView.subviews[0] as? ShoppingWebViewScreen
-////        screen?.imageView.image = image
-////        screen?.updateHeaderHeight(constant: originFrame.height)
-//
-//        destinationView.prepareForConstraints()
-//        destinationView.pinTop()
-//        destinationView.pinLeft()
-//        destinationView.pinRight()
-//        destinationView.constraintHeight(destinationFrame.height)
-//    }
-
-    var origin = UIView()
-
-    var startingPoint = CGPoint.zero {
-        didSet {
-            origin.center = startingPoint
-        }
-    }
-
-    var circleColor = UIColor.timetableSystemBackgroundColor
-
-    var duration = 0.3
-
     enum TransitionMode:Int {
         case present, dismiss, pop
     }
@@ -120,9 +80,6 @@ class Transition: NSObject {
 }
 
 extension Transition: UIViewControllerAnimatedTransitioning {
-    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return duration
-    }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
@@ -138,28 +95,28 @@ extension Transition: UIViewControllerAnimatedTransitioning {
 
                 presentedView.prepareForConstraints()
                 // pra animacao nascer do formato do ponto de origem
-                origin = UIView()
-                origin.prepareForConstraints()
+
+                originView.prepareForConstraints()
 //
 //                // pra animacao crescer no formato do ponto de origem
-                origin.frame = originCell.eventDayLabel.frame
-                origin.center = CGPoint(x: originCell.eventDayLabel.center.x, y: originCell.center.y)
-                origin.backgroundColor = circleColor
-                origin.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
-                containerView.addSubview(origin)
-                origin.pinEdgesToSafeArea()
+                originView.frame = originCell.eventDayLabel.frame
+//                ori.center = CGPoint(x: originCell.eventDayLabel.center.x, y: originCell.center.y)
+                originView.backgroundColor = .timetableSystemBackgroundColor
+                originView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                containerView.addSubview(originView)
+                originView.pinEdgesToSafeArea()
 
-                presentedView.center = originCell.eventDayLabel.center
-                presentedView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+//                presentedView.center = originCell.eventDayLabel.center
+//                presentedView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 presentedView.alpha = 0
-                origin.addSubview(presentedView)
+                originView.addSubview(presentedView)
                 presentedView.pinEdgesToSafeArea()
 
-                UIView.animate(withDuration: duration, animations: {
-                    self.origin.transform = CGAffineTransform.identity
+                UIView.animate(withDuration: 3, animations: {
+                    self.originView.transform = CGAffineTransform.identity
                     presentedView.transform = CGAffineTransform.identity
                     presentedView.alpha = 1
-                    presentedView.center = viewCenter
+//                    presentedView.center = viewCenter
 
                     }, completion: { (success:Bool) in
                         transitionContext.completeTransition(success)
@@ -178,15 +135,15 @@ extension Transition: UIViewControllerAnimatedTransitioning {
 //
 //                origin.center = startingPoint
 
-                UIView.animate(withDuration: duration, animations: {
-                    self.origin.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
+                UIView.animate(withDuration: 3, animations: {
+                    self.originView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
 //                    returningView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
 //                    returningView.center = self.startingPoint
                     returningView.alpha = 0
 
                     if self.transitionMode == .pop {
                         containerView.insertSubview(returningView, belowSubview: returningView)
-                        containerView.insertSubview(self.origin, belowSubview: returningView)
+                        containerView.insertSubview(self.originView, belowSubview: returningView)
                     }
 
 
@@ -194,7 +151,7 @@ extension Transition: UIViewControllerAnimatedTransitioning {
                         returningView.center = viewCenter
                         returningView.removeFromSuperview()
 
-                        self.origin.removeFromSuperview()
+                        self.originView.removeFromSuperview()
 
                         transitionContext.completeTransition(success)
 
@@ -204,19 +161,6 @@ extension Transition: UIViewControllerAnimatedTransitioning {
 
 
         }
-
-    }
-
-
-
-    func frameForCircle (withViewCenter viewCenter:CGPoint, size viewSize:CGSize, startPoint:CGPoint) -> CGRect {
-        let xLength = fmax(startPoint.x, viewSize.width - startPoint.x)
-        let yLength = fmax(startPoint.y, viewSize.height - startPoint.y)
-
-        let offestVector = sqrt(xLength * xLength + yLength * yLength) * 2
-        let size = CGSize(width: offestVector, height: offestVector)
-
-        return CGRect(origin: CGPoint.zero, size: size)
 
     }
 
