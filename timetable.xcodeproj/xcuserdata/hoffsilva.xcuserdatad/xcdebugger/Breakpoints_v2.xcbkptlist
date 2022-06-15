@@ -48,8 +48,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
             endingLineNumber = "102"
-            landmarkName = "Transition"
-            landmarkType = "21">
+            landmarkName = "animateTransition(using:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,8 +126,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "56"
             endingLineNumber = "56"
-            landmarkName = "animateTransition(using:)"
-            landmarkType = "7">
+            landmarkName = "ShowTransition"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "5E243CFD-B1ED-44F2-84A4-41998883E3BE - 9fd82985dc9fef2e"

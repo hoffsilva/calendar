@@ -86,7 +86,8 @@
 		0B471E7C27AEF3FB00644CE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */; };
 		0B57B02A27B82A6F008F4015 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57B02927B82A6F008F4015 /* Resolver.swift */; };
 		0B57B02C27B82E60008F4015 /* exportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B57B02B27B82E60008F4015 /* exportOptions.plist */; };
-		0BAF0A9A27E6281400030DA1 /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF0A9927E6281400030DA1 /* Transition.swift */; };
+		0BAF0A9A27E6281400030DA1 /* ShowTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF0A9927E6281400030DA1 /* ShowTransition.swift */; };
+		0BC68B09285A78A20086B2CF /* DismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC68B08285A78A20086B2CF /* DismissTransition.swift */; };
 		0BD0A7E627D030C00087B1AC /* DetailDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7E427D030C00087B1AC /* DetailDayViewController.swift */; };
 		0BD0A7E727D030C00087B1AC /* DetailDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */; };
 		0BD0A7E927D032800087B1AC /* DaysEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7E827D032800087B1AC /* DaysEventsViewModel.swift */; };
@@ -282,7 +283,8 @@
 		0B471E8427AEF43A00644CE2 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		0B57B02927B82A6F008F4015 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		0B57B02B27B82E60008F4015 /* exportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = exportOptions.plist; sourceTree = "<group>"; };
-		0BAF0A9927E6281400030DA1 /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		0BAF0A9927E6281400030DA1 /* ShowTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTransition.swift; sourceTree = "<group>"; };
+		0BC68B08285A78A20086B2CF /* DismissTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissTransition.swift; sourceTree = "<group>"; };
 		0BD0A7E427D030C00087B1AC /* DetailDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDayViewController.swift; sourceTree = "<group>"; };
 		0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailDayViewController.xib; sourceTree = "<group>"; };
 		0BD0A7E827D032800087B1AC /* DaysEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysEventsViewModel.swift; sourceTree = "<group>"; };
@@ -495,7 +497,8 @@
 				0B471E2227AEF0AF00644CE2 /* Views */,
 				0B3331C327AFF88300695F27 /* Extensions+UIViewController.swift */,
 				0B471E8027AEF43A00644CE2 /* Localizations */,
-				0BAF0A9927E6281400030DA1 /* Transition.swift */,
+				0BAF0A9927E6281400030DA1 /* ShowTransition.swift */,
+				0BC68B08285A78A20086B2CF /* DismissTransition.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -990,6 +993,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B3331C427AFF88300695F27 /* Extensions+UIViewController.swift in Sources */,
+				0BC68B09285A78A20086B2CF /* DismissTransition.swift in Sources */,
 				0B3331C027AFF1F000695F27 /* EventListViewCoordinator.swift in Sources */,
 				0B471E5827AEF2E500644CE2 /* String+Utils.swift in Sources */,
 				0B471E5527AEF2E500644CE2 /* Extension+UILabel.swift in Sources */,
@@ -1006,7 +1010,7 @@
 				0B3331C227AFF1FE00695F27 /* Coordinator.swift in Sources */,
 				5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */,
 				0B471E5627AEF2E500644CE2 /* Extension+UIFont.swift in Sources */,
-				0BAF0A9A27E6281400030DA1 /* Transition.swift in Sources */,
+				0BAF0A9A27E6281400030DA1 /* ShowTransition.swift in Sources */,
 				0B471E5427AEF2E500644CE2 /* UIView+Constraints.swift in Sources */,
 				0B471E3D27AEF0AF00644CE2 /* AppearenceToggle.swift in Sources */,
 				0B3331C727AFFAFF00695F27 /* Localizable.swift in Sources */,

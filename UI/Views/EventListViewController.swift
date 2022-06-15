@@ -129,13 +129,13 @@ extension EventListViewController: UITableViewDelegate {
 //        t
         guard let originView = cell?.eventDayLabel else { return nil }
                 
-        return Transition(originView: originView)
+        return ShowTransition()
     }
     
-//    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-////        transition.transitionMode = .dismiss
-////        transition.startingPoint = cell!.center
-//        return transition
-//    }
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        transition.transitionMode = .dismiss
+//        transition.startingPoint = cell!.center
+        return DismissTransition()
+    }
     
 }
