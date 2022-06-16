@@ -21,7 +21,17 @@ class DetailDayViewController: UIViewController {
     @IBOutlet weak var nameOfMonthLabel: UILabel!
     @IBOutlet weak var separatorView: UIView!
     @IBOutlet weak var listOfDaysEventsTableView: UITableView!
-
+    
+    
+    @IBOutlet weak var nameOfDayLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var numberOfDayLeadingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var nameOfMonthLeadingConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var listOfDaysEventsTableViewTopConstraints: NSLayoutConstraint!
+    
+    @IBOutlet weak var listOfDaysEventsTableViewBottomConstraints: NSLayoutConstraint!
+    
     private lazy var dataSource = makeDataSource()
     
     public override func viewDidLoad() {
@@ -48,6 +58,18 @@ class DetailDayViewController: UIViewController {
             self?.nameOfTheDayLabel.text = data.dayOfWeek
             self?.numberOfTheDayLabel.text = data.dayOfMonth
             self?.nameOfMonthLabel.text = data.month
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.nameOfDayLeadingConstraint.constant = 24
+        self.numberOfDayLeadingConstraint.constant = 24
+        self.nameOfMonthLeadingConstraint.constant = 8
+        self.listOfDaysEventsTableViewTopConstraints.constant = 4
+        self.listOfDaysEventsTableViewBottomConstraints.constant = 0
+        UIView.animate(withDuration: 0.8) {
+            self.view.layoutIfNeeded()
         }
     }
     
@@ -116,7 +138,17 @@ class DetailDayViewController: UIViewController {
     }
     
     @objc private func didTapOnBackButton() {
-        self.dismiss(animated: true, completion: nil)
+        self.nameOfDayLeadingConstraint.constant = -90
+        self.numberOfDayLeadingConstraint.constant = -58
+        self.nameOfMonthLeadingConstraint.constant = 44
+        self.listOfDaysEventsTableViewTopConstraints.constant = 900
+        self.listOfDaysEventsTableViewBottomConstraints.constant = 900
+        UIView.animate(withDuration: 0.6, delay: 0, options: .curveLinear) {
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            self.dismiss(animated: true, completion: nil)
+        }
+        
     }
 }
 
