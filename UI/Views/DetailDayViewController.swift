@@ -87,7 +87,10 @@ class DetailDayViewController: UIViewController {
     
     private func makeDataSource() -> UITableViewDiffableDataSource<Int, Hour> {
         UITableViewDiffableDataSource(tableView: listOfDaysEventsTableView) { tableView, indexPath, itemIdentifier in
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: DetailDayEventCell.self), for: indexPath) as? DetailDayEventCell else { return UITableViewCell() }
+            guard let cell = tableView
+                .dequeueReusableCell(
+                    withIdentifier: String(describing: DetailDayEventCell.self),
+                    for: indexPath) as? DetailDayEventCell else { return UITableViewCell() }
             cell.setupData(itemIdentifier)
             return cell
         }
