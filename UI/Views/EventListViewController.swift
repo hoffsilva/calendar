@@ -152,7 +152,7 @@ extension EventListViewController: UITableViewDelegate {
     }
     
     private func dragScreenDown(y: CGFloat, completion: @escaping (()->Void)) {
-        self.listViewTableView.setContentOffset(CGPoint(x: 0, y: 46 + y), animated: true)
+        self.listViewTableView.setContentOffset(CGPoint(x: 0, y: y), animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             completion()
         }
