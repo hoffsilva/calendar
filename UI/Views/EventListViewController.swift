@@ -25,6 +25,8 @@ public class EventListViewController: UIViewController, UIViewControllerTransiti
     
     private lazy var dataSource = makeDataSource()
     
+    private let saltedTag = 1000
+    
     var cell: EventCell?
     
     public override func viewDidLoad() {
@@ -91,7 +93,8 @@ public class EventListViewController: UIViewController, UIViewControllerTransiti
         label.prepareForConstraints()
         backgroundView.addSubview(label)
         label.pinLeft(24)
-        label.centerHorizontally()
+        label.pinTop(16)
+        label.pinBottom()
         return backgroundView
     }
     
@@ -116,7 +119,7 @@ extension EventListViewController: UITableViewDelegate {
         let headerView =  createSectionHeaderView(
             with: viewModel.months?[section].name
         )
-        headerView.tag = section+1000
+        headerView.tag = section+saltedTag
         return headerView
     }
     
@@ -125,7 +128,7 @@ extension EventListViewController: UITableViewDelegate {
         self.cell = tableView.cellForRow(at: indexPath) as? EventCell
         
         if let view = tableView.subviews.filter({ view in
-            return view.tag == indexPath.section+1000
+            return view.tag == indexPath.section+saltedTag
         }).first {
             self.dragScreenDown(y: view.frame.minY) {
                 self.delegate?.didTapToDetail(day: day, from: self)
@@ -149,7 +152,7 @@ extension EventListViewController: UITableViewDelegate {
     }
     
     private func dragScreenDown(y: CGFloat, completion: @escaping (()->Void)) {
-        self.listViewTableView.setContentOffset(CGPoint(x: 0, y: 35.33 + y), animated: true)
+        self.listViewTableView.setContentOffset(CGPoint(x: 0, y: 46 + y), animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             completion()
         }
