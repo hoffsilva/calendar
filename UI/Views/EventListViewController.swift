@@ -113,29 +113,46 @@ extension EventListViewController: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return createSectionHeaderView(
-            with: dataSource.sectionIdentifier(for: section)?.name
+        let headerView =  createSectionHeaderView(
+            with: viewModel.months?[section].name
         )
+        headerView.tag = section+1000
+        return headerView
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let day = viewModel.months?[indexPath.section].days[indexPath.row] else { return }
         self.cell = tableView.cellForRow(at: indexPath) as? EventCell
-        self.delegate?.didTapToDetail(day: day, from: self)
+        
+        if let view = tableView.subviews.filter({ view in
+            return view.tag == indexPath.section+1000
+        }).first {
+            self.dragScreenDown(y: view.frame.minY) {
+                self.delegate?.didTapToDetail(day: day, from: self)
+            }
+        }
+        
     }
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        transition.startingPoint = cell!.eventDayLabel.center
-//        t
+        //        transition.startingPoint = cell!.eventDayLabel.center
+        //        t
         guard let originView = cell?.eventDayLabel else { return nil }
-                
+        
         return ShowTransition()
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-//        transition.transitionMode = .dismiss
-//        transition.startingPoint = cell!.center
+        //        transition.transitionMode = .dismiss
+        //        transition.startingPoint = cell!.center
         return DismissTransition()
+    }
+    
+    private func dragScreenDown(y: CGFloat, completion: @escaping (()->Void)) {
+        self.listViewTableView.setContentOffset(CGPoint(x: 0, y: 35.33 + y), animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            completion()
+        }
     }
     
 }
