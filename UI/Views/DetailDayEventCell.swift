@@ -15,6 +15,7 @@ class DetailDayEventCell: UITableViewCell {
         label.prepareForConstraints()
         label.font = .rubikRegular(16)
         label.textAlignment = .justified
+        label.textColor = .timetableGray
         return label
     }()
     
@@ -50,7 +51,7 @@ class DetailDayEventCell: UITableViewCell {
         separatorView.pinLeft(24)
         separatorView.pinRight(24)
         separatorView.pinBottom()
-        separatorView.height(with: 1.5)
+        separatorView.height(with: 1)
     }
     
     public func setupData(_ data: Hour) {
