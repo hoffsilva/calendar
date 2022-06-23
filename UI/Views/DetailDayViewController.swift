@@ -63,12 +63,37 @@ class DetailDayViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.nameOfDayLeadingConstraint.constant = 24
-        self.numberOfDayLeadingConstraint.constant = 24
-        self.nameOfMonthLeadingConstraint.constant = 8
-        self.listOfDaysEventsTableViewTopConstraints.constant = 4
-        self.listOfDaysEventsTableViewBottomConstraints.constant = 0
-        UIView.animate(withDuration: 0.8) {
+        animateNameOfDay(with: 24)
+        animateNumberOfDay(with: 24)
+        animateNameOfMonth(with: 8)
+        animateListOfDaysEventsTableView(with: 4, and: 0)
+    }
+    
+    private func animateNameOfDay(with constant: CGFloat) {
+        self.nameOfDayLeadingConstraint.constant = constant
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func animateNumberOfDay(with constant: CGFloat) {
+        self.numberOfDayLeadingConstraint.constant = constant
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func animateNameOfMonth(with constant: CGFloat) {
+        self.nameOfMonthLeadingConstraint.constant = constant
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    private func animateListOfDaysEventsTableView(with constantTop: CGFloat, and constantBottom: CGFloat) {
+        self.listOfDaysEventsTableViewTopConstraints.constant = constantTop
+        self.listOfDaysEventsTableViewBottomConstraints.constant = constantBottom
+        UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
     }
@@ -141,11 +166,10 @@ class DetailDayViewController: UIViewController {
     }
     
     @objc private func didTapOnBackButton() {
-        self.nameOfDayLeadingConstraint.constant = -90
-        self.numberOfDayLeadingConstraint.constant = -58
-        self.nameOfMonthLeadingConstraint.constant = 44
-        self.listOfDaysEventsTableViewTopConstraints.constant = 900
-        self.listOfDaysEventsTableViewBottomConstraints.constant = 900
+        animateNameOfDay(with: -90)
+        animateNumberOfDay(with: -58)
+        animateNameOfMonth(with: 44)
+        animateListOfDaysEventsTableView(with: 900, and: 900)
         UIView.animate(withDuration: 0.6, delay: 0, options: .curveLinear) {
             self.view.layoutIfNeeded()
         } completion: { _ in
