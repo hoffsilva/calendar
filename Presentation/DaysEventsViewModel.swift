@@ -43,7 +43,7 @@ public final class DaysEventsViewModel {
         
         headerData?(
             HeaderData(
-                dayOfWeek: day.events.first?.startDate.getDayOfWeek().lowercased() ?? "",
+                dayOfWeek: day.events.first?.startDate.getDayOfWeek().capitalized ?? "",
                 dayOfMonth: day.number,
                 month: day.events.first?.startDate.getLongMonth() ?? ""
             )

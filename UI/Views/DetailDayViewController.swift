@@ -57,7 +57,7 @@ class DetailDayViewController: UIViewController {
         daysEventsViewModel.headerData = { [weak self] data in
             self?.nameOfTheDayLabel.text = data.dayOfWeek
             self?.numberOfTheDayLabel.text = data.dayOfMonth
-            self?.nameOfMonthLabel.text = data.month
+            self?.nameOfMonthLabel.text = data.month.capitalized
         }
     }
     
@@ -78,14 +78,14 @@ class DetailDayViewController: UIViewController {
     
     private func animateNumberOfDay(with constant: CGFloat) {
         self.numberOfDayLeadingConstraint.constant = constant
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.3, delay: 0.13) {
             self.view.layoutIfNeeded()
         }
     }
     
     private func animateNameOfMonth(with constant: CGFloat) {
         self.nameOfMonthLeadingConstraint.constant = constant
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.3, delay: 0.2) {
             self.view.layoutIfNeeded()
         }
     }
@@ -93,7 +93,7 @@ class DetailDayViewController: UIViewController {
     private func animateListOfDaysEventsTableView(with constantTop: CGFloat, and constantBottom: CGFloat) {
         self.listOfDaysEventsTableViewTopConstraints.constant = constantTop
         self.listOfDaysEventsTableViewBottomConstraints.constant = constantBottom
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseInOut) {
             self.view.layoutIfNeeded()
         }
     }

@@ -117,7 +117,7 @@ extension EventListViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView =  createSectionHeaderView(
-            with: viewModel.months?[section].name
+            with: viewModel.months?[section].name.capitalized
         )
         headerView.tag = section+saltedTag
         return headerView
@@ -130,7 +130,7 @@ extension EventListViewController: UITableViewDelegate {
         if let view = tableView.subviews.filter({ view in
             return view.tag == indexPath.section+saltedTag
         }).first {
-            self.dragScreenDown(y: view.frame.minY) {
+            self.scrollSectionTo(y: view.frame.minY) {
                 self.delegate?.didTapToDetail(day: day, from: self)
             }
         }
@@ -151,7 +151,7 @@ extension EventListViewController: UITableViewDelegate {
         return DismissTransition()
     }
     
-    private func dragScreenDown(y: CGFloat, completion: @escaping (()->Void)) {
+    private func scrollSectionTo(y: CGFloat, completion: @escaping (()->Void)) {
         self.listViewTableView.setContentOffset(CGPoint(x: 0, y: y), animated: true)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             completion()

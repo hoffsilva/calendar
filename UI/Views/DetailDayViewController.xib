@@ -56,20 +56,20 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="nameOfMonth" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AT2-HS-kr7">
-                    <rect key="frame" x="6.6666666666666572" y="105.66666666666667" width="397.33333333333337" height="21"/>
+                    <rect key="frame" x="-29.333333333333343" y="105.66666666666667" width="433.33333333333337" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IBZ-Co-PfS">
-                    <rect key="frame" x="24" y="174.66666666666666" width="380" height="1"/>
+                    <rect key="frame" x="24" y="150.66666666666666" width="380" height="1"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="6Tb-8L-a4Y"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="1rY-zs-664">
-                    <rect key="frame" x="0.0" y="1075.6666666666667" width="428" height="716.33333333333326"/>
+                    <rect key="frame" x="0.0" y="1051.6666666666667" width="428" height="740.33333333333326"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -78,13 +78,13 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C89-Nn-vJI" secondAttribute="trailing" constant="24" id="1jT-vd-Ac6"/>
                 <constraint firstItem="AT2-HS-kr7" firstAttribute="centerY" secondItem="rnq-da-tNJ" secondAttribute="centerY" id="5De-Eb-Mmg"/>
-                <constraint firstItem="AT2-HS-kr7" firstAttribute="leading" secondItem="rnq-da-tNJ" secondAttribute="trailing" constant="44" id="5F5-L7-wdZ"/>
+                <constraint firstItem="AT2-HS-kr7" firstAttribute="leading" secondItem="rnq-da-tNJ" secondAttribute="trailing" constant="8" id="5F5-L7-wdZ"/>
                 <constraint firstItem="bNp-p5-4Dt" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="7Sy-uh-CT9"/>
                 <constraint firstItem="bNp-p5-4Dt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="8aS-Gz-1cc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="AT2-HS-kr7" secondAttribute="trailing" constant="24" id="BpO-TX-hRS"/>
                 <constraint firstItem="rnq-da-tNJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="-58" id="CzT-8r-Bcd"/>
                 <constraint firstItem="zcp-Ac-Rzi" firstAttribute="top" secondItem="bNp-p5-4Dt" secondAttribute="bottom" constant="8" id="E1d-9G-55E"/>
-                <constraint firstItem="IBZ-Co-PfS" firstAttribute="top" secondItem="rnq-da-tNJ" secondAttribute="bottom" constant="48" id="Ghf-Dp-m3x"/>
+                <constraint firstItem="IBZ-Co-PfS" firstAttribute="top" secondItem="rnq-da-tNJ" secondAttribute="bottom" constant="24" id="Ghf-Dp-m3x"/>
                 <constraint firstItem="zcp-Ac-Rzi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="-90" id="I6G-Hb-YZc"/>
                 <constraint firstItem="1rY-zs-664" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Py8-CC-9jo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zcp-Ac-Rzi" secondAttribute="trailing" constant="24" id="RZx-0N-lU0"/>
