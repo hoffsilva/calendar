@@ -14,6 +14,7 @@ class DetailDayEventCell: UITableViewCell {
         let label = UILabel()
         label.prepareForConstraints()
         label.font = .rubikRegular(16)
+        label.textAlignment = .justified
         return label
     }()
     
@@ -41,6 +42,7 @@ class DetailDayEventCell: UITableViewCell {
     private func setupViewsConstraints() {
         hourLabel.centerVertically()
         hourLabel.pinLeft(24)
+        hourLabel.width(with: 48)
         hourEventsCollectionView.pinLeftInRelation(to: hourLabel.rightAnchor)
         hourEventsCollectionView.pinRight(24)
         hourEventsCollectionView.pinTop()

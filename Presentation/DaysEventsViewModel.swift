@@ -16,7 +16,7 @@ public struct HeaderData {
 
 public final class DaysEventsViewModel {
     
-    private let day: Day
+    private var day: Day
     
     public var listOfHour: (([Hour]) -> Void)?
     public var headerData: ((HeaderData) -> Void)?
@@ -27,18 +27,12 @@ public final class DaysEventsViewModel {
     
     public func loadData() {
         
-        let set = Set(self.day.events.map { $0.startDate.getShortHour()})
-        
-        var hours = [Hour]()
-        
-        for hour in set {
-            var a = Hour(name: hour, events: [])
+        for (index, hour) in day.hours.enumerated() {
             for event in day.events {
-                if event.startDate.getShortHour() == a.name {
-                    a.events.append(event)
+                if event.startDate.getShortHour() == hour.name {
+                    day.hours[index].events.append(event)
                 }
             }
-            hours.append(a)
         }
         
         headerData?(
@@ -49,7 +43,7 @@ public final class DaysEventsViewModel {
             )
         )
         
-        listOfHour?(hours)
+        listOfHour?(day.hours)
     }
     
 }
