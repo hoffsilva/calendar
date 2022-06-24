@@ -85,7 +85,7 @@ class DetailDayViewController: UIViewController {
     
     private func animateNameOfMonth(with constant: CGFloat) {
         self.nameOfMonthLeadingConstraint.constant = constant
-        UIView.animate(withDuration: 0.3, delay: 0.2) {
+        UIView.animate(withDuration: 0.1, delay: 0.2) {
             self.view.layoutIfNeeded()
         }
     }
