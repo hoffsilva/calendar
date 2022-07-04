@@ -39,7 +39,8 @@ public final class GetEventsUseCaseImp: GetEventsUseCase {
             location: event.location,
             title: event.title,
             year: event.startDate.getYear(),
-            day: event.startDate.getIntDay()
+            day: event.startDate.getIntDay(),
+            acceptanceAnswer: AcceptanceAnswer(rawValue: event.availability.rawValue) ?? .notAnswered
         )
         
         for (index, day) in month.days.enumerated() {

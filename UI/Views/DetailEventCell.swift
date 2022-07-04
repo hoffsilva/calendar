@@ -21,8 +21,22 @@ class DetailEventCell: UICollectionViewCell {
     public func setupData(_ data: Event) {
         setupViewsHierarchy()
         setupViewsConstraints()
-        self.backgroundColor = .timetableText
         eventNameLabel.text = data.title
+        setupStyle(for: data.acceptanceAnswer)
+    }
+    
+    private func setupStyle(for acceptanceAnswer: AcceptanceAnswer) {
+        switch acceptanceAnswer {
+        case .notAnswered:
+            eventNameLabel.textColor = .timetableGray
+            self.backgroundColor = .white
+            self.layer.borderColor = UIColor.timetableGray.cgColor
+            self.layer.borderWidth = 2
+        case .accepted:
+            self.backgroundColor = .timetableText
+        case .tentative:
+            self.backgroundColor = .timetableGray
+        }
     }
     
     private func setupViewsHierarchy() {
