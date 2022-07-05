@@ -31,7 +31,7 @@ class DetailEventCell: UICollectionViewCell {
             eventNameLabel.textColor = .timetableGray
             self.backgroundColor = .white
             self.layer.borderColor = UIColor.timetableGray.cgColor
-            self.layer.borderWidth = 2
+            self.layer.borderWidth = 1
         case .accepted:
             self.backgroundColor = .timetableText
         case .tentative:
