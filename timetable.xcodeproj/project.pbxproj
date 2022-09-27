@@ -1663,7 +1663,7 @@
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = timetable/Info.plist;
-				INFOPLIST_KEY_NSCalendarsUsageDescription = aaaaaa;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1700,7 +1700,7 @@
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = timetable/Info.plist;
-				INFOPLIST_KEY_NSCalendarsUsageDescription = aaaaaa;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
