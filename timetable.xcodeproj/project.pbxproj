@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B24FCEE28E37A35003EADD7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B24FCED28E37A17003EADD7 /* InfoPlist.strings */; };
 		0B3331B627AF004300695F27 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DC827AEEB9000644CE2 /* Date+Extensions.swift */; };
 		0B3331B727AF005A00695F27 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471DC627AEEB9000644CE2 /* Time.swift */; };
 		0B3331BB27AFF03400695F27 /* Timetable+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3331BA27AFF03400695F27 /* Timetable+Injection.swift */; };
@@ -15,7 +16,6 @@
 		0B3331C227AFF1FE00695F27 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3331B827AF00AE00695F27 /* Coordinator.swift */; };
 		0B3331C427AFF88300695F27 /* Extensions+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3331C327AFF88300695F27 /* Extensions+UIViewController.swift */; };
 		0B3331C527AFFAF300695F27 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E8127AEF43A00644CE2 /* Localizable.strings */; };
-		0B3331C627AFFAF800695F27 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E8327AEF43A00644CE2 /* InfoPlist.strings */; };
 		0B3331C727AFFAFF00695F27 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471E8427AEF43A00644CE2 /* Localizable.swift */; };
 		0B3331CA27AFFFED00695F27 /* Rubik-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1127AEF0AF00644CE2 /* Rubik-MediumItalic.ttf */; };
 		0B3331CB27AFFFED00695F27 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0B471E1227AEF0AF00644CE2 /* Rubik-Bold.ttf */; };
@@ -211,6 +211,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0B24FCEC28E37A17003EADD7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0B3331B827AF00AE00695F27 /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0B3331BA27AFF03400695F27 /* Timetable+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timetable+Injection.swift"; sourceTree = "<group>"; };
 		0B3331C327AFF88300695F27 /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
@@ -279,7 +280,6 @@
 		0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B471E7E27AEF42A00644CE2 /* EventListViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventListViewCoordinator.swift; sourceTree = "<group>"; };
 		0B471E8227AEF43A00644CE2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		0B471E8327AEF43A00644CE2 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
 		0B471E8427AEF43A00644CE2 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		0B57B02927B82A6F008F4015 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		0B57B02B27B82E60008F4015 /* exportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = exportOptions.plist; sourceTree = "<group>"; };
@@ -557,6 +557,7 @@
 				0B471E7B27AEF3FB00644CE2 /* Assets.xcassets */,
 				0B471E7327AEF3C200644CE2 /* AppDelegate.swift */,
 				0B471E7527AEF3C200644CE2 /* SceneDelegate.swift */,
+				0B24FCED28E37A17003EADD7 /* InfoPlist.strings */,
 				0B471E7927AEF3DB00644CE2 /* Info.plist */,
 				0B471E7227AEF3C100644CE2 /* timetable-Bridging-Header.h */,
 				0B57B02B27B82E60008F4015 /* exportOptions.plist */,
@@ -578,7 +579,6 @@
 			isa = PBXGroup;
 			children = (
 				0B471E8127AEF43A00644CE2 /* Localizable.strings */,
-				0B471E8327AEF43A00644CE2 /* InfoPlist.strings */,
 				0B471E8427AEF43A00644CE2 /* Localizable.swift */,
 			);
 			path = Localizations;
@@ -887,7 +887,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B3331C627AFFAF800695F27 /* InfoPlist.strings in Resources */,
 				502BDF642843C22E00C0C6B7 /* LaunchScreen.storyboard in Resources */,
 				0B471E3F27AEF0AF00644CE2 /* EventListViewController.xib in Resources */,
 				0B3331C527AFFAF300695F27 /* Localizable.strings in Resources */,
@@ -917,6 +916,7 @@
 				0B471E7C27AEF3FB00644CE2 /* Assets.xcassets in Resources */,
 				0B3331D627AFFFED00695F27 /* Rubik-Italic.ttf in Resources */,
 				0B3331D427AFFFED00695F27 /* Rubik-SemiBoldItalic.ttf in Resources */,
+				0B24FCEE28E37A35003EADD7 /* InfoPlist.strings in Resources */,
 				502BDF652843CDD200C0C6B7 /* LaunchScreen.storyboard in Resources */,
 				0B3331D227AFFFED00695F27 /* Rubik-Regular.ttf in Resources */,
 				0B3331CB27AFFFED00695F27 /* Rubik-Bold.ttf in Resources */,
@@ -1112,6 +1112,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0B24FCED28E37A17003EADD7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0B24FCEC28E37A17003EADD7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		0B471E8127AEF43A00644CE2 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1545,6 +1553,7 @@
 				DYLIB_CURRENT_VERSION = 9;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1580,6 +1589,7 @@
 				DYLIB_CURRENT_VERSION = 9;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = "";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1653,7 +1663,7 @@
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = timetable/Info.plist;
-				INFOPLIST_KEY_NSCalendarsUsageDescription = NSCalendarsUsageDescription;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = aaaaaa;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1690,7 +1700,7 @@
 				DEVELOPMENT_TEAM = C434CHPZ37;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = timetable/Info.plist;
-				INFOPLIST_KEY_NSCalendarsUsageDescription = NSCalendarsUsageDescription;
+				INFOPLIST_KEY_NSCalendarsUsageDescription = aaaaaa;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
