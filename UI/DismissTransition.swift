@@ -14,7 +14,7 @@ final class DismissTransition: Transition, UIViewControllerAnimatedTransitioning
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         if let returningView = transitionContext.view(forKey: UITransitionContextViewKey.from) {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6) {
                 returningView.removeFromSuperview()
                 self.circle.removeFromSuperview()
                 transitionContext.completeTransition(true)
