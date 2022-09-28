@@ -166,9 +166,9 @@ class DetailDayViewController: UIViewController {
     }
     
     @objc private func didTapOnBackButton() {
-        animateNameOfDay(with: -90)
+        animateNameOfDay(with: -100)
         animateNumberOfDay(with: -58)
-        animateNameOfMonth(with: 44)
+        animateNameOfMonth(with: 36)
         animateListOfDaysEventsTableView(with: 900, and: 900)
         UIView.animate(withDuration: 0.6, delay: 0, options: .curveLinear) {
             self.view.layoutIfNeeded()
