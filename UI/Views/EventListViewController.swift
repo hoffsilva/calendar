@@ -88,7 +88,6 @@ public class EventListViewController: UIViewController, UIViewControllerTransiti
         let label = UILabel()
         label.font = .rubikBold(40)
         label.text = title
-        label.addCharacterSpacing(kernValue: -2)
         label.textColor = .timetableGray
         label.prepareForConstraints()
         backgroundView.addSubview(label)
