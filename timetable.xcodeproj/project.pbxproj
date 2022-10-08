@@ -535,17 +535,9 @@
 		0B471E2227AEF0AF00644CE2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				0B471E2327AEF0AF00644CE2 /* EventCell.swift */,
-				0B471E2427AEF0AF00644CE2 /* EventCell.xib */,
+				503BFFC428F1ABBA00947DE9 /* Error */,
+				503BFFC228F1AB9800947DE9 /* Event */,
 				0B471E2527AEF0AF00644CE2 /* AppearenceToggle.swift */,
-				0B471E2627AEF0AF00644CE2 /* ErrorViewController.swift */,
-				0B471E2727AEF0AF00644CE2 /* EventListViewController.xib */,
-				0B471E2927AEF0AF00644CE2 /* EventListViewController.swift */,
-				0B471E2827AEF0AF00644CE2 /* ErrorViewController.xib */,
-				0BD0A7E427D030C00087B1AC /* DetailDayViewController.swift */,
-				0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */,
-				0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */,
-				0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -582,6 +574,54 @@
 				0B471E8427AEF43A00644CE2 /* Localizable.swift */,
 			);
 			path = Localizations;
+			sourceTree = "<group>";
+		};
+		503BFFC228F1AB9800947DE9 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				503BFFC528F1ABD600947DE9 /* DetailOfEvent */,
+				0B471E2727AEF0AF00644CE2 /* EventListViewController.xib */,
+				0B471E2927AEF0AF00644CE2 /* EventListViewController.swift */,
+				503BFFC328F1ABA900947DE9 /* Cell */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		503BFFC328F1ABA900947DE9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0B471E2327AEF0AF00644CE2 /* EventCell.swift */,
+				0B471E2427AEF0AF00644CE2 /* EventCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		503BFFC428F1ABBA00947DE9 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				0B471E2627AEF0AF00644CE2 /* ErrorViewController.swift */,
+				0B471E2827AEF0AF00644CE2 /* ErrorViewController.xib */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		503BFFC528F1ABD600947DE9 /* DetailOfEvent */ = {
+			isa = PBXGroup;
+			children = (
+				503BFFC628F1ABE800947DE9 /* Cell */,
+				0BD0A7E427D030C00087B1AC /* DetailDayViewController.swift */,
+				0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */,
+			);
+			path = DetailOfEvent;
+			sourceTree = "<group>";
+		};
+		503BFFC628F1ABE800947DE9 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */,
+				0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
