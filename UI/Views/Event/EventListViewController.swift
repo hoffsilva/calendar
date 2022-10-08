@@ -12,9 +12,10 @@ import Data
 
 public protocol EventListViewControllerDelegate: AnyObject {
     func didLoadDataWithAccessNotGranted()
+    func didTapToDetail(day: Day, from viewController: UIViewController)
 }
 
-public class EventListViewController: UIViewController {
+public class EventListViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
     @Injected private var viewModel: EventViewModel
     
@@ -24,9 +25,17 @@ public class EventListViewController: UIViewController {
     
     private lazy var dataSource = makeDataSource()
     
+    private let saltedTag = 1000
+    
+    var cell: EventCell?
+    
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.requestAccess()
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.requestAccess()
         registerCell()
         listViewTableView.dataSource = dataSource
         listViewTableView.delegate = self
@@ -83,12 +92,12 @@ public class EventListViewController: UIViewController {
         let label = UILabel()
         label.font = .rubikBold(40)
         label.text = title
-        label.addCharacterSpacing(kernValue: -2)
         label.textColor = .timetableGray
         label.prepareForConstraints()
         backgroundView.addSubview(label)
         label.pinLeft(24)
-        label.centerHorizontally()
+        label.pinTop(16)
+        label.pinBottom()
         return backgroundView
     }
     
@@ -110,9 +119,46 @@ extension EventListViewController: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return createSectionHeaderView(
-            with: dataSource.sectionIdentifier(for: section)?.name
+        let headerView =  createSectionHeaderView(
+            with: viewModel.months?[section].name.capitalized
         )
+        headerView.tag = section+saltedTag
+        return headerView
+    }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let day = viewModel.months?[indexPath.section].days[indexPath.row] else { return }
+        self.cell = tableView.cellForRow(at: indexPath) as? EventCell
+        
+        if let view = tableView.subviews.filter({ view in
+            return view.tag == indexPath.section+saltedTag
+        }).first {
+            self.scrollSectionTo(y: view.frame.minY) {
+                self.delegate?.didTapToDetail(day: day, from: self)
+            }
+        }
+        
+    }
+    
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        //        transition.startingPoint = cell!.eventDayLabel.center
+        //        t
+        guard let originView = cell?.eventDayLabel else { return nil }
+        
+        return ShowTransition()
+    }
+    
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        //        transition.transitionMode = .dismiss
+        //        transition.startingPoint = cell!.center
+        return DismissTransition()
+    }
+    
+    private func scrollSectionTo(y: CGFloat, completion: @escaping (()->Void)) {
+        self.listViewTableView.setContentOffset(CGPoint(x: 0, y: y), animated: true)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            completion()
+        }
     }
     
 }

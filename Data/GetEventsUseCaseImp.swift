@@ -39,7 +39,9 @@ public final class GetEventsUseCaseImp: GetEventsUseCase {
             location: event.location,
             title: event.title,
             year: event.startDate.getYear(),
-            day: event.startDate.getIntDay()
+            day: event.startDate.getIntDay(),
+            acceptanceAnswer: AcceptanceAnswer(
+                rawValue: event.status.rawValue) ?? .notAnswered
         )
         
         for (index, day) in month.days.enumerated() {
@@ -92,38 +94,54 @@ public final class GetEventsUseCaseImp: GetEventsUseCase {
     
     private func getDays() -> [Day] {
         [
-            Day(number: "01", events: [Event]()),
-            Day(number: "02", events: [Event]()),
-            Day(number: "03", events: [Event]()),
-            Day(number: "04", events: [Event]()),
-            Day(number: "05", events: [Event]()),
-            Day(number: "06", events: [Event]()),
-            Day(number: "07", events: [Event]()),
-            Day(number: "08", events: [Event]()),
-            Day(number: "09", events: [Event]()),
-            Day(number: "10", events: [Event]()),
-            Day(number: "11", events: [Event]()),
-            Day(number: "12", events: [Event]()),
-            Day(number: "13", events: [Event]()),
-            Day(number: "14", events: [Event]()),
-            Day(number: "15", events: [Event]()),
-            Day(number: "16", events: [Event]()),
-            Day(number: "17", events: [Event]()),
-            Day(number: "18", events: [Event]()),
-            Day(number: "19", events: [Event]()),
-            Day(number: "20", events: [Event]()),
-            Day(number: "21", events: [Event]()),
-            Day(number: "22", events: [Event]()),
-            Day(number: "23", events: [Event]()),
-            Day(number: "24", events: [Event]()),
-            Day(number: "25", events: [Event]()),
-            Day(number: "26", events: [Event]()),
-            Day(number: "27", events: [Event]()),
-            Day(number: "28", events: [Event]()),
-            Day(number: "29", events: [Event]()),
-            Day(number: "30", events: [Event]()),
-            Day(number: "31", events: [Event]())
+            Day(number: "01", events: [Event](), hours: getHours()),
+            Day(number: "02", events: [Event](), hours: getHours()),
+            Day(number: "03", events: [Event](), hours: getHours()),
+            Day(number: "04", events: [Event](), hours: getHours()),
+            Day(number: "05", events: [Event](), hours: getHours()),
+            Day(number: "06", events: [Event](), hours: getHours()),
+            Day(number: "07", events: [Event](), hours: getHours()),
+            Day(number: "08", events: [Event](), hours: getHours()),
+            Day(number: "09", events: [Event](), hours: getHours()),
+            Day(number: "10", events: [Event](), hours: getHours()),
+            Day(number: "11", events: [Event](), hours: getHours()),
+            Day(number: "12", events: [Event](), hours: getHours()),
+            Day(number: "13", events: [Event](), hours: getHours()),
+            Day(number: "14", events: [Event](), hours: getHours()),
+            Day(number: "15", events: [Event](), hours: getHours()),
+            Day(number: "16", events: [Event](), hours: getHours()),
+            Day(number: "17", events: [Event](), hours: getHours()),
+            Day(number: "18", events: [Event](), hours: getHours()),
+            Day(number: "19", events: [Event](), hours: getHours()),
+            Day(number: "20", events: [Event](), hours: getHours()),
+            Day(number: "21", events: [Event](), hours: getHours()),
+            Day(number: "22", events: [Event](), hours: getHours()),
+            Day(number: "23", events: [Event](), hours: getHours()),
+            Day(number: "24", events: [Event](), hours: getHours()),
+            Day(number: "25", events: [Event](), hours: getHours()),
+            Day(number: "26", events: [Event](), hours: getHours()),
+            Day(number: "27", events: [Event](), hours: getHours()),
+            Day(number: "28", events: [Event](), hours: getHours()),
+            Day(number: "29", events: [Event](), hours: getHours()),
+            Day(number: "30", events: [Event](), hours: getHours()),
+            Day(number: "31", events: [Event](), hours: getHours())
         ]
+    }
+    
+    private func getHours() -> [Hour] {
+        var hours = [Hour]()
+        let isoDate = "00"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH"
+        let date = dateFormatter.date(from:isoDate)!
+        for time in 0...23 {
+            let name = Calendar.current.date(
+                byAdding: .hour,
+                value: time,
+                to: date)?.getShortHour()
+            hours.append(Hour(name: name ?? "", events: []))
+        }
+        return hours
     }
     
     private func mapEvent(events: [EKEvent]) -> [Month] {

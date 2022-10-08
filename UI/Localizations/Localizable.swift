@@ -37,6 +37,14 @@ public final class Localizable {
         getLocalizedString(of: "error_screen_allowCallendarAccess_description")
     }
     
+    static func backButtonTitle() -> String {
+        getLocalizedString(of: "back_button_title")
+    }
+    
+    static func addEventButtonTitle() -> String {
+        getLocalizedString(of: "add_event_button_title")
+    }
+    
     private static func getLocalizedString(of key: String) -> String {
         NSLocalizedString(key, bundle: Bundle(for: Localizable.self), comment: key)
     }

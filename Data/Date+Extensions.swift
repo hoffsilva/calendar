@@ -21,6 +21,14 @@ public extension Date {
         return formatter.string(from: self)
     }
     
+    func getDayOfWeek() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
+        formatter.dateFormat = "EEEE"
+        return formatter.string(from: self)
+    }
+    
     func getIntDay() -> Int {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
@@ -42,6 +50,14 @@ public extension Date {
         formatter.dateStyle = .long
         formatter.timeStyle = .none
         formatter.dateFormat = "MMMM"
+        return formatter.string(from: self)
+    }
+    
+    func getShortHour() -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .short
+        formatter.dateFormat = "h a"
         return formatter.string(from: self)
     }
     

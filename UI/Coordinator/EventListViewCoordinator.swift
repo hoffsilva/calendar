@@ -7,6 +7,7 @@
 
 import UIKit
 import Presentation
+import Domain
 
 public final class EventListViewCoordinator: Coordinator {
  
@@ -22,7 +23,7 @@ public final class EventListViewCoordinator: Coordinator {
     public func start() {
         eventListViewController = Resolver.resolve(EventListViewController.self)
         eventListViewController?.delegate = self
-        navigationController = TimeTableNavigationController(rootViewController: eventListViewController ?? UIViewController())
+        navigationController = TimeTableNavigationController(rootViewController: eventListViewController ?? UIViewController(), window: self.window)
         self.window.rootViewController = navigationController
     }
     
@@ -36,10 +37,27 @@ public final class EventListViewCoordinator: Coordinator {
         errorViewController.delegate = self
         navigationController?.viewControllers.first?.present(errorViewController, animated: true, completion: nil)
     }
+    
+    public func showDetail(of day: Day, from viewController: UIViewController) {
+        let detailDayViewModel = Resolver.resolve(DaysEventsViewModel.self, args: ["day": day])
+        let detailDayViewController = Resolver.resolve(DetailDayViewController.self, args: detailDayViewModel)
+        guard let eventListViewController = viewController as? EventListViewController else {
+            return
+        }
+        detailDayViewController.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
+        detailDayViewController.transitioningDelegate = eventListViewController
+        detailDayViewController.modalPresentationStyle = .overFullScreen
+        navigationController?.viewControllers.first?.present(detailDayViewController, animated: true, completion: nil)
+    }
 
 }
 
 extension EventListViewCoordinator: EventListViewControllerDelegate {
+    
+    public func didTapToDetail(day: Day, from viewController: UIViewController) {
+        self.showDetail(of: day, from: viewController)
+    }
+    
     
     public func didLoadDataWithAccessNotGranted() {
         showErrorViewController(with: Localizable.descriptionOfErrorScreenWhenCalendarAccessNotGranted(), and: false)

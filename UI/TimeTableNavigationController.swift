@@ -9,7 +9,10 @@ import UIKit
 
 public final class TimeTableNavigationController: UINavigationController {
     
-    public override init(rootViewController: UIViewController) {
+    private let window: UIWindow
+    
+    public init(rootViewController: UIViewController, window: UIWindow) {
+        self.window = window
         super.init(rootViewController: rootViewController)
         self.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationBar.shadowImage = UIImage()
@@ -24,12 +27,21 @@ public final class TimeTableNavigationController: UINavigationController {
         AppearenceToggle()
     }()
     
+    private lazy var appearenceToggleTap:  UIGestureRecognizer = {
+        UITapGestureRecognizer(target: self, action: #selector(animateUserInterfaceStyle))
+    }()
+    
+    private lazy var userInterfaceStyleNameLabelTap:  UIGestureRecognizer = {
+        UITapGestureRecognizer(target: self, action: #selector(animateUserInterfaceStyle))
+    }()
+    
     private lazy var userInterfaceStyleNameLabel: UILabel = {
         let label = UILabel()
         label.prepareForConstraints()
         label.font = .rubikRegular(12)
         label.addCharacterSpacing(kernValue: 50)
         label.textColor = .timetableText
+        label.isUserInteractionEnabled = true
         return label
     }()
     
@@ -40,16 +52,14 @@ public final class TimeTableNavigationController: UINavigationController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        setAppearenceToggleColor()
         setAppearenceToggleTitle()
-        NotificationCenter.default.addObserver(self, selector: #selector(setAppearenceToggleTitle), name: NSNotification.Name(rawValue: "AppearenceToggleTitle"), object: self)
     }
     
     private func configureAppearenceToggle() {
         setupViewsHierarchy()
         setupConstraints()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(animateUserInterfaceStyle))
-        appearenceToggle.addGestureRecognizer(tap)
+        appearenceToggle.addGestureRecognizer(appearenceToggleTap)
+        userInterfaceStyleNameLabel.addGestureRecognizer(userInterfaceStyleNameLabelTap)
     }
     
     @objc private func setAppearenceToggleTitle() {
@@ -57,10 +67,10 @@ public final class TimeTableNavigationController: UINavigationController {
     }
     
     private func setAppearenceToggleColor() {
-        if overrideUserInterfaceStyle == .dark {
-            overrideUserInterfaceStyle = .light
+        if self.window.overrideUserInterfaceStyle == .dark {
+            self.window.overrideUserInterfaceStyle = .light
         } else {
-            overrideUserInterfaceStyle = .dark
+            self.window.overrideUserInterfaceStyle = .dark
         }
         setAppearenceToggleTitle()
     }
@@ -84,7 +94,6 @@ public final class TimeTableNavigationController: UINavigationController {
         
         userInterfaceStyleNameLabel.centerVertically(inRelationTo: appearenceToggle)
         userInterfaceStyleNameLabel.pinLeftInRelation(to: appearenceToggle.rightAnchor, 8)
-
     }
     
 }
