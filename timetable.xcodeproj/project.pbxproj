@@ -579,9 +579,9 @@
 		503BFFC228F1AB9800947DE9 /* Event */ = {
 			isa = PBXGroup;
 			children = (
+				50A8F6BE28F1D433006E4D89 /* AddEvent */,
+				50A8F6BD28F1D423006E4D89 /* ListOfEvents */,
 				503BFFC528F1ABD600947DE9 /* DetailOfEvent */,
-				0B471E2727AEF0AF00644CE2 /* EventListViewController.xib */,
-				0B471E2927AEF0AF00644CE2 /* EventListViewController.swift */,
 				503BFFC328F1ABA900947DE9 /* Cell */,
 			);
 			path = Event;
@@ -622,6 +622,22 @@
 				0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		50A8F6BD28F1D423006E4D89 /* ListOfEvents */ = {
+			isa = PBXGroup;
+			children = (
+				0B471E2727AEF0AF00644CE2 /* EventListViewController.xib */,
+				0B471E2927AEF0AF00644CE2 /* EventListViewController.swift */,
+			);
+			path = ListOfEvents;
+			sourceTree = "<group>";
+		};
+		50A8F6BE28F1D433006E4D89 /* AddEvent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AddEvent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
