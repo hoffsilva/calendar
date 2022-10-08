@@ -105,7 +105,7 @@ class DetailDayEventCell: UITableViewCell {
             let item = NSCollectionLayoutItem(layoutSize: itemSize)
             
             let groupSize = NSCollectionLayoutSize(
-                widthDimension: .fractionalWidth(1.0),
+                widthDimension: .fractionalWidth(0.5),
                 heightDimension: .absolute(32)
             )
             let group = NSCollectionLayoutGroup.horizontal(
@@ -116,7 +116,7 @@ class DetailDayEventCell: UITableViewCell {
 
             let section = NSCollectionLayoutSection(group: group)
             section.interGroupSpacing = spacing
-            section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
+            section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 4, bottom: 0, trailing: 0)
             section.orthogonalScrollingBehavior = .continuous
             return section
         }

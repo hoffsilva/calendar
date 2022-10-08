@@ -29,9 +29,13 @@ public class EventListViewController: UIViewController, UIViewControllerTransiti
     
     var cell: EventCell?
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.requestAccess()
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.requestAccess()
         registerCell()
         listViewTableView.dataSource = dataSource
         listViewTableView.delegate = self

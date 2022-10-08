@@ -40,7 +40,8 @@ public final class GetEventsUseCaseImp: GetEventsUseCase {
             title: event.title,
             year: event.startDate.getYear(),
             day: event.startDate.getIntDay(),
-            acceptanceAnswer: AcceptanceAnswer(rawValue: event.availability.rawValue) ?? .notAnswered
+            acceptanceAnswer: AcceptanceAnswer(
+                rawValue: event.status.rawValue) ?? .notAnswered
         )
         
         for (index, day) in month.days.enumerated() {
