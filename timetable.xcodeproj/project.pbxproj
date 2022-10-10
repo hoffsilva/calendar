@@ -94,9 +94,13 @@
 		0BD0A7EB27D034B00087B1AC /* Hour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7EA27D034B00087B1AC /* Hour.swift */; };
 		0BD0A7EE27D035F00087B1AC /* DetailDayEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */; };
 		0BD1166F27DE298000BD7AD8 /* DetailEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */; };
+		500DE4AA28F456C900EA52F1 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 500DE4A928F456C900EA52F1 /* FSCalendar */; };
 		502BDF642843C22E00C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		502BDF652843CDD200C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094EC582842499A002A3042 /* Extension+UIColor.swift */; };
+		50A8F6C128F1D4B1006E4D89 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8F6BF28F1D4B1006E4D89 /* AddEventViewController.swift */; };
+		50A8F6C628F1D8BB006E4D89 /* AddEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A8F6C528F1D8BB006E4D89 /* AddEventViewController.xib */; };
+		50A8F6D128F44224006E4D89 /* CalendarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8F6D028F44224006E4D89 /* CalendarScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -293,6 +297,9 @@
 		0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventCell.swift; sourceTree = "<group>"; };
 		502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5094EC582842499A002A3042 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		50A8F6BF28F1D4B1006E4D89 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddEventViewController.swift; path = UI/Views/Event/AddEvent/AddEventViewController.swift; sourceTree = SOURCE_ROOT; };
+		50A8F6C528F1D8BB006E4D89 /* AddEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEventViewController.xib; sourceTree = "<group>"; };
+		50A8F6D028F44224006E4D89 /* CalendarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -341,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B33321B27B1AB0600695F27 /* Domain.framework in Frameworks */,
+				500DE4AA28F456C900EA52F1 /* FSCalendar in Frameworks */,
 				0B33321827B1AB0400695F27 /* Data.framework in Frameworks */,
 				0B33321D27B1AB0800695F27 /* Presentation.framework in Frameworks */,
 			);
@@ -380,7 +388,6 @@
 				0B471E0627AEF07000644CE2 /* UITests */,
 				0B471E5F27AEF35E00644CE2 /* timetable */,
 				0B471D6627AEE89000644CE2 /* Products */,
-				0B471DBB27AEEB3400644CE2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -451,13 +458,6 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
-		0B471DBB27AEEB3400644CE2 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		0B471DDC27AEEF2A00644CE2 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +499,7 @@
 				0B471E8027AEF43A00644CE2 /* Localizations */,
 				0BAF0A9927E6281400030DA1 /* ShowTransition.swift */,
 				0BC68B08285A78A20086B2CF /* DismissTransition.swift */,
+				50A8F6D028F44224006E4D89 /* CalendarScreen.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -636,6 +637,8 @@
 		50A8F6BE28F1D433006E4D89 /* AddEvent */ = {
 			isa = PBXGroup;
 			children = (
+				50A8F6BF28F1D4B1006E4D89 /* AddEventViewController.swift */,
+				50A8F6C528F1D8BB006E4D89 /* AddEventViewController.xib */,
 			);
 			path = AddEvent;
 			sourceTree = "<group>";
@@ -688,8 +691,6 @@
 			dependencies = (
 			);
 			name = Domain;
-			packageProductDependencies = (
-			);
 			productName = Domain;
 			productReference = 0B471D8227AEE99900644CE2 /* Domain.framework */;
 			productType = "com.apple.product-type.framework";
@@ -747,8 +748,6 @@
 				0B33321127B1A96500695F27 /* PBXTargetDependency */,
 			);
 			name = Presentation;
-			packageProductDependencies = (
-			);
 			productName = Presentation;
 			productReference = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */;
 			productType = "com.apple.product-type.framework";
@@ -789,6 +788,7 @@
 			);
 			name = UI;
 			packageProductDependencies = (
+				500DE4A928F456C900EA52F1 /* FSCalendar */,
 			);
 			productName = UI;
 			productReference = 0B471DFB27AEF07000644CE2 /* UI.framework */;
@@ -830,8 +830,6 @@
 				0B33324927B7F45400695F27 /* PBXTargetDependency */,
 			);
 			name = timetable;
-			packageProductDependencies = (
-			);
 			productName = timetable;
 			productReference = 0B471E5E27AEF35E00644CE2 /* timetable.app */;
 			productType = "com.apple.product-type.application";
@@ -886,6 +884,7 @@
 			);
 			mainGroup = 0B471D5B27AEE88F00644CE2;
 			packageReferences = (
+				500DE4A828F456C900EA52F1 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 0B471D6627AEE89000644CE2 /* Products */;
 			projectDirPath = "";
@@ -945,6 +944,7 @@
 			files = (
 				502BDF642843C22E00C0C6B7 /* LaunchScreen.storyboard in Resources */,
 				0B471E3F27AEF0AF00644CE2 /* EventListViewController.xib in Resources */,
+				50A8F6C628F1D8BB006E4D89 /* AddEventViewController.xib in Resources */,
 				0B3331C527AFFAF300695F27 /* Localizable.strings in Resources */,
 				0B471E3C27AEF0AF00644CE2 /* EventCell.xib in Resources */,
 				0B471E4027AEF0AF00644CE2 /* ErrorViewController.xib in Resources */,
@@ -1049,6 +1049,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B3331C427AFF88300695F27 /* Extensions+UIViewController.swift in Sources */,
+				50A8F6C128F1D4B1006E4D89 /* AddEventViewController.swift in Sources */,
 				0BC68B09285A78A20086B2CF /* DismissTransition.swift in Sources */,
 				0B3331C027AFF1F000695F27 /* EventListViewCoordinator.swift in Sources */,
 				0B471E5827AEF2E500644CE2 /* String+Utils.swift in Sources */,
@@ -1068,6 +1069,7 @@
 				0B471E5627AEF2E500644CE2 /* Extension+UIFont.swift in Sources */,
 				0BAF0A9A27E6281400030DA1 /* ShowTransition.swift in Sources */,
 				0B471E5427AEF2E500644CE2 /* UIView+Constraints.swift in Sources */,
+				50A8F6D128F44224006E4D89 /* CalendarScreen.swift in Sources */,
 				0B471E3D27AEF0AF00644CE2 /* AppearenceToggle.swift in Sources */,
 				0B3331C727AFFAFF00695F27 /* Localizable.swift in Sources */,
 				0BD0A7EE27D035F00087B1AC /* DetailDayEventCell.swift in Sources */,
@@ -1864,6 +1866,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		500DE4A828F456C900EA52F1 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hoffsilva/FSCalendar.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		500DE4A928F456C900EA52F1 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 500DE4A828F456C900EA52F1 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0B471D5C27AEE88F00644CE2 /* Project object */;
 }
