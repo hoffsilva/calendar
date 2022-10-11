@@ -11,6 +11,10 @@ public final class TimeTableNavigationController: UINavigationController {
     
     private let window: UIWindow
     
+    public init(){
+        super.init()
+    }
+    
     public init(rootViewController: UIViewController, window: UIWindow) {
         self.window = window
         super.init(rootViewController: rootViewController)

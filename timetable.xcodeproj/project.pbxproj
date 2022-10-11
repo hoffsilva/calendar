@@ -95,6 +95,8 @@
 		0BD0A7EE27D035F00087B1AC /* DetailDayEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */; };
 		0BD1166F27DE298000BD7AD8 /* DetailEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */; };
 		500DE4AA28F456C900EA52F1 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 500DE4A928F456C900EA52F1 /* FSCalendar */; };
+		500DE4AC28F5F23400EA52F1 /* DetailDayViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4AB28F5F23400EA52F1 /* DetailDayViewCoordinator.swift */; };
+		500DE4AE28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4AD28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift */; };
 		502BDF642843C22E00C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		502BDF652843CDD200C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094EC582842499A002A3042 /* Extension+UIColor.swift */; };
@@ -294,6 +296,8 @@
 		0BD0A7EA27D034B00087B1AC /* Hour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hour.swift; sourceTree = "<group>"; };
 		0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDayEventCell.swift; sourceTree = "<group>"; };
 		0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventCell.swift; sourceTree = "<group>"; };
+		500DE4AB28F5F23400EA52F1 /* DetailDayViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDayViewCoordinator.swift; sourceTree = "<group>"; };
+		500DE4AD28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLaunchScreenCoordinator.swift; sourceTree = "<group>"; };
 		502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5094EC582842499A002A3042 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		50A8F6BF28F1D4B1006E4D89 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddEventViewController.swift; path = UI/Views/Event/AddEvent/AddEventViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -561,6 +565,8 @@
 				0B471E7E27AEF42A00644CE2 /* EventListViewCoordinator.swift */,
 				0B471E7427AEF3C200644CE2 /* AppCoordinator.swift */,
 				0B3331B827AF00AE00695F27 /* Coordinator.swift */,
+				500DE4AB28F5F23400EA52F1 /* DetailDayViewCoordinator.swift */,
+				500DE4AD28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -1050,7 +1056,9 @@
 				0BC68B09285A78A20086B2CF /* DismissTransition.swift in Sources */,
 				0B3331C027AFF1F000695F27 /* EventListViewCoordinator.swift in Sources */,
 				0B471E5827AEF2E500644CE2 /* String+Utils.swift in Sources */,
+				500DE4AC28F5F23400EA52F1 /* DetailDayViewCoordinator.swift in Sources */,
 				0B471E5527AEF2E500644CE2 /* Extension+UILabel.swift in Sources */,
+				500DE4AE28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift in Sources */,
 				0B57B02A27B82A6F008F4015 /* Resolver.swift in Sources */,
 				0B3331C127AFF1FA00695F27 /* AppCoordinator.swift in Sources */,
 				0B471E4127AEF0AF00644CE2 /* EventListViewController.swift in Sources */,

@@ -9,12 +9,17 @@ import UIKit
 import Presentation
 import Domain
 
+protocol EventListViewCoordinatorDelegate: AnyObject {
+    func showDetail(of day: Day, from viewController: UIViewController)
+}
+
 public final class EventListViewCoordinator: Coordinator {
  
     private let window: UIWindow
     private var navigationController: TimeTableNavigationController?
     private var eventListViewController: EventListViewController?
-    @WeakLazyInjected private var delegate: Coordinator?
+    
+    weak var eventListViewCoordinatorDelegate: EventListViewCoordinatorDelegate?
     
     public init(window: UIWindow) {
         self.window = window
@@ -27,7 +32,7 @@ public final class EventListViewCoordinator: Coordinator {
         self.window.rootViewController = navigationController
     }
     
-    public func showErrorViewController(with errorMessage: String, and calendarAccessGranted: Bool) {
+    private func showErrorViewController(with errorMessage: String, and calendarAccessGranted: Bool) {
         let errorViewModel: ErrorViewModel = Resolver.resolve(args: [
             "errorMessage": errorMessage,
             "allowCalendarAccess": calendarAccessGranted
@@ -38,16 +43,8 @@ public final class EventListViewCoordinator: Coordinator {
         navigationController?.viewControllers.first?.present(errorViewController, animated: true, completion: nil)
     }
     
-    public func showDetail(of day: Day, from viewController: UIViewController) {
-        let detailDayViewModel = Resolver.resolve(DaysEventsViewModel.self, args: ["day": day])
-        let detailDayViewController = Resolver.resolve(DetailDayViewController.self, args: detailDayViewModel)
-        guard let eventListViewController = viewController as? EventListViewController else {
-            return
-        }
-        detailDayViewController.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
-        detailDayViewController.transitioningDelegate = eventListViewController
-        detailDayViewController.modalPresentationStyle = .overFullScreen
-        navigationController?.viewControllers.first?.present(detailDayViewController, animated: true, completion: nil)
+    private func showDetail(of day: Day, from viewController: UIViewController) {
+        self.eventListViewCoordinatorDelegate?.showDetail(of: day, from: viewController)
     }
 
 }

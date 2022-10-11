@@ -31,6 +31,23 @@ extension Resolver {
         .scope(.application)
         .implements(Coordinator.self)
         
+        register { _, args in
+            CustomLaunchScreenCoordinator(window: args("window"))
+        }
+        .scope(.application)
+        .implements(Coordinator.self)
+        
+        register { _, args in
+            DetailDayViewCoordinator(
+                window: args("window"),
+                navigationController: args("navigationController"),
+                from: args("viewController"),
+                day: args("day")
+            )
+        }
+        .scope(.application)
+        .implements(Coordinator.self)
+        
     }
     
     public static func registerViews() {

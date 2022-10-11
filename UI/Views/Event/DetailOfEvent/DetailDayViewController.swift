@@ -9,6 +9,9 @@ import UIKit
 import Presentation
 import Domain
 
+protocol DetailDayViewControllerDelegate: AnyObject {
+    func didTapOnCreateEventButton()
+}
 
 class DetailDayViewController: UIViewController {
     
@@ -33,6 +36,8 @@ class DetailDayViewController: UIViewController {
     @IBOutlet weak var listOfDaysEventsTableViewBottomConstraints: NSLayoutConstraint!
     
     private lazy var dataSource = makeDataSource()
+    
+    weak var detailDayViewControllerDelegate: DetailDayViewControllerDelegate?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -159,10 +164,9 @@ class DetailDayViewController: UIViewController {
     }
     
     private func setupAddEventButton() {
-//        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnBackButton))
-//        addEventButton.isUserInteractionEnabled = true
-//        addEventButton.addGestureRecognizer(tap)
-//        addEventButton.addTarget(self, action: #selector(didTapOnCloseButton), for: .touchUpInside)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnCreateEventButton))
+        addEventButton.isUserInteractionEnabled = true
+        addEventButton.addGestureRecognizer(tap)
     }
     
     @objc private func didTapOnBackButton() {
@@ -177,6 +181,10 @@ class DetailDayViewController: UIViewController {
         }
         
     }
+    
+    @objc private func didTapOnCreateEventButton() {
+        self.detailDayViewControllerDelegate?.didTapOnCreateEventButton()
+    }
 }
 
 extension DetailDayViewController: UITableViewDelegate {
@@ -189,4 +197,20 @@ extension DetailDayViewController: UITableViewDelegate {
         UITableView.automaticDimension
     }
     
+}
+
+extension DetailDayViewController: UIViewControllerTransitioningDelegate {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        //        transition.startingPoint = cell!.eventDayLabel.center
+        //        t
+//        guard let originView = cell?.eventDayLabel else { return nil }
+        
+        return ShowTransition()
+    }
+    
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        //        transition.transitionMode = .dismiss
+        //        transition.startingPoint = cell!.center
+        return DismissTransition()
+    }
 }
