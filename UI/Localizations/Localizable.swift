@@ -45,6 +45,30 @@ public final class Localizable {
         getLocalizedString(of: "add_event_button_title")
     }
     
+    static func eventTitleTextFieldPlaceHolder() -> String {
+        getLocalizedString(of: "event_title_textfield_placeholder")
+    }
+    
+    static func cancelButtonTitle() -> String {
+        getLocalizedString(of: "cancel_button")
+    }
+    
+    static func saveButtonTitle() -> String {
+        getLocalizedString(of: "save_button")
+    }
+    
+    static func addLocationButtonTitle() -> String {
+        getLocalizedString(of: "add_location")
+    }
+    
+    static func addNoteButtonTitle() -> String {
+        getLocalizedString(of: "add_note")
+    }
+    
+    static func addAlertButtonTitle() -> String {
+        getLocalizedString(of: "add_alert")
+    }
+    
     private static func getLocalizedString(of key: String) -> String {
         NSLocalizedString(key, bundle: Bundle(for: Localizable.self), comment: key)
     }
