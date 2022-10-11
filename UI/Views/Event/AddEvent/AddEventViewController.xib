@@ -17,7 +17,7 @@
                 <outlet property="addNoteButton" destination="ifH-yt-fpk" id="rJm-0T-yer"/>
                 <outlet property="allDayLabel" destination="wgI-pN-SZ0" id="x35-YQ-7Z9"/>
                 <outlet property="allDayToggle" destination="Pjs-wr-z6W" id="I7r-9a-X5s"/>
-                <outlet property="backButton" destination="L6r-4K-FK8" id="0Kg-jn-kNE"/>
+                <outlet property="cancelButton" destination="L6r-4K-FK8" id="0Kg-jn-kNE"/>
                 <outlet property="endDateTextField" destination="kch-5X-nmi" id="emm-4p-Xmr"/>
                 <outlet property="eventNameTextField" destination="Oop-lf-tQ6" id="T3o-Rs-eWJ"/>
                 <outlet property="monthCalendar" destination="xG1-Wn-VPP" id="xtl-p2-Q5Z"/>
@@ -117,7 +117,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oI4-Dw-Vnp">
                             <rect key="frame" x="0.0" y="0.0" width="115" height="32"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qZq-Ry-Xvt" userLabel="locationIcon">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="qZq-Ry-Xvt" userLabel="locationIcon">
                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="32" id="CAB-jB-5Ku"/>
@@ -134,7 +134,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JoF-mS-0Jv">
                             <rect key="frame" x="0.0" y="56" width="115" height="32"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cCR-cM-ZS4" userLabel="alertIcon">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert" translatesAutoresizingMaskIntoConstraints="NO" id="cCR-cM-ZS4" userLabel="alertIcon">
                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="32" id="ZD3-Ky-IEU"/>
@@ -151,7 +151,7 @@
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YFu-of-Ai7">
                             <rect key="frame" x="0.0" y="112" width="115" height="32"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-Uj-x9C" userLabel="noteIcon">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-Uj-x9C" userLabel="noteIcon">
                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="32" id="PSh-sK-1ij"/>
@@ -216,6 +216,9 @@
         </view>
     </objects>
     <resources>
+        <image name="alert" width="32" height="32"/>
+        <image name="note" width="32" height="32"/>
+        <image name="pin" width="32" height="32"/>
         <namedColor name="background-color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
