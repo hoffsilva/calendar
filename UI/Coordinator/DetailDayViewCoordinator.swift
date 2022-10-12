@@ -23,8 +23,8 @@ public final class DetailDayViewCoordinator: Coordinator {
     weak var detailDayViewCoordinatorDelegate: DetailDayViewCoordinatorDelegate?
     
     public init(window: UIWindow,
-                navigationController: TimeTableNavigationController,
                 from transitionOrigin: UIViewController,
+                navigationController: TimeTableNavigationController,
                 day: Day) {
         self.window = window
         self.navigationController = navigationController

@@ -12,14 +12,12 @@ import UIKit
 public final class AppCoordinator: Coordinator {
     
     private let window: UIWindow
-    private let navigationController: TimeTableNavigationController
     private var customLaunchScreenCoordinator: CustomLaunchScreenCoordinator?
     private var eventListViewCoordinator: EventListViewCoordinator?
     private var detailDayViewCoordinator: DetailDayViewCoordinator?
     
     public init(window: UIWindow) {
         self.window = window
-        self.navigationController = TimeTableNavigationController()
     }
     
     public func start() {
@@ -39,11 +37,11 @@ public final class AppCoordinator: Coordinator {
         eventListViewCoordinator?.start()
     }
     
-    private func showDetailOf(day: Day, from viewController: UIViewController) {
+    private func showDetailOf(day: Day, from viewController: UIViewController, navigationController: TimeTableNavigationController) {
         detailDayViewCoordinator = Resolver.resolve(DetailDayViewCoordinator.self,
                                                     args: ["window": window,
-                                                           "navigationController": navigationController,
                                                            "viewController": viewController,
+                                                           "navigationController": navigationController,
                                                            "day": day]
         )
         detailDayViewCoordinator?.detailDayViewCoordinatorDelegate = self
@@ -61,9 +59,13 @@ extension AppCoordinator: CustomLaunchScreenCoordinatorDelegate {
 }
 
 extension AppCoordinator: EventListViewCoordinatorDelegate {
+    func showDetail(of day: Domain.Day, from viewController: UIViewController, navigationController: TimeTableNavigationController) {
+        self.showDetailOf(day: day, from: viewController, navigationController: navigationController)
+    }
+    
     
     func showDetail(of day: Day, from viewController: UIViewController) {
-        self.showDetailOf(day: day, from: viewController)
+       
     }
     
 }

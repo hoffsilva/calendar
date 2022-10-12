@@ -10,7 +10,7 @@ import Presentation
 import Domain
 
 protocol EventListViewCoordinatorDelegate: AnyObject {
-    func showDetail(of day: Day, from viewController: UIViewController)
+    func showDetail(of day: Day, from viewController: UIViewController, navigationController: TimeTableNavigationController)
 }
 
 public final class EventListViewCoordinator: Coordinator {
@@ -44,7 +44,7 @@ public final class EventListViewCoordinator: Coordinator {
     }
     
     private func showDetail(of day: Day, from viewController: UIViewController) {
-        self.eventListViewCoordinatorDelegate?.showDetail(of: day, from: viewController)
+        self.eventListViewCoordinatorDelegate?.showDetail(of: day, from: viewController, navigationController: self.navigationController!)
     }
 
 }

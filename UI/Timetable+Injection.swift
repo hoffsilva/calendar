@@ -40,8 +40,8 @@ extension Resolver {
         register { _, args in
             DetailDayViewCoordinator(
                 window: args("window"),
-                navigationController: args("navigationController"),
                 from: args("viewController"),
+                navigationController: args("navigationController"),
                 day: args("day")
             )
         }
