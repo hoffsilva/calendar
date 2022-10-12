@@ -7,7 +7,7 @@
 
 import EventKit
 
-protocol GetEventsRepository {
+public protocol GetEventsRepository {
     func getEvents(from: Int, completion: @escaping ((Result<[EKEvent], Error>) -> Void))
     func requestAccess(completion: @escaping ((Bool, LocalizedError?) -> Void))
 }

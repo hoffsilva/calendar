@@ -17,6 +17,8 @@ extension Resolver: ResolverRegistering {
         registerViews()
         registerViewModels()
         registerUseCases()
+        registerRepositories()
+        registerDataSources()
     }
     
 }
@@ -71,6 +73,10 @@ extension Resolver {
             DetailDayViewController.loadFromNib()
         }
         
+        register { _, args in
+            AddEventViewController.loadFromNib()
+        }
+        
     }
     
     public static func registerViewModels() {
@@ -88,15 +94,60 @@ extension Resolver {
             DaysEventsViewModel(day: args.get("day"))
         }
         .scope(.shared)
+        
+        register { service, _ in
+            AddEventViewModel(addEventUseCase: service.resolve(AddEventUseCase.self))
+        }
+        .scope(.shared)
     }
     
     public static func registerUseCases() {
         
-        register {
-            GetEventsUseCaseImp()
+        register { service, _ in
+            GetEventsUseCaseImp(getEventsRepository: service.resolve(GetEventsRepository.self))
         }
         .scope(.application)
         .implements(GetEventsUseCase.self)
+        
+        register { service, _ in
+            AddEventUseCaseImp(addEventRepository: service.resolve(AddEventRepository.self))
+        }
+        .scope(.application)
+        .implements(AddEventUseCase.self)
+        
+        
+    }
+    
+    public static func registerRepositories() {
+        
+        register { service, _ in
+            GetEventsRepositoryImp(dataSource: service.resolve(EventsDataSource.self))
+        }
+        .scope(.application)
+        .implements(GetEventsRepository.self)
+        
+        register { service, _ in
+            AddEventRepositoryImp(calendarManager: self.resolve(CalendarManager.self))
+        }
+        .scope(.application)
+        .implements(AddEventRepository.self)
+        
+    }
+    
+    public static func registerDataSources() {
+        
+        register {
+            CalendarManagerImpl()
+        }
+        .scope(.application)
+        .implements(CalendarManager.self)
+        
+        register {
+            EventsDataSourceImp()
+        }
+        .scope(.application)
+        .implements(EventsDataSource.self)
+        
         
     }
     

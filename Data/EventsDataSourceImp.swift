@@ -8,7 +8,7 @@
 import EventKit
 import Domain
 
-final class EventsDataSourceImp: EventsDataSource {
+public final class EventsDataSourceImp: EventsDataSource {
     
     private lazy var store: EKEventStore = {
         EKEventStore()
@@ -20,7 +20,9 @@ final class EventsDataSourceImp: EventsDataSource {
         return formatter
     }()
     
-    func requestAccess(completion: @escaping ((Bool, LocalizedError?) -> Void)) {
+    public init() {}
+    
+    public func requestAccess(completion: @escaping ((Bool, LocalizedError?) -> Void)) {
         store.requestAccess(to: .event) { (granted, error) in
             if granted {
                 completion(granted, nil)
@@ -30,7 +32,7 @@ final class EventsDataSourceImp: EventsDataSource {
         }
     }
     
-    func getEvents(from: Int, completion: @escaping ((Result<[EKEvent], Error>) -> Void)) {
+    public func getEvents(from: Int, completion: @escaping ((Result<[EKEvent], Error>) -> Void)) {
         let today = Date()
         guard let numericMonth = Int(today.getShortMonth()),
               let endDate = Calendar(identifier: .gregorian).date(byAdding: .month, value: 12 - numericMonth, to: today) else { return }

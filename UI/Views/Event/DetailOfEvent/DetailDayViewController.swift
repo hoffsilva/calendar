@@ -10,7 +10,7 @@ import Presentation
 import Domain
 
 protocol DetailDayViewControllerDelegate: AnyObject {
-    func didTapOnCreateEventButton()
+    func didTapOnCreateEventButton(for day: Day)
 }
 
 class DetailDayViewController: UIViewController {
@@ -183,7 +183,7 @@ class DetailDayViewController: UIViewController {
     }
     
     @objc private func didTapOnCreateEventButton() {
-        self.detailDayViewControllerDelegate?.didTapOnCreateEventButton()
+        self.detailDayViewControllerDelegate?.didTapOnCreateEventButton(for: daysEventsViewModel.getDay())
     }
 }
 

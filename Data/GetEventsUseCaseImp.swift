@@ -10,16 +10,18 @@ import Domain
 
 public final class GetEventsUseCaseImp: GetEventsUseCase {
     
-    let repository = GetEventsRepositoryImp(dataSource: EventsDataSourceImp())
+    private let getEventsRepository: GetEventsRepository
     
-    public init() {}
+    public init(getEventsRepository: GetEventsRepository) {
+        self.getEventsRepository = getEventsRepository
+    }
 
     public func getEvents(from year: Int, completion: @escaping ((Result<[Month], Error>) -> Void)) {
-        repository.requestAccess { granted, error in
+        getEventsRepository.requestAccess { granted, error in
             if let safeError = error {
                 completion(.failure(NSError.init(domain: safeError.localizedDescription, code: 0, userInfo: nil)))
             } else if granted {
-                self.repository.getEvents(from: year) { result in
+                self.getEventsRepository.getEvents(from: year) { result in
                     switch result {
                     case .success(let events):
                         completion(.success(self.mapEvent(events: events)))

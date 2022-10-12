@@ -97,6 +97,14 @@
 		500DE4AA28F456C900EA52F1 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 500DE4A928F456C900EA52F1 /* FSCalendar */; };
 		500DE4AC28F5F23400EA52F1 /* DetailDayViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4AB28F5F23400EA52F1 /* DetailDayViewCoordinator.swift */; };
 		500DE4AE28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4AD28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift */; };
+		500DE4B028F742CF00EA52F1 /* AddEventViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4AF28F742CF00EA52F1 /* AddEventViewCoordinator.swift */; };
+		500DE4B228F7439600EA52F1 /* AddEventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4B128F7439600EA52F1 /* AddEventViewModel.swift */; };
+		500DE4B428F7441F00EA52F1 /* AddEventUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4B328F7441F00EA52F1 /* AddEventUseCase.swift */; };
+		500DE4B728F744C400EA52F1 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4B528F744C400EA52F1 /* CalendarManager.swift */; };
+		500DE4B828F744C400EA52F1 /* CalendarManagerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4B628F744C400EA52F1 /* CalendarManagerImpl.swift */; };
+		500DE4BA28F7476800EA52F1 /* AddEventUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4B928F7476800EA52F1 /* AddEventUseCaseImp.swift */; };
+		500DE4BC28F74D4300EA52F1 /* AddEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4BB28F74D4300EA52F1 /* AddEventRepository.swift */; };
+		500DE4BE28F74D9C00EA52F1 /* AddEventRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4BD28F74D9C00EA52F1 /* AddEventRepositoryImp.swift */; };
 		502BDF642843C22E00C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		502BDF652843CDD200C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094EC582842499A002A3042 /* Extension+UIColor.swift */; };
@@ -298,6 +306,14 @@
 		0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEventCell.swift; sourceTree = "<group>"; };
 		500DE4AB28F5F23400EA52F1 /* DetailDayViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDayViewCoordinator.swift; sourceTree = "<group>"; };
 		500DE4AD28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLaunchScreenCoordinator.swift; sourceTree = "<group>"; };
+		500DE4AF28F742CF00EA52F1 /* AddEventViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewCoordinator.swift; sourceTree = "<group>"; };
+		500DE4B128F7439600EA52F1 /* AddEventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewModel.swift; sourceTree = "<group>"; };
+		500DE4B328F7441F00EA52F1 /* AddEventUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventUseCase.swift; sourceTree = "<group>"; };
+		500DE4B528F744C400EA52F1 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
+		500DE4B628F744C400EA52F1 /* CalendarManagerImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManagerImpl.swift; sourceTree = "<group>"; };
+		500DE4B928F7476800EA52F1 /* AddEventUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventUseCaseImp.swift; sourceTree = "<group>"; };
+		500DE4BB28F74D4300EA52F1 /* AddEventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventRepository.swift; sourceTree = "<group>"; };
+		500DE4BD28F74D9C00EA52F1 /* AddEventRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventRepositoryImp.swift; sourceTree = "<group>"; };
 		502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5094EC582842499A002A3042 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		50A8F6BF28F1D4B1006E4D89 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddEventViewController.swift; path = UI/Views/Event/AddEvent/AddEventViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -413,6 +429,7 @@
 			children = (
 				0B471D8927AEEA3400644CE2 /* GetEventsUseCase.swift */,
 				0B471D8B27AEEA4E00644CE2 /* Entities */,
+				500DE4B328F7441F00EA52F1 /* AddEventUseCase.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -433,6 +450,8 @@
 		0B471D9C27AEEAA400644CE2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				500DE4B528F744C400EA52F1 /* CalendarManager.swift */,
+				500DE4B628F744C400EA52F1 /* CalendarManagerImpl.swift */,
 				0B471DC627AEEB9000644CE2 /* Time.swift */,
 				0B471DB427AEEACE00644CE2 /* EventsDataSource.swift */,
 				0B471DB327AEEACE00644CE2 /* EventsDataSourceImp.swift */,
@@ -440,6 +459,8 @@
 				0B471DB627AEEACE00644CE2 /* GetEventsUseCaseImp.swift */,
 				0B471DC827AEEB9000644CE2 /* Date+Extensions.swift */,
 				0B471DB027AEEAC300644CE2 /* Repositories */,
+				500DE4B928F7476800EA52F1 /* AddEventUseCaseImp.swift */,
+				500DE4BD28F74D9C00EA52F1 /* AddEventRepositoryImp.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -456,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				0B471DB127AEEAC300644CE2 /* GetEventsRepository.swift */,
+				500DE4BB28F74D4300EA52F1 /* AddEventRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -467,6 +489,7 @@
 				0B471DF227AEEF5400644CE2 /* EventCellViewModel.swift */,
 				0B471DF027AEEF5400644CE2 /* EventViewModel.swift */,
 				0BD0A7E827D032800087B1AC /* DaysEventsViewModel.swift */,
+				500DE4B128F7439600EA52F1 /* AddEventViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -567,6 +590,7 @@
 				0B3331B827AF00AE00695F27 /* Coordinator.swift */,
 				500DE4AB28F5F23400EA52F1 /* DetailDayViewCoordinator.swift */,
 				500DE4AD28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift */,
+				500DE4AF28F742CF00EA52F1 /* AddEventViewCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -1000,6 +1024,7 @@
 				0B471D9127AEEA4E00644CE2 /* Location.swift in Sources */,
 				0B471D9527AEEA4E00644CE2 /* Month.swift in Sources */,
 				0B471D9227AEEA4E00644CE2 /* Months.swift in Sources */,
+				500DE4B428F7441F00EA52F1 /* AddEventUseCase.swift in Sources */,
 				0B471D9427AEEA4E00644CE2 /* Day.swift in Sources */,
 				0B471D8A27AEEA3400644CE2 /* GetEventsUseCase.swift in Sources */,
 				0BD0A7EB27D034B00087B1AC /* Hour.swift in Sources */,
@@ -1013,8 +1038,13 @@
 				0B471DB727AEEACE00644CE2 /* EventsDataSourceImp.swift in Sources */,
 				0B471DB227AEEAC300644CE2 /* GetEventsRepository.swift in Sources */,
 				0B3331B727AF005A00695F27 /* Time.swift in Sources */,
+				500DE4BE28F74D9C00EA52F1 /* AddEventRepositoryImp.swift in Sources */,
 				0B471DB927AEEACE00644CE2 /* GetEventsRepositoryImp.swift in Sources */,
 				0B471DB827AEEACE00644CE2 /* EventsDataSource.swift in Sources */,
+				500DE4BC28F74D4300EA52F1 /* AddEventRepository.swift in Sources */,
+				500DE4B828F744C400EA52F1 /* CalendarManagerImpl.swift in Sources */,
+				500DE4B728F744C400EA52F1 /* CalendarManager.swift in Sources */,
+				500DE4BA28F7476800EA52F1 /* AddEventUseCaseImp.swift in Sources */,
 				0B471DBA27AEEACE00644CE2 /* GetEventsUseCaseImp.swift in Sources */,
 				0B3331B627AF004300695F27 /* Date+Extensions.swift in Sources */,
 			);
@@ -1032,6 +1062,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500DE4B228F7439600EA52F1 /* AddEventViewModel.swift in Sources */,
 				0B471DF327AEEF5400644CE2 /* EventViewModel.swift in Sources */,
 				0B471DF527AEEF5400644CE2 /* EventCellViewModel.swift in Sources */,
 				0BD0A7E927D032800087B1AC /* DaysEventsViewModel.swift in Sources */,
@@ -1057,6 +1088,7 @@
 				0B3331C027AFF1F000695F27 /* EventListViewCoordinator.swift in Sources */,
 				0B471E5827AEF2E500644CE2 /* String+Utils.swift in Sources */,
 				500DE4AC28F5F23400EA52F1 /* DetailDayViewCoordinator.swift in Sources */,
+				500DE4B028F742CF00EA52F1 /* AddEventViewCoordinator.swift in Sources */,
 				0B471E5527AEF2E500644CE2 /* Extension+UILabel.swift in Sources */,
 				500DE4AE28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift in Sources */,
 				0B57B02A27B82A6F008F4015 /* Resolver.swift in Sources */,

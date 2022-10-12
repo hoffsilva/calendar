@@ -41,7 +41,7 @@ public final class DetailDayViewCoordinator: Coordinator {
         navigationController.viewControllers.first?.present(detailDayViewController, animated: true, completion: nil)
     }
     
-    public func showAddEventView(of day: Day) {
+    public func showAddEventView(for day: Day) {
         let detailDayViewModel = Resolver.resolve(DaysEventsViewModel.self, args: ["day": day])
         let detailDayViewController = Resolver.resolve(DetailDayViewController.self, args: detailDayViewModel)
         detailDayViewController.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
@@ -54,8 +54,8 @@ public final class DetailDayViewCoordinator: Coordinator {
 
 extension DetailDayViewCoordinator: DetailDayViewControllerDelegate {
     
-    func didTapOnCreateEventButton() {
-        
+    func didTapOnCreateEventButton(for day: Day) {
+        self.showAddEventView(for: day)
     }
     
 }

@@ -8,19 +8,19 @@
 import EventKit
 import Domain
 
-final class GetEventsRepositoryImp: GetEventsRepository {
+public final class GetEventsRepositoryImp: GetEventsRepository {
 
     private let dataSource: EventsDataSource
     
-    internal init(dataSource: EventsDataSource) {
+    public init(dataSource: EventsDataSource) {
         self.dataSource = dataSource
     }
     
-    func getEvents(from: Int, completion: @escaping ((Result<[EKEvent], Error>) -> Void)) {
+    public func getEvents(from: Int, completion: @escaping ((Result<[EKEvent], Error>) -> Void)) {
         dataSource.getEvents(from: from, completion: completion)
     }
     
-    func requestAccess(completion: @escaping ((Bool, LocalizedError?) -> Void)) {
+    public func requestAccess(completion: @escaping ((Bool, LocalizedError?) -> Void)) {
         dataSource.requestAccess(completion: completion)
     }
     

@@ -46,4 +46,8 @@ public final class DaysEventsViewModel {
         listOfHour?(day.hours)
     }
     
+    public func getDay() -> Day {
+        self.day
+    }
+    
 }

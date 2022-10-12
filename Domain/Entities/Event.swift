@@ -24,8 +24,9 @@ public struct Event: Hashable {
     public let day: Int
     public let uuid = UUID()
     public let acceptanceAnswer: AcceptanceAnswer
+    public let note: String?
     
-    public init(startDate: Date, endDate: Date, isAllDay: Bool, location: String?, title: String, year: Int, day: Int, acceptanceAnswer: AcceptanceAnswer) {
+    public init(startDate: Date, endDate: Date, isAllDay: Bool, location: String?, title: String, year: Int, day: Int, acceptanceAnswer: AcceptanceAnswer,  note: String? = nil) {
         self.startDate = startDate
         self.endDate = endDate
         self.isAllDay = isAllDay
@@ -34,5 +35,6 @@ public struct Event: Hashable {
         self.year = year
         self.day = day
         self.acceptanceAnswer = acceptanceAnswer
+        self.note = note
     }
 }
