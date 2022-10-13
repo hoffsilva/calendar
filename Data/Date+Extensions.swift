@@ -83,4 +83,11 @@ public extension Date {
         return Int(formatter.string(from: self)) ?? 0
     }
     
+    func getCurrentDate(day: String, month: String, year: String) -> Self {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        guard let currentDate = formatter.date(from: "\(day)/\(month)/\(year)") else { return Date() }
+        return currentDate
+    }
+    
 }
