@@ -19,9 +19,10 @@ public final class AddEventViewCoordinator: Coordinator {
     private let window: UIWindow
     private var navigationController: TimeTableNavigationController
     private var transitionOrigin: DetailDayViewController?
+    private var addEventViewController: AddEventViewController?
     private var day: Day
     
-    weak var detailDayViewCoordinatorDelegate: DetailDayViewCoordinatorDelegate?
+    weak var addEventViewCoordinatorDelegate: AddEventViewCoordinatorDelegate?
     
     public init(window: UIWindow,
                 from transitionOrigin: UIViewController,
@@ -34,17 +35,12 @@ public final class AddEventViewCoordinator: Coordinator {
     }
     
     public func start() {
-//        let addEventUseCase
-//        let detailDayViewModel = Resolver.resolve(AddEventViewModel.self, args: ["day": day])
-//        let detailDayViewController = Resolver.resolve(AddEventViewController.self, args: detailDayViewModel)
-//        detailDayViewController.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
-//        detailDayViewController.transitioningDelegate = transitionOrigin
-//        detailDayViewController.modalPresentationStyle = .overFullScreen
-//        navigationController.viewControllers.first?.present(detailDayViewController, animated: true, completion: nil)
-    }
-    
-    public func showAddEventView(for day: Day) {
-        
+        let addEventViewModel = Resolver.resolve(AddEventViewModel.self, args: ["currentDate": day.date])
+        addEventViewController = Resolver.resolve(AddEventViewController.self, args: addEventViewModel)
+        addEventViewController?.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
+        addEventViewController?.transitioningDelegate = addEventViewController
+        addEventViewController?.modalPresentationStyle = .overFullScreen
+        navigationController.presentedViewController?.present(addEventViewController!, animated: true, completion: nil)
     }
 
 }

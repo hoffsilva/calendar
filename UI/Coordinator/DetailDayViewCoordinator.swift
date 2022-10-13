@@ -10,7 +10,7 @@ import Presentation
 import Domain
 
 protocol DetailDayViewCoordinatorDelegate: AnyObject {
-    
+    func callAddEventView(of day: Day, from viewController: UIViewController, navigationController: TimeTableNavigationController)
 }
 
 public final class DetailDayViewCoordinator: Coordinator {
@@ -18,6 +18,7 @@ public final class DetailDayViewCoordinator: Coordinator {
     private let window: UIWindow
     private var navigationController: TimeTableNavigationController
     private var transitionOrigin: EventListViewController?
+    private var detailDayViewController: DetailDayViewController?
     private var day: Day
     
     weak var detailDayViewCoordinatorDelegate: DetailDayViewCoordinatorDelegate?
@@ -34,20 +35,16 @@ public final class DetailDayViewCoordinator: Coordinator {
     
     public func start() {
         let detailDayViewModel = Resolver.resolve(DaysEventsViewModel.self, args: ["day": day])
-        let detailDayViewController = Resolver.resolve(DetailDayViewController.self, args: detailDayViewModel)
-        detailDayViewController.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
-        detailDayViewController.transitioningDelegate = transitionOrigin
-        detailDayViewController.modalPresentationStyle = .overFullScreen
-        navigationController.viewControllers.first?.present(detailDayViewController, animated: true, completion: nil)
+        detailDayViewController = Resolver.resolve(DetailDayViewController.self, args: detailDayViewModel)
+        detailDayViewController?.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
+        detailDayViewController?.transitioningDelegate = transitionOrigin
+        detailDayViewController?.modalPresentationStyle = .overFullScreen
+        detailDayViewController?.detailDayViewControllerDelegate = self
+        navigationController.viewControllers.first?.present(detailDayViewController!, animated: true, completion: nil)
     }
     
     public func showAddEventView(for day: Day) {
-        let detailDayViewModel = Resolver.resolve(DaysEventsViewModel.self, args: ["day": day])
-        let detailDayViewController = Resolver.resolve(DetailDayViewController.self, args: detailDayViewModel)
-        detailDayViewController.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
-        detailDayViewController.transitioningDelegate = detailDayViewController
-        detailDayViewController.modalPresentationStyle = .overFullScreen
-        navigationController.viewControllers.first?.present(detailDayViewController, animated: true, completion: nil)
+        self.detailDayViewCoordinatorDelegate?.callAddEventView(of: day, from: detailDayViewController!, navigationController: navigationController)
     }
 
 }

@@ -15,6 +15,7 @@ public final class AppCoordinator: Coordinator {
     private var customLaunchScreenCoordinator: CustomLaunchScreenCoordinator?
     private var eventListViewCoordinator: EventListViewCoordinator?
     private var detailDayViewCoordinator: DetailDayViewCoordinator?
+    private var addEventViewCoordinator: AddEventViewCoordinator?
     
     public init(window: UIWindow) {
         self.window = window
@@ -48,6 +49,17 @@ public final class AppCoordinator: Coordinator {
         detailDayViewCoordinator?.start()
     }
     
+    private func showAddEventOf(day: Day, from viewController: UIViewController, navigationController: TimeTableNavigationController) {
+        addEventViewCoordinator = Resolver.resolve(AddEventViewCoordinator.self,
+                                                    args: ["window": window,
+                                                           "viewController": viewController,
+                                                           "navigationController": navigationController,
+                                                           "day": day]
+        )
+//        addEventViewCoordinator?.addEventViewCoordinatorDelegate = self
+        addEventViewCoordinator?.start()
+    }
+    
 }
 
 extension AppCoordinator: CustomLaunchScreenCoordinatorDelegate {
@@ -59,18 +71,17 @@ extension AppCoordinator: CustomLaunchScreenCoordinatorDelegate {
 }
 
 extension AppCoordinator: EventListViewCoordinatorDelegate {
+    
     func showDetail(of day: Domain.Day, from viewController: UIViewController, navigationController: TimeTableNavigationController) {
         self.showDetailOf(day: day, from: viewController, navigationController: navigationController)
-    }
-    
-    
-    func showDetail(of day: Day, from viewController: UIViewController) {
-       
     }
     
 }
 
 extension AppCoordinator: DetailDayViewCoordinatorDelegate {
     
+    func callAddEventView(of day: Domain.Day, from viewController: UIViewController, navigationController: TimeTableNavigationController) {
+        self.showAddEventOf(day: day, from: viewController, navigationController: navigationController)
+    }
     
 }
