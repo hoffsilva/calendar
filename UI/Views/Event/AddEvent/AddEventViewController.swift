@@ -43,6 +43,7 @@ class AddEventViewController: UIViewController {
         setupStyle()
         addEventViewModel.loadCurrentDate()
         setupBindings()
+        setupFSCalendarStyle()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -72,7 +73,7 @@ class AddEventViewController: UIViewController {
     }
     
     private func setupFSCalendarStyle() {
-        monthCalendar.pagingEnabled = false
+        monthCalendar.pagingEnabled = true
         monthCalendar.appearance.selectionColor = .timetableText
         monthCalendar.appearance.todaySelectionColor = .timetableText
         monthCalendar.appearance.todayColor = .timetableSystemBackgroundColor
@@ -81,7 +82,9 @@ class AddEventViewController: UIViewController {
         monthCalendar.appearance.titleFont = .rubikBold(16)
         monthCalendar.appearance.headerDateFormat = nil
         monthCalendar.appearance.weekdayTextColor = .timetableText
-//        monthCalendar.scrollEnabled = false
+        monthCalendar.appearance.caseOptions = [.weekdayUsesSingleUpperCase]
+        monthCalendar.setCurrentPage(Date(), animated: false)
+        monthCalendar.scrollEnabled = false
     }
     
     private func animateNumberOfDay(with constant: CGFloat) {
