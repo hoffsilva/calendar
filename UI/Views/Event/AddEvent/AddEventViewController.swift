@@ -67,7 +67,7 @@ class AddEventViewController: UIViewController {
         }
         
         addEventViewModel.selectedDate = { [weak self] selectedDate in
-//            self?.monthCalendar.tar = selectedDate
+            self?.monthCalendar.setCurrentPage(selectedDate, animated: false)
         }
         
     }
@@ -83,7 +83,6 @@ class AddEventViewController: UIViewController {
         monthCalendar.appearance.headerDateFormat = nil
         monthCalendar.appearance.weekdayTextColor = .timetableText
         monthCalendar.appearance.caseOptions = [.weekdayUsesSingleUpperCase]
-        monthCalendar.setCurrentPage(Date(), animated: false)
         monthCalendar.scrollEnabled = false
     }
     
