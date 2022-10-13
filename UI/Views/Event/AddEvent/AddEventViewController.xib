@@ -29,6 +29,7 @@
                 <outlet property="saveEventButton" destination="HfF-aJ-O2j" id="Mwc-U3-bBa"/>
                 <outlet property="separatorView" destination="cGc-wr-WZU" id="MTX-uh-mJO"/>
                 <outlet property="startDateTextField" destination="6bz-TJ-aDN" id="eRI-u3-9ec"/>
+                <outlet property="view" destination="Kwx-Ih-v6b" id="zQE-87-K1b"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

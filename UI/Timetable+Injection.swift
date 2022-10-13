@@ -50,6 +50,17 @@ extension Resolver {
         .scope(.unique)
         .implements(Coordinator.self)
         
+        register { _, args in
+            AddEventViewCoordinator(
+                window: args("window"),
+                from: args("viewController"),
+                navigationController: args("navigationController"),
+                day: args("day")
+            )
+        }
+        .scope(.unique)
+        .implements(Coordinator.self)
+        
     }
     
     public static func registerViews() {
@@ -80,8 +91,9 @@ extension Resolver {
     }
     
     public static func registerViewModels() {
-        register {
-            EventViewModel(eventUseCase: Resolver.resolve(GetEventsUseCase.self))
+        
+        register { service, _ in
+            EventViewModel(eventUseCase: service.resolve(GetEventsUseCase.self))
         }
         .scope(.application)
         
@@ -95,10 +107,11 @@ extension Resolver {
         }
         .scope(.shared)
         
-        register { service, _ in
-            AddEventViewModel(addEventUseCase: service.resolve(AddEventUseCase.self))
+        register { service, args in
+            AddEventViewModel(addEventUseCase: service.resolve(AddEventUseCase.self), currentDate: args.get("currentDate"))
         }
         .scope(.shared)
+        
         
     }
     
@@ -113,9 +126,8 @@ extension Resolver {
         register { service, _ in
             AddEventUseCaseImp(addEventRepository: service.resolve(AddEventRepository.self))
         }
-        .scope(.application)
+        .scope(.shared)
         .implements(AddEventUseCase.self)
-        
         
     }
     

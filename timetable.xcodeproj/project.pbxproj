@@ -316,7 +316,7 @@
 		500DE4BD28F74D9C00EA52F1 /* AddEventRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventRepositoryImp.swift; sourceTree = "<group>"; };
 		502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5094EC582842499A002A3042 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
-		50A8F6BF28F1D4B1006E4D89 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddEventViewController.swift; path = UI/Views/Event/AddEvent/AddEventViewController.swift; sourceTree = SOURCE_ROOT; };
+		50A8F6BF28F1D4B1006E4D89 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		50A8F6C528F1D8BB006E4D89 /* AddEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEventViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 

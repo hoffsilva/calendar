@@ -11,7 +11,7 @@ import FSCalendar
 
 class AddEventViewController: UIViewController {
     
-    @Injected var daysEventsViewModel: DaysEventsViewModel
+    @Injected var addEventViewModel: AddEventViewModel
     
     @IBOutlet weak var cancelButton: UILabel!
     @IBOutlet weak var saveEventButton: UILabel!
@@ -39,14 +39,49 @@ class AddEventViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setLabelStrings()
+        setupStyle()
+        addEventViewModel.loadCurrentDate()
+        setupBindings()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateNumberOfDay(with: 24)
         animateNameOfMonth(with: 8)
+    }
+    
+    func setupBindings() {
+        
+        addEventViewModel.numberOfDay = { [weak self] numberOfDay in
+            self?.numberOfTheDayLabel.text = numberOfDay
+        }
+        
+        addEventViewModel.nameOfMonth = { [weak self] nameOfMonth in
+            self?.nameOfMonthLabel.text = nameOfMonth
+        }
+        
+        addEventViewModel.nameOfDay = { [weak self] nameOfDay in
+            self?.nameOfDayLabel.text = nameOfDay
+        }
+        
+        addEventViewModel.selectedDate = { [weak self] selectedDate in
+//            self?.monthCalendar.tar = selectedDate
+        }
+        
+    }
+    
+    private func setupFSCalendarStyle() {
+        monthCalendar.pagingEnabled = false
+        monthCalendar.appearance.selectionColor = .timetableText
+        monthCalendar.appearance.todaySelectionColor = .timetableText
+        monthCalendar.appearance.todayColor = .timetableSystemBackgroundColor
+        monthCalendar.appearance.titleTodayColor = .timetableText
+        monthCalendar.appearance.weekdayFont = .rubikRegular(16)
+        monthCalendar.appearance.titleFont = .rubikBold(16)
+        monthCalendar.appearance.headerDateFormat = nil
+        monthCalendar.appearance.weekdayTextColor = .timetableText
+//        monthCalendar.scrollEnabled = false
     }
     
     private func animateNumberOfDay(with constant: CGFloat) {
@@ -66,6 +101,7 @@ class AddEventViewController: UIViewController {
     private func setLabelStrings() {
         cancelButton.text = Localizable.backButtonTitle()
         saveEventButton.text = Localizable.addEventButtonTitle()
+        eventNameTextField.placeholder = Localizable.eventTitleTextFieldPlaceHolder()
     }
     
     private func setupStyle() {
@@ -83,6 +119,7 @@ class AddEventViewController: UIViewController {
         nameOfDayLabel.font = .rubikRegular(12)
         numberOfTheDayLabel.font = .rubikBold(40)
         nameOfMonthLabel.font = .rubikBold(40)
+        eventNameTextField.font = .rubikBold(28)
     }
     
     private func setupLabelColor() {
@@ -118,3 +155,5 @@ class AddEventViewController: UIViewController {
     }
 
 }
+
+extension AddEventViewController: UIViewControllerTransitioningDelegate {}
