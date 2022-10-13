@@ -94,39 +94,39 @@ public final class GetEventsUseCaseImp: GetEventsUseCase {
         
     }
     
-    private func getDays() -> [Day] {
+    private func getDays(of month: Months, and year: String) -> [Day] {
         [
-            Day(number: "01", events: [Event](), hours: getHours()),
-            Day(number: "02", events: [Event](), hours: getHours()),
-            Day(number: "03", events: [Event](), hours: getHours()),
-            Day(number: "04", events: [Event](), hours: getHours()),
-            Day(number: "05", events: [Event](), hours: getHours()),
-            Day(number: "06", events: [Event](), hours: getHours()),
-            Day(number: "07", events: [Event](), hours: getHours()),
-            Day(number: "08", events: [Event](), hours: getHours()),
-            Day(number: "09", events: [Event](), hours: getHours()),
-            Day(number: "10", events: [Event](), hours: getHours()),
-            Day(number: "11", events: [Event](), hours: getHours()),
-            Day(number: "12", events: [Event](), hours: getHours()),
-            Day(number: "13", events: [Event](), hours: getHours()),
-            Day(number: "14", events: [Event](), hours: getHours()),
-            Day(number: "15", events: [Event](), hours: getHours()),
-            Day(number: "16", events: [Event](), hours: getHours()),
-            Day(number: "17", events: [Event](), hours: getHours()),
-            Day(number: "18", events: [Event](), hours: getHours()),
-            Day(number: "19", events: [Event](), hours: getHours()),
-            Day(number: "20", events: [Event](), hours: getHours()),
-            Day(number: "21", events: [Event](), hours: getHours()),
-            Day(number: "22", events: [Event](), hours: getHours()),
-            Day(number: "23", events: [Event](), hours: getHours()),
-            Day(number: "24", events: [Event](), hours: getHours()),
-            Day(number: "25", events: [Event](), hours: getHours()),
-            Day(number: "26", events: [Event](), hours: getHours()),
-            Day(number: "27", events: [Event](), hours: getHours()),
-            Day(number: "28", events: [Event](), hours: getHours()),
-            Day(number: "29", events: [Event](), hours: getHours()),
-            Day(number: "30", events: [Event](), hours: getHours()),
-            Day(number: "31", events: [Event](), hours: getHours())
+            Day(number: "01", date: Date().getCurrentDate(day: "01", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "02", date: Date().getCurrentDate(day: "02", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "03", date: Date().getCurrentDate(day: "03", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "04", date: Date().getCurrentDate(day: "04", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "05", date: Date().getCurrentDate(day: "05", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "06", date: Date().getCurrentDate(day: "06", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "07", date: Date().getCurrentDate(day: "07", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "08", date: Date().getCurrentDate(day: "08", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "09", date: Date().getCurrentDate(day: "09", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "10", date: Date().getCurrentDate(day: "10", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "11", date: Date().getCurrentDate(day: "11", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "12", date: Date().getCurrentDate(day: "12", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "13", date: Date().getCurrentDate(day: "13", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "14", date: Date().getCurrentDate(day: "14", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "15", date: Date().getCurrentDate(day: "15", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "16", date: Date().getCurrentDate(day: "16", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "17", date: Date().getCurrentDate(day: "17", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "18", date: Date().getCurrentDate(day: "18", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "19", date: Date().getCurrentDate(day: "19", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "20", date: Date().getCurrentDate(day: "20", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "21", date: Date().getCurrentDate(day: "21", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "22", date: Date().getCurrentDate(day: "22", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "23", date: Date().getCurrentDate(day: "23", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "24", date: Date().getCurrentDate(day: "24", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "25", date: Date().getCurrentDate(day: "25", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "26", date: Date().getCurrentDate(day: "26", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "27", date: Date().getCurrentDate(day: "27", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "28", date: Date().getCurrentDate(day: "28", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "29", date: Date().getCurrentDate(day: "29", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "30", date: Date().getCurrentDate(day: "30", month: month.rawValue, year: year), events: [Event](), hours: getHours()),
+            Day(number: "31", date: Date().getCurrentDate(day: "31", month: month.rawValue, year: year), events: [Event](), hours: getHours())
         ]
     }
     
@@ -148,18 +148,18 @@ public final class GetEventsUseCaseImp: GetEventsUseCase {
     
     private func mapEvent(events: [EKEvent]) -> [Month] {
         
-        var jan = Month(name: "", days: getDays(), month: .jan)
-        var fev = Month(name: "", days: getDays(), month: .fev)
-        var mar = Month(name: "", days: getDays(), month: .mar)
-        var apr = Month(name: "", days: getDays(), month: .apr)
-        var may = Month(name: "", days: getDays(), month: .may)
-        var jun = Month(name: "", days: getDays(), month: .jun)
-        var jul = Month(name: "", days: getDays(), month: .jul)
-        var aug = Month(name: "", days: getDays(), month: .aug)
-        var sep = Month(name: "", days: getDays(), month: .sep)
-        var oct = Month(name: "", days: getDays(), month: .oct)
-        var nov = Month(name: "", days: getDays(), month: .nov)
-        var dec = Month(name: "", days: getDays(), month: .dec)
+        var jan = Month(name: "", days: getDays(of: .jan, and: "\(Date().getYear())"), month: .jan)
+        var fev = Month(name: "", days: getDays(of: .fev, and: "\(Date().getYear())"), month: .fev)
+        var mar = Month(name: "", days: getDays(of: .mar, and: "\(Date().getYear())"), month: .mar)
+        var apr = Month(name: "", days: getDays(of: .apr, and: "\(Date().getYear())"), month: .apr)
+        var may = Month(name: "", days: getDays(of: .may, and: "\(Date().getYear())"), month: .may)
+        var jun = Month(name: "", days: getDays(of: .jun, and: "\(Date().getYear())"), month: .jun)
+        var jul = Month(name: "", days: getDays(of: .jul, and: "\(Date().getYear())"), month: .jul)
+        var aug = Month(name: "", days: getDays(of: .aug, and: "\(Date().getYear())"), month: .aug)
+        var sep = Month(name: "", days: getDays(of: .sep, and: "\(Date().getYear())"), month: .sep)
+        var oct = Month(name: "", days: getDays(of: .oct, and: "\(Date().getYear())"), month: .oct)
+        var nov = Month(name: "", days: getDays(of: .nov, and: "\(Date().getYear())"), month: .nov)
+        var dec = Month(name: "", days: getDays(of: .dec, and: "\(Date().getYear())"), month: .dec)
         
         
         for event in events {
