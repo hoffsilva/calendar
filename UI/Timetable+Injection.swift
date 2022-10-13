@@ -47,7 +47,7 @@ extension Resolver {
                 day: args("day")
             )
         }
-        .scope(.application)
+        .scope(.unique)
         .implements(Coordinator.self)
         
     }
@@ -99,6 +99,7 @@ extension Resolver {
             AddEventViewModel(addEventUseCase: service.resolve(AddEventUseCase.self))
         }
         .scope(.shared)
+        
     }
     
     public static func registerUseCases() {
