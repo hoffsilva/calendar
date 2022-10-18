@@ -9,6 +9,10 @@ import UIKit
 import Presentation
 import FSCalendar
 
+protocol AddEventViewControllerDelegate: AnyObject {
+    func didTapOnCancelButton()
+}
+
 class AddEventViewController: UIViewController {
     
     @Injected var addEventViewModel: AddEventViewModel
@@ -36,6 +40,8 @@ class AddEventViewController: UIViewController {
     @IBOutlet weak var numberOfDayLeadingConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var nameOfMonthLeadingConstraint: NSLayoutConstraint!
+    
+    weak var addEventViewControllerDelegate: AddEventViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -175,10 +181,10 @@ class AddEventViewController: UIViewController {
     @objc private func didTapOnCancelButton() {
         animateNumberOfDay(with: -58)
         animateNameOfMonth(with: 36)
-        UIView.animate(withDuration: 0.6, delay: 0, options: .curveLinear) {
-            self.view.layoutIfNeeded()
-        } completion: { _ in
-            self.dismiss(animated: true, completion: nil)
+        UIView.animate(withDuration: 0.6, delay: 0, options: .curveLinear) { [weak self] in
+            self?.view.layoutIfNeeded()
+        } completion: { [weak self] _ in
+            self?.addEventViewControllerDelegate?.didTapOnCancelButton()
         }
     }
     

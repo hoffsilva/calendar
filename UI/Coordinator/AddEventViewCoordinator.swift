@@ -11,7 +11,7 @@ import Presentation
 import Domain
 
 protocol AddEventViewCoordinatorDelegate: AnyObject {
-    
+    func cleanCoordinator()
 }
 
 public final class AddEventViewCoordinator: Coordinator {
@@ -41,7 +41,26 @@ public final class AddEventViewCoordinator: Coordinator {
         addEventViewController?.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
         addEventViewController?.transitioningDelegate = addEventViewController
         addEventViewController?.modalPresentationStyle = .overFullScreen
+        addEventViewController?.addEventViewControllerDelegate = self
         navigationController.presentedViewController?.present(addEventViewController!, animated: true, completion: nil)
     }
+    
+    private func dismissAddEventViewController() {
+        self.addEventViewController?.dismiss(animated: true, completion: { [weak self] in
+            self?.addEventViewCoordinatorDelegate?.cleanCoordinator()
+        })
+    }
+    
+    deinit {
+        print("Bye \(Self.Type.self)")
+    }
 
+}
+
+extension AddEventViewCoordinator: AddEventViewControllerDelegate {
+    func didTapOnCancelButton() {
+        dismissAddEventViewController()
+    }
+    
+    
 }

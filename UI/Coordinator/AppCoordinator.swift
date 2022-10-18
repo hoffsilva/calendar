@@ -56,7 +56,7 @@ public final class AppCoordinator: Coordinator {
                                                            "navigationController": navigationController,
                                                            "day": day]
         )
-//        addEventViewCoordinator?.addEventViewCoordinatorDelegate = self
+        addEventViewCoordinator?.addEventViewCoordinatorDelegate = self
         addEventViewCoordinator?.start()
     }
     
@@ -82,6 +82,14 @@ extension AppCoordinator: DetailDayViewCoordinatorDelegate {
     
     func callAddEventView(of day: Domain.Day, from viewController: UIViewController, navigationController: TimeTableNavigationController) {
         self.showAddEventOf(day: day, from: viewController, navigationController: navigationController)
+    }
+    
+}
+
+extension AppCoordinator: AddEventViewCoordinatorDelegate {
+    
+    func cleanCoordinator() {
+        self.addEventViewCoordinator = nil
     }
     
 }

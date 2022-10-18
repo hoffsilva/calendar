@@ -46,6 +46,10 @@ public final class DetailDayViewCoordinator: Coordinator {
     public func showAddEventView(for day: Day) {
         self.detailDayViewCoordinatorDelegate?.callAddEventView(of: day, from: detailDayViewController!, navigationController: navigationController)
     }
+    
+    deinit {
+        print("Bye \(#file)")
+    }
 
 }
 

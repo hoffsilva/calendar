@@ -30,13 +30,13 @@ extension Resolver {
         register { _, args in
             EventListViewCoordinator(window: args("window"))
         }
-        .scope(.application)
+        .scope(.unique)
         .implements(Coordinator.self)
         
         register { _, args in
             CustomLaunchScreenCoordinator(window: args("window"))
         }
-        .scope(.application)
+        .scope(.unique)
         .implements(Coordinator.self)
         
         register { _, args in
@@ -47,7 +47,7 @@ extension Resolver {
                 day: args("day")
             )
         }
-        .scope(.shared)
+        .scope(.application)
         .implements(Coordinator.self)
         
         register { _, args in
@@ -58,7 +58,7 @@ extension Resolver {
                 day: args("day")
             )
         }
-        .scope(.shared)
+        .scope(.unique)
         .implements(Coordinator.self)
         
     }
