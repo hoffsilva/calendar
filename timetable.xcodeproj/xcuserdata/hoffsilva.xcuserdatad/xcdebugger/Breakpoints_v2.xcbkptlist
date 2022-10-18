@@ -213,145 +213,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8D89311E-AD0C-4522-94CF-3553F0C412F0"
-            shouldBeEnabled = "Yes"
+            uuid = "911C1609-5F8F-45C9-9E58-CBB53EAFB44D"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UI/Views/Event/AddEvent/AddEventViewController.swift"
+            filePath = "Presentation/AddEventViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "setupBindings()"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "init(addEventUseCase:currentDate:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8D89311E-AD0C-4522-94CF-3553F0C412F0 - e60a6b63624ae8b8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in UI.AddEventViewController.setupBindings() -&gt; ()"
-                  moduleName = "UI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/timetable/UI/Views/Event/AddEvent/AddEventViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "444">
-               </Location>
-               <Location
-                  uuid = "8D89311E-AD0C-4522-94CF-3553F0C412F0 - e60a6b63624ae8b8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.String) -&gt; () in UI.AddEventViewController.setupBindings() -&gt; ()"
-                  moduleName = "UI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/timetable/UI/Views/Event/AddEvent/AddEventViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "58"
-                  endingLineNumber = "58"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "09DFEF04-B4F6-4F3C-BB12-ABB5DED26736"
+            uuid = "98ADBA32-A463-4275-AC47-76CFCFF2491E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UI/Views/Event/AddEvent/AddEventViewController.swift"
+            filePath = "Presentation/AddEventViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "setupBindings()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "09DFEF04-B4F6-4F3C-BB12-ABB5DED26736 - 82c23be21c4aa13f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.String) -&gt; () in UI.AddEventViewController.setupBindings() -&gt; ()"
-                  moduleName = "UI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/timetable/UI/Views/Event/AddEvent/AddEventViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "444">
-               </Location>
-               <Location
-                  uuid = "09DFEF04-B4F6-4F3C-BB12-ABB5DED26736 - 82c23be21c4aa13f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.String) -&gt; () in UI.AddEventViewController.setupBindings() -&gt; ()"
-                  moduleName = "UI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/timetable/UI/Views/Event/AddEvent/AddEventViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "AddEventViewModel"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CCF0C14C-A094-42C9-861D-A1F3638325FE"
-            shouldBeEnabled = "Yes"
+            uuid = "8E534B55-E3C5-45A3-9FAE-16345CE8A606"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UI/Views/Event/AddEvent/AddEventViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "setupBindings()"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CCF0C14C-A094-42C9-861D-A1F3638325FE - 2f7acc613e4a79b2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Swift.String) -&gt; () in UI.AddEventViewController.setupBindings() -&gt; ()"
-                  moduleName = "UI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/timetable/UI/Views/Event/AddEvent/AddEventViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "444">
-               </Location>
-               <Location
-                  uuid = "CCF0C14C-A094-42C9-861D-A1F3638325FE - 2f7acc613e4a79b2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #3 (Swift.String) -&gt; () in UI.AddEventViewController.setupBindings() -&gt; ()"
-                  moduleName = "UI"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/timetable/UI/Views/Event/AddEvent/AddEventViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "66"
-                  endingLineNumber = "66"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

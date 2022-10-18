@@ -28,9 +28,9 @@ class AddEventViewController: UIViewController {
     
     @IBOutlet weak var monthCalendar: FSCalendar!
     
-    @IBOutlet weak var addLocationButton: UIButton!
-    @IBOutlet weak var addAlertButton: UIButton!
-    @IBOutlet weak var addNoteButton: UIButton!
+    @IBOutlet weak var addLocationButton: UILabel!
+    @IBOutlet weak var addAlertButton: UILabel!
+    @IBOutlet weak var addNoteButton: UILabel!
     
   
     @IBOutlet weak var numberOfDayLeadingConstraint: NSLayoutConstraint!
@@ -104,6 +104,9 @@ class AddEventViewController: UIViewController {
         cancelButton.text = Localizable.backButtonTitle()
         saveEventButton.text = Localizable.addEventButtonTitle()
         eventNameTextField.placeholder = Localizable.eventTitleTextFieldPlaceHolder()
+        addLocationButton.text = Localizable.addLocationButtonTitle()
+        addAlertButton.text = Localizable.addAlertButtonTitle()
+        addNoteButton.text = Localizable.addNoteButtonTitle()
     }
     
     private func setupStyle() {
@@ -111,6 +114,9 @@ class AddEventViewController: UIViewController {
         setupLabelColor()
         setupBackButton()
         setupSaveEventButton()
+        setupAddLocationButton()
+        setupAddAlertButton()
+        setupAddNoteButton()
         separatorView.backgroundColor = .timetableGray
         self.view.backgroundColor = .timetableSystemBackgroundColor
     }
@@ -122,6 +128,9 @@ class AddEventViewController: UIViewController {
         numberOfTheDayLabel.font = .rubikBold(40)
         nameOfMonthLabel.font = .rubikBold(40)
         eventNameTextField.font = .rubikBold(28)
+        addLocationButton.font = .rubikBold(16)
+        addAlertButton.font = .rubikBold(16)
+        addNoteButton.font = .rubikBold(16)
     }
     
     private func setupLabelColor() {
@@ -136,6 +145,24 @@ class AddEventViewController: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnCancelButton))
         cancelButton.isUserInteractionEnabled = true
         cancelButton.addGestureRecognizer(tap)
+    }
+    
+    private func setupAddLocationButton() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(openLocation))
+        addLocationButton.isUserInteractionEnabled = true
+        addLocationButton.addGestureRecognizer(tap)
+    }
+    
+    private func setupAddAlertButton() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(openAlert))
+        addAlertButton.isUserInteractionEnabled = true
+        addAlertButton.addGestureRecognizer(tap)
+    }
+    
+    private func setupAddNoteButton() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(openNote))
+        addNoteButton.isUserInteractionEnabled = true
+        addNoteButton.addGestureRecognizer(tap)
     }
     
     private func setupSaveEventButton() {
@@ -153,7 +180,16 @@ class AddEventViewController: UIViewController {
         } completion: { _ in
             self.dismiss(animated: true, completion: nil)
         }
-        
+    }
+    
+    @objc private func openLocation() { print("Location opened") }
+    
+    @objc private func openAlert() { print("Alert opened") }
+    
+    @objc private func openNote() { print("Note opened") }
+    
+    deinit {
+        print("Bye \(#file)")
     }
 
 }

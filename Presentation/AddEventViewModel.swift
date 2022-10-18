@@ -47,5 +47,9 @@ public final class AddEventViewModel: ObservableObject {
     //        })
     //    }
     
+    deinit {
+        print("Bye \(#file)")
+    }
+    
 }
 

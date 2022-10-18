@@ -12,9 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddEventViewController" customModule="UI" customModuleProvider="target">
             <connections>
-                <outlet property="addAlertButton" destination="v3o-xh-BIi" id="0l5-7q-UPO"/>
-                <outlet property="addLocationButton" destination="h3X-AQ-IAP" id="4Y2-EX-aUz"/>
-                <outlet property="addNoteButton" destination="ifH-yt-fpk" id="rJm-0T-yer"/>
+                <outlet property="addAlertButton" destination="1HN-jn-mJw" id="Uja-wD-Fna"/>
+                <outlet property="addLocationButton" destination="j8m-9f-Oyl" id="Yow-7Q-8ux"/>
+                <outlet property="addNoteButton" destination="FL6-5s-toH" id="8Ct-M8-iOb"/>
                 <outlet property="allDayLabel" destination="wgI-pN-SZ0" id="x35-YQ-7Z9"/>
                 <outlet property="allDayToggle" destination="Pjs-wr-z6W" id="I7r-9a-X5s"/>
                 <outlet property="cancelButton" destination="L6r-4K-FK8" id="0Kg-jn-kNE"/>
@@ -116,7 +116,7 @@
                     <rect key="frame" x="34" y="666" width="322" height="144"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="oI4-Dw-Vnp">
-                            <rect key="frame" x="0.0" y="0.0" width="115" height="32"/>
+                            <rect key="frame" x="0.0" y="0.0" width="81.333333333333329" height="32"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pin" translatesAutoresizingMaskIntoConstraints="NO" id="qZq-Ry-Xvt" userLabel="locationIcon">
                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -125,15 +125,16 @@
                                         <constraint firstAttribute="height" constant="32" id="ZKl-6m-uGU"/>
                                     </constraints>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h3X-AQ-IAP" userLabel="addLocationButton">
-                                    <rect key="frame" x="40" y="0.0" width="75" height="32"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8m-9f-Oyl" userLabel="addLocationButton">
+                                    <rect key="frame" x="40" y="0.0" width="41.333333333333343" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JoF-mS-0Jv">
-                            <rect key="frame" x="0.0" y="56" width="115" height="32"/>
+                            <rect key="frame" x="0.0" y="56" width="81.333333333333329" height="32"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alert" translatesAutoresizingMaskIntoConstraints="NO" id="cCR-cM-ZS4" userLabel="alertIcon">
                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -142,15 +143,16 @@
                                         <constraint firstAttribute="height" constant="32" id="zV2-zq-jHq"/>
                                     </constraints>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v3o-xh-BIi" userLabel="addAlertButton">
-                                    <rect key="frame" x="40" y="0.0" width="75" height="32"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1HN-jn-mJw" userLabel="addAlertButton">
+                                    <rect key="frame" x="40" y="0.0" width="41.333333333333343" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YFu-of-Ai7">
-                            <rect key="frame" x="0.0" y="112" width="115" height="32"/>
+                            <rect key="frame" x="0.0" y="112" width="81.333333333333329" height="32"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="note" translatesAutoresizingMaskIntoConstraints="NO" id="Ujh-Uj-x9C" userLabel="noteIcon">
                                     <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
@@ -159,11 +161,12 @@
                                         <constraint firstAttribute="width" constant="32" id="Qbj-7m-0Eu"/>
                                     </constraints>
                                 </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifH-yt-fpk" userLabel="addNoteButton">
-                                    <rect key="frame" x="40" y="0.0" width="75" height="32"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL6-5s-toH" userLabel="addNoteButton">
+                                    <rect key="frame" x="40" y="0.0" width="41.333333333333343" height="32"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                         </stackView>
                     </subviews>

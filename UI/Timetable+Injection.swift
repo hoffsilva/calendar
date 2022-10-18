@@ -47,7 +47,7 @@ extension Resolver {
                 day: args("day")
             )
         }
-        .scope(.unique)
+        .scope(.shared)
         .implements(Coordinator.self)
         
         register { _, args in
@@ -58,7 +58,7 @@ extension Resolver {
                 day: args("day")
             )
         }
-        .scope(.unique)
+        .scope(.shared)
         .implements(Coordinator.self)
         
     }
@@ -83,10 +83,12 @@ extension Resolver {
         register { _, args in
             DetailDayViewController.loadFromNib()
         }
+        .scope(.application)
         
         register { _, args in
             AddEventViewController.loadFromNib()
         }
+        .scope(.application)
         
     }
     
@@ -110,7 +112,7 @@ extension Resolver {
         register { service, args in
             AddEventViewModel(addEventUseCase: service.resolve(AddEventUseCase.self), currentDate: args.get("currentDate"))
         }
-        .scope(.shared)
+        .scope(.application)
         
         
     }
@@ -142,7 +144,7 @@ extension Resolver {
         register { service, _ in
             AddEventRepositoryImp(calendarManager: self.resolve(CalendarManager.self))
         }
-        .scope(.application)
+        .scope(.shared)
         .implements(AddEventRepository.self)
         
     }
@@ -152,7 +154,7 @@ extension Resolver {
         register {
             CalendarManagerImpl()
         }
-        .scope(.application)
+        .scope(.shared)
         .implements(CalendarManager.self)
         
         register {

@@ -20,6 +20,7 @@ public final class AddEventViewCoordinator: Coordinator {
     private var navigationController: TimeTableNavigationController
     private var transitionOrigin: DetailDayViewController?
     private var addEventViewController: AddEventViewController?
+    private var addEventViewModel: AddEventViewModel?
     private var day: Day
     
     weak var addEventViewCoordinatorDelegate: AddEventViewCoordinatorDelegate?
@@ -35,7 +36,7 @@ public final class AddEventViewCoordinator: Coordinator {
     }
     
     public func start() {
-        let addEventViewModel = Resolver.resolve(AddEventViewModel.self, args: ["currentDate": day.date])
+        addEventViewModel = Resolver.resolve(AddEventViewModel.self, args: ["currentDate": day.date])
         addEventViewController = Resolver.resolve(AddEventViewController.self, args: addEventViewModel)
         addEventViewController?.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
         addEventViewController?.transitioningDelegate = addEventViewController
