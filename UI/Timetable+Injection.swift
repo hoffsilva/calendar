@@ -13,6 +13,7 @@ import Foundation
 extension Resolver: ResolverRegistering {
     
     public static func registerAllServices() {
+        Resolver.defaultScope = .shared
         registerCoordinators()
         registerViews()
         registerViewModels()
@@ -30,13 +31,11 @@ extension Resolver {
         register { _, args in
             EventListViewCoordinator(window: args("window"))
         }
-        .scope(.unique)
         .implements(Coordinator.self)
         
         register { _, args in
             CustomLaunchScreenCoordinator(window: args("window"))
         }
-        .scope(.unique)
         .implements(Coordinator.self)
         
         register { _, args in
@@ -47,7 +46,6 @@ extension Resolver {
                 day: args("day")
             )
         }
-        .scope(.application)
         .implements(Coordinator.self)
         
         register { _, args in
@@ -58,7 +56,6 @@ extension Resolver {
                 day: args("day")
             )
         }
-        .scope(.unique)
         .implements(Coordinator.self)
         
     }
@@ -68,52 +65,47 @@ extension Resolver {
         register {
             EventListViewController.loadFromNib()
         }
-        .scope(.application)
+        
         
         register {
             CustomLaunchScreen.loadFromNib()
         }
-        .scope(.application)
+        
         
         register { _, args in
             ErrorViewController.loadFromNib()
         }
-        .scope(.application)
+        
         
         register { _, args in
             DetailDayViewController.loadFromNib()
         }
-        .scope(.application)
+        
         
         register { _, args in
             AddEventViewController.loadFromNib()
         }
-        .scope(.application)
+        
         
     }
     
     public static func registerViewModels() {
         
-        register { service, _ in
-            EventViewModel(eventUseCase: service.resolve(GetEventsUseCase.self))
+        register {
+            EventViewModel(eventUseCase: resolve())
         }
-        .scope(.application)
         
         register { _, args in
             ErrorViewModel(errorMessage: args.get("errorMessage"), allowCalendarAccess: args.get("allowCalendarAccess"))
         }
-        .scope(.application)
         
         register { _, args in
             DaysEventsViewModel(day: args.get("day"))
         }
-        .scope(.shared)
         
         register { service, args in
             AddEventViewModel(addEventUseCase: service.resolve(AddEventUseCase.self), currentDate: args.get("currentDate"))
         }
-        .scope(.application)
-        
         
     }
     
@@ -122,13 +114,11 @@ extension Resolver {
         register { service, _ in
             GetEventsUseCaseImp(getEventsRepository: service.resolve(GetEventsRepository.self))
         }
-        .scope(.application)
         .implements(GetEventsUseCase.self)
         
         register { service, _ in
             AddEventUseCaseImp(addEventRepository: service.resolve(AddEventRepository.self))
         }
-        .scope(.shared)
         .implements(AddEventUseCase.self)
         
     }
@@ -138,13 +128,11 @@ extension Resolver {
         register { service, _ in
             GetEventsRepositoryImp(dataSource: service.resolve(EventsDataSource.self))
         }
-        .scope(.application)
         .implements(GetEventsRepository.self)
         
         register { service, _ in
             AddEventRepositoryImp(calendarManager: self.resolve(CalendarManager.self))
         }
-        .scope(.shared)
         .implements(AddEventRepository.self)
         
     }
@@ -154,13 +142,11 @@ extension Resolver {
         register {
             CalendarManagerImpl()
         }
-        .scope(.shared)
         .implements(CalendarManager.self)
         
         register {
             EventsDataSourceImp()
         }
-        .scope(.application)
         .implements(EventsDataSource.self)
         
         

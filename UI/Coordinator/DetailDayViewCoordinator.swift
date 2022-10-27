@@ -34,7 +34,7 @@ public final class DetailDayViewCoordinator: Coordinator {
     }
     
     public func start() {
-        let detailDayViewModel = Resolver.resolve(DaysEventsViewModel.self, args: ["day": day])
+        let detailDayViewModel = Resolver.resolve(DaysEventsViewModel.self, args: ["day": self.day])
         detailDayViewController = Resolver.resolve(DetailDayViewController.self, args: detailDayViewModel)
         detailDayViewController?.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
         detailDayViewController?.transitioningDelegate = transitionOrigin

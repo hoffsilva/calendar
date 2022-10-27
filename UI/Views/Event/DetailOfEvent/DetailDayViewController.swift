@@ -15,7 +15,7 @@ protocol DetailDayViewControllerDelegate: AnyObject {
 
 class DetailDayViewController: UIViewController {
     
-    @Injected var daysEventsViewModel: DaysEventsViewModel
+    @LazyInjected var daysEventsViewModel: DaysEventsViewModel
     
     @IBOutlet weak var backButton: UILabel!
     @IBOutlet weak var addEventButton: UILabel!
