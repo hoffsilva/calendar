@@ -15,7 +15,7 @@ protocol DetailDayViewControllerDelegate: AnyObject {
 
 class DetailDayViewController: UIViewController {
     
-    @LazyInjected var daysEventsViewModel: DaysEventsViewModel
+    var daysEventsViewModel: DaysEventsViewModel?
     
     @IBOutlet weak var backButton: UILabel!
     @IBOutlet weak var addEventButton: UILabel!
@@ -46,20 +46,20 @@ class DetailDayViewController: UIViewController {
         listOfDaysEventsTableView.delegate = self
         listOfDaysEventsTableView.separatorColor = .clear
         setupBindings()
-        daysEventsViewModel.loadData()
+        daysEventsViewModel?.loadData()
         setLabelStrings()
         setupStyle()
     }
         
     func setupBindings() {
-        daysEventsViewModel
+        daysEventsViewModel?
             .listOfHour = { [weak self] hours in
                 DispatchQueue.main.async {
                     self?.updateDataSource(listOfHour: hours)
                 }
             }
         
-        daysEventsViewModel.headerData = { [weak self] data in
+        daysEventsViewModel?.headerData = { [weak self] data in
             self?.nameOfTheDayLabel.text = data.dayOfWeek
             self?.numberOfTheDayLabel.text = data.dayOfMonth
             self?.nameOfMonthLabel.text = data.month.capitalized
@@ -183,7 +183,8 @@ class DetailDayViewController: UIViewController {
     }
     
     @objc private func didTapOnCreateEventButton() {
-        self.detailDayViewControllerDelegate?.didTapOnCreateEventButton(for: daysEventsViewModel.getDay())
+        guard let day = daysEventsViewModel?.getDay() else { return }
+        self.detailDayViewControllerDelegate?.didTapOnCreateEventButton(for: day)
     }
 }
 

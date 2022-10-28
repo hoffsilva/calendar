@@ -27,35 +27,25 @@ public final class AppCoordinator: Coordinator {
     }
     
     private func showLaunchScreen() {
-        self.customLaunchScreenCoordinator = Resolver.resolve(CustomLaunchScreenCoordinator.self, args: ["window": window])
+        self.customLaunchScreenCoordinator = CustomLaunchScreenCoordinator(window: window)
         self.customLaunchScreenCoordinator?.customLaunchScreenCoordinatorDelegate = self
         self.customLaunchScreenCoordinator?.start()
     }
     
     private func showEventListView() {
-        eventListViewCoordinator = Resolver.resolve(EventListViewCoordinator.self, args: ["window": window, "coordinator": self])
+        eventListViewCoordinator = EventListViewCoordinator(window: window)
         eventListViewCoordinator?.eventListViewCoordinatorDelegate = self
         eventListViewCoordinator?.start()
     }
     
     private func showDetailOf(day: Day, from viewController: UIViewController, navigationController: TimeTableNavigationController) {
-        detailDayViewCoordinator = Resolver.resolve(DetailDayViewCoordinator.self,
-                                                    args: ["window": window,
-                                                           "viewController": viewController,
-                                                           "navigationController": navigationController,
-                                                           "day": day]
-        )
+        detailDayViewCoordinator = DetailDayViewCoordinator(window: window, from: viewController, navigationController: navigationController, day: day)
         detailDayViewCoordinator?.detailDayViewCoordinatorDelegate = self
         detailDayViewCoordinator?.start()
     }
     
     private func showAddEventOf(day: Day, from viewController: UIViewController, navigationController: TimeTableNavigationController) {
-        addEventViewCoordinator = Resolver.resolve(AddEventViewCoordinator.self,
-                                                    args: ["window": window,
-                                                           "viewController": viewController,
-                                                           "navigationController": navigationController,
-                                                           "day": day]
-        )
+        addEventViewCoordinator = AddEventViewCoordinator(window: window, from: viewController, navigationController: navigationController, day: day)
         addEventViewCoordinator?.addEventViewCoordinatorDelegate = self
         addEventViewCoordinator?.start()
     }

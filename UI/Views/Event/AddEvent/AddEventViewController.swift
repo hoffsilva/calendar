@@ -15,7 +15,7 @@ protocol AddEventViewControllerDelegate: AnyObject {
 
 class AddEventViewController: UIViewController {
     
-    @Injected var addEventViewModel: AddEventViewModel
+    var addEventViewModel: AddEventViewModel?
     
     @IBOutlet weak var cancelButton: UILabel!
     @IBOutlet weak var saveEventButton: UILabel!
@@ -47,7 +47,7 @@ class AddEventViewController: UIViewController {
         super.viewDidLoad()
         setLabelStrings()
         setupStyle()
-        addEventViewModel.loadCurrentDate()
+        addEventViewModel?.loadCurrentDate()
         setupBindings()
         setupFSCalendarStyle()
     }
@@ -60,19 +60,19 @@ class AddEventViewController: UIViewController {
     
     func setupBindings() {
         
-        addEventViewModel.numberOfDay = { [weak self] numberOfDay in
+        addEventViewModel?.numberOfDay = { [weak self] numberOfDay in
             self?.numberOfTheDayLabel.text = numberOfDay
         }
         
-        addEventViewModel.nameOfMonth = { [weak self] nameOfMonth in
+        addEventViewModel?.nameOfMonth = { [weak self] nameOfMonth in
             self?.nameOfMonthLabel.text = nameOfMonth
         }
         
-        addEventViewModel.nameOfDay = { [weak self] nameOfDay in
+        addEventViewModel?.nameOfDay = { [weak self] nameOfDay in
             self?.nameOfDayLabel.text = nameOfDay
         }
         
-        addEventViewModel.selectedDate = { [weak self] selectedDate in
+        addEventViewModel?.selectedDate = { [weak self] selectedDate in
             self?.monthCalendar.setCurrentPage(selectedDate, animated: false)
         }
         

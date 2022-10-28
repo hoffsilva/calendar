@@ -8,6 +8,7 @@
 import UIKit
 import Presentation
 import Domain
+import Data
 
 protocol EventListViewCoordinatorDelegate: AnyObject {
     func showDetail(of day: Day, from viewController: UIViewController, navigationController: TimeTableNavigationController)
@@ -26,18 +27,20 @@ public final class EventListViewCoordinator: Coordinator {
     }
     
     public func start() {
-        eventListViewController = Resolver.resolve(EventListViewController.self)
+        eventListViewController = EventListViewController.loadFromNib()
+        let dataSource = EventsDataSourceImp()
+        let getEventsRepository = GetEventsRepositoryImp(dataSource: dataSource)
+        let eventUseCase = GetEventsUseCaseImp(getEventsRepository: getEventsRepository)
+        eventListViewController?.viewModel = EventViewModel(eventUseCase: eventUseCase)
         eventListViewController?.delegate = self
         navigationController = TimeTableNavigationController(rootViewController: eventListViewController ?? UIViewController(), window: self.window)
         self.window.rootViewController = navigationController
     }
     
     private func showErrorViewController(with errorMessage: String, and calendarAccessGranted: Bool) {
-        let errorViewModel: ErrorViewModel = Resolver.resolve(args: [
-            "errorMessage": errorMessage,
-            "allowCalendarAccess": calendarAccessGranted
-        ])
-        let errorViewController = Resolver.resolve(ErrorViewController.self, args: errorViewModel)
+        let errorViewModel = ErrorViewModel(errorMessage: errorMessage, allowCalendarAccess: calendarAccessGranted)
+        let errorViewController = ErrorViewController.loadFromNib()
+        errorViewController.errorViewModel = errorViewModel
         errorViewController.modalPresentationStyle = .overCurrentContext
         errorViewController.delegate = self
         navigationController?.viewControllers.first?.present(errorViewController, animated: true, completion: nil)

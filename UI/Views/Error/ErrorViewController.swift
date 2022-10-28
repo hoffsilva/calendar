@@ -16,7 +16,7 @@ public protocol ErrorViewControllerDelegate: AnyObject {
 
 public class ErrorViewController: UIViewController {
     
-    @Injected var errorViewModel: ErrorViewModel
+    var errorViewModel: ErrorViewModel?
     
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var errorTitleLabel: UILabel!
@@ -36,16 +36,16 @@ public class ErrorViewController: UIViewController {
         UIView.animate(withDuration: 1) {
             self.view.alpha = 1
         }
-        errorViewModel.lodaData()
+        errorViewModel?.lodaData()
     }
     
     private func loadData() {
-        errorViewModel
+        errorViewModel?
             .didLoadWithErrorMessage = { errorDescription in
                 self.errorDescriptionLabel.text = errorDescription
         }
         
-        errorViewModel
+        errorViewModel?
             .shouldShowAllowCalendarAccessButton = { isAccessNotaGranted in
                 self.allowCalendarAccessButton.isHidden = isAccessNotaGranted
             }

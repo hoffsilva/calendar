@@ -17,7 +17,7 @@ public protocol EventListViewControllerDelegate: AnyObject {
 
 public class EventListViewController: UIViewController, UIViewControllerTransitioningDelegate {
     
-    @Injected private var viewModel: EventViewModel
+    var viewModel: EventViewModel?
     
     @IBOutlet weak var listViewTableView: UITableView!
     
@@ -31,7 +31,7 @@ public class EventListViewController: UIViewController, UIViewControllerTransiti
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.requestAccess()
+        viewModel?.requestAccess()
     }
     
     public override func viewDidLoad() {
@@ -52,14 +52,14 @@ public class EventListViewController: UIViewController, UIViewControllerTransiti
     }
     
     func setupBindings() {
-        viewModel
+        viewModel?
             .sections = { [weak self] events in
                 DispatchQueue.main.async {
                     self?.updateDataSource(listOfMonth: events)
                 }
             }
         
-        viewModel
+        viewModel?
             .didGetErrorMessage = { [weak self] errorMessage in
                 DispatchQueue.main.async {
                     self?.delegate?.didLoadDataWithAccessNotGranted()
@@ -120,14 +120,14 @@ extension EventListViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView =  createSectionHeaderView(
-            with: viewModel.months?[section].name.capitalized
+            with: viewModel?.months?[section].name.capitalized
         )
         headerView.tag = section+saltedTag
         return headerView
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let day = viewModel.months?[indexPath.section].days[indexPath.row] else { return }
+        guard let day = viewModel?.months?[indexPath.section].days[indexPath.row] else { return }
         self.cell = tableView.cellForRow(at: indexPath) as? EventCell
         
         if let view = tableView.subviews.filter({ view in

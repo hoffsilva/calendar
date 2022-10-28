@@ -9,6 +9,7 @@
 import UIKit
 import Presentation
 import Domain
+import Data
 
 protocol AddEventViewCoordinatorDelegate: AnyObject {
     func cleanCoordinator()
@@ -36,8 +37,12 @@ public final class AddEventViewCoordinator: Coordinator {
     }
     
     public func start() {
-        addEventViewModel = Resolver.resolve(AddEventViewModel.self, args: ["currentDate": day.date])
-        addEventViewController = Resolver.resolve(AddEventViewController.self, args: addEventViewModel)
+        let calendarManager = CalendarManagerImpl()
+        let addEventRepository = AddEventRepositoryImp(calendarManager: calendarManager)
+        let addEventUseCase = AddEventUseCaseImp(addEventRepository: addEventRepository)
+        addEventViewModel = AddEventViewModel(addEventUseCase: addEventUseCase, currentDate: day.date)
+        addEventViewController = AddEventViewController.loadFromNib()
+        addEventViewController?.addEventViewModel = self.addEventViewModel
         addEventViewController?.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
         addEventViewController?.transitioningDelegate = addEventViewController
         addEventViewController?.modalPresentationStyle = .overFullScreen
@@ -52,7 +57,7 @@ public final class AddEventViewCoordinator: Coordinator {
     }
     
     deinit {
-        print("Bye \(Self.Type.self)")
+        print("Bye \(#file)")
     }
 
 }

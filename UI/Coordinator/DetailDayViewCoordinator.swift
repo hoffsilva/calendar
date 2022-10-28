@@ -34,8 +34,9 @@ public final class DetailDayViewCoordinator: Coordinator {
     }
     
     public func start() {
-        let detailDayViewModel = Resolver.resolve(DaysEventsViewModel.self, args: ["day": self.day])
-        detailDayViewController = Resolver.resolve(DetailDayViewController.self, args: detailDayViewModel)
+        let detailDayViewModel =  DaysEventsViewModel(day: self.day)
+        detailDayViewController = DetailDayViewController.loadFromNib()
+        detailDayViewController?.daysEventsViewModel = detailDayViewModel
         detailDayViewController?.overrideUserInterfaceStyle = window.overrideUserInterfaceStyle
         detailDayViewController?.transitioningDelegate = transitionOrigin
         detailDayViewController?.modalPresentationStyle = .overFullScreen
