@@ -57,6 +57,10 @@ public final class Localizable {
         getLocalizedString(of: "save_button")
     }
     
+    static func allDayLabelTitle() -> String {
+        getLocalizedString(of: "all_day")
+    }
+    
     static func addLocationButtonTitle() -> String {
         getLocalizedString(of: "add_location")
     }

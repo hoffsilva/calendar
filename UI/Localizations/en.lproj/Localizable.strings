@@ -17,6 +17,7 @@
 "event_title_textfield_placeholder" = "Event Title";
 "cancel_button" = "Cancel";
 "save_button" = "Save";
+"all_day" = "All Day";
 "add_location" = "Add Location";
 "add_note" = "Add Note";
 "add_alert" = "Add Alert";

@@ -77,6 +77,8 @@ class AddEventViewController: UIViewController {
             self?.monthCalendar.setCurrentPage(selectedDate, animated: false)
         }
         
+        allDayLabel.text = Localizable.allDayLabelTitle()
+        
     }
     
     private func setupFSCalendarStyle() {
@@ -138,6 +140,7 @@ class AddEventViewController: UIViewController {
         addLocationButton.font = .rubikBold(16)
         addAlertButton.font = .rubikBold(16)
         addNoteButton.font = .rubikBold(16)
+        allDayLabel.font = .rubikBold(16)
     }
     
     private func setupLabelColor() {

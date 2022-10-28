@@ -89,19 +89,19 @@
                     <rect key="frame" x="317" y="184" width="51" height="31"/>
                 </switch>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bz-TJ-aDN" userLabel="startDateTextField">
-                    <rect key="frame" x="24" y="286.33333333333331" width="159" height="30"/>
+                    <rect key="frame" x="24" y="286.33333333333331" width="159" height="18.666666666666686"/>
                     <color key="backgroundColor" name="red"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kch-5X-nmi" userLabel="endDateTextField">
-                    <rect key="frame" x="207" y="292" width="159" height="18.666666666666686"/>
+                    <rect key="frame" x="207" y="286.33333333333331" width="159" height="18.666666666666686"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dc3-l8-ozf" userLabel="startEndDatesSeparator">
-                    <rect key="frame" x="191" y="301" width="8" height="1"/>
+                    <rect key="frame" x="191" y="295.33333333333331" width="8" height="1"/>
                     <color key="backgroundColor" systemColor="systemPurpleColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="cA6-Sb-a2e"/>
@@ -109,7 +109,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xG1-Wn-VPP" customClass="FSCalendar">
-                    <rect key="frame" x="24" y="340.33333333333326" width="342" height="293.66666666666674"/>
+                    <rect key="frame" x="24" y="329" width="342" height="305"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="VOL-DC-gB1">
@@ -214,7 +214,6 @@
                 <constraint firstItem="xG1-Wn-VPP" firstAttribute="leading" secondItem="Nce-4t-iVq" secondAttribute="leading" constant="24" id="o8w-x6-r7w"/>
                 <constraint firstItem="wgI-pN-SZ0" firstAttribute="leading" secondItem="Nce-4t-iVq" secondAttribute="leading" constant="24" id="tCD-Wb-eox"/>
                 <constraint firstItem="VOL-DC-gB1" firstAttribute="top" secondItem="xG1-Wn-VPP" secondAttribute="bottom" constant="32" id="tb9-Uk-n86"/>
-                <constraint firstItem="kch-5X-nmi" firstAttribute="height" secondItem="6bz-TJ-aDN" secondAttribute="height" multiplier="0.622222" id="wZk-86-7Co"/>
             </constraints>
             <point key="canvasLocation" x="130.76923076923077" y="129.38388625592415"/>
         </view>
