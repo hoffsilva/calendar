@@ -47,15 +47,16 @@ class AddEventViewController: UIViewController {
         super.viewDidLoad()
         setLabelStrings()
         setupStyle()
-        addEventViewModel?.loadCurrentDate()
-        setupBindings()
         setupFSCalendarStyle()
+        setupBindings()
+        addEventViewModel?.loadCurrentDate()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         animateNumberOfDay(with: 24)
         animateNameOfMonth(with: 8)
+        
     }
     
     func setupBindings() {
@@ -65,7 +66,7 @@ class AddEventViewController: UIViewController {
         }
         
         addEventViewModel?.nameOfMonth = { [weak self] nameOfMonth in
-            self?.nameOfMonthLabel.text = nameOfMonth
+            self?.nameOfMonthLabel.text = nameOfMonth.capitalized
         }
         
         addEventViewModel?.nameOfDay = { [weak self] nameOfDay in
@@ -200,4 +201,18 @@ class AddEventViewController: UIViewController {
 
 }
 
-extension AddEventViewController: UIViewControllerTransitioningDelegate {}
+extension AddEventViewController: UIViewControllerTransitioningDelegate {
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        //        transition.startingPoint = cell!.eventDayLabel.center
+        //        t
+//        guard let originView = cell?.eventDayLabel else { return nil }
+        
+        return ShowTransition()
+    }
+    
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        //        transition.transitionMode = .dismiss
+        //        transition.startingPoint = cell!.center
+        return DismissTransition()
+    }
+}
