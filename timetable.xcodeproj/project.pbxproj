@@ -94,7 +94,6 @@
 		0BD0A7EB27D034B00087B1AC /* Hour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7EA27D034B00087B1AC /* Hour.swift */; };
 		0BD0A7EE27D035F00087B1AC /* DetailDayEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7EC27D035F00087B1AC /* DetailDayEventCell.swift */; };
 		0BD1166F27DE298000BD7AD8 /* DetailEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD1166D27DE298000BD7AD8 /* DetailEventCell.swift */; };
-		500DE4AA28F456C900EA52F1 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 500DE4A928F456C900EA52F1 /* FSCalendar */; };
 		500DE4AC28F5F23400EA52F1 /* DetailDayViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4AB28F5F23400EA52F1 /* DetailDayViewCoordinator.swift */; };
 		500DE4AE28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4AD28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift */; };
 		500DE4B028F742CF00EA52F1 /* AddEventViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4AF28F742CF00EA52F1 /* AddEventViewCoordinator.swift */; };
@@ -110,6 +109,7 @@
 		5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094EC582842499A002A3042 /* Extension+UIColor.swift */; };
 		50A8F6C128F1D4B1006E4D89 /* AddEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A8F6BF28F1D4B1006E4D89 /* AddEventViewController.swift */; };
 		50A8F6C628F1D8BB006E4D89 /* AddEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50A8F6C528F1D8BB006E4D89 /* AddEventViewController.xib */; };
+		50F4D5CE292497870076817C /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F4D5CD292497870076817C /* CalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,6 +318,7 @@
 		5094EC582842499A002A3042 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		50A8F6BF28F1D4B1006E4D89 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
 		50A8F6C528F1D8BB006E4D89 /* AddEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddEventViewController.xib; sourceTree = "<group>"; };
+		50F4D5CD292497870076817C /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -366,7 +367,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B33321B27B1AB0600695F27 /* Domain.framework in Frameworks */,
-				500DE4AA28F456C900EA52F1 /* FSCalendar in Frameworks */,
 				0B33321827B1AB0400695F27 /* Data.framework in Frameworks */,
 				0B33321D27B1AB0800695F27 /* Presentation.framework in Frameworks */,
 			);
@@ -505,6 +505,7 @@
 		0B471DFC27AEF07000644CE2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				50F4D5CB2924972E0076817C /* Components */,
 				502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */,
 				5094EC582842499A002A3042 /* Extension+UIColor.swift */,
 				0B57B02927B82A6F008F4015 /* Resolver.swift */,
@@ -670,6 +671,22 @@
 			path = AddEvent;
 			sourceTree = "<group>";
 		};
+		50F4D5CB2924972E0076817C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				50F4D5CC2924973E0076817C /* Calendar */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		50F4D5CC2924973E0076817C /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				50F4D5CD292497870076817C /* CalendarView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -815,7 +832,6 @@
 			);
 			name = UI;
 			packageProductDependencies = (
-				500DE4A928F456C900EA52F1 /* FSCalendar */,
 			);
 			productName = UI;
 			productReference = 0B471DFB27AEF07000644CE2 /* UI.framework */;
@@ -911,7 +927,6 @@
 			);
 			mainGroup = 0B471D5B27AEE88F00644CE2;
 			packageReferences = (
-				500DE4A828F456C900EA52F1 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 0B471D6627AEE89000644CE2 /* Products */;
 			projectDirPath = "";
@@ -1089,6 +1104,7 @@
 				0B471E5827AEF2E500644CE2 /* String+Utils.swift in Sources */,
 				500DE4AC28F5F23400EA52F1 /* DetailDayViewCoordinator.swift in Sources */,
 				500DE4B028F742CF00EA52F1 /* AddEventViewCoordinator.swift in Sources */,
+				50F4D5CE292497870076817C /* CalendarView.swift in Sources */,
 				0B471E5527AEF2E500644CE2 /* Extension+UILabel.swift in Sources */,
 				500DE4AE28F5F91600EA52F1 /* CustomLaunchScreenCoordinator.swift in Sources */,
 				0B57B02A27B82A6F008F4015 /* Resolver.swift in Sources */,
@@ -1278,7 +1294,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = timetable/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1337,7 +1353,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_FILE = timetable/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1764,7 +1780,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1801,7 +1817,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1902,25 +1918,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		500DE4A828F456C900EA52F1 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/hoffsilva/FSCalendar.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		500DE4A928F456C900EA52F1 /* FSCalendar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 500DE4A828F456C900EA52F1 /* XCRemoteSwiftPackageReference "FSCalendar" */;
-			productName = FSCalendar;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0B471D5C27AEE88F00644CE2 /* Project object */;
 }

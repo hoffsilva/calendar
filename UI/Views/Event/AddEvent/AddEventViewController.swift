@@ -7,7 +7,6 @@
 
 import UIKit
 import Presentation
-import FSCalendar
 
 protocol AddEventViewControllerDelegate: AnyObject {
     func didTapOnCancelButton()
@@ -16,6 +15,14 @@ protocol AddEventViewControllerDelegate: AnyObject {
 class AddEventViewController: UIViewController {
     
     var addEventViewModel: AddEventViewModel?
+    
+    var calendarView: UICalendarView = {
+        let calendarView = UICalendarView()
+        let gregorianCalendar = Calendar(identifier: .gregorian)
+        calendarView.calendar = gregorianCalendar
+        calendarView.prepareForConstraints()
+        return calendarView
+    }()
     
     @IBOutlet weak var cancelButton: UILabel!
     @IBOutlet weak var saveEventButton: UILabel!
@@ -30,7 +37,7 @@ class AddEventViewController: UIViewController {
     @IBOutlet weak var startDateTextField: UITextField!
     @IBOutlet weak var endDateTextField: UITextField!
     
-    @IBOutlet weak var monthCalendar: FSCalendar!
+    @IBOutlet weak var monthCalendar: UIView!
     
     @IBOutlet weak var addLocationButton: UILabel!
     @IBOutlet weak var addAlertButton: UILabel!
@@ -50,6 +57,8 @@ class AddEventViewController: UIViewController {
         setupFSCalendarStyle()
         setupBindings()
         addEventViewModel?.loadCurrentDate()
+        monthCalendar.addSubview(calendarView)
+        calendarView.pinEdgesToSuperview()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -74,7 +83,7 @@ class AddEventViewController: UIViewController {
         }
         
         addEventViewModel?.selectedDate = { [weak self] selectedDate in
-            self?.monthCalendar.setCurrentPage(selectedDate, animated: false)
+//            self?.monthCalendar.setCurrentPage(selectedDate, animated: false)
         }
         
         allDayLabel.text = Localizable.allDayLabelTitle()
@@ -82,17 +91,17 @@ class AddEventViewController: UIViewController {
     }
     
     private func setupFSCalendarStyle() {
-        monthCalendar.pagingEnabled = true
-        monthCalendar.appearance.selectionColor = .timetableText
-        monthCalendar.appearance.todaySelectionColor = .timetableText
-        monthCalendar.appearance.todayColor = .timetableSystemBackgroundColor
-        monthCalendar.appearance.titleTodayColor = .timetableText
-        monthCalendar.appearance.weekdayFont = .rubikRegular(16)
-        monthCalendar.appearance.titleFont = .rubikBold(16)
-        monthCalendar.appearance.headerDateFormat = nil
-        monthCalendar.appearance.weekdayTextColor = .timetableText
-        monthCalendar.appearance.caseOptions = [.weekdayUsesSingleUpperCase]
-        monthCalendar.scrollEnabled = false
+//        monthCalendar.pagingEnabled = true
+//        monthCalendar.appearance.selectionColor = .timetableText
+//        monthCalendar.appearance.todaySelectionColor = .timetableText
+//        monthCalendar.appearance.todayColor = .timetableSystemBackgroundColor
+//        monthCalendar.appearance.titleTodayColor = .timetableText
+//        monthCalendar.appearance.weekdayFont = .rubikRegular(16)
+//        monthCalendar.appearance.titleFont = .rubikBold(16)
+//        monthCalendar.appearance.headerDateFormat = nil
+//        monthCalendar.appearance.weekdayTextColor = .timetableText
+//        monthCalendar.appearance.caseOptions = [.weekdayUsesSingleUpperCase]
+//        monthCalendar.scrollEnabled = false
     }
     
     private func animateNumberOfDay(with constant: CGFloat) {
