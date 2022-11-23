@@ -17,6 +17,7 @@ final class CalendarViewCell: UICollectionViewCell {
         label.prepareForConstraints()
         label.font = .rubikBold(16)
         label.textColor = .timetableText
+        label.textAlignment = .center
         return label
     }()
     
@@ -56,11 +57,11 @@ final class CalendarViewCell: UICollectionViewCell {
 
 final class CalendarView: UIView {
     
-    private var collectionViewCalendar: UICollectionView = {
-        let collectionViewFlowLayout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
+    private lazy var collectionViewCalendar: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
         collectionView.prepareForConstraints()
         collectionView.isPagingEnabled = true
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return collectionView
     }()
     
@@ -153,7 +154,7 @@ final class CalendarView: UIView {
         self.collectionViewCalendar.delegate = self
         self.collectionViewCalendar.register(CalendarViewCell.self, forCellWithReuseIdentifier: String(describing: CalendarViewCell.self))
         self.collectionViewCalendar.dataSource = dataSource
-        self.updateDataSource(listOfHour: [1,2,3,4,5,6,7,8,9])
+        self.updateDataSource(listOfHour: [1,2,3,4,5,6,7,8,9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31])
     }
     
     required init?(coder: NSCoder) {
@@ -173,6 +174,7 @@ final class CalendarView: UIView {
     }
     
     private func setupConstraints() {
+        weekDaysStackView.pinTop()
         weekDaysStackView.height(with: 20)
         weekDaysStackView.pinLeft()
         weekDaysStackView.pinRight()
@@ -185,7 +187,7 @@ final class CalendarView: UIView {
     private func makeDataSource() -> UICollectionViewDiffableDataSource<Int, Day> {
         let cellRegistration = UICollectionView.CellRegistration
         <CalendarViewCell, Day> { (cell, indexPath, item) in
-            cell.setup(Day(number: "", date: Date(), events: [Event](), hours: [Hour]()))
+            cell.setup(item)
         }
         
         return UICollectionViewDiffableDataSource(collectionView: collectionViewCalendar) { collectionView, indexPath, itemIdentifier in
@@ -201,8 +203,24 @@ final class CalendarView: UIView {
     private func updateDataSource(listOfHour: [Int]) {
         var snapshot = NSDiffableDataSourceSnapshot<Int, Day>()
         snapshot.appendSections([1])
-        snapshot.appendItems(listOfHour.map({ _ in Day(number: "", date: Date(), events: [Event](), hours: [Hour]()) }), toSection: 1)
+        snapshot.appendItems(listOfHour.map({ Day(number: "\($0)", date: Date(), events: [Event](), hours: [Hour]()) }), toSection: 1)
         dataSource.apply(snapshot)
+    }
+    
+    private func createLayout() -> UICollectionViewLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.14),
+                                             heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                              heightDimension: .fractionalWidth(0.14))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
+                                                         subitems: [item])
+
+        let section = NSCollectionLayoutSection(group: group)
+
+        let layout = UICollectionViewCompositionalLayout(section: section)
+        return layout
     }
     
 }
