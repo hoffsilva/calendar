@@ -21,4 +21,11 @@
 "add_location" = "Add Location";
 "add_note" = "Add Note";
 "add_alert" = "Add Alert";
+"sunday" = "s";
+"monday" = "m";
+"tuesday" = "t";
+"wednsday" = "w";
+"thursday" = "t";
+"friday" = "f";
+"saturday" = "s";
 

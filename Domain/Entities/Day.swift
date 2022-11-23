@@ -8,7 +8,7 @@
 import Foundation
 
 public struct Day: Hashable {
-    
+    private var udid = UUID()
     public let number: String
     public let date: Date
     public var events: [Event]

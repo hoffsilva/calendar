@@ -16,10 +16,9 @@ class AddEventViewController: UIViewController {
     
     var addEventViewModel: AddEventViewModel?
     
-    var calendarView: UICalendarView = {
-        let calendarView = UICalendarView()
+    var calendarView: CalendarView = {
+        let calendarView = CalendarView(frame: .zero)
         let gregorianCalendar = Calendar(identifier: .gregorian)
-        calendarView.calendar = gregorianCalendar
         calendarView.prepareForConstraints()
         return calendarView
     }()

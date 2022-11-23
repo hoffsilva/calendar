@@ -73,6 +73,34 @@ public final class Localizable {
         getLocalizedString(of: "add_alert")
     }
     
+    static func sundayTitle() -> String {
+        getLocalizedString(of: "sunday")
+    }
+    
+    static func mondayTitle() -> String {
+        getLocalizedString(of: "monday")
+    }
+    
+    static func tuesdayTitle() -> String {
+        getLocalizedString(of: "tuesday")
+    }
+    
+    static func wednsdayTitle() -> String {
+        getLocalizedString(of: "wednsday")
+    }
+    
+    static func thursdayTitle() -> String {
+        getLocalizedString(of: "thursday")
+    }
+    
+    static func fridayTitle() -> String {
+        getLocalizedString(of: "friday")
+    }
+    
+    static func saturdayTitle() -> String {
+        getLocalizedString(of: "saturday")
+    }
+    
     private static func getLocalizedString(of key: String) -> String {
         NSLocalizedString(key, bundle: Bundle(for: Localizable.self), comment: key)
     }
