@@ -154,7 +154,7 @@ final class CalendarView: UIView {
         self.collectionViewCalendar.delegate = self
         self.collectionViewCalendar.register(CalendarViewCell.self, forCellWithReuseIdentifier: String(describing: CalendarViewCell.self))
         self.collectionViewCalendar.dataSource = dataSource
-        self.updateDataSource(listOfHour: [1,2,3,4,5,6,7,8,9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31])
+        self.updateDataSource(listOfDay: [1,2,3,4,5,6,7,8,9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 23, 24, 25, 26, 27, 28, 29, 30, 31])
     }
     
     required init?(coder: NSCoder) {
@@ -200,10 +200,10 @@ final class CalendarView: UIView {
         }
     }
     
-    private func updateDataSource(listOfHour: [Int]) {
+    private func updateDataSource(listOfDay: [Int]) {
         var snapshot = NSDiffableDataSourceSnapshot<Int, Day>()
         snapshot.appendSections([1])
-        snapshot.appendItems(listOfHour.map({ Day(number: "\($0)", date: Date(), events: [Event](), hours: [Hour]()) }), toSection: 1)
+        snapshot.appendItems(listOfDay.map({ Day(number: "\($0)", date: Date(), events: [Event](), hours: [Hour]()) }), toSection: 1)
         dataSource.apply(snapshot)
     }
     
