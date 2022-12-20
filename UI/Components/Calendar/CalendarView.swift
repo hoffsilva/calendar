@@ -12,6 +12,13 @@ final class CalendarViewCell: UICollectionViewCell {
     
     // MARK: - First Content Layer
     
+    private lazy var bgView: UIView = {
+        let view = UIView()
+        view.prepareForConstraints()
+        view.backgroundColor = .timetableSystemBackgroundColor
+        return view
+    }()
+    
     private lazy var dayLabel: UILabel = {
         let label = UILabel()
         label.prepareForConstraints()
@@ -41,16 +48,24 @@ final class CalendarViewCell: UICollectionViewCell {
     }
     
     private func setupViewHierarchy() {
+        self.contentView.addSubview(bgView)
         self.contentView.addSubview(dayLabel)
     }
     
     private func setupConstraints() {
+        bgView.pinEdgesToSuperview(6)
         dayLabel.pinEdgesToSuperview()
         dayLabel.height(with: 20)
+        self.bgView.layer.cornerRadius = (self.contentView.frame.height/2) - 6
     }
     
     func setup(_ day: Day) {
         dayLabel.text = day.number
+    }
+    
+    func select() {
+        dayLabel.textColor = .timetableSystemBackgroundColor
+        self.bgView.backgroundColor = .timetableText
     }
     
 }
@@ -62,6 +77,8 @@ final class CalendarView: UIView {
         collectionView.prepareForConstraints()
         collectionView.isPagingEnabled = true
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.delegate = self
+        collectionView.allowsMultipleSelection = true
         return collectionView
     }()
     
@@ -226,6 +243,11 @@ final class CalendarView: UIView {
 }
 
 extension CalendarView: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let cell = collectionView.cellForItem(at: indexPath) as? CalendarViewCell else { return }
+        cell.select()
+    }
     
     
 }
