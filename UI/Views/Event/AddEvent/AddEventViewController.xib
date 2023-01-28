@@ -84,19 +84,25 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bz-TJ-aDN" userLabel="startDateTextField">
-                    <rect key="frame" x="24" y="286.33333333333331" width="159" height="18.666666666666686"/>
+                    <rect key="frame" x="24" y="286.33333333333331" width="159" height="32"/>
                     <color key="backgroundColor" name="red"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="AWM-36-QQu"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kch-5X-nmi" userLabel="endDateTextField">
-                    <rect key="frame" x="207" y="286.33333333333331" width="159" height="18.666666666666686"/>
+                    <rect key="frame" x="207" y="286.33333333333331" width="159" height="32"/>
                     <color key="backgroundColor" systemColor="linkColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="fjN-lz-SOg"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dc3-l8-ozf" userLabel="startEndDatesSeparator">
-                    <rect key="frame" x="191" y="295.33333333333331" width="8" height="1"/>
+                    <rect key="frame" x="191" y="302" width="8" height="1"/>
                     <color key="backgroundColor" systemColor="systemPurpleColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="cA6-Sb-a2e"/>
@@ -104,7 +110,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xG1-Wn-VPP">
-                    <rect key="frame" x="24" y="329" width="342" height="305"/>
+                    <rect key="frame" x="24" y="342.33333333333326" width="342" height="291.66666666666674"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="VOL-DC-gB1">
@@ -188,6 +194,7 @@
                 <constraint firstItem="Nce-4t-iVq" firstAttribute="trailing" secondItem="cGc-wr-WZU" secondAttribute="trailing" constant="24" id="O2H-yX-j6s"/>
                 <constraint firstItem="VOL-DC-gB1" firstAttribute="bottom" secondItem="Nce-4t-iVq" secondAttribute="bottom" id="OvS-C3-P2k"/>
                 <constraint firstItem="L6r-4K-FK8" firstAttribute="top" secondItem="Nce-4t-iVq" secondAttribute="top" constant="8" id="QsE-r8-0NU"/>
+                <constraint firstItem="xG1-Wn-VPP" firstAttribute="top" secondItem="kch-5X-nmi" secondAttribute="bottom" constant="24" id="S0m-Eb-QzG"/>
                 <constraint firstItem="VOL-DC-gB1" firstAttribute="leading" secondItem="Nce-4t-iVq" secondAttribute="leading" constant="34" id="TXL-GD-95g"/>
                 <constraint firstItem="Dc3-l8-ozf" firstAttribute="leading" secondItem="6bz-TJ-aDN" secondAttribute="trailing" constant="8" symbolic="YES" id="UgU-Po-huU"/>
                 <constraint firstItem="L6r-4K-FK8" firstAttribute="leading" secondItem="Nce-4t-iVq" secondAttribute="leading" constant="24" id="VMl-aE-MVV"/>
