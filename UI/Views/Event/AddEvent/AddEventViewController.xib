@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,7 +15,6 @@
                 <outlet property="addLocationButton" destination="j8m-9f-Oyl" id="Yow-7Q-8ux"/>
                 <outlet property="addNoteButton" destination="FL6-5s-toH" id="8Ct-M8-iOb"/>
                 <outlet property="allDayLabel" destination="wgI-pN-SZ0" id="x35-YQ-7Z9"/>
-                <outlet property="allDayToggle" destination="Pjs-wr-z6W" id="I7r-9a-X5s"/>
                 <outlet property="cancelButton" destination="L6r-4K-FK8" id="0Kg-jn-kNE"/>
                 <outlet property="endDateTextField" destination="kch-5X-nmi" id="emm-4p-Xmr"/>
                 <outlet property="eventNameTextField" destination="Oop-lf-tQ6" id="T3o-Rs-eWJ"/>
@@ -74,7 +72,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgI-pN-SZ0" userLabel="allDayLabel">
-                    <rect key="frame" x="24" y="189.33333333333334" width="285" height="20.333333333333343"/>
+                    <rect key="frame" x="24.000000000000004" y="189.33333333333334" width="41.333333333333343" height="20.333333333333343"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -85,9 +83,6 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pjs-wr-z6W" userLabel="allDayToggle">
-                    <rect key="frame" x="317" y="184" width="51" height="31"/>
-                </switch>
                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bz-TJ-aDN" userLabel="startDateTextField">
                     <rect key="frame" x="24" y="286.33333333333331" width="159" height="18.666666666666686"/>
                     <color key="backgroundColor" name="red"/>
@@ -177,7 +172,6 @@
             <constraints>
                 <constraint firstItem="kch-5X-nmi" firstAttribute="leading" secondItem="Dc3-l8-ozf" secondAttribute="trailing" constant="8" id="2V2-8b-a7k"/>
                 <constraint firstItem="Oop-lf-tQ6" firstAttribute="top" secondItem="gh8-ZJ-yxY" secondAttribute="bottom" constant="19.333333333333329" id="4rg-j5-Kg1"/>
-                <constraint firstItem="Pjs-wr-z6W" firstAttribute="centerY" secondItem="wgI-pN-SZ0" secondAttribute="centerY" id="5YK-zb-Xk9"/>
                 <constraint firstItem="6bz-TJ-aDN" firstAttribute="leading" secondItem="Nce-4t-iVq" secondAttribute="leading" constant="24" id="5fg-9h-N11"/>
                 <constraint firstItem="kch-5X-nmi" firstAttribute="centerY" secondItem="Dc3-l8-ozf" secondAttribute="centerY" id="6Jy-UK-rOv"/>
                 <constraint firstItem="Nce-4t-iVq" firstAttribute="trailing" secondItem="xG1-Wn-VPP" secondAttribute="trailing" constant="24" id="78q-ew-711"/>
@@ -187,13 +181,11 @@
                 <constraint firstItem="cGc-wr-WZU" firstAttribute="top" secondItem="Oop-lf-tQ6" secondAttribute="bottom" constant="4" id="AnY-7f-MvL"/>
                 <constraint firstItem="Dc3-l8-ozf" firstAttribute="centerX" secondItem="Kwx-Ih-v6b" secondAttribute="centerX" id="BXc-P2-GVd"/>
                 <constraint firstItem="Nce-4t-iVq" firstAttribute="trailing" secondItem="HfF-aJ-O2j" secondAttribute="trailing" constant="24" id="C2a-z4-G3a"/>
-                <constraint firstItem="Nce-4t-iVq" firstAttribute="trailing" secondItem="Pjs-wr-z6W" secondAttribute="trailing" constant="24" id="Eu7-KQ-onw"/>
                 <constraint firstItem="wgI-pN-SZ0" firstAttribute="top" secondItem="cGc-wr-WZU" secondAttribute="bottom" constant="24" id="Fim-qd-QY2"/>
                 <constraint firstItem="xG1-Wn-VPP" firstAttribute="top" secondItem="6bz-TJ-aDN" secondAttribute="bottom" constant="24" id="HBL-OA-mIm"/>
                 <constraint firstItem="HfF-aJ-O2j" firstAttribute="top" secondItem="Nce-4t-iVq" secondAttribute="top" constant="8" id="L7R-Cj-8fn"/>
                 <constraint firstItem="Oop-lf-tQ6" firstAttribute="leading" secondItem="Nce-4t-iVq" secondAttribute="leading" constant="24" id="NiL-46-KiT"/>
                 <constraint firstItem="Nce-4t-iVq" firstAttribute="trailing" secondItem="cGc-wr-WZU" secondAttribute="trailing" constant="24" id="O2H-yX-j6s"/>
-                <constraint firstItem="Pjs-wr-z6W" firstAttribute="leading" secondItem="wgI-pN-SZ0" secondAttribute="trailing" constant="8" symbolic="YES" id="OEp-0N-Vc2"/>
                 <constraint firstItem="VOL-DC-gB1" firstAttribute="bottom" secondItem="Nce-4t-iVq" secondAttribute="bottom" id="OvS-C3-P2k"/>
                 <constraint firstItem="L6r-4K-FK8" firstAttribute="top" secondItem="Nce-4t-iVq" secondAttribute="top" constant="8" id="QsE-r8-0NU"/>
                 <constraint firstItem="VOL-DC-gB1" firstAttribute="leading" secondItem="Nce-4t-iVq" secondAttribute="leading" constant="34" id="TXL-GD-95g"/>

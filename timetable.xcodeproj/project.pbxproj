@@ -104,6 +104,7 @@
 		500DE4BA28F7476800EA52F1 /* AddEventUseCaseImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4B928F7476800EA52F1 /* AddEventUseCaseImp.swift */; };
 		500DE4BC28F74D4300EA52F1 /* AddEventRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4BB28F74D4300EA52F1 /* AddEventRepository.swift */; };
 		500DE4BE28F74D9C00EA52F1 /* AddEventRepositoryImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500DE4BD28F74D9C00EA52F1 /* AddEventRepositoryImp.swift */; };
+		502803A8298563E600F45306 /* CustomSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 502803A7298563E600F45306 /* CustomSwitch.swift */; };
 		502BDF642843C22E00C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		502BDF652843CDD200C0C6B7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */; };
 		5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094EC582842499A002A3042 /* Extension+UIColor.swift */; };
@@ -314,6 +315,7 @@
 		500DE4B928F7476800EA52F1 /* AddEventUseCaseImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventUseCaseImp.swift; sourceTree = "<group>"; };
 		500DE4BB28F74D4300EA52F1 /* AddEventRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventRepository.swift; sourceTree = "<group>"; };
 		500DE4BD28F74D9C00EA52F1 /* AddEventRepositoryImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventRepositoryImp.swift; sourceTree = "<group>"; };
+		502803A7298563E600F45306 /* CustomSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSwitch.swift; sourceTree = "<group>"; };
 		502BDF632843C22D00C0C6B7 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5094EC582842499A002A3042 /* Extension+UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
 		50A8F6BF28F1D4B1006E4D89 /* AddEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEventViewController.swift; sourceTree = "<group>"; };
@@ -675,6 +677,7 @@
 			isa = PBXGroup;
 			children = (
 				50F4D5CC2924973E0076817C /* Calendar */,
+				502803A7298563E600F45306 /* CustomSwitch.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1100,6 +1103,7 @@
 				0B3331C427AFF88300695F27 /* Extensions+UIViewController.swift in Sources */,
 				50A8F6C128F1D4B1006E4D89 /* AddEventViewController.swift in Sources */,
 				0BC68B09285A78A20086B2CF /* DismissTransition.swift in Sources */,
+				502803A8298563E600F45306 /* CustomSwitch.swift in Sources */,
 				0B3331C027AFF1F000695F27 /* EventListViewCoordinator.swift in Sources */,
 				0B471E5827AEF2E500644CE2 /* String+Utils.swift in Sources */,
 				500DE4AC28F5F23400EA52F1 /* DetailDayViewCoordinator.swift in Sources */,

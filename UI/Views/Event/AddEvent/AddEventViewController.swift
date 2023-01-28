@@ -23,6 +23,12 @@ class AddEventViewController: UIViewController {
         return calendarView
     }()
     
+    var customSwitch: CustomSwitch = {
+        let customSwitch = CustomSwitch()
+        customSwitch.prepareForConstraints()
+        return customSwitch
+    }()
+    
     @IBOutlet weak var cancelButton: UILabel!
     @IBOutlet weak var saveEventButton: UILabel!
     @IBOutlet weak var numberOfTheDayLabel: UILabel!
@@ -56,8 +62,8 @@ class AddEventViewController: UIViewController {
         setupFSCalendarStyle()
         setupBindings()
         addEventViewModel?.loadCurrentDate()
-        monthCalendar.addSubview(calendarView)
-        calendarView.pinEdgesToSuperview()
+        setupViewHierarchy()
+        setupConstraints()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -86,6 +92,8 @@ class AddEventViewController: UIViewController {
         }
         
         allDayLabel.text = Localizable.allDayLabelTitle()
+        
+        customSwitch.delegate = self
         
     }
     
@@ -159,6 +167,21 @@ class AddEventViewController: UIViewController {
         nameOfMonthLabel.textColor = .timetableGray
     }
     
+    private func setupViewHierarchy() {
+        self.view.addSubview(customSwitch)
+        monthCalendar.addSubview(calendarView)
+    }
+    
+    private func setupConstraints() {
+        customSwitch.pinRight(24)
+        customSwitch.centerVertically(inRelationTo: allDayLabel)
+        customSwitch.height(with: 20)
+        customSwitch.width(with: 40)
+        calendarView.pinEdgesToSuperview()
+        customSwitch.layer.masksToBounds = true
+        customSwitch.layer.cornerRadius = 10
+    }
+    
     private func setupBackButton() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(didTapOnCancelButton))
         cancelButton.isUserInteractionEnabled = true
@@ -226,4 +249,12 @@ extension AddEventViewController: UIViewControllerTransitioningDelegate {
         //        transition.startingPoint = cell!.center
         return DismissTransition()
     }
+}
+
+extension AddEventViewController: CustomToggleViewDelegate {
+    
+    func didSet(status: Bool) {
+        
+    }
+    
 }
