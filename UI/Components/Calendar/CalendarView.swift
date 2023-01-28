@@ -64,8 +64,9 @@ final class CalendarViewCell: UICollectionViewCell {
     }
     
     func select() {
-        dayLabel.textColor = .timetableSystemBackgroundColor
-        self.bgView.backgroundColor = .timetableText
+        dayLabel.textColor =  dayLabel.textColor == .timetableSystemBackgroundColor ? .timetableText : .timetableSystemBackgroundColor
+        self.bgView.backgroundColor = self.bgView.backgroundColor == .timetableText ? .timetableSystemBackgroundColor : .timetableText
+        self.layoutIfNeeded()
     }
     
 }
