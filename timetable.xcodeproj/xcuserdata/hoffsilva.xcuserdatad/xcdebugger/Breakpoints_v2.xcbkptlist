@@ -242,5 +242,149 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A524AC0A-EE5B-4F3F-B797-70930FC3DEAA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UI/Components/HourPickerView/HourPickerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4F9BC19C-47DE-4013-9424-10372844991B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UI/Components/HourPickerView/HourPickerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "scrollViewWillBeginDragging(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4F9BC19C-47DE-4013-9424-10372844991B - 9749d560cb1dbff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UI.HourPickerView.scrollViewWillBeginDragging(__C.UIScrollView) -&gt; ()"
+                  moduleName = "UI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/timetable/UI/Components/HourPickerView/HourPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "304">
+               </Location>
+               <Location
+                  uuid = "4F9BC19C-47DE-4013-9424-10372844991B - 9749d560cb1dbff"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UI.HourPickerView.scrollViewWillBeginDragging(__C.UIScrollView) -&gt; ()"
+                  moduleName = "UI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/timetable/UI/Components/HourPickerView/HourPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "83"
+                  endingLineNumber = "83"
+                  offsetFromSymbolStart = "456">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1FE5774E-00E6-42C8-9174-A126A209AC73"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UI/Components/HourPickerView/HourPickerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1FE5774E-00E6-42C8-9174-A126A209AC73 - 32dfc1f32be96359"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UI.HourPickerView.scrollViewDidScroll(__C.UIScrollView) -&gt; ()"
+                  moduleName = "UI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/timetable/UI/Components/HourPickerView/HourPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "304">
+               </Location>
+               <Location
+                  uuid = "1FE5774E-00E6-42C8-9174-A126A209AC73 - 32dfc1f32be96359"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "UI.HourPickerView.scrollViewDidScroll(__C.UIScrollView) -&gt; ()"
+                  moduleName = "UI"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hoffsilva/Developer/personal-projects/timetable/UI/Components/HourPickerView/HourPickerView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "93"
+                  endingLineNumber = "93"
+                  offsetFromSymbolStart = "456">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F0E9719F-6CCD-4AFE-8A42-4EDF3B79A4CB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UI/Components/HourPickerView/HourPickerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "scrollViewWillBeginDragging(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63C6FC38-8246-4767-9BDA-268A37489C5C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UI/Components/HourPickerView/HourPickerView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
+            landmarkName = "startZoom()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

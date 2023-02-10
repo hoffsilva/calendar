@@ -86,6 +86,10 @@ extension Resolver {
             AddEventViewController.loadFromNib()
         }
         
+        register { _, args in
+            StartsAtViewController.loadFromNib()
+        }
+        
         
     }
     
@@ -105,6 +109,10 @@ extension Resolver {
         
         register { service, args in
             AddEventViewModel(addEventUseCase: service.resolve(AddEventUseCase.self), currentDate: args.get("currentDate"))
+        }
+        
+        register { _, args in
+            StartsAtViewModel()
         }
         
     }

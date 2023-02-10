@@ -23,7 +23,8 @@ public final class AppCoordinator: Coordinator {
     
     public func start() {
         window.makeKeyAndVisible()
-        showLaunchScreen()
+//        showLaunchScreen()
+        window.rootViewController = Resolver.resolve(StartsAtViewController.self)
     }
     
     private func showLaunchScreen() {

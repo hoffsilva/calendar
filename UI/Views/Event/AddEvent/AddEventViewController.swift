@@ -10,6 +10,8 @@ import Presentation
 
 protocol AddEventViewControllerDelegate: AnyObject {
     func didTapOnCancelButton()
+    func didTapOnStartField()
+    func didTapOnEndField()
 }
 
 class AddEventViewController: UIViewController {
@@ -59,7 +61,6 @@ class AddEventViewController: UIViewController {
         super.viewDidLoad()
         setLabelStrings()
         setupStyle()
-        setupFSCalendarStyle()
         setupBindings()
         addEventViewModel?.loadCurrentDate()
         setupViewHierarchy()
@@ -74,6 +75,9 @@ class AddEventViewController: UIViewController {
     }
     
     func setupBindings() {
+        
+        startDateTextField.delegate = self
+        endDateTextField.delegate = self
         
         addEventViewModel?.numberOfDay = { [weak self] numberOfDay in
             self?.numberOfTheDayLabel.text = numberOfDay
@@ -95,20 +99,6 @@ class AddEventViewController: UIViewController {
         
         customSwitch.delegate = self
         
-    }
-    
-    private func setupFSCalendarStyle() {
-//        monthCalendar.pagingEnabled = true
-//        monthCalendar.appearance.selectionColor = .timetableText
-//        monthCalendar.appearance.todaySelectionColor = .timetableText
-//        monthCalendar.appearance.todayColor = .timetableSystemBackgroundColor
-//        monthCalendar.appearance.titleTodayColor = .timetableText
-//        monthCalendar.appearance.weekdayFont = .rubikRegular(16)
-//        monthCalendar.appearance.titleFont = .rubikBold(16)
-//        monthCalendar.appearance.headerDateFormat = nil
-//        monthCalendar.appearance.weekdayTextColor = .timetableText
-//        monthCalendar.appearance.caseOptions = [.weekdayUsesSingleUpperCase]
-//        monthCalendar.scrollEnabled = false
     }
     
     private func animateNumberOfDay(with constant: CGFloat) {
@@ -233,6 +223,19 @@ class AddEventViewController: UIViewController {
         print("Bye \(#file)")
     }
 
+}
+
+extension AddEventViewController: UITextFieldDelegate {
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        switch textField {
+        case startDateTextField: self.addEventViewControllerDelegate?.didTapOnStartField()
+        case endDateTextField: self.addEventViewControllerDelegate?.didTapOnEndField()
+        default: ()
+        }
+        return true
+    }
+    
 }
 
 extension AddEventViewController: UIViewControllerTransitioningDelegate {

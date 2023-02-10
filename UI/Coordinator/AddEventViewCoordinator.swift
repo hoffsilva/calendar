@@ -56,6 +56,10 @@ public final class AddEventViewCoordinator: Coordinator {
         })
     }
     
+    private func showStartsAtScreen() {
+        
+    }
+    
     deinit {
         print("Bye \(#file)")
     }
@@ -67,5 +71,12 @@ extension AddEventViewCoordinator: AddEventViewControllerDelegate {
         dismissAddEventViewController()
     }
     
+    func didTapOnStartField() {
+        showStartsAtScreen()
+    }
+    
+    func didTapOnEndField() {
+        
+    }
     
 }

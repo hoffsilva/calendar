@@ -47,6 +47,8 @@
 		0B33325327B7FC4C00695F27 /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DDB27AEEF2A00644CE2 /* Presentation.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0B33325427B7FC4D00695F27 /* UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; platformFilter = ios; };
 		0B33325527B7FC4D00695F27 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0B471DFB27AEF07000644CE2 /* UI.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0B3F2C932995CBF60012AA2C /* StartsAtViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F2C922995CBF60012AA2C /* StartsAtViewModel.swift */; };
+		0B3F2C9D2995D3320012AA2C /* HourPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3F2C9B2995D3320012AA2C /* HourPickerView.swift */; };
 		0B471D8A27AEEA3400644CE2 /* GetEventsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8927AEEA3400644CE2 /* GetEventsUseCase.swift */; };
 		0B471D9127AEEA4E00644CE2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8C27AEEA4E00644CE2 /* Location.swift */; };
 		0B471D9227AEEA4E00644CE2 /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B471D8D27AEEA4E00644CE2 /* Months.swift */; };
@@ -87,6 +89,8 @@
 		0B57B02A27B82A6F008F4015 /* Resolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B57B02927B82A6F008F4015 /* Resolver.swift */; };
 		0B57B02C27B82E60008F4015 /* exportOptions.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0B57B02B27B82E60008F4015 /* exportOptions.plist */; };
 		0BAF0A9A27E6281400030DA1 /* ShowTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BAF0A9927E6281400030DA1 /* ShowTransition.swift */; };
+		0BC4ACF82995C91E009E2A90 /* StartsAtViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BC4ACF62995C862009E2A90 /* StartsAtViewController.xib */; };
+		0BC4ACF92995C921009E2A90 /* StartsAtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC4ACF72995C862009E2A90 /* StartsAtViewController.swift */; };
 		0BC68B09285A78A20086B2CF /* DismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BC68B08285A78A20086B2CF /* DismissTransition.swift */; };
 		0BD0A7E627D030C00087B1AC /* DetailDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BD0A7E427D030C00087B1AC /* DetailDayViewController.swift */; };
 		0BD0A7E727D030C00087B1AC /* DetailDayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */; };
@@ -230,6 +234,8 @@
 		0B3331BA27AFF03400695F27 /* Timetable+Injection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timetable+Injection.swift"; sourceTree = "<group>"; };
 		0B3331C327AFF88300695F27 /* Extensions+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+UIViewController.swift"; sourceTree = "<group>"; };
 		0B3331D927B00F1D00695F27 /* CustomLaunchScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLaunchScreen.swift; sourceTree = "<group>"; };
+		0B3F2C922995CBF60012AA2C /* StartsAtViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartsAtViewModel.swift; sourceTree = "<group>"; };
+		0B3F2C9B2995D3320012AA2C /* HourPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourPickerView.swift; sourceTree = "<group>"; };
 		0B471D8227AEE99900644CE2 /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B471D8927AEEA3400644CE2 /* GetEventsUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetEventsUseCase.swift; sourceTree = "<group>"; };
 		0B471D8C27AEEA4E00644CE2 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -298,6 +304,8 @@
 		0B57B02927B82A6F008F4015 /* Resolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resolver.swift; sourceTree = "<group>"; };
 		0B57B02B27B82E60008F4015 /* exportOptions.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = exportOptions.plist; sourceTree = "<group>"; };
 		0BAF0A9927E6281400030DA1 /* ShowTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowTransition.swift; sourceTree = "<group>"; };
+		0BC4ACF62995C862009E2A90 /* StartsAtViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StartsAtViewController.xib; sourceTree = "<group>"; };
+		0BC4ACF72995C862009E2A90 /* StartsAtViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartsAtViewController.swift; sourceTree = "<group>"; };
 		0BC68B08285A78A20086B2CF /* DismissTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissTransition.swift; sourceTree = "<group>"; };
 		0BD0A7E427D030C00087B1AC /* DetailDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDayViewController.swift; sourceTree = "<group>"; };
 		0BD0A7E527D030C00087B1AC /* DetailDayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailDayViewController.xib; sourceTree = "<group>"; };
@@ -396,6 +404,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B3F2C962995D2840012AA2C /* HourPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				0B3F2C9B2995D3320012AA2C /* HourPickerView.swift */,
+			);
+			path = HourPickerView;
+			sourceTree = "<group>";
+		};
 		0B471D5B27AEE88F00644CE2 = {
 			isa = PBXGroup;
 			children = (
@@ -492,6 +508,7 @@
 				0B471DF027AEEF5400644CE2 /* EventViewModel.swift */,
 				0BD0A7E827D032800087B1AC /* DaysEventsViewModel.swift */,
 				500DE4B128F7439600EA52F1 /* AddEventViewModel.swift */,
+				0B3F2C922995CBF60012AA2C /* StartsAtViewModel.swift */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -563,6 +580,7 @@
 		0B471E2227AEF0AF00644CE2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0BC4ACF52995C826009E2A90 /* StartsAt */,
 				503BFFC428F1ABBA00947DE9 /* Error */,
 				503BFFC228F1AB9800947DE9 /* Event */,
 				0B471E2527AEF0AF00644CE2 /* AppearenceToggle.swift */,
@@ -605,6 +623,15 @@
 				0B471E8427AEF43A00644CE2 /* Localizable.swift */,
 			);
 			path = Localizations;
+			sourceTree = "<group>";
+		};
+		0BC4ACF52995C826009E2A90 /* StartsAt */ = {
+			isa = PBXGroup;
+			children = (
+				0BC4ACF72995C862009E2A90 /* StartsAtViewController.swift */,
+				0BC4ACF62995C862009E2A90 /* StartsAtViewController.xib */,
+			);
+			path = StartsAt;
 			sourceTree = "<group>";
 		};
 		503BFFC228F1AB9800947DE9 /* Event */ = {
@@ -676,6 +703,7 @@
 		50F4D5CB2924972E0076817C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0B3F2C962995D2840012AA2C /* HourPickerView */,
 				50F4D5CC2924973E0076817C /* Calendar */,
 				502803A7298563E600F45306 /* CustomSwitch.swift */,
 			);
@@ -987,6 +1015,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BC4ACF82995C91E009E2A90 /* StartsAtViewController.xib in Resources */,
 				502BDF642843C22E00C0C6B7 /* LaunchScreen.storyboard in Resources */,
 				0B471E3F27AEF0AF00644CE2 /* EventListViewController.xib in Resources */,
 				50A8F6C628F1D8BB006E4D89 /* AddEventViewController.xib in Resources */,
@@ -1082,6 +1111,7 @@
 			files = (
 				500DE4B228F7439600EA52F1 /* AddEventViewModel.swift in Sources */,
 				0B471DF327AEEF5400644CE2 /* EventViewModel.swift in Sources */,
+				0B3F2C932995CBF60012AA2C /* StartsAtViewModel.swift in Sources */,
 				0B471DF527AEEF5400644CE2 /* EventCellViewModel.swift in Sources */,
 				0BD0A7E927D032800087B1AC /* DaysEventsViewModel.swift in Sources */,
 				0B471DF427AEEF5400644CE2 /* ErrorViewModel.swift in Sources */,
@@ -1120,11 +1150,13 @@
 				0B3331DA27B00F1D00695F27 /* CustomLaunchScreen.swift in Sources */,
 				0BD1166F27DE298000BD7AD8 /* DetailEventCell.swift in Sources */,
 				0B471E3E27AEF0AF00644CE2 /* ErrorViewController.swift in Sources */,
+				0B3F2C9D2995D3320012AA2C /* HourPickerView.swift in Sources */,
 				0B471E5927AEF2E500644CE2 /* TimeTableNavigationController.swift in Sources */,
 				0B3331C227AFF1FE00695F27 /* Coordinator.swift in Sources */,
 				5094EC592842499A002A3042 /* Extension+UIColor.swift in Sources */,
 				0B471E5627AEF2E500644CE2 /* Extension+UIFont.swift in Sources */,
 				0BAF0A9A27E6281400030DA1 /* ShowTransition.swift in Sources */,
+				0BC4ACF92995C921009E2A90 /* StartsAtViewController.swift in Sources */,
 				0B471E5427AEF2E500644CE2 /* UIView+Constraints.swift in Sources */,
 				0B471E3D27AEF0AF00644CE2 /* AppearenceToggle.swift in Sources */,
 				0B3331C727AFFAFF00695F27 /* Localizable.swift in Sources */,
