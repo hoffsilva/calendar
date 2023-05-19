@@ -15,7 +15,7 @@ final class HourPickerView: UIView {
             scrollDirection = .vertical
             minimumInteritemSpacing = 0
             minimumLineSpacing = 0
-            itemSize = CGSize(width: 140, height: 82)
+            itemSize = CGSize(width: 150, height: 62)
         }
     }
     
@@ -26,6 +26,7 @@ final class HourPickerView: UIView {
         scrollview.prepareForConstraints()
         scrollview.showsVerticalScrollIndicator = false
         scrollview.showsHorizontalScrollIndicator = false
+        scrollview.clipsToBounds = false
         scrollview.register(HourPickerViewCell.self, forCellWithReuseIdentifier: String(describing: HourPickerViewCell.self))
         return scrollview
     }()
@@ -34,8 +35,8 @@ final class HourPickerView: UIView {
         let label = UILabel()
         label.prepareForConstraints()
         label.textAlignment = .left
-        label.textColor = .timetableDarkGray
-        label.font = .rubikBold(62)
+        label.textColor = .timetableText
+        label.font = .rubikBold(52)
         return label
     }()
     
@@ -64,7 +65,7 @@ final class HourPickerView: UIView {
         collectionView.pinTop()
         collectionView.pinLeft()
         collectionView.pinBottom()
-        collectionView.pinRightInRelation(to: hourPeriodLabel.leftAnchor, 4)
+        collectionView.pinRightInRelation(to: hourPeriodLabel.leftAnchor)
         hourPeriodLabel.centerVertically()
         hourPeriodLabel.pinRight()
     }
@@ -76,6 +77,7 @@ extension HourPickerView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HourPickerViewCell.self), for: indexPath)
         guard let hourPickerViewCell = cell as? HourPickerViewCell else { return cell }
+        if indexPath.row == 0 { hourPickerViewCell.zoomingIn(offset: 20) }
         hourPickerViewCell.configure(with: hoursList[indexPath.row].0)
         self.hourPeriodLabel.text = hoursList[indexPath.row].1
         return hourPickerViewCell
@@ -107,17 +109,38 @@ extension HourPickerView: UIScrollViewDelegate {
         if let indexPath = self.collectionView.indexPathForItem(at: centerPoint),
            let centerCell = collectionView.cellForItem(at: indexPath) as? HourPickerViewCell {
             self.centerCell = centerCell
-            self.centerCell?.zoomingIn(width: centerCell.frame.width*0.2)
-        }
-        
-        if let centerCell = self.centerCell {
-            let offsetY = centerPoint.y - centerCell.center.y
-            if offsetY < -19 || offsetY > 19 {
-                self.centerCell?.zoomingOut()
-                self.centerCell = nil
+            
+            if indexPath.row == 1 &&  (centerPoint.y/10 - 6) < 6 {
+                self.centerCell?.zoomingIn(offset: centerPoint.y/10 - 6)
+                print(centerPoint.y/10 - 6)
+            }
+            
+//            switch indexPath.row {
+//            case 1:
+//                print(centerPoint.y/10 - 6)
+//
+//            case 2:
+//                print(centerPoint.y/20)
+//                self.centerCell?.zoomingIn(offset: centerPoint.y/20)
+//            case 3: self.centerCell?.zoomingIn(offset: centerPoint.y/30)
+//            case 4: self.centerCell?.zoomingIn(offset: centerPoint.y/40)
+//            case 5: self.centerCell?.zoomingIn(offset: centerPoint.y/50)
+//            default: ()
+//            }
+            
+            if let centerCell = self.centerCell {
+                let offsetY = centerPoint.y - centerCell.center.y
+                if offsetY < -10 || offsetY > 10 {
+                    if indexPath.row == 1 &&  (centerPoint.y/10 - 6) > 6 || (centerPoint.y/10 - 6) < 6 {
+                        self.centerCell?.zoomingOut(offset: centerPoint.y/10 + 6)
+                        print(centerPoint.y/10 - 6)
+                    }
+                    
+                    self.centerCell = nil
+                }
             }
         }
-        
+    
     }
     
     
@@ -125,16 +148,12 @@ extension HourPickerView: UIScrollViewDelegate {
 
 final fileprivate class HourPickerViewCell: UICollectionViewCell {
     
-    private var constraintLabelWidth: NSLayoutConstraint?
-    
     private lazy var hourLabel: UILabel = {
         let label = UILabel()
         label.prepareForConstraints()
         label.textAlignment = .right
         label.textColor = .timetableDarkGray
         label.font = .rubikBold(32)
-        label.adjustsFontSizeToFitWidth = true
-        label.minimumScaleFactor = 1.2
         return label
     }()
     
@@ -164,29 +183,28 @@ final fileprivate class HourPickerViewCell: UICollectionViewCell {
     }
     
     private func setupConstraints() {
-        hourLabel.pinRight(4)
+        hourLabel.pinRight()
         hourLabel.centerVertically()
-        constraintLabelWidth = hourLabel.width(with: 91)
+        hourLabel.pinLeft()
     }
     
     func configure(with text: String) {
         hourLabel.text = text
     }
     
-    func zoomingIn(width: Double) {
+    func zoomingIn(offset: Double) {
         UIView.animate(withDuration: 0.2, delay: 0) {
-            self.constraintLabelWidth?.constant = 150
+            let size = self.hourLabel.font.pointSize + offset
+            self.hourLabel.font = self.hourLabel.font.withSize(size < 52 ? size : 52)
             self.hourLabel.textColor = UIColor.timetableText
-            self.hourLabel.transform = .init(1.5, 0, 0, 1.5, 0, 0)
-            print(self.hourLabel.transform)
             self.layoutIfNeeded()
         }
     }
     
-    func zoomingOut() {
+    func zoomingOut(offset: Double) {
         UIView.animate(withDuration: 0.2, delay: 0) {
-            self.constraintLabelWidth?.constant = 91
-            self.hourLabel.transform = .identity
+            let size = self.hourLabel.font.pointSize - offset
+            self.hourLabel.font = self.hourLabel.font.withSize(size > 32 ? size : 32)
             self.hourLabel.textColor = UIColor.timetableDarkGray
             self.layoutIfNeeded()
         }
