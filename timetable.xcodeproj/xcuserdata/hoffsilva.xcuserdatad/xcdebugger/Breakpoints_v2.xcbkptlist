@@ -245,32 +245,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "568B4539-B1B8-412E-B0D3-D3B6B0AB94A9"
-            shouldBeEnabled = "Yes"
+            uuid = "1A34E624-FB84-4723-A662-BCBDFFED1D0D"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UI/Components/HourPickerView/HourPickerView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "scrollViewDidScroll(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BD1B346A-2980-494F-B74A-38A6C153B385"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "UI/Components/HourPickerView/HourPickerView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
-            landmarkName = "scrollViewDidScroll(_:)"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "zoomingIn(width:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -52,15 +52,14 @@ public class StartsAtViewController: UIViewController {
     }
     
     private func setupConstraints() {
-        hourPickerView.centerVertically()
-        hourPickerView.height(with: 62)
-        hourPickerView.pinLeft()
-        hourPickerView.pinRight()
+//        hourPickerView.centerVertically()
+//        hourPickerView.height(with: 82)
+//        hourPickerView.pinLeft()
+//        hourPickerView.pinRight()
+        hourPickerView.pinEdgesToSuperview()
     }
     
     private func setupBindings() {
-        
-        hourPickerView.setupCells(["10:30am", "10:30am", "10:30am", "10:30am", "10:30am"])
     
         //        errorViewModel?
         //            .didLoadWithErrorMessage = { errorDescription in
@@ -74,10 +73,10 @@ public class StartsAtViewController: UIViewController {
     }
     
     private func setupStyle() {
-        startsAtHourPickerView.clipsToBounds = true
         setupLabelFont()
         setupLabelColor()
         setupCloseButton()
+        hourPickerView.clipsToBounds = false
 //        setupAllowCalendarAccessButton()
     }
     
