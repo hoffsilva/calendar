@@ -64,7 +64,7 @@ final class HourPickerView: UIView {
     private func setupConstraints() {
         collectionView.pinTop()
         collectionView.pinLeft()
-        collectionView.pinBottom()
+        collectionView.pinBottom(-20)
         collectionView.pinRightInRelation(to: hourPeriodLabel.leftAnchor)
         hourPeriodLabel.centerVertically()
         hourPeriodLabel.pinRight()
