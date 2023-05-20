@@ -64,7 +64,7 @@ final class HourPickerView: UIView {
     private func setupConstraints() {
         collectionView.pinTop()
         collectionView.pinLeft()
-        collectionView.pinBottom(-20)
+        collectionView.pinBottom(-15)
         collectionView.pinRightInRelation(to: hourPeriodLabel.leftAnchor)
         hourPeriodLabel.centerVertically()
         hourPeriodLabel.pinRight()
@@ -77,7 +77,7 @@ extension HourPickerView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: HourPickerViewCell.self), for: indexPath)
         guard let hourPickerViewCell = cell as? HourPickerViewCell else { return cell }
-        if indexPath.row == 0 { hourPickerViewCell.zoomingIn(offset: 20) }
+        if indexPath.row == 0 { hourPickerViewCell.zoomingIn(offset: 30, alpha: 1) }
         hourPickerViewCell.configure(with: hoursList[indexPath.row].0)
         self.hourPeriodLabel.text = hoursList[indexPath.row].1
         return hourPickerViewCell
@@ -110,9 +110,19 @@ extension HourPickerView: UIScrollViewDelegate {
            let centerCell = collectionView.cellForItem(at: indexPath) as? HourPickerViewCell {
             self.centerCell = centerCell
             
+            if indexPath.row == 0 &&  centerPoint.y > 20 {
+                self.centerCell?.zoomingIn(offset: centerPoint.y - 6)
+                print(centerPoint.y - 6)
+            }
+            
             if indexPath.row == 1 &&  (centerPoint.y/10 - 6) < 6 {
                 self.centerCell?.zoomingIn(offset: centerPoint.y/10 - 6)
                 print(centerPoint.y/10 - 6)
+            }
+            
+            if indexPath.row == 2 &&  (centerPoint.y/20 - 6) < 6 {
+                self.centerCell?.zoomingIn(offset: centerPoint.y/20 - 6)
+                print(centerPoint.y/20 - 6)
             }
             
 //            switch indexPath.row {
@@ -131,9 +141,19 @@ extension HourPickerView: UIScrollViewDelegate {
             if let centerCell = self.centerCell {
                 let offsetY = centerPoint.y - centerCell.center.y
                 if offsetY < -10 || offsetY > 10 {
+                    if indexPath.row == 0 &&  (centerPoint.y - 6) > 6 || (centerPoint.y - 6) < 6 {
+                        self.centerCell?.zoomingOut(offset: centerPoint.y + 6)
+                        print(centerPoint.y/10 - 6)
+                    }
+                    
                     if indexPath.row == 1 &&  (centerPoint.y/10 - 6) > 6 || (centerPoint.y/10 - 6) < 6 {
                         self.centerCell?.zoomingOut(offset: centerPoint.y/10 + 6)
                         print(centerPoint.y/10 - 6)
+                    }
+                    
+                    if indexPath.row == 2 &&  (centerPoint.y/20 - 6) > 6 || (centerPoint.y/20 - 6) < 6 {
+                        self.centerCell?.zoomingOut(offset: centerPoint.y/20 + 6)
+                        print(centerPoint.y/20 - 6)
                     }
                     
                     self.centerCell = nil
@@ -152,8 +172,9 @@ final fileprivate class HourPickerViewCell: UICollectionViewCell {
         let label = UILabel()
         label.prepareForConstraints()
         label.textAlignment = .right
-        label.textColor = .timetableDarkGray
+        label.textColor = .timetableText
         label.font = .rubikBold(32)
+        label.alpha = 0.5
         return label
     }()
     
@@ -192,22 +213,17 @@ final fileprivate class HourPickerViewCell: UICollectionViewCell {
         hourLabel.text = text
     }
     
-    func zoomingIn(offset: Double) {
-        UIView.animate(withDuration: 0.2, delay: 0) {
-            let size = self.hourLabel.font.pointSize + offset
-            self.hourLabel.font = self.hourLabel.font.withSize(size < 52 ? size : 52)
-            self.hourLabel.textColor = UIColor.timetableText
-            self.layoutIfNeeded()
-        }
+    func zoomingIn(offset: Double, alpha: CGFloat? = nil) {
+        let size = self.hourLabel.font.pointSize + offset/2
+        self.hourLabel.font = self.hourLabel.font.withSize(size < 52 ? size : 52)
+        if let alpha = alpha { self.hourLabel.alpha = alpha }
+        self.hourLabel.alpha += 0.1
     }
     
     func zoomingOut(offset: Double) {
-        UIView.animate(withDuration: 0.2, delay: 0) {
-            let size = self.hourLabel.font.pointSize - offset
-            self.hourLabel.font = self.hourLabel.font.withSize(size > 32 ? size : 32)
-            self.hourLabel.textColor = UIColor.timetableDarkGray
-            self.layoutIfNeeded()
-        }
+        let size = self.hourLabel.font.pointSize - offset/2
+        self.hourLabel.font = self.hourLabel.font.withSize(size > 32 ? size : 32)
+        self.hourLabel.alpha = 0.5
     }
     
 }
