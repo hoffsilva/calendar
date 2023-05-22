@@ -7,6 +7,11 @@
 
 import UIKit
 
+private enum ScrollDirection {
+    case goingUp
+    case goindDown
+}
+
 final class HourPickerView: UIView {
     
     private class Layout: UICollectionViewFlowLayout {
@@ -43,6 +48,8 @@ final class HourPickerView: UIView {
     }()
     
     private var lastContentOffset: CGFloat = 0
+    
+    
     private let hoursList = [
         ("12:00", "am"),
         ("12:30", "am"),
@@ -149,6 +156,20 @@ extension HourPickerView: UICollectionViewDelegate {
 }
 
 extension HourPickerView: UIScrollViewDelegate {
+    
+    private func verifyScrollDirection(scrolledValue: CGFloat) -> ScrollDirection {
+        var scrollDirection = ScrollDirection.goindDown
+        
+        if (self.lastContentOffset > scrolledValue) {
+            scrollDirection = .goindDown
+        } else if (self.lastContentOffset < scrolledValue) {
+            scrollDirection = .goingUp
+        }
+        
+        self.lastContentOffset = scrolledValue
+        
+        return scrollDirection
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
