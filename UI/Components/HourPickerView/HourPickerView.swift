@@ -8,8 +8,8 @@
 import UIKit
 
 private enum ScrollDirection {
-    case goingUp
-    case goindDown
+    case isGoingToUp
+    case isGoingToDown
 }
 
 final class HourPickerView: UIView {
@@ -25,8 +25,7 @@ final class HourPickerView: UIView {
     }
     
     private var started = false
-    
-    private var centerCell: HourPickerViewCell?
+    private var lastContentOffset: CGFloat = 0
     
     private lazy var collectionView: UICollectionView = {
         let scrollview = UICollectionView(frame: .zero, collectionViewLayout: Layout())
@@ -46,9 +45,6 @@ final class HourPickerView: UIView {
         label.font = .rubikBold(52)
         return label
     }()
-    
-    private var lastContentOffset: CGFloat = 0
-    
     
     private let hoursList = [
         ("12:00", "am"),
@@ -157,13 +153,13 @@ extension HourPickerView: UICollectionViewDelegate {
 
 extension HourPickerView: UIScrollViewDelegate {
     
-    private func verifyScrollDirection(scrolledValue: CGFloat) -> ScrollDirection {
-        var scrollDirection = ScrollDirection.goindDown
+    private func getScrollDirection(scrolledValue: CGFloat) -> ScrollDirection {
+        var scrollDirection = ScrollDirection.isGoingToDown
         
         if (self.lastContentOffset > scrolledValue) {
-            scrollDirection = .goindDown
+            scrollDirection = .isGoingToDown
         } else if (self.lastContentOffset < scrolledValue) {
-            scrollDirection = .goingUp
+            scrollDirection = .isGoingToUp
         }
         
         self.lastContentOffset = scrolledValue
@@ -179,150 +175,31 @@ extension HourPickerView: UIScrollViewDelegate {
         
         if let indexPath = self.collectionView.indexPathForItem(at: centerPoint),
            let centerCell = collectionView.cellForItem(at: indexPath) as? HourPickerViewCell {
-            self.centerCell = centerCell
-            
-            print("scrollView.contentOffset.y: \(scrollView.contentOffset.y)")
-            
-            let teste = 2713 / hoursList.count
-            
-            print(teste)
-            
-            if indexPath.row == 0 &&  centerPoint.y > 20 {
-                print("Center point Y: \(centerPoint.y)")
-                self.centerCell?.zoomingIn(offset: centerPoint.y - 6)
-            }
-            
-            if indexPath.row == 1 &&  (centerPoint.y/10 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/10 - 6)
-            }
-            
-            if indexPath.row == 2 &&  (centerPoint.y/20 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/20 - 6)
-            }
-            
-            if indexPath.row == 3 &&  (centerPoint.y/30 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/30 - 6)
-            }
-            
-            if indexPath.row == 4 &&  (centerPoint.y/40 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/40 - 6)
-            }
-            
-            if indexPath.row == 5 &&  (centerPoint.y/50 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/50 - 6)
-            }
-            
-            if indexPath.row == 6 &&  (centerPoint.y/60 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/60 - 6)
-            }
-            
-            if indexPath.row == 7 &&  (centerPoint.y/70 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/70 - 6)
-            }
-            
-            if indexPath.row == 8 &&  (centerPoint.y/80 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/80 - 6)
-            }
-            
-            if indexPath.row == 9 &&  (centerPoint.y/90 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/90 - 6)
-            }
-            
-            if indexPath.row == 10 &&  (centerPoint.y/100 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/100 - 6)
-            }
-            
-            if indexPath.row == 11 &&  (centerPoint.y/110 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/110 - 6)
-            }
-            
-            if indexPath.row == 12 &&  (centerPoint.y/120 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/120 - 6)
-            }
-            
-            if indexPath.row == 13 &&  (centerPoint.y/130 - 6) < 6 {
-                self.centerCell?.zoomingIn(offset: centerPoint.y/130 - 6)
-            }
-            
-//            switch indexPath.row {
-//            case 1:
-//                print(centerPoint.y/10 - 6)
-//
-//            case 2:
-//                print(centerPoint.y/20)
-//                self.centerCell?.zoomingIn(offset: centerPoint.y/20)
-//            case 3: self.centerCell?.zoomingIn(offset: centerPoint.y/30)
-//            case 4: self.centerCell?.zoomingIn(offset: centerPoint.y/40)
-//            case 5: self.centerCell?.zoomingIn(offset: centerPoint.y/50)
-//            default: ()
-//            }
-            
-            if let centerCell = self.centerCell {
-                let offsetY = centerPoint.y - centerCell.center.y
-                if offsetY < -10 || offsetY > 10 {
-                    if indexPath.row == 0 &&  (centerPoint.y - 6) > 6 || (centerPoint.y - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y + 6)
-                    }
-                    
-                    if indexPath.row == 1 &&  (centerPoint.y/10 - 6) > 6 || (centerPoint.y/10 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/10 + 6)
-                    }
-                    
-                    if indexPath.row == 2 &&  (centerPoint.y/20 - 6) > 6 || (centerPoint.y/20 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/20 + 6)
-                    }
-                    
-                    if indexPath.row == 2 &&  (centerPoint.y/20 - 6) > 6 || (centerPoint.y/20 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/20 + 6)
-                    }
-                    
-                    if indexPath.row == 3 &&  (centerPoint.y/30 - 6) > 6 || (centerPoint.y/30 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/30 + 6)
-                    }
-                    
-                    if indexPath.row == 4 &&  (centerPoint.y/40 - 6) > 6 || (centerPoint.y/40 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/40 + 6)
-                    }
-                    
-                    if indexPath.row == 5 &&  (centerPoint.y/50 - 6) > 6 || (centerPoint.y/50 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/50 + 6)
-                    }
-                    
-                    if indexPath.row == 6 &&  (centerPoint.y/60 - 6) > 6 || (centerPoint.y/60 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/60 + 6)
-                    }
-                    
-                    if indexPath.row == 7 &&  (centerPoint.y/70 - 6) > 6 || (centerPoint.y/70 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/70 + 6)
-                    }
-                    
-                    if indexPath.row == 8 &&  (centerPoint.y/80 - 6) > 6 || (centerPoint.y/80 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/80 + 6)
-                    }
-                    
-                    if indexPath.row == 9 &&  (centerPoint.y/90 - 6) > 6 || (centerPoint.y/90 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/90 + 6)
-                    }
-                    
-                    if indexPath.row == 10 &&  (centerPoint.y/100 - 6) > 6 || (centerPoint.y/100 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/100 + 6)
-                    }
-                    
-                    if indexPath.row == 11 &&  (centerPoint.y/110 - 6) > 6 || (centerPoint.y/110 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/110 + 6)
-                    }
-                    
-                    if indexPath.row == 12 &&  (centerPoint.y/120 - 6) > 6 || (centerPoint.y/120 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/120 + 6)
-                    }
-                    
-                    if indexPath.row == 13 &&  (centerPoint.y/130 - 6) > 6 || (centerPoint.y/130 - 6) < 6 {
-                        self.centerCell?.zoomingOut(offset: centerPoint.y/130 + 6)
-                    }
-                    
-                    self.centerCell = nil
+            print("Meio da celula: \(centerCell.center)")
+            switch getScrollDirection(scrolledValue: scrollView.contentOffset.y) {
+            case .isGoingToDown:
+                print("down")
+                print(centerCell.frame.height)
+                if (indexPath.row < indexPath.row + 1) &&
+                    (indexPath.row <= hoursList.count - 1) &&
+                    centerCell.hourLabel.font.pointSize < 55 &&
+                    !centerCell.isZoomedDown {
+                    centerCell.zoomingIn(offset: 0.48)
+                } else {
+                    centerCell.zoomingOut(offset: 0.49)
+                }
+            case .isGoingToUp:
+                print("up")
+                if (indexPath.row > indexPath.row - 1) &&
+                    (indexPath.row >= 0) &&
+                    centerCell.hourLabel.font.pointSize < 55 &&
+                    !centerCell.isZoomedUp {
+                    centerCell.zoomingIn(offset: 0.48)
+                } else {
+                    centerCell.zoomingOut(offset: 0.49)
                 }
             }
+        
         }
     
     }
@@ -332,7 +209,7 @@ extension HourPickerView: UIScrollViewDelegate {
 
 final fileprivate class HourPickerViewCell: UICollectionViewCell {
     
-    private lazy var hourLabel: UILabel = {
+    lazy var hourLabel: UILabel = {
         let label = UILabel()
         label.prepareForConstraints()
         label.textAlignment = .right
@@ -341,6 +218,9 @@ final fileprivate class HourPickerViewCell: UICollectionViewCell {
         label.alpha = 0.5
         return label
     }()
+    
+    var isZoomedUp = false
+    var isZoomedDown = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -384,16 +264,27 @@ final fileprivate class HourPickerViewCell: UICollectionViewCell {
     }
     
     func zoomingIn(offset: Double, alpha: CGFloat? = nil) {
-        let size = self.hourLabel.font.pointSize + offset/2
+        let size = self.hourLabel.font.pointSize + offset
+        print("Size: \(size)")
         self.hourLabel.font = self.hourLabel.font.withSize(size < 52 ? size : 52)
         if let alpha = alpha { self.hourLabel.alpha = alpha }
         self.hourLabel.alpha += 0.1
+        if self.hourLabel.font.pointSize == 52 {
+            self.isZoomedUp = true
+        } else {
+            self.isZoomedDown = false
+        }
     }
     
     func zoomingOut(offset: Double) {
-        let size = self.hourLabel.font.pointSize - offset/2
+        let size = self.hourLabel.font.pointSize - offset
         self.hourLabel.font = self.hourLabel.font.withSize(size > 32 ? size : 32)
-        self.hourLabel.alpha = 0.5
+        self.hourLabel.alpha -= self.hourLabel.alpha > 0.5 ? 0.1 : 0
+        if self.hourLabel.font.pointSize == 32 {
+            self.isZoomedDown = false
+        } else {
+            self.isZoomedUp = false
+        }
     }
     
 }
